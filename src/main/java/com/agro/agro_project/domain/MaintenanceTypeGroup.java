@@ -15,25 +15,25 @@ public class MaintenanceTypeGroup {
     private String name;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
     @Column(name="description")
     @Lob
     private String description;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
-    public MaintenanceTypeGroup(Short id, String name, String external_id, String description, Timestamp created_at, Timestamp updated_at) {
+    public MaintenanceTypeGroup(Short id, String name, String externalId, String description, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.name = name;
-        this.external_id = external_id;
+        this.externalId = externalId;
         this.description = description;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public MaintenanceTypeGroup() {
@@ -55,12 +55,12 @@ public class MaintenanceTypeGroup {
         this.name = name;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
     public String getDescription() {
@@ -71,20 +71,20 @@ public class MaintenanceTypeGroup {
         this.description = description;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
@@ -92,12 +92,12 @@ public class MaintenanceTypeGroup {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MaintenanceTypeGroup that = (MaintenanceTypeGroup) o;
-        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(external_id, that.external_id) && Objects.equals(description, that.description) && Objects.equals(created_at, that.created_at) && Objects.equals(updated_at, that.updated_at);
+        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(externalId, that.externalId) && Objects.equals(description, that.description) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, external_id, description, created_at, updated_at);
+        return Objects.hash(id, name, externalId, description, createdAt, updatedAt);
     }
 
     @Override
@@ -105,10 +105,10 @@ public class MaintenanceTypeGroup {
         return "MaintenanceTypeGroup{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", external_id='" + external_id + '\'' +
+                ", externalId='" + externalId + '\'' +
                 ", description='" + description + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }

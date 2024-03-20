@@ -16,59 +16,59 @@ public class Chemical {
     private String name;
 
     @Column(name="chemical_type", length=30)
-    private String chemical_type;
+    private String chemicalType;
 
     @Column(name="units_of_measurement", length=10)
-    private String units_of_measurement;
+    private String unitsOfMeasurement;
 
     @Column(name="additional_info")
     @Lob
-    private String additional_info;
+    private String additionalInfo;
 
     @Column(name="description")
     private String description;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
     @Column(name="archived")
     private boolean archived;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
     @Column(name="toxicity_class")
-    private short toxicity_class;
+    private short toxicityClass;
 
     @Column(name="action_term")
-    private short action_term;
+    private short actionTerm;
 
     @Column(name="action_term_units", length=10)
-    private String action_term_units;
+    private String actionTermUnits;
 
     @Column(name="active_substance", length=255)
-    private String active_substance;
+    private String activeSubstance;
 
     @Column(name="drug_form", length=30)
-    private String drug_form;
+    private String drugForm;
 
     @Column(name="influence_method", length=10)
-    private String influence_method;
+    private String influenceMethod;
 
     @Column(name="bees_isolating_recommended_term")
-    private short bees_isolating_recommended_term;
+    private short beesIsolatingRecommendedTerm;
 
     @Column(name="bees_isolating_recommended_term_units", length=10)
-    private String bees_isolating_recommended_term_units;
+    private String beesIsolatingRecommendedTermUnits;
 
     @Column(name="sale_term")
-    private Date sale_term;
+    private Date saleTerm;
 
     @Column(name="term_of_use")
-    private Date term_of_use;
+    private Date termOfUse;
 
     @ManyToOne
     @JoinColumn(name="wh_item_id")
@@ -78,27 +78,27 @@ public class Chemical {
     @JoinColumn(name="wh_item_base_unit_id")
     private Unit whItemBaseUnit;
 
-    public Chemical(Short id, String name, String chemical_type, String units_of_measurement, String additional_info, String description, Timestamp created_at, Timestamp updated_at, boolean archived, String external_id, short toxicity_class, short action_term, String action_term_units, String active_substance, String drug_form, String influence_method, short bees_isolating_recommended_term, String bees_isolating_recommended_term_units, Date sale_term, Date term_of_use, WhItem whItem, Unit whItemBaseUnit) {
+    public Chemical(Short id, String name, String chemicalType, String unitsOfMeasurement, String additionalInfo, String description, Timestamp createdAt, Timestamp updatedAt, boolean archived, String externalId, short toxicityClass, short actionTerm, String actionTermUnits, String activeSubstance, String drugForm, String influenceMethod, short beesIsolatingRecommendedTerm, String beesIsolatingRecommendedTermUnits, Date saleTerm, Date termOfUse, WhItem whItem, Unit whItemBaseUnit) {
         this.id = id;
         this.name = name;
-        this.chemical_type = chemical_type;
-        this.units_of_measurement = units_of_measurement;
-        this.additional_info = additional_info;
+        this.chemicalType = chemicalType;
+        this.unitsOfMeasurement = unitsOfMeasurement;
+        this.additionalInfo = additionalInfo;
         this.description = description;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
         this.archived = archived;
-        this.external_id = external_id;
-        this.toxicity_class = toxicity_class;
-        this.action_term = action_term;
-        this.action_term_units = action_term_units;
-        this.active_substance = active_substance;
-        this.drug_form = drug_form;
-        this.influence_method = influence_method;
-        this.bees_isolating_recommended_term = bees_isolating_recommended_term;
-        this.bees_isolating_recommended_term_units = bees_isolating_recommended_term_units;
-        this.sale_term = sale_term;
-        this.term_of_use = term_of_use;
+        this.externalId = externalId;
+        this.toxicityClass = toxicityClass;
+        this.actionTerm = actionTerm;
+        this.actionTermUnits = actionTermUnits;
+        this.activeSubstance = activeSubstance;
+        this.drugForm = drugForm;
+        this.influenceMethod = influenceMethod;
+        this.beesIsolatingRecommendedTerm = beesIsolatingRecommendedTerm;
+        this.beesIsolatingRecommendedTermUnits = beesIsolatingRecommendedTermUnits;
+        this.saleTerm = saleTerm;
+        this.termOfUse = termOfUse;
         this.whItem = whItem;
         this.whItemBaseUnit = whItemBaseUnit;
     }
@@ -122,28 +122,28 @@ public class Chemical {
         this.name = name;
     }
 
-    public String getChemical_type() {
-        return chemical_type;
+    public String getChemicalType() {
+        return chemicalType;
     }
 
-    public void setChemical_type(String chemical_type) {
-        this.chemical_type = chemical_type;
+    public void setChemicalType(String chemicalType) {
+        this.chemicalType = chemicalType;
     }
 
-    public String getUnits_of_measurement() {
-        return units_of_measurement;
+    public String getUnitsOfMeasurement() {
+        return unitsOfMeasurement;
     }
 
-    public void setUnits_of_measurement(String units_of_measurement) {
-        this.units_of_measurement = units_of_measurement;
+    public void setUnitsOfMeasurement(String unitsOfMeasurement) {
+        this.unitsOfMeasurement = unitsOfMeasurement;
     }
 
-    public String getAdditional_info() {
-        return additional_info;
+    public String getAdditionalInfo() {
+        return additionalInfo;
     }
 
-    public void setAdditional_info(String additional_info) {
-        this.additional_info = additional_info;
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
 
     public String getDescription() {
@@ -154,20 +154,20 @@ public class Chemical {
         this.description = description;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     public boolean isArchived() {
@@ -178,92 +178,92 @@ public class Chemical {
         this.archived = archived;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
-    public short getToxicity_class() {
-        return toxicity_class;
+    public short getToxicityClass() {
+        return toxicityClass;
     }
 
-    public void setToxicity_class(short toxicity_class) {
-        this.toxicity_class = toxicity_class;
+    public void setToxicityClass(short toxicityClass) {
+        this.toxicityClass = toxicityClass;
     }
 
-    public short getAction_term() {
-        return action_term;
+    public short getActionTerm() {
+        return actionTerm;
     }
 
-    public void setAction_term(short action_term) {
-        this.action_term = action_term;
+    public void setActionTerm(short actionTerm) {
+        this.actionTerm = actionTerm;
     }
 
-    public String getAction_term_units() {
-        return action_term_units;
+    public String getActionTermUnits() {
+        return actionTermUnits;
     }
 
-    public void setAction_term_units(String action_term_units) {
-        this.action_term_units = action_term_units;
+    public void setActionTermUnits(String actionTermUnits) {
+        this.actionTermUnits = actionTermUnits;
     }
 
-    public String getActive_substance() {
-        return active_substance;
+    public String getActiveSubstance() {
+        return activeSubstance;
     }
 
-    public void setActive_substance(String active_substance) {
-        this.active_substance = active_substance;
+    public void setActiveSubstance(String activeSubstance) {
+        this.activeSubstance = activeSubstance;
     }
 
-    public String getDrug_form() {
-        return drug_form;
+    public String getDrugForm() {
+        return drugForm;
     }
 
-    public void setDrug_form(String drug_form) {
-        this.drug_form = drug_form;
+    public void setDrugForm(String drugForm) {
+        this.drugForm = drugForm;
     }
 
-    public String getInfluence_method() {
-        return influence_method;
+    public String getInfluenceMethod() {
+        return influenceMethod;
     }
 
-    public void setInfluence_method(String influence_method) {
-        this.influence_method = influence_method;
+    public void setInfluenceMethod(String influenceMethod) {
+        this.influenceMethod = influenceMethod;
     }
 
-    public short getBees_isolating_recommended_term() {
-        return bees_isolating_recommended_term;
+    public short getBeesIsolatingRecommendedTerm() {
+        return beesIsolatingRecommendedTerm;
     }
 
-    public void setBees_isolating_recommended_term(short bees_isolating_recommended_term) {
-        this.bees_isolating_recommended_term = bees_isolating_recommended_term;
+    public void setBeesIsolatingRecommendedTerm(short beesIsolatingRecommendedTerm) {
+        this.beesIsolatingRecommendedTerm = beesIsolatingRecommendedTerm;
     }
 
-    public String getBees_isolating_recommended_term_units() {
-        return bees_isolating_recommended_term_units;
+    public String getBeesIsolatingRecommendedTermUnits() {
+        return beesIsolatingRecommendedTermUnits;
     }
 
-    public void setBees_isolating_recommended_term_units(String bees_isolating_recommended_term_units) {
-        this.bees_isolating_recommended_term_units = bees_isolating_recommended_term_units;
+    public void setBeesIsolatingRecommendedTermUnits(String beesIsolatingRecommendedTermUnits) {
+        this.beesIsolatingRecommendedTermUnits = beesIsolatingRecommendedTermUnits;
     }
 
-    public Date getSale_term() {
-        return sale_term;
+    public Date getSaleTerm() {
+        return saleTerm;
     }
 
-    public void setSale_term(Date sale_term) {
-        this.sale_term = sale_term;
+    public void setSaleTerm(Date saleTerm) {
+        this.saleTerm = saleTerm;
     }
 
-    public Date getTerm_of_use() {
-        return term_of_use;
+    public Date getTermOfUse() {
+        return termOfUse;
     }
 
-    public void setTerm_of_use(Date term_of_use) {
-        this.term_of_use = term_of_use;
+    public void setTermOfUse(Date termOfUse) {
+        this.termOfUse = termOfUse;
     }
 
     public WhItem getWhItem() {
@@ -287,12 +287,12 @@ public class Chemical {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Chemical chemical = (Chemical) o;
-        return archived == chemical.archived && toxicity_class == chemical.toxicity_class && action_term == chemical.action_term && bees_isolating_recommended_term == chemical.bees_isolating_recommended_term && Objects.equals(id, chemical.id) && Objects.equals(name, chemical.name) && Objects.equals(chemical_type, chemical.chemical_type) && Objects.equals(units_of_measurement, chemical.units_of_measurement) && Objects.equals(additional_info, chemical.additional_info) && Objects.equals(description, chemical.description) && Objects.equals(created_at, chemical.created_at) && Objects.equals(updated_at, chemical.updated_at) && Objects.equals(external_id, chemical.external_id) && Objects.equals(action_term_units, chemical.action_term_units) && Objects.equals(active_substance, chemical.active_substance) && Objects.equals(drug_form, chemical.drug_form) && Objects.equals(influence_method, chemical.influence_method) && Objects.equals(bees_isolating_recommended_term_units, chemical.bees_isolating_recommended_term_units) && Objects.equals(sale_term, chemical.sale_term) && Objects.equals(term_of_use, chemical.term_of_use) && Objects.equals(whItem, chemical.whItem) && Objects.equals(whItemBaseUnit, chemical.whItemBaseUnit);
+        return archived == chemical.archived && toxicityClass == chemical.toxicityClass && actionTerm == chemical.actionTerm && beesIsolatingRecommendedTerm == chemical.beesIsolatingRecommendedTerm && Objects.equals(id, chemical.id) && Objects.equals(name, chemical.name) && Objects.equals(chemicalType, chemical.chemicalType) && Objects.equals(unitsOfMeasurement, chemical.unitsOfMeasurement) && Objects.equals(additionalInfo, chemical.additionalInfo) && Objects.equals(description, chemical.description) && Objects.equals(createdAt, chemical.createdAt) && Objects.equals(updatedAt, chemical.updatedAt) && Objects.equals(externalId, chemical.externalId) && Objects.equals(actionTermUnits, chemical.actionTermUnits) && Objects.equals(activeSubstance, chemical.activeSubstance) && Objects.equals(drugForm, chemical.drugForm) && Objects.equals(influenceMethod, chemical.influenceMethod) && Objects.equals(beesIsolatingRecommendedTermUnits, chemical.beesIsolatingRecommendedTermUnits) && Objects.equals(saleTerm, chemical.saleTerm) && Objects.equals(termOfUse, chemical.termOfUse) && Objects.equals(whItem, chemical.whItem) && Objects.equals(whItemBaseUnit, chemical.whItemBaseUnit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, chemical_type, units_of_measurement, additional_info, description, created_at, updated_at, archived, external_id, toxicity_class, action_term, action_term_units, active_substance, drug_form, influence_method, bees_isolating_recommended_term, bees_isolating_recommended_term_units, sale_term, term_of_use, whItem, whItemBaseUnit);
+        return Objects.hash(id, name, chemicalType, unitsOfMeasurement, additionalInfo, description, createdAt, updatedAt, archived, externalId, toxicityClass, actionTerm, actionTermUnits, activeSubstance, drugForm, influenceMethod, beesIsolatingRecommendedTerm, beesIsolatingRecommendedTermUnits, saleTerm, termOfUse, whItem, whItemBaseUnit);
     }
 
     @Override
@@ -300,24 +300,24 @@ public class Chemical {
         return "Chemical{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", chemical_type='" + chemical_type + '\'' +
-                ", units_of_measurement='" + units_of_measurement + '\'' +
-                ", additional_info='" + additional_info + '\'' +
+                ", chemicalType='" + chemicalType + '\'' +
+                ", unitsOfMeasurement='" + unitsOfMeasurement + '\'' +
+                ", additionalInfo='" + additionalInfo + '\'' +
                 ", description='" + description + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 ", archived=" + archived +
-                ", external_id='" + external_id + '\'' +
-                ", toxicity_class=" + toxicity_class +
-                ", action_term=" + action_term +
-                ", action_term_units='" + action_term_units + '\'' +
-                ", active_substance='" + active_substance + '\'' +
-                ", drug_form='" + drug_form + '\'' +
-                ", influence_method='" + influence_method + '\'' +
-                ", bees_isolating_recommended_term=" + bees_isolating_recommended_term +
-                ", bees_isolating_recommended_term_units='" + bees_isolating_recommended_term_units + '\'' +
-                ", sale_term=" + sale_term +
-                ", term_of_use=" + term_of_use +
+                ", externalId='" + externalId + '\'' +
+                ", toxicityClass=" + toxicityClass +
+                ", actionTerm=" + actionTerm +
+                ", actionTermUnits='" + actionTermUnits + '\'' +
+                ", activeSubstance='" + activeSubstance + '\'' +
+                ", drugForm='" + drugForm + '\'' +
+                ", influenceMethod='" + influenceMethod + '\'' +
+                ", beesIsolatingRecommendedTerm=" + beesIsolatingRecommendedTerm +
+                ", beesIsolatingRecommendedTermUnits='" + beesIsolatingRecommendedTermUnits + '\'' +
+                ", saleTerm=" + saleTerm +
+                ", termOfUse=" + termOfUse +
                 ", whItem=" + whItem +
                 ", whItemBaseUnit=" + whItemBaseUnit +
                 '}';

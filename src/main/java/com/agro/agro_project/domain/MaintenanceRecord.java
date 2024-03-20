@@ -12,13 +12,13 @@ public class MaintenanceRecord {
     private Short id;
 
     @Column(name="maintainable_id")
-    private int maintainable_id;
+    private int maintainableId;
 
     @Column(name="maintainable_type", length=20)
-    private String maintainable_type;
+    private String maintainableType;
 
     @Column(name="maintenance_plan_id")
-    private short maintenance_plan_id;
+    private short maintenancePlanId;
 
     @Column(name="status", length=15)
     private String status;
@@ -33,43 +33,43 @@ public class MaintenanceRecord {
     private int mileage;
 
     @Column(name="start_time")
-    private Timestamp start_time;
+    private Timestamp startTime;
 
     @Column(name="end_time")
-    private Timestamp end_time;
+    private Timestamp endTime;
 
     @Column(name="planned_start_time")
-    private Timestamp planned_start_time;
+    private Timestamp plannedStartTime;
 
     @Column(name="planned_end_time")
-    private Timestamp planned_end_time;
+    private Timestamp plannedEndTime;
 
     @Column(name="description")
     @Lob
     private String description;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
-    public MaintenanceRecord(Short id, int maintainable_id, String maintainable_type, short maintenance_plan_id, String status, short season, int motohours, int mileage, Timestamp start_time, Timestamp end_time, Timestamp planned_start_time, Timestamp planned_end_time, String description, Timestamp created_at, Timestamp updated_at) {
+    public MaintenanceRecord(Short id, int maintainableId, String maintainableType, short maintenancePlanId, String status, short season, int motohours, int mileage, Timestamp startTime, Timestamp endTime, Timestamp plannedStartTime, Timestamp plannedEndTime, String description, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
-        this.maintainable_id = maintainable_id;
-        this.maintainable_type = maintainable_type;
-        this.maintenance_plan_id = maintenance_plan_id;
+        this.maintainableId = maintainableId;
+        this.maintainableType = maintainableType;
+        this.maintenancePlanId = maintenancePlanId;
         this.status = status;
         this.season = season;
         this.motohours = motohours;
         this.mileage = mileage;
-        this.start_time = start_time;
-        this.end_time = end_time;
-        this.planned_start_time = planned_start_time;
-        this.planned_end_time = planned_end_time;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.plannedStartTime = plannedStartTime;
+        this.plannedEndTime = plannedEndTime;
         this.description = description;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public MaintenanceRecord() {
@@ -83,28 +83,28 @@ public class MaintenanceRecord {
         this.id = id;
     }
 
-    public int getMaintainable_id() {
-        return maintainable_id;
+    public int getMaintainableId() {
+        return maintainableId;
     }
 
-    public void setMaintainable_id(int maintainable_id) {
-        this.maintainable_id = maintainable_id;
+    public void setMaintainableId(int maintainableId) {
+        this.maintainableId = maintainableId;
     }
 
-    public String getMaintainable_type() {
-        return maintainable_type;
+    public String getMaintainableType() {
+        return maintainableType;
     }
 
-    public void setMaintainable_type(String maintainable_type) {
-        this.maintainable_type = maintainable_type;
+    public void setMaintainableType(String maintainableType) {
+        this.maintainableType = maintainableType;
     }
 
-    public short getMaintenance_plan_id() {
-        return maintenance_plan_id;
+    public short getMaintenancePlanId() {
+        return maintenancePlanId;
     }
 
-    public void setMaintenance_plan_id(short maintenance_plan_id) {
-        this.maintenance_plan_id = maintenance_plan_id;
+    public void setMaintenancePlanId(short maintenancePlanId) {
+        this.maintenancePlanId = maintenancePlanId;
     }
 
     public String getStatus() {
@@ -139,36 +139,36 @@ public class MaintenanceRecord {
         this.mileage = mileage;
     }
 
-    public Timestamp getStart_time() {
-        return start_time;
+    public Timestamp getStartTime() {
+        return startTime;
     }
 
-    public void setStart_time(Timestamp start_time) {
-        this.start_time = start_time;
+    public void setStartTime(Timestamp startTime) {
+        this.startTime = startTime;
     }
 
-    public Timestamp getEnd_time() {
-        return end_time;
+    public Timestamp getEndTime() {
+        return endTime;
     }
 
-    public void setEnd_time(Timestamp end_time) {
-        this.end_time = end_time;
+    public void setEndTime(Timestamp endTime) {
+        this.endTime = endTime;
     }
 
-    public Timestamp getPlanned_start_time() {
-        return planned_start_time;
+    public Timestamp getPlannedStartTime() {
+        return plannedStartTime;
     }
 
-    public void setPlanned_start_time(Timestamp planned_start_time) {
-        this.planned_start_time = planned_start_time;
+    public void setPlannedStartTime(Timestamp plannedStartTime) {
+        this.plannedStartTime = plannedStartTime;
     }
 
-    public Timestamp getPlanned_end_time() {
-        return planned_end_time;
+    public Timestamp getPlannedEndTime() {
+        return plannedEndTime;
     }
 
-    public void setPlanned_end_time(Timestamp planned_end_time) {
-        this.planned_end_time = planned_end_time;
+    public void setPlannedEndTime(Timestamp plannedEndTime) {
+        this.plannedEndTime = plannedEndTime;
     }
 
     public String getDescription() {
@@ -179,20 +179,20 @@ public class MaintenanceRecord {
         this.description = description;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
@@ -200,32 +200,32 @@ public class MaintenanceRecord {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MaintenanceRecord that = (MaintenanceRecord) o;
-        return maintainable_id == that.maintainable_id && maintenance_plan_id == that.maintenance_plan_id && season == that.season && motohours == that.motohours && mileage == that.mileage && Objects.equals(id, that.id) && Objects.equals(maintainable_type, that.maintainable_type) && Objects.equals(status, that.status) && Objects.equals(start_time, that.start_time) && Objects.equals(end_time, that.end_time) && Objects.equals(planned_start_time, that.planned_start_time) && Objects.equals(planned_end_time, that.planned_end_time) && Objects.equals(description, that.description) && Objects.equals(created_at, that.created_at) && Objects.equals(updated_at, that.updated_at);
+        return maintainableId == that.maintainableId && maintenancePlanId == that.maintenancePlanId && season == that.season && motohours == that.motohours && mileage == that.mileage && Objects.equals(id, that.id) && Objects.equals(maintainableType, that.maintainableType) && Objects.equals(status, that.status) && Objects.equals(startTime, that.startTime) && Objects.equals(endTime, that.endTime) && Objects.equals(plannedStartTime, that.plannedStartTime) && Objects.equals(plannedEndTime, that.plannedEndTime) && Objects.equals(description, that.description) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, maintainable_id, maintainable_type, maintenance_plan_id, status, season, motohours, mileage, start_time, end_time, planned_start_time, planned_end_time, description, created_at, updated_at);
+        return Objects.hash(id, maintainableId, maintainableType, maintenancePlanId, status, season, motohours, mileage, startTime, endTime, plannedStartTime, plannedEndTime, description, createdAt, updatedAt);
     }
 
     @Override
     public String toString() {
         return "MaintenanceRecord{" +
                 "id=" + id +
-                ", maintainable_id=" + maintainable_id +
-                ", maintainable_type='" + maintainable_type + '\'' +
-                ", maintenance_plan_id=" + maintenance_plan_id +
+                ", maintainableId=" + maintainableId +
+                ", maintainableType='" + maintainableType + '\'' +
+                ", maintenancePlanId=" + maintenancePlanId +
                 ", status='" + status + '\'' +
                 ", season=" + season +
                 ", motohours=" + motohours +
                 ", mileage=" + mileage +
-                ", start_time=" + start_time +
-                ", end_time=" + end_time +
-                ", planned_start_time=" + planned_start_time +
-                ", planned_end_time=" + planned_end_time +
+                ", startTime=" + startTime +
+                ", endTime=" + endTime +
+                ", plannedStartTime=" + plannedStartTime +
+                ", plannedEndTime=" + plannedEndTime +
                 ", description='" + description + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }

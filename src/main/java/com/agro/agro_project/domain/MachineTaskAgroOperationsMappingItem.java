@@ -12,23 +12,23 @@ public class MachineTaskAgroOperationsMappingItem {
     private Integer id;
 
     @Column(name="machine_task_id")
-    private int machine_task_id;
+    private int machineTaskId;
 
     @Column(name="agro_operation_id")
-    private int agro_operation_id;
+    private int agroOperationId;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
-    public MachineTaskAgroOperationsMappingItem(Integer id, int machine_task_id, int agro_operation_id, Timestamp created_at, Timestamp updated_at) {
+    public MachineTaskAgroOperationsMappingItem(Integer id, int machineTaskId, int agroOperationId, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
-        this.machine_task_id = machine_task_id;
-        this.agro_operation_id = agro_operation_id;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
+        this.machineTaskId = machineTaskId;
+        this.agroOperationId = agroOperationId;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public MachineTaskAgroOperationsMappingItem() {
@@ -42,36 +42,36 @@ public class MachineTaskAgroOperationsMappingItem {
         this.id = id;
     }
 
-    public int getMachine_task_id() {
-        return machine_task_id;
+    public int getMachineTaskId() {
+        return machineTaskId;
     }
 
-    public void setMachine_task_id(int machine_task_id) {
-        this.machine_task_id = machine_task_id;
+    public void setMachineTaskId(int machineTaskId) {
+        this.machineTaskId = machineTaskId;
     }
 
-    public int getAgro_operation_id() {
-        return agro_operation_id;
+    public int getAgroOperationId() {
+        return agroOperationId;
     }
 
-    public void setAgro_operation_id(int agro_operation_id) {
-        this.agro_operation_id = agro_operation_id;
+    public void setAgroOperationId(int agroOperationId) {
+        this.agroOperationId = agroOperationId;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
@@ -79,22 +79,22 @@ public class MachineTaskAgroOperationsMappingItem {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MachineTaskAgroOperationsMappingItem that = (MachineTaskAgroOperationsMappingItem) o;
-        return Objects.equals(id, that.id) && Objects.equals(machine_task_id, that.machine_task_id) && Objects.equals(agro_operation_id, that.agro_operation_id) && Objects.equals(created_at, that.created_at) && Objects.equals(updated_at, that.updated_at);
+        return Objects.equals(id, that.id) && Objects.equals(machineTaskId, that.machineTaskId) && Objects.equals(agroOperationId, that.agroOperationId) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, machine_task_id, agro_operation_id, created_at, updated_at);
+        return Objects.hash(id, machineTaskId, agroOperationId, createdAt, updatedAt);
     }
 
     @Override
     public String toString() {
         return "MachineTaskAgroOperationsMappingItem{" +
                 "id=" + id +
-                ", machine_task_id=" + machine_task_id +
-                ", agroOperation=" + agro_operation_id +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
+                ", machineTaskId=" + machineTaskId +
+                ", agroOperationId=" + agroOperationId +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }

@@ -16,16 +16,16 @@ public class MachineTask {
     private Machine machine;
 
     @Column(name="start_time")
-    private Timestamp start_time;
+    private Timestamp startTime;
 
     @Column(name="end_time")
-    private Timestamp end_time;
+    private Timestamp endTime;
 
     @Column(name="action_type", length=20)
-    private String action_type;
+    private String actionType;
 
     @Column(name="action_subtype", length=50)
-    private String action_subtype;
+    private String actionSubtype;
 
     @ManyToOne
     @JoinColumn(name="work_type_id")
@@ -36,38 +36,38 @@ public class MachineTask {
     private User driver;
 
     @Column(name="implement_id")
-    private short implement_id;
+    private short implementId;
 
     @Column(name="work_for_contractors")
-    private boolean work_for_contractors;
+    private boolean workForContractors;
 
     @Column(name="work_for_land_owners")
-    private boolean work_for_land_owners;
+    private boolean workForLandOwners;
 
     @Column(name="real_implement_width")
-    private double real_implement_width;
+    private double realImplementWidth;
 
     @Column(name="total_distance")
-    private double total_distance;
+    private double totalDistance;
 
     @Column(name="work_distance")
-    private double work_distance;
+    private double workDistance;
 
     @Column(name="work_area")
-    private double work_area;
+    private double workArea;
 
     @Column(name="covered_area")
-    private double covered_area;
+    private double coveredArea;
 
     @Column(name="manual_covered_area")
-    private double manual_covered_area;
+    private double manualCoveredArea;
 
     @Column(name="work_duration")
-    private int work_duration;
+    private int workDuration;
 
     @Column(name="additional_info")
     @Lob
-    private String additional_info;
+    private String additionalInfo;
 
     @Column(name="description")
     @Lob
@@ -77,115 +77,115 @@ public class MachineTask {
     private short season;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
     @Column(name="status", length=15)
     private String status;
 
     @Column(name="stops_on_road_duration")
-    private int stops_on_road_duration;
+    private int stopsOnRoadDuration;
 
     @Column(name="movements_on_road_duration")
-    private int movements_on_road_duration;
+    private int movementsOnRoadDuration;
 
     @Column(name="time_without_gps_data")
-    private int time_without_gps_data;
+    private int timeWithoutGpsData;
 
     @Column(name="fuel_consumption")
-    private double fuel_consumption;
+    private double fuelConsumption;
 
     @Column(name="fuel_consumption_per_ha")
-    private double fuel_consumption_per_ha;
+    private double fuelConsumptionPerHa;
 
     @Column(name="fuel_consumption_on_road")
-    private double fuel_consumption_on_road;
+    private double fuelConsumptionOnRoad;
 
     @Column(name="fuel_consumption_on_road_average")
-    private double fuel_consumption_on_road_average;
+    private double fuelConsumptionOnRoadAverage;
 
     @Column(name="track_integrity_coef")
-    private double track_integrity_coef;
+    private double trackIntegrityCoef;
 
     @Column(name="engine_work_duration_on_fields")
-    private double engine_work_duration_on_fields;
+    private double engineWorkDurationOnFields;
 
     @Column(name="engine_work_duration_on_road")
-    private double engine_work_duration_on_road;
+    private double engineWorkDurationOnRoad;
 
     @Column(name="locked_to_edit")
-    private double locked_to_edit;
+    private double lockedToEdit;
 
     @Column(name="locked_at")
-    private double locked_at;
+    private double lockedAt;
 
     @Column(name="plan_speed_min")
-    private short plan_speed_min;
+    private short planSpeedMin;
 
     @Column(name="plan_speed_max")
-    private short plan_speed_max;
+    private short planSpeedMax;
 
     @Column(name="start_fuel_level")
-    private double start_fuel_level;
+    private double startFuelLevel;
 
     @Column(name="end_fuel_level")
-    private double end_fuel_level;
+    private double endFuelLevel;
 
     @Column(name="refuel")
     private double refuel;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
     @Column(name="notify_responsible_users")
-    private boolean notify_responsible_users;
+    private boolean notifyResponsibleUsers;
 
-    public MachineTask(Integer id, Machine machine, Timestamp start_time, Timestamp end_time, String action_type, String action_subtype, WorkType workType, User driver, short implement_id, boolean work_for_contractors, boolean work_for_land_owners, double real_implement_width, double total_distance, double work_distance, double work_area, double covered_area, double manual_covered_area, int work_duration, String additional_info, String description, short season, String external_id, String status, int stops_on_road_duration, int movements_on_road_duration, int time_without_gps_data, double fuel_consumption, double fuel_consumption_per_ha, double fuel_consumption_on_road, double fuel_consumption_on_road_average, double track_integrity_coef, double engine_work_duration_on_fields, double engine_work_duration_on_road, double locked_to_edit, double locked_at, short plan_speed_min, short plan_speed_max, double start_fuel_level, double end_fuel_level, double refuel, Timestamp created_at, Timestamp updated_at, boolean notify_responsible_users) {
+    public MachineTask(Integer id, Machine machine, Timestamp startTime, Timestamp endTime, String actionType, String actionSubtype, WorkType workType, User driver, short implementId, boolean workForContractors, boolean workForLandOwners, double realImplementWidth, double totalDistance, double workDistance, double workArea, double coveredArea, double manualCoveredArea, int workDuration, String additionalInfo, String description, short season, String externalId, String status, int stopsOnRoadDuration, int movementsOnRoadDuration, int timeWithoutGpsData, double fuelConsumption, double fuelConsumptionPerHa, double fuelConsumptionOnRoad, double fuelConsumptionOnRoadAverage, double trackIntegrityCoef, double engineWorkDurationOnFields, double engineWorkDurationOnRoad, double lockedToEdit, double lockedAt, short planSpeedMin, short planSpeedMax, double startFuelLevel, double endFuelLevel, double refuel, Timestamp createdAt, Timestamp updatedAt, boolean notifyResponsibleUsers) {
         this.id = id;
         this.machine = machine;
-        this.start_time = start_time;
-        this.end_time = end_time;
-        this.action_type = action_type;
-        this.action_subtype = action_subtype;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.actionType = actionType;
+        this.actionSubtype = actionSubtype;
         this.workType = workType;
         this.driver = driver;
-        this.implement_id = implement_id;
-        this.work_for_contractors = work_for_contractors;
-        this.work_for_land_owners = work_for_land_owners;
-        this.real_implement_width = real_implement_width;
-        this.total_distance = total_distance;
-        this.work_distance = work_distance;
-        this.work_area = work_area;
-        this.covered_area = covered_area;
-        this.manual_covered_area = manual_covered_area;
-        this.work_duration = work_duration;
-        this.additional_info = additional_info;
+        this.implementId = implementId;
+        this.workForContractors = workForContractors;
+        this.workForLandOwners = workForLandOwners;
+        this.realImplementWidth = realImplementWidth;
+        this.totalDistance = totalDistance;
+        this.workDistance = workDistance;
+        this.workArea = workArea;
+        this.coveredArea = coveredArea;
+        this.manualCoveredArea = manualCoveredArea;
+        this.workDuration = workDuration;
+        this.additionalInfo = additionalInfo;
         this.description = description;
         this.season = season;
-        this.external_id = external_id;
+        this.externalId = externalId;
         this.status = status;
-        this.stops_on_road_duration = stops_on_road_duration;
-        this.movements_on_road_duration = movements_on_road_duration;
-        this.time_without_gps_data = time_without_gps_data;
-        this.fuel_consumption = fuel_consumption;
-        this.fuel_consumption_per_ha = fuel_consumption_per_ha;
-        this.fuel_consumption_on_road = fuel_consumption_on_road;
-        this.fuel_consumption_on_road_average = fuel_consumption_on_road_average;
-        this.track_integrity_coef = track_integrity_coef;
-        this.engine_work_duration_on_fields = engine_work_duration_on_fields;
-        this.engine_work_duration_on_road = engine_work_duration_on_road;
-        this.locked_to_edit = locked_to_edit;
-        this.locked_at = locked_at;
-        this.plan_speed_min = plan_speed_min;
-        this.plan_speed_max = plan_speed_max;
-        this.start_fuel_level = start_fuel_level;
-        this.end_fuel_level = end_fuel_level;
+        this.stopsOnRoadDuration = stopsOnRoadDuration;
+        this.movementsOnRoadDuration = movementsOnRoadDuration;
+        this.timeWithoutGpsData = timeWithoutGpsData;
+        this.fuelConsumption = fuelConsumption;
+        this.fuelConsumptionPerHa = fuelConsumptionPerHa;
+        this.fuelConsumptionOnRoad = fuelConsumptionOnRoad;
+        this.fuelConsumptionOnRoadAverage = fuelConsumptionOnRoadAverage;
+        this.trackIntegrityCoef = trackIntegrityCoef;
+        this.engineWorkDurationOnFields = engineWorkDurationOnFields;
+        this.engineWorkDurationOnRoad = engineWorkDurationOnRoad;
+        this.lockedToEdit = lockedToEdit;
+        this.lockedAt = lockedAt;
+        this.planSpeedMin = planSpeedMin;
+        this.planSpeedMax = planSpeedMax;
+        this.startFuelLevel = startFuelLevel;
+        this.endFuelLevel = endFuelLevel;
         this.refuel = refuel;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
-        this.notify_responsible_users = notify_responsible_users;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.notifyResponsibleUsers = notifyResponsibleUsers;
     }
 
     public MachineTask() {
@@ -207,36 +207,36 @@ public class MachineTask {
         this.machine = machine;
     }
 
-    public Timestamp getStart_time() {
-        return start_time;
+    public Timestamp getStartTime() {
+        return startTime;
     }
 
-    public void setStart_time(Timestamp start_time) {
-        this.start_time = start_time;
+    public void setStartTime(Timestamp startTime) {
+        this.startTime = startTime;
     }
 
-    public Timestamp getEnd_time() {
-        return end_time;
+    public Timestamp getEndTime() {
+        return endTime;
     }
 
-    public void setEnd_time(Timestamp end_time) {
-        this.end_time = end_time;
+    public void setEndTime(Timestamp endTime) {
+        this.endTime = endTime;
     }
 
-    public String getAction_type() {
-        return action_type;
+    public String getActionType() {
+        return actionType;
     }
 
-    public void setAction_type(String action_type) {
-        this.action_type = action_type;
+    public void setActionType(String actionType) {
+        this.actionType = actionType;
     }
 
-    public String getAction_subtype() {
-        return action_subtype;
+    public String getActionSubtype() {
+        return actionSubtype;
     }
 
-    public void setAction_subtype(String action_subtype) {
-        this.action_subtype = action_subtype;
+    public void setActionSubtype(String actionSubtype) {
+        this.actionSubtype = actionSubtype;
     }
 
     public WorkType getWorkType() {
@@ -255,92 +255,92 @@ public class MachineTask {
         this.driver = driver;
     }
 
-    public short getImplement_id() {
-        return implement_id;
+    public short getImplementId() {
+        return implementId;
     }
 
-    public void setImplement_id(short implement_id) {
-        this.implement_id = implement_id;
+    public void setImplementId(short implementId) {
+        this.implementId = implementId;
     }
 
-    public boolean isWork_for_contractors() {
-        return work_for_contractors;
+    public boolean isWorkForContractors() {
+        return workForContractors;
     }
 
-    public void setWork_for_contractors(boolean work_for_contractors) {
-        this.work_for_contractors = work_for_contractors;
+    public void setWorkForContractors(boolean workForContractors) {
+        this.workForContractors = workForContractors;
     }
 
-    public boolean isWork_for_land_owners() {
-        return work_for_land_owners;
+    public boolean isWorkForLandOwners() {
+        return workForLandOwners;
     }
 
-    public void setWork_for_land_owners(boolean work_for_land_owners) {
-        this.work_for_land_owners = work_for_land_owners;
+    public void setWorkForLandOwners(boolean workForLandOwners) {
+        this.workForLandOwners = workForLandOwners;
     }
 
-    public double getReal_implement_width() {
-        return real_implement_width;
+    public double getRealImplementWidth() {
+        return realImplementWidth;
     }
 
-    public void setReal_implement_width(double real_implement_width) {
-        this.real_implement_width = real_implement_width;
+    public void setRealImplementWidth(double realImplementWidth) {
+        this.realImplementWidth = realImplementWidth;
     }
 
-    public double getTotal_distance() {
-        return total_distance;
+    public double getTotalDistance() {
+        return totalDistance;
     }
 
-    public void setTotal_distance(double total_distance) {
-        this.total_distance = total_distance;
+    public void setTotalDistance(double totalDistance) {
+        this.totalDistance = totalDistance;
     }
 
-    public double getWork_distance() {
-        return work_distance;
+    public double getWorkDistance() {
+        return workDistance;
     }
 
-    public void setWork_distance(double work_distance) {
-        this.work_distance = work_distance;
+    public void setWorkDistance(double workDistance) {
+        this.workDistance = workDistance;
     }
 
-    public double getWork_area() {
-        return work_area;
+    public double getWorkArea() {
+        return workArea;
     }
 
-    public void setWork_area(double work_area) {
-        this.work_area = work_area;
+    public void setWorkArea(double workArea) {
+        this.workArea = workArea;
     }
 
-    public double getCovered_area() {
-        return covered_area;
+    public double getCoveredArea() {
+        return coveredArea;
     }
 
-    public void setCovered_area(double covered_area) {
-        this.covered_area = covered_area;
+    public void setCoveredArea(double coveredArea) {
+        this.coveredArea = coveredArea;
     }
 
-    public double getManual_covered_area() {
-        return manual_covered_area;
+    public double getManualCoveredArea() {
+        return manualCoveredArea;
     }
 
-    public void setManual_covered_area(double manual_covered_area) {
-        this.manual_covered_area = manual_covered_area;
+    public void setManualCoveredArea(double manualCoveredArea) {
+        this.manualCoveredArea = manualCoveredArea;
     }
 
-    public int getWork_duration() {
-        return work_duration;
+    public int getWorkDuration() {
+        return workDuration;
     }
 
-    public void setWork_duration(int work_duration) {
-        this.work_duration = work_duration;
+    public void setWorkDuration(int workDuration) {
+        this.workDuration = workDuration;
     }
 
-    public String getAdditional_info() {
-        return additional_info;
+    public String getAdditionalInfo() {
+        return additionalInfo;
     }
 
-    public void setAdditional_info(String additional_info) {
-        this.additional_info = additional_info;
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
 
     public String getDescription() {
@@ -359,12 +359,12 @@ public class MachineTask {
         this.season = season;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
     public String getStatus() {
@@ -375,132 +375,132 @@ public class MachineTask {
         this.status = status;
     }
 
-    public int getStops_on_road_duration() {
-        return stops_on_road_duration;
+    public int getStopsOnRoadDuration() {
+        return stopsOnRoadDuration;
     }
 
-    public void setStops_on_road_duration(int stops_on_road_duration) {
-        this.stops_on_road_duration = stops_on_road_duration;
+    public void setStopsOnRoadDuration(int stopsOnRoadDuration) {
+        this.stopsOnRoadDuration = stopsOnRoadDuration;
     }
 
-    public int getMovements_on_road_duration() {
-        return movements_on_road_duration;
+    public int getMovementsOnRoadDuration() {
+        return movementsOnRoadDuration;
     }
 
-    public void setMovements_on_road_duration(int movements_on_road_duration) {
-        this.movements_on_road_duration = movements_on_road_duration;
+    public void setMovementsOnRoadDuration(int movementsOnRoadDuration) {
+        this.movementsOnRoadDuration = movementsOnRoadDuration;
     }
 
-    public int getTime_without_gps_data() {
-        return time_without_gps_data;
+    public int getTimeWithoutGpsData() {
+        return timeWithoutGpsData;
     }
 
-    public void setTime_without_gps_data(int time_without_gps_data) {
-        this.time_without_gps_data = time_without_gps_data;
+    public void setTimeWithoutGpsData(int timeWithoutGpsData) {
+        this.timeWithoutGpsData = timeWithoutGpsData;
     }
 
-    public double getFuel_consumption() {
-        return fuel_consumption;
+    public double getFuelConsumption() {
+        return fuelConsumption;
     }
 
-    public void setFuel_consumption(double fuel_consumption) {
-        this.fuel_consumption = fuel_consumption;
+    public void setFuelConsumption(double fuelConsumption) {
+        this.fuelConsumption = fuelConsumption;
     }
 
-    public double getFuel_consumption_per_ha() {
-        return fuel_consumption_per_ha;
+    public double getFuelConsumptionPerHa() {
+        return fuelConsumptionPerHa;
     }
 
-    public void setFuel_consumption_per_ha(double fuel_consumption_per_ha) {
-        this.fuel_consumption_per_ha = fuel_consumption_per_ha;
+    public void setFuelConsumptionPerHa(double fuelConsumptionPerHa) {
+        this.fuelConsumptionPerHa = fuelConsumptionPerHa;
     }
 
-    public double getFuel_consumption_on_road() {
-        return fuel_consumption_on_road;
+    public double getFuelConsumptionOnRoad() {
+        return fuelConsumptionOnRoad;
     }
 
-    public void setFuel_consumption_on_road(double fuel_consumption_on_road) {
-        this.fuel_consumption_on_road = fuel_consumption_on_road;
+    public void setFuelConsumptionOnRoad(double fuelConsumptionOnRoad) {
+        this.fuelConsumptionOnRoad = fuelConsumptionOnRoad;
     }
 
-    public double getFuel_consumption_on_road_average() {
-        return fuel_consumption_on_road_average;
+    public double getFuelConsumptionOnRoadAverage() {
+        return fuelConsumptionOnRoadAverage;
     }
 
-    public void setFuel_consumption_on_road_average(double fuel_consumption_on_road_average) {
-        this.fuel_consumption_on_road_average = fuel_consumption_on_road_average;
+    public void setFuelConsumptionOnRoadAverage(double fuelConsumptionOnRoadAverage) {
+        this.fuelConsumptionOnRoadAverage = fuelConsumptionOnRoadAverage;
     }
 
-    public double getTrack_integrity_coef() {
-        return track_integrity_coef;
+    public double getTrackIntegrityCoef() {
+        return trackIntegrityCoef;
     }
 
-    public void setTrack_integrity_coef(double track_integrity_coef) {
-        this.track_integrity_coef = track_integrity_coef;
+    public void setTrackIntegrityCoef(double trackIntegrityCoef) {
+        this.trackIntegrityCoef = trackIntegrityCoef;
     }
 
-    public double getEngine_work_duration_on_fields() {
-        return engine_work_duration_on_fields;
+    public double getEngineWorkDurationOnFields() {
+        return engineWorkDurationOnFields;
     }
 
-    public void setEngine_work_duration_on_fields(double engine_work_duration_on_fields) {
-        this.engine_work_duration_on_fields = engine_work_duration_on_fields;
+    public void setEngineWorkDurationOnFields(double engineWorkDurationOnFields) {
+        this.engineWorkDurationOnFields = engineWorkDurationOnFields;
     }
 
-    public double getEngine_work_duration_on_road() {
-        return engine_work_duration_on_road;
+    public double getEngineWorkDurationOnRoad() {
+        return engineWorkDurationOnRoad;
     }
 
-    public void setEngine_work_duration_on_road(double engine_work_duration_on_road) {
-        this.engine_work_duration_on_road = engine_work_duration_on_road;
+    public void setEngineWorkDurationOnRoad(double engineWorkDurationOnRoad) {
+        this.engineWorkDurationOnRoad = engineWorkDurationOnRoad;
     }
 
-    public double getLocked_to_edit() {
-        return locked_to_edit;
+    public double getLockedToEdit() {
+        return lockedToEdit;
     }
 
-    public void setLocked_to_edit(double locked_to_edit) {
-        this.locked_to_edit = locked_to_edit;
+    public void setLockedToEdit(double lockedToEdit) {
+        this.lockedToEdit = lockedToEdit;
     }
 
-    public double getLocked_at() {
-        return locked_at;
+    public double getLockedAt() {
+        return lockedAt;
     }
 
-    public void setLocked_at(double locked_at) {
-        this.locked_at = locked_at;
+    public void setLockedAt(double lockedAt) {
+        this.lockedAt = lockedAt;
     }
 
-    public short getPlan_speed_min() {
-        return plan_speed_min;
+    public short getPlanSpeedMin() {
+        return planSpeedMin;
     }
 
-    public void setPlan_speed_min(short plan_speed_min) {
-        this.plan_speed_min = plan_speed_min;
+    public void setPlanSpeedMin(short planSpeedMin) {
+        this.planSpeedMin = planSpeedMin;
     }
 
-    public short getPlan_speed_max() {
-        return plan_speed_max;
+    public short getPlanSpeedMax() {
+        return planSpeedMax;
     }
 
-    public void setPlan_speed_max(short plan_speed_max) {
-        this.plan_speed_max = plan_speed_max;
+    public void setPlanSpeedMax(short planSpeedMax) {
+        this.planSpeedMax = planSpeedMax;
     }
 
-    public double getStart_fuel_level() {
-        return start_fuel_level;
+    public double getStartFuelLevel() {
+        return startFuelLevel;
     }
 
-    public void setStart_fuel_level(double start_fuel_level) {
-        this.start_fuel_level = start_fuel_level;
+    public void setStartFuelLevel(double startFuelLevel) {
+        this.startFuelLevel = startFuelLevel;
     }
 
-    public double getEnd_fuel_level() {
-        return end_fuel_level;
+    public double getEndFuelLevel() {
+        return endFuelLevel;
     }
 
-    public void setEnd_fuel_level(double end_fuel_level) {
-        this.end_fuel_level = end_fuel_level;
+    public void setEndFuelLevel(double endFuelLevel) {
+        this.endFuelLevel = endFuelLevel;
     }
 
     public double getRefuel() {
@@ -511,28 +511,28 @@ public class MachineTask {
         this.refuel = refuel;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
-    public boolean isNotify_responsible_users() {
-        return notify_responsible_users;
+    public boolean isNotifyResponsibleUsers() {
+        return notifyResponsibleUsers;
     }
 
-    public void setNotify_responsible_users(boolean notify_responsible_users) {
-        this.notify_responsible_users = notify_responsible_users;
+    public void setNotifyResponsibleUsers(boolean notifyResponsibleUsers) {
+        this.notifyResponsibleUsers = notifyResponsibleUsers;
     }
 
     @Override
@@ -540,12 +540,12 @@ public class MachineTask {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MachineTask that = (MachineTask) o;
-        return work_for_contractors == that.work_for_contractors && work_for_land_owners == that.work_for_land_owners && Double.compare(real_implement_width, that.real_implement_width) == 0 && Double.compare(total_distance, that.total_distance) == 0 && Double.compare(work_distance, that.work_distance) == 0 && Double.compare(work_area, that.work_area) == 0 && Double.compare(covered_area, that.covered_area) == 0 && Double.compare(manual_covered_area, that.manual_covered_area) == 0 && work_duration == that.work_duration && season == that.season && stops_on_road_duration == that.stops_on_road_duration && movements_on_road_duration == that.movements_on_road_duration && time_without_gps_data == that.time_without_gps_data && Double.compare(fuel_consumption, that.fuel_consumption) == 0 && Double.compare(fuel_consumption_per_ha, that.fuel_consumption_per_ha) == 0 && Double.compare(fuel_consumption_on_road, that.fuel_consumption_on_road) == 0 && Double.compare(fuel_consumption_on_road_average, that.fuel_consumption_on_road_average) == 0 && Double.compare(track_integrity_coef, that.track_integrity_coef) == 0 && Double.compare(engine_work_duration_on_fields, that.engine_work_duration_on_fields) == 0 && Double.compare(engine_work_duration_on_road, that.engine_work_duration_on_road) == 0 && Double.compare(locked_to_edit, that.locked_to_edit) == 0 && Double.compare(locked_at, that.locked_at) == 0 && plan_speed_min == that.plan_speed_min && plan_speed_max == that.plan_speed_max && Double.compare(start_fuel_level, that.start_fuel_level) == 0 && Double.compare(end_fuel_level, that.end_fuel_level) == 0 && Double.compare(refuel, that.refuel) == 0 && notify_responsible_users == that.notify_responsible_users && Objects.equals(id, that.id) && Objects.equals(machine, that.machine) && Objects.equals(start_time, that.start_time) && Objects.equals(end_time, that.end_time) && Objects.equals(action_type, that.action_type) && Objects.equals(action_subtype, that.action_subtype) && Objects.equals(workType, that.workType) && Objects.equals(driver, that.driver) && implement_id == that.implement_id && Objects.equals(additional_info, that.additional_info) && Objects.equals(description, that.description) && Objects.equals(external_id, that.external_id) && Objects.equals(status, that.status) && Objects.equals(created_at, that.created_at) && Objects.equals(updated_at, that.updated_at);
+        return workForContractors == that.workForContractors && workForLandOwners == that.workForLandOwners && Double.compare(realImplementWidth, that.realImplementWidth) == 0 && Double.compare(totalDistance, that.totalDistance) == 0 && Double.compare(workDistance, that.workDistance) == 0 && Double.compare(workArea, that.workArea) == 0 && Double.compare(coveredArea, that.coveredArea) == 0 && Double.compare(manualCoveredArea, that.manualCoveredArea) == 0 && workDuration == that.workDuration && season == that.season && stopsOnRoadDuration == that.stopsOnRoadDuration && movementsOnRoadDuration == that.movementsOnRoadDuration && timeWithoutGpsData == that.timeWithoutGpsData && Double.compare(fuelConsumption, that.fuelConsumption) == 0 && Double.compare(fuelConsumptionPerHa, that.fuelConsumptionPerHa) == 0 && Double.compare(fuelConsumptionOnRoad, that.fuelConsumptionOnRoad) == 0 && Double.compare(fuelConsumptionOnRoadAverage, that.fuelConsumptionOnRoadAverage) == 0 && Double.compare(trackIntegrityCoef, that.trackIntegrityCoef) == 0 && Double.compare(engineWorkDurationOnFields, that.engineWorkDurationOnFields) == 0 && Double.compare(engineWorkDurationOnRoad, that.engineWorkDurationOnRoad) == 0 && Double.compare(lockedToEdit, that.lockedToEdit) == 0 && Double.compare(lockedAt, that.lockedAt) == 0 && planSpeedMin == that.planSpeedMin && planSpeedMax == that.planSpeedMax && Double.compare(startFuelLevel, that.startFuelLevel) == 0 && Double.compare(endFuelLevel, that.endFuelLevel) == 0 && Double.compare(refuel, that.refuel) == 0 && notifyResponsibleUsers == that.notifyResponsibleUsers && Objects.equals(id, that.id) && Objects.equals(machine, that.machine) && Objects.equals(startTime, that.startTime) && Objects.equals(endTime, that.endTime) && Objects.equals(actionType, that.actionType) && Objects.equals(actionSubtype, that.actionSubtype) && Objects.equals(workType, that.workType) && Objects.equals(driver, that.driver) && implementId == that.implementId && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(description, that.description) && Objects.equals(externalId, that.externalId) && Objects.equals(status, that.status) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, machine, start_time, end_time, action_type, action_subtype, workType, driver, implement_id, work_for_contractors, work_for_land_owners, real_implement_width, total_distance, work_distance, work_area, covered_area, manual_covered_area, work_duration, additional_info, description, season, external_id, status, stops_on_road_duration, movements_on_road_duration, time_without_gps_data, fuel_consumption, fuel_consumption_per_ha, fuel_consumption_on_road, fuel_consumption_on_road_average, track_integrity_coef, engine_work_duration_on_fields, engine_work_duration_on_road, locked_to_edit, locked_at, plan_speed_min, plan_speed_max, start_fuel_level, end_fuel_level, refuel, created_at, updated_at, notify_responsible_users);
+        return Objects.hash(id, machine, startTime, endTime, actionType, actionSubtype, workType, driver, implementId, workForContractors, workForLandOwners, realImplementWidth, totalDistance, workDistance, workArea, coveredArea, manualCoveredArea, workDuration, additionalInfo, description, season, externalId, status, stopsOnRoadDuration, movementsOnRoadDuration, timeWithoutGpsData, fuelConsumption, fuelConsumptionPerHa, fuelConsumptionOnRoad, fuelConsumptionOnRoadAverage, trackIntegrityCoef, engineWorkDurationOnFields, engineWorkDurationOnRoad, lockedToEdit, lockedAt, planSpeedMin, planSpeedMax, startFuelLevel, endFuelLevel, refuel, createdAt, updatedAt, notifyResponsibleUsers);
     }
 
     @Override
@@ -553,47 +553,47 @@ public class MachineTask {
         return "MachineTask{" +
                 "id=" + id +
                 ", machine=" + machine +
-                ", start_time=" + start_time +
-                ", end_time=" + end_time +
-                ", action_type='" + action_type + '\'' +
-                ", action_subtype='" + action_subtype + '\'' +
+                ", startTime=" + startTime +
+                ", endTime=" + endTime +
+                ", actionType='" + actionType + '\'' +
+                ", actionSubtype='" + actionSubtype + '\'' +
                 ", workType=" + workType +
                 ", driver=" + driver +
-                ", implement_id=" + implement_id +
-                ", work_for_contractors=" + work_for_contractors +
-                ", work_for_land_owners=" + work_for_land_owners +
-                ", real_implement_width=" + real_implement_width +
-                ", total_distance=" + total_distance +
-                ", work_distance=" + work_distance +
-                ", work_area=" + work_area +
-                ", covered_area=" + covered_area +
-                ", manual_covered_area=" + manual_covered_area +
-                ", work_duration=" + work_duration +
-                ", additional_info='" + additional_info + '\'' +
+                ", implementId=" + implementId +
+                ", workForContractors=" + workForContractors +
+                ", workForLandOwners=" + workForLandOwners +
+                ", realImplementWidth=" + realImplementWidth +
+                ", totalDistance=" + totalDistance +
+                ", workDistance=" + workDistance +
+                ", workArea=" + workArea +
+                ", coveredArea=" + coveredArea +
+                ", manualCoveredArea=" + manualCoveredArea +
+                ", workDuration=" + workDuration +
+                ", additionalInfo='" + additionalInfo + '\'' +
                 ", description='" + description + '\'' +
                 ", season=" + season +
-                ", external_id='" + external_id + '\'' +
+                ", externalId='" + externalId + '\'' +
                 ", status='" + status + '\'' +
-                ", stops_on_road_duration=" + stops_on_road_duration +
-                ", movements_on_road_duration=" + movements_on_road_duration +
-                ", time_without_gps_data=" + time_without_gps_data +
-                ", fuel_consumption=" + fuel_consumption +
-                ", fuel_consumption_per_ha=" + fuel_consumption_per_ha +
-                ", fuel_consumption_on_road=" + fuel_consumption_on_road +
-                ", fuel_consumption_on_road_average=" + fuel_consumption_on_road_average +
-                ", track_integrity_coef=" + track_integrity_coef +
-                ", engine_work_duration_on_fields=" + engine_work_duration_on_fields +
-                ", engine_work_duration_on_road=" + engine_work_duration_on_road +
-                ", locked_to_edit=" + locked_to_edit +
-                ", locked_at=" + locked_at +
-                ", plan_speed_min=" + plan_speed_min +
-                ", plan_speed_max=" + plan_speed_max +
-                ", start_fuel_level=" + start_fuel_level +
-                ", end_fuel_level=" + end_fuel_level +
+                ", stopsOnRoadDuration=" + stopsOnRoadDuration +
+                ", movementsOnRoadDuration=" + movementsOnRoadDuration +
+                ", timeWithoutGpsData=" + timeWithoutGpsData +
+                ", fuelConsumption=" + fuelConsumption +
+                ", fuelConsumptionPerHa=" + fuelConsumptionPerHa +
+                ", fuelConsumptionOnRoad=" + fuelConsumptionOnRoad +
+                ", fuelConsumptionOnRoadAverage=" + fuelConsumptionOnRoadAverage +
+                ", trackIntegrityCoef=" + trackIntegrityCoef +
+                ", engineWorkDurationOnFields=" + engineWorkDurationOnFields +
+                ", engineWorkDurationOnRoad=" + engineWorkDurationOnRoad +
+                ", lockedToEdit=" + lockedToEdit +
+                ", lockedAt=" + lockedAt +
+                ", planSpeedMin=" + planSpeedMin +
+                ", planSpeedMax=" + planSpeedMax +
+                ", startFuelLevel=" + startFuelLevel +
+                ", endFuelLevel=" + endFuelLevel +
                 ", refuel=" + refuel +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
-                ", notify_responsible_users=" + notify_responsible_users +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", notifyResponsibleUsers=" + notifyResponsibleUsers +
                 '}';
     }
 }

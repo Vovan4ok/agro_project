@@ -16,39 +16,39 @@ public class FieldShape {
     private Field field;
 
     @Column(name="start_time")
-    private Timestamp start_time;
+    private Timestamp startTime;
 
     @Column(name="end_time")
-    private Timestamp end_time;
+    private Timestamp endTime;
 
     @Column(name="calculated_area")
-    private double calculated_area;
+    private double calculatedArea;
 
     @Column(name="legal_area")
-    private double legal_area;
+    private double legalArea;
 
     @Column(name="tillable_area")
-    private double tillable_area;
+    private double tillableArea;
 
     @Column(name="simplified_shape")
     @Lob
-    private String simplified_shape;
+    private String simplifiedShape;
 
     @Column(name="shape_simplified_geojson")
     @Lob
-    private String shape_simplified_geojson;
+    private String shapeSimplifiedGeojson;
 
     @Column(name="point_lon")
-    private double point_lon;
+    private double pointLon;
 
     @Column(name="point_lat")
-    private double point_lat;
+    private double pointLat;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
     @Column(name="legal_perimeter")
-    private double legal_perimeter;
+    private double legalPerimeter;
 
     @Column(name="description")
     @Lob
@@ -56,32 +56,32 @@ public class FieldShape {
 
     @Column(name="land_quality_assessment")
     @Lob
-    private String land_quality_assessment;
+    private String landQualityAssessment;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
-    public FieldShape(Integer id, Field field, Timestamp start_time, Timestamp end_time, double calculated_area, double legal_area, double tillable_area, String simplified_shape, String shape_simplified_geojson, double point_lon, double point_lat, String external_id, double legal_perimeter, String description, String land_quality_assessment, Timestamp created_at, Timestamp updated_at) {
+    public FieldShape(Integer id, Field field, Timestamp startTime, Timestamp endTime, double calculatedArea, double legalArea, double tillableArea, String simplifiedShape, String shapeSimplifiedGeojson, double pointLon, double pointLat, String externalId, double legalPerimeter, String description, String landQualityAssessment, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.field = field;
-        this.start_time = start_time;
-        this.end_time = end_time;
-        this.calculated_area = calculated_area;
-        this.legal_area = legal_area;
-        this.tillable_area = tillable_area;
-        this.simplified_shape = simplified_shape;
-        this.shape_simplified_geojson = shape_simplified_geojson;
-        this.point_lon = point_lon;
-        this.point_lat = point_lat;
-        this.external_id = external_id;
-        this.legal_perimeter = legal_perimeter;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.calculatedArea = calculatedArea;
+        this.legalArea = legalArea;
+        this.tillableArea = tillableArea;
+        this.simplifiedShape = simplifiedShape;
+        this.shapeSimplifiedGeojson = shapeSimplifiedGeojson;
+        this.pointLon = pointLon;
+        this.pointLat = pointLat;
+        this.externalId = externalId;
+        this.legalPerimeter = legalPerimeter;
         this.description = description;
-        this.land_quality_assessment = land_quality_assessment;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
+        this.landQualityAssessment = landQualityAssessment;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public FieldShape() {
@@ -103,92 +103,92 @@ public class FieldShape {
         this.field = field;
     }
 
-    public Timestamp getStart_time() {
-        return start_time;
+    public Timestamp getStartTime() {
+        return startTime;
     }
 
-    public void setStart_time(Timestamp start_time) {
-        this.start_time = start_time;
+    public void setStartTime(Timestamp startTime) {
+        this.startTime = startTime;
     }
 
-    public Timestamp getEnd_time() {
-        return end_time;
+    public Timestamp getEndTime() {
+        return endTime;
     }
 
-    public void setEnd_time(Timestamp end_time) {
-        this.end_time = end_time;
+    public void setEndTime(Timestamp endTime) {
+        this.endTime = endTime;
     }
 
-    public double getCalculated_area() {
-        return calculated_area;
+    public double getCalculatedArea() {
+        return calculatedArea;
     }
 
-    public void setCalculated_area(double calculated_area) {
-        this.calculated_area = calculated_area;
+    public void setCalculatedArea(double calculatedArea) {
+        this.calculatedArea = calculatedArea;
     }
 
-    public double getLegal_area() {
-        return legal_area;
+    public double getLegalArea() {
+        return legalArea;
     }
 
-    public void setLegal_area(double legal_area) {
-        this.legal_area = legal_area;
+    public void setLegalArea(double legalArea) {
+        this.legalArea = legalArea;
     }
 
-    public double getTillable_area() {
-        return tillable_area;
+    public double getTillableArea() {
+        return tillableArea;
     }
 
-    public void setTillable_area(double tillable_area) {
-        this.tillable_area = tillable_area;
+    public void setTillableArea(double tillableArea) {
+        this.tillableArea = tillableArea;
     }
 
-    public String getSimplified_shape() {
-        return simplified_shape;
+    public String getSimplifiedShape() {
+        return simplifiedShape;
     }
 
-    public void setSimplified_shape(String simplified_shape) {
-        this.simplified_shape = simplified_shape;
+    public void setSimplifiedShape(String simplifiedShape) {
+        this.simplifiedShape = simplifiedShape;
     }
 
-    public String getShape_simplified_geojson() {
-        return shape_simplified_geojson;
+    public String getShapeSimplifiedGeojson() {
+        return shapeSimplifiedGeojson;
     }
 
-    public void setShape_simplified_geojson(String shape_simplified_geojson) {
-        this.shape_simplified_geojson = shape_simplified_geojson;
+    public void setShapeSimplifiedGeojson(String shapeSimplifiedGeojson) {
+        this.shapeSimplifiedGeojson = shapeSimplifiedGeojson;
     }
 
-    public double getPoint_lon() {
-        return point_lon;
+    public double getPointLon() {
+        return pointLon;
     }
 
-    public void setPoint_lon(double point_lon) {
-        this.point_lon = point_lon;
+    public void setPointLon(double pointLon) {
+        this.pointLon = pointLon;
     }
 
-    public double getPoint_lat() {
-        return point_lat;
+    public double getPointLat() {
+        return pointLat;
     }
 
-    public void setPoint_lat(double point_lat) {
-        this.point_lat = point_lat;
+    public void setPointLat(double pointLat) {
+        this.pointLat = pointLat;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
-    public double getLegal_perimeter() {
-        return legal_perimeter;
+    public double getLegalPerimeter() {
+        return legalPerimeter;
     }
 
-    public void setLegal_perimeter(double legal_perimeter) {
-        this.legal_perimeter = legal_perimeter;
+    public void setLegalPerimeter(double legalPerimeter) {
+        this.legalPerimeter = legalPerimeter;
     }
 
     public String getDescription() {
@@ -199,28 +199,28 @@ public class FieldShape {
         this.description = description;
     }
 
-    public String getLand_quality_assessment() {
-        return land_quality_assessment;
+    public String getLandQualityAssessment() {
+        return landQualityAssessment;
     }
 
-    public void setLand_quality_assessment(String land_quality_assessment) {
-        this.land_quality_assessment = land_quality_assessment;
+    public void setLandQualityAssessment(String landQualityAssessment) {
+        this.landQualityAssessment = landQualityAssessment;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
@@ -228,12 +228,12 @@ public class FieldShape {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         FieldShape that = (FieldShape) o;
-        return Double.compare(calculated_area, that.calculated_area) == 0 && Double.compare(legal_area, that.legal_area) == 0 && Double.compare(tillable_area, that.tillable_area) == 0 && Double.compare(point_lon, that.point_lon) == 0 && Double.compare(point_lat, that.point_lat) == 0 && Double.compare(legal_perimeter, that.legal_perimeter) == 0 && Objects.equals(id, that.id) && Objects.equals(field, that.field) && Objects.equals(start_time, that.start_time) && Objects.equals(end_time, that.end_time) && Objects.equals(simplified_shape, that.simplified_shape) && Objects.equals(shape_simplified_geojson, that.shape_simplified_geojson) && Objects.equals(external_id, that.external_id) && Objects.equals(description, that.description) && Objects.equals(land_quality_assessment, that.land_quality_assessment) && Objects.equals(created_at, that.created_at) && Objects.equals(updated_at, that.updated_at);
+        return Double.compare(calculatedArea, that.calculatedArea) == 0 && Double.compare(legalArea, that.legalArea) == 0 && Double.compare(tillableArea, that.tillableArea) == 0 && Double.compare(pointLon, that.pointLon) == 0 && Double.compare(pointLat, that.pointLat) == 0 && Double.compare(legalPerimeter, that.legalPerimeter) == 0 && Objects.equals(id, that.id) && Objects.equals(field, that.field) && Objects.equals(startTime, that.startTime) && Objects.equals(endTime, that.endTime) && Objects.equals(simplifiedShape, that.simplifiedShape) && Objects.equals(shapeSimplifiedGeojson, that.shapeSimplifiedGeojson) && Objects.equals(externalId, that.externalId) && Objects.equals(description, that.description) && Objects.equals(landQualityAssessment, that.landQualityAssessment) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, field, start_time, end_time, calculated_area, legal_area, tillable_area, simplified_shape, shape_simplified_geojson, point_lon, point_lat, external_id, legal_perimeter, description, land_quality_assessment, created_at, updated_at);
+        return Objects.hash(id, field, startTime, endTime, calculatedArea, legalArea, tillableArea, simplifiedShape, shapeSimplifiedGeojson, pointLon, pointLat, externalId, legalPerimeter, description, landQualityAssessment, createdAt, updatedAt);
     }
 
     @Override
@@ -241,21 +241,21 @@ public class FieldShape {
         return "FieldShape{" +
                 "id=" + id +
                 ", field=" + field +
-                ", start_time=" + start_time +
-                ", end_time=" + end_time +
-                ", calculated_area=" + calculated_area +
-                ", legal_area=" + legal_area +
-                ", tillable_area=" + tillable_area +
-                ", simplified_shape='" + simplified_shape + '\'' +
-                ", shape_simplified_geojson='" + shape_simplified_geojson + '\'' +
-                ", point_lon=" + point_lon +
-                ", point_lat=" + point_lat +
-                ", external_id='" + external_id + '\'' +
-                ", legal_perimeter=" + legal_perimeter +
+                ", startTime=" + startTime +
+                ", endTime=" + endTime +
+                ", calculatedArea=" + calculatedArea +
+                ", legalArea=" + legalArea +
+                ", tillableArea=" + tillableArea +
+                ", simplifiedShape='" + simplifiedShape + '\'' +
+                ", shapeSimplifiedGeojson='" + shapeSimplifiedGeojson + '\'' +
+                ", pointLon=" + pointLon +
+                ", pointLat=" + pointLat +
+                ", externalId='" + externalId + '\'' +
+                ", legalPerimeter=" + legalPerimeter +
                 ", description='" + description + '\'' +
-                ", land_quality_assessment='" + land_quality_assessment + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
+                ", landQualityAssessment='" + landQualityAssessment + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }

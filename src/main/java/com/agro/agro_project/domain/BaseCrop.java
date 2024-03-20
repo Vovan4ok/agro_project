@@ -14,12 +14,12 @@ public class BaseCrop {
     private String name;
 
     @Column(name="standard_name", length=50)
-    private String standard_name;
+    private String standardName;
 
-    public BaseCrop(Short id, String name, String standard_name) {
+    public BaseCrop(Short id, String name, String standardName) {
         this.id = id;
         this.name = name;
-        this.standard_name = standard_name;
+        this.standardName = standardName;
     }
 
     public BaseCrop() {
@@ -41,12 +41,12 @@ public class BaseCrop {
         this.name = name;
     }
 
-    public String getStandard_name() {
-        return standard_name;
+    public String getStandardName() {
+        return standardName;
     }
 
-    public void setStandard_name(String standard_name) {
-        this.standard_name = standard_name;
+    public void setStandardName(String standardName) {
+        this.standardName = standardName;
     }
 
     @Override
@@ -54,12 +54,12 @@ public class BaseCrop {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BaseCrop baseCrop = (BaseCrop) o;
-        return Objects.equals(id, baseCrop.id) && Objects.equals(name, baseCrop.name) && Objects.equals(standard_name, baseCrop.standard_name);
+        return Objects.equals(id, baseCrop.id) && Objects.equals(name, baseCrop.name) && Objects.equals(standardName, baseCrop.standardName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, standard_name);
+        return Objects.hash(id, name, standardName);
     }
 
     @Override
@@ -67,7 +67,7 @@ public class BaseCrop {
         return "BaseCrop{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", standard_name='" + standard_name + '\'' +
+                ", standardName='" + standardName + '\'' +
                 '}';
     }
 }

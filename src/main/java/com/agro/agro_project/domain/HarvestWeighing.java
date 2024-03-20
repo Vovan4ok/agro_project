@@ -22,41 +22,41 @@ public class HarvestWeighing {
 
     @ManyToOne
     @JoinColumn(name="weighing_place_id")
-    private AdditionalObject weighingPlace;
+    private AdditionalObject weighingplace;
 
     @Column(name="type_of_route", length=30)
-    private String type_of_route;
+    private String typeOfRoute;
 
     @Column(name="departure_from_field_time")
-    private Timestamp departure_from_field_time;
+    private Timestamp departureFromFieldTime;
 
     @Column(name="weight")
     private double weight;
 
     @Column(name="brutto_weight")
-    private double brutto_weight;
+    private double bruttoWeight;
 
     @Column(name="seed_moisture")
-    private double seed_moisture;
+    private double seedMoisture;
 
     @Column(name="seed_admixture")
-    private double seed_admixture;
+    private double seedAdmixture;
 
     @Column(name="weighing_time")
-    private Timestamp weighing_time;
+    private Timestamp weighingTime;
 
     @Column(name="last_truck")
-    private boolean last_truck;
+    private boolean lastTruck;
 
     @Column(name="track_length")
-    private double track_length;
+    private double trackLength;
 
     @Column(name="manually_set_track_length")
-    private boolean manually_set_track_length;
+    private boolean manuallySetTrackLength;
 
     @Column(name="additional_info")
     @Lob
-    private String additional_info;
+    private String additionalInfo;
 
     @Column(name="description")
     @Lob
@@ -70,53 +70,53 @@ public class HarvestWeighing {
     private User createdBy;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
     @Column(name="waybill_number", length=20)
-    private String waybill_number;
+    private String waybillNumber;
 
     @Column(name="waybill_date")
-    private Date waybill_date;
+    private Date waybillDate;
 
     @Column(name="history_item_id")
-    private int history_item_id;
+    private int historyItemId;
 
     @Column(name="unloaded_machines")
     @Lob
-    private String unloaded_machines;
+    private String unloadedMachines;
 
-    public HarvestWeighing(Integer id, Machine machine, Field field, AdditionalObject weighingPlace, String type_of_route, Timestamp departure_from_field_time, double weight, double brutto_weight, double seed_moisture, double seed_admixture, Timestamp weighing_time, boolean last_truck, double truck_length, boolean manually_set_track_length, String additional_info, String description, short season, User createdBy, String external_id, Timestamp created_at, Timestamp updated_at, String waybill_number, Date waybill_date, int history_item_id, String unloaded_machines) {
+    public HarvestWeighing(Integer id, Machine machine, Field field, AdditionalObject weighingplace, String typeOfRoute, Timestamp departureFromFieldTime, double weight, double bruttoWeight, double seedMoisture, double seedAdmixture, Timestamp weighingTime, boolean lastTruck, double trackLength, boolean manuallySetTrackLength, String additionalInfo, String description, short season, User createdBy, String externalId, Timestamp createdAt, Timestamp updatedAt, String waybillNumber, Date waybillDate, int historyItemId, String unloadedMachines) {
         this.id = id;
         this.machine = machine;
         this.field = field;
-        this.weighingPlace = weighingPlace;
-        this.type_of_route = type_of_route;
-        this.departure_from_field_time = departure_from_field_time;
+        this.weighingplace = weighingplace;
+        this.typeOfRoute = typeOfRoute;
+        this.departureFromFieldTime = departureFromFieldTime;
         this.weight = weight;
-        this.brutto_weight = brutto_weight;
-        this.seed_moisture = seed_moisture;
-        this.seed_admixture = seed_admixture;
-        this.weighing_time = weighing_time;
-        this.last_truck = last_truck;
-        this.track_length = truck_length;
-        this.manually_set_track_length = manually_set_track_length;
-        this.additional_info = additional_info;
+        this.bruttoWeight = bruttoWeight;
+        this.seedMoisture = seedMoisture;
+        this.seedAdmixture = seedAdmixture;
+        this.weighingTime = weighingTime;
+        this.lastTruck = lastTruck;
+        this.trackLength = trackLength;
+        this.manuallySetTrackLength = manuallySetTrackLength;
+        this.additionalInfo = additionalInfo;
         this.description = description;
         this.season = season;
         this.createdBy = createdBy;
-        this.external_id = external_id;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
-        this.waybill_number = waybill_number;
-        this.waybill_date = waybill_date;
-        this.history_item_id = history_item_id;
-        this.unloaded_machines = unloaded_machines;
+        this.externalId = externalId;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.waybillNumber = waybillNumber;
+        this.waybillDate = waybillDate;
+        this.historyItemId = historyItemId;
+        this.unloadedMachines = unloadedMachines;
     }
 
     public HarvestWeighing() {
@@ -146,28 +146,28 @@ public class HarvestWeighing {
         this.field = field;
     }
 
-    public AdditionalObject getWeighingPlace() {
-        return weighingPlace;
+    public AdditionalObject getWeighingplace() {
+        return weighingplace;
     }
 
-    public void setWeighingPlace(AdditionalObject weighingPlace) {
-        this.weighingPlace = weighingPlace;
+    public void setWeighingplace(AdditionalObject weighingPlace) {
+        this.weighingplace = weighingPlace;
     }
 
-    public String getType_of_route() {
-        return type_of_route;
+    public String getTypeOfRoute() {
+        return typeOfRoute;
     }
 
-    public void setType_of_route(String type_of_route) {
-        this.type_of_route = type_of_route;
+    public void setTypeOfRoute(String typeOfRoute) {
+        this.typeOfRoute = typeOfRoute;
     }
 
-    public Timestamp getDeparture_from_field_time() {
-        return departure_from_field_time;
+    public Timestamp getDepartureFromFieldTime() {
+        return departureFromFieldTime;
     }
 
-    public void setDeparture_from_field_time(Timestamp departure_from_field_time) {
-        this.departure_from_field_time = departure_from_field_time;
+    public void setDepartureFromFieldTime(Timestamp departureFromFieldTime) {
+        this.departureFromFieldTime = departureFromFieldTime;
     }
 
     public double getWeight() {
@@ -178,68 +178,68 @@ public class HarvestWeighing {
         this.weight = weight;
     }
 
-    public double getBrutto_weight() {
-        return brutto_weight;
+    public double getBruttoWeight() {
+        return bruttoWeight;
     }
 
-    public void setBrutto_weight(double brutto_weight) {
-        this.brutto_weight = brutto_weight;
+    public void setBruttoWeight(double bruttoWeight) {
+        this.bruttoWeight = bruttoWeight;
     }
 
-    public double getSeed_moisture() {
-        return seed_moisture;
+    public double getSeedMoisture() {
+        return seedMoisture;
     }
 
-    public void setSeed_moisture(double seed_moisture) {
-        this.seed_moisture = seed_moisture;
+    public void setSeedMoisture(double seedMoisture) {
+        this.seedMoisture = seedMoisture;
     }
 
-    public double getSeed_admixture() {
-        return seed_admixture;
+    public double getSeedAdmixture() {
+        return seedAdmixture;
     }
 
-    public void setSeed_admixture(double seed_admixture) {
-        this.seed_admixture = seed_admixture;
+    public void setSeedAdmixture(double seedAdmixture) {
+        this.seedAdmixture = seedAdmixture;
     }
 
-    public Timestamp getWeighing_time() {
-        return weighing_time;
+    public Timestamp getWeighingTime() {
+        return weighingTime;
     }
 
-    public void setWeighing_time(Timestamp weighing_time) {
-        this.weighing_time = weighing_time;
+    public void setWeighingTime(Timestamp weighingTime) {
+        this.weighingTime = weighingTime;
     }
 
-    public boolean isLast_truck() {
-        return last_truck;
+    public boolean isLastTruck() {
+        return lastTruck;
     }
 
-    public void setLast_truck(boolean last_truck) {
-        this.last_truck = last_truck;
+    public void setLastTruck(boolean lastTruck) {
+        this.lastTruck = lastTruck;
     }
 
-    public double getTrack_length() {
-        return track_length;
+    public double getTrackLength() {
+        return trackLength;
     }
 
-    public void setTrack_length(double truck_length) {
-        this.track_length = truck_length;
+    public void setTrackLength(double trackLength) {
+        this.trackLength = trackLength;
     }
 
-    public boolean isManually_set_track_length() {
-        return manually_set_track_length;
+    public boolean isManuallySetTrackLength() {
+        return manuallySetTrackLength;
     }
 
-    public void setManually_set_track_length(boolean manually_set_track_length) {
-        this.manually_set_track_length = manually_set_track_length;
+    public void setManuallySetTrackLength(boolean manuallySetTrackLength) {
+        this.manuallySetTrackLength = manuallySetTrackLength;
     }
 
-    public String getAdditional_info() {
-        return additional_info;
+    public String getAdditionalInfo() {
+        return additionalInfo;
     }
 
-    public void setAdditional_info(String additional_info) {
-        this.additional_info = additional_info;
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
 
     public String getDescription() {
@@ -266,60 +266,60 @@ public class HarvestWeighing {
         this.createdBy = createdBy;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
-    public String getWaybill_number() {
-        return waybill_number;
+    public String getWaybillNumber() {
+        return waybillNumber;
     }
 
-    public void setWaybill_number(String waybill_number) {
-        this.waybill_number = waybill_number;
+    public void setWaybillNumber(String waybillNumber) {
+        this.waybillNumber = waybillNumber;
     }
 
-    public Date getWaybill_date() {
-        return waybill_date;
+    public Date getWaybillDate() {
+        return waybillDate;
     }
 
-    public void setWaybill_date(Date waybill_date) {
-        this.waybill_date = waybill_date;
+    public void setWaybillDate(Date waybillDate) {
+        this.waybillDate = waybillDate;
     }
 
-    public int getHistory_item_id() {
-        return history_item_id;
+    public int getHistoryItemId() {
+        return historyItemId;
     }
 
-    public void setHistory_item_id(int history_item_id) {
-        this.history_item_id = history_item_id;
+    public void setHistoryItemId(int historyItemId) {
+        this.historyItemId = historyItemId;
     }
 
-    public String getUnloaded_machines() {
-        return unloaded_machines;
+    public String getUnloadedMachines() {
+        return unloadedMachines;
     }
 
-    public void setUnloaded_machines(String unloaded_machines) {
-        this.unloaded_machines = unloaded_machines;
+    public void setUnloadedMachines(String unloadedMachines) {
+        this.unloadedMachines = unloadedMachines;
     }
 
     @Override
@@ -327,12 +327,12 @@ public class HarvestWeighing {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         HarvestWeighing that = (HarvestWeighing) o;
-        return Double.compare(weight, that.weight) == 0 && Double.compare(brutto_weight, that.brutto_weight) == 0 && Double.compare(seed_moisture, that.seed_moisture) == 0 && Double.compare(seed_admixture, that.seed_admixture) == 0 && last_truck == that.last_truck && Double.compare(track_length, that.track_length) == 0 && manually_set_track_length == that.manually_set_track_length && season == that.season && history_item_id == that.history_item_id && Objects.equals(id, that.id) && Objects.equals(machine, that.machine) && Objects.equals(field, that.field) && Objects.equals(weighingPlace, that.weighingPlace) && Objects.equals(type_of_route, that.type_of_route) && Objects.equals(departure_from_field_time, that.departure_from_field_time) && Objects.equals(weighing_time, that.weighing_time) && Objects.equals(additional_info, that.additional_info) && Objects.equals(description, that.description) && Objects.equals(createdBy, that.createdBy) && Objects.equals(external_id, that.external_id) && Objects.equals(created_at, that.created_at) && Objects.equals(updated_at, that.updated_at) && Objects.equals(waybill_number, that.waybill_number) && Objects.equals(waybill_date, that.waybill_date) && Objects.equals(unloaded_machines, that.unloaded_machines);
+        return Double.compare(weight, that.weight) == 0 && Double.compare(bruttoWeight, that.bruttoWeight) == 0 && Double.compare(seedMoisture, that.seedMoisture) == 0 && Double.compare(seedAdmixture, that.seedAdmixture) == 0 && lastTruck == that.lastTruck && Double.compare(trackLength, that.trackLength) == 0 && manuallySetTrackLength == that.manuallySetTrackLength && season == that.season && historyItemId == that.historyItemId && Objects.equals(id, that.id) && Objects.equals(machine, that.machine) && Objects.equals(field, that.field) && Objects.equals(weighingplace, that.weighingplace) && Objects.equals(typeOfRoute, that.typeOfRoute) && Objects.equals(departureFromFieldTime, that.departureFromFieldTime) && Objects.equals(weighingTime, that.weighingTime) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(description, that.description) && Objects.equals(createdBy, that.createdBy) && Objects.equals(externalId, that.externalId) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(waybillNumber, that.waybillNumber) && Objects.equals(waybillDate, that.waybillDate) && Objects.equals(unloadedMachines, that.unloadedMachines);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, machine, field, weighingPlace, type_of_route, departure_from_field_time, weight, brutto_weight, seed_moisture, seed_admixture, weighing_time, last_truck, track_length, manually_set_track_length, additional_info, description, season, createdBy, external_id, created_at, updated_at, waybill_number, waybill_date, history_item_id, unloaded_machines);
+        return Objects.hash(id, machine, field, weighingplace, typeOfRoute, departureFromFieldTime, weight, bruttoWeight, seedMoisture, seedAdmixture, weighingTime, lastTruck, trackLength, manuallySetTrackLength, additionalInfo, description, season, createdBy, externalId, createdAt, updatedAt, waybillNumber, waybillDate, historyItemId, unloadedMachines);
     }
 
     @Override
@@ -341,28 +341,28 @@ public class HarvestWeighing {
                 "id=" + id +
                 ", machine=" + machine +
                 ", field=" + field +
-                ", weighingPlace=" + weighingPlace +
-                ", type_of_route='" + type_of_route + '\'' +
-                ", departure_from_field_time=" + departure_from_field_time +
+                ", weighingPlace=" + weighingplace +
+                ", typeOfRoute='" + typeOfRoute + '\'' +
+                ", departureFromFieldTime=" + departureFromFieldTime +
                 ", weight=" + weight +
-                ", brutto_weight=" + brutto_weight +
-                ", seed_moisture=" + seed_moisture +
-                ", seed_admixture=" + seed_admixture +
-                ", weighing_time=" + weighing_time +
-                ", last_truck=" + last_truck +
-                ", track_length=" + track_length +
-                ", manually_set_track_length=" + manually_set_track_length +
-                ", additional_info='" + additional_info + '\'' +
+                ", bruttoWeight=" + bruttoWeight +
+                ", seedMoisture=" + seedMoisture +
+                ", seedAdmixture=" + seedAdmixture +
+                ", weighingTime=" + weighingTime +
+                ", lastTruck=" + lastTruck +
+                ", trackLength=" + trackLength +
+                ", manuallySetTrackLength=" + manuallySetTrackLength +
+                ", additionalInfo='" + additionalInfo + '\'' +
                 ", description='" + description + '\'' +
                 ", season=" + season +
                 ", createdBy=" + createdBy +
-                ", external_id='" + external_id + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
-                ", waybill_number='" + waybill_number + '\'' +
-                ", waybill_date=" + waybill_date +
-                ", history_item_id=" + history_item_id +
-                ", unloaded_machines='" + unloaded_machines + '\'' +
+                ", externalId='" + externalId + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", waybillNumber='" + waybillNumber + '\'' +
+                ", waybillDate=" + waybillDate +
+                ", historyItemId=" + historyItemId +
+                ", unloadedMachines='" + unloadedMachines + '\'' +
                 '}';
     }
 }

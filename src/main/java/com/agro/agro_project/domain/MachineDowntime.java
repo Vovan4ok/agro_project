@@ -12,53 +12,53 @@ public class MachineDowntime {
     private Integer id;
 
     @Column(name="start_time")
-    private Timestamp start_time;
+    private Timestamp startTime;
 
     @Column(name="end_time")
-    private Timestamp end_time;
+    private Timestamp endTime;
 
     @Column(name="duration_in_seconds")
-    private int duration_in_seconds;
+    private int durationInSeconds;
 
     @ManyToOne
     @JoinColumn(name="machine_downtime_type_id")
     private MachineDowntimeType machineDowntimeType;
 
     @Column(name="machine_id")
-    private short machine_id;
+    private short machineId;
 
     @Column(name="status", length=20)
     private String status;
 
     @Column(name="additional_info")
     @Lob
-    private String additional_info;
+    private String additionalInfo;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
     @Column(name="point_lon")
-    private double point_lon;
+    private double pointLon;
 
     @Column(name="point_lat")
-    private double point_lat;
+    private double pointLat;
 
-    public MachineDowntime(Integer id, Timestamp start_time, Timestamp end_time, int duration_in_seconds, MachineDowntimeType machineDowntimeType, short machine_id, String status, String additional_info, Timestamp created_at, Timestamp updated_at, double point_lon, double point_lat) {
+    public MachineDowntime(Integer id, Timestamp startTime, Timestamp endTime, int durationInSeconds, MachineDowntimeType machineDowntimeType, short machineId, String status, String additionalInfo, Timestamp createdAt, Timestamp updatedAt, double pointLon, double pointLat) {
         this.id = id;
-        this.start_time = start_time;
-        this.end_time = end_time;
-        this.duration_in_seconds = duration_in_seconds;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.durationInSeconds = durationInSeconds;
         this.machineDowntimeType = machineDowntimeType;
-        this.machine_id = machine_id;
+        this.machineId = machineId;
         this.status = status;
-        this.additional_info = additional_info;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
-        this.point_lon = point_lon;
-        this.point_lat = point_lat;
+        this.additionalInfo = additionalInfo;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.pointLon = pointLon;
+        this.pointLat = pointLat;
     }
 
     public MachineDowntime() {
@@ -72,28 +72,28 @@ public class MachineDowntime {
         this.id = id;
     }
 
-    public Timestamp getStart_time() {
-        return start_time;
+    public Timestamp getStartTime() {
+        return startTime;
     }
 
-    public void setStart_time(Timestamp start_time) {
-        this.start_time = start_time;
+    public void setStartTime(Timestamp startTime) {
+        this.startTime = startTime;
     }
 
-    public Timestamp getEnd_time() {
-        return end_time;
+    public Timestamp getEndTime() {
+        return endTime;
     }
 
-    public void setEnd_time(Timestamp end_time) {
-        this.end_time = end_time;
+    public void setEndTime(Timestamp endTime) {
+        this.endTime = endTime;
     }
 
-    public int getDuration_in_seconds() {
-        return duration_in_seconds;
+    public int getDurationInSeconds() {
+        return durationInSeconds;
     }
 
-    public void setDuration_in_seconds(int duration_in_seconds) {
-        this.duration_in_seconds = duration_in_seconds;
+    public void setDurationInSeconds(int durationInSeconds) {
+        this.durationInSeconds = durationInSeconds;
     }
 
     public MachineDowntimeType getMachineDowntimeType() {
@@ -104,12 +104,12 @@ public class MachineDowntime {
         this.machineDowntimeType = machineDowntimeType;
     }
 
-    public short getMachine_id() {
-        return machine_id;
+    public short getMachineId() {
+        return machineId;
     }
 
-    public void setMachine_id(short machine_id) {
-        this.machine_id = machine_id;
+    public void setMachineId(short machineId) {
+        this.machineId = machineId;
     }
 
     public String getStatus() {
@@ -120,44 +120,44 @@ public class MachineDowntime {
         this.status = status;
     }
 
-    public String getAdditional_info() {
-        return additional_info;
+    public String getAdditionalInfo() {
+        return additionalInfo;
     }
 
-    public void setAdditional_info(String additional_info) {
-        this.additional_info = additional_info;
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
-    public double getPoint_lon() {
-        return point_lon;
+    public double getPointLon() {
+        return pointLon;
     }
 
-    public void setPoint_lon(double point_lon) {
-        this.point_lon = point_lon;
+    public void setPointLon(double pointLon) {
+        this.pointLon = pointLon;
     }
 
-    public double getPoint_lat() {
-        return point_lat;
+    public double getPointLat() {
+        return pointLat;
     }
 
-    public void setPoint_lat(double point_lat) {
-        this.point_lat = point_lat;
+    public void setPointLat(double pointLat) {
+        this.pointLat = pointLat;
     }
 
     @Override
@@ -165,29 +165,29 @@ public class MachineDowntime {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MachineDowntime that = (MachineDowntime) o;
-        return duration_in_seconds == that.duration_in_seconds && Double.compare(point_lon, that.point_lon) == 0 && Double.compare(point_lat, that.point_lat) == 0 && Objects.equals(id, that.id) && Objects.equals(start_time, that.start_time) && Objects.equals(end_time, that.end_time) && Objects.equals(machineDowntimeType, that.machineDowntimeType) && Objects.equals(machine_id, that.machine_id) && Objects.equals(status, that.status) && Objects.equals(additional_info, that.additional_info) && Objects.equals(created_at, that.created_at) && Objects.equals(updated_at, that.updated_at);
+        return durationInSeconds == that.durationInSeconds && Double.compare(pointLon, that.pointLon) == 0 && Double.compare(pointLat, that.pointLat) == 0 && Objects.equals(id, that.id) && Objects.equals(startTime, that.startTime) && Objects.equals(endTime, that.endTime) && Objects.equals(machineDowntimeType, that.machineDowntimeType) && Objects.equals(machineId, that.machineId) && Objects.equals(status, that.status) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, start_time, end_time, duration_in_seconds, machineDowntimeType, machine_id, status, additional_info, created_at, updated_at, point_lon, point_lat);
+        return Objects.hash(id, startTime, endTime, durationInSeconds, machineDowntimeType, machineId, status, additionalInfo, createdAt, updatedAt, pointLon, pointLat);
     }
 
     @Override
     public String toString() {
         return "MachineDowntime{" +
                 "id=" + id +
-                ", start_time=" + start_time +
-                ", end_time=" + end_time +
-                ", duration_in_seconds=" + duration_in_seconds +
+                ", startTime=" + startTime +
+                ", endTime=" + endTime +
+                ", durationInSeconds=" + durationInSeconds +
                 ", machineDowntimeType=" + machineDowntimeType +
-                ", machine_id=" + machine_id +
+                ", machineId=" + machineId +
                 ", status='" + status + '\'' +
-                ", additional_info='" + additional_info + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
-                ", point_lon=" + point_lon +
-                ", point_lat=" + point_lat +
+                ", additionalInfo='" + additionalInfo + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", pointLon=" + pointLon +
+                ", pointLat=" + pointLat +
                 '}';
     }
 }

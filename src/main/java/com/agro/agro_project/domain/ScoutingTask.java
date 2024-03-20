@@ -25,41 +25,41 @@ public class ScoutingTask {
     private User author;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
     @Column(name="idempotency_key", length=50)
-    private String idempotency_key;
+    private String idempotencyKey;
 
     @Column(name="start_time")
-    private Timestamp start_time;
+    private Timestamp startTime;
 
     @Column(name="end_time")
-    private Timestamp end_time;
+    private Timestamp endTime;
 
     @Column(name="description")
     @Lob
     private String description;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
     @Column(name="status", length=20)
     private String status;
 
     @Column(name="image_type", length=20)
-    private String image_type;
+    private String imageType;
 
     @Column(name="image_date")
-    private Date image_date;
+    private Date imageDate;
 
     @Column(name="image_source_sign", length=10)
-    private String image_source_sign;
+    private String imageSourceSign;
 
     @Column(name="scout_report_template_id")
-    private short scout_report_template_id;
+    private short scoutReportTemplateId;
 
     @Column(name="season")
     private short season;
@@ -69,32 +69,32 @@ public class ScoutingTask {
     private AgroOperation agroOperation;
 
     @Column(name="automatic_scouting_task_id")
-    private int automatic_scouting_task_id;
+    private int automaticScoutingTaskId;
 
     @Column(name="history_item_id")
-    private int history_item_id;
+    private int historyItemId;
 
-    public ScoutingTask(Short id, Field field, User responsibleUser, User author, String external_id, String idempotency_key, Timestamp start_time, Timestamp end_time, String description, Timestamp created_at, Timestamp updated_at, String status, String image_type, Date image_date, String image_source_sign, short scout_report_template_id, short season, AgroOperation agroOperation, int automatic_scouting_task_id, int history_item_id) {
+    public ScoutingTask(Short id, Field field, User responsibleUser, User author, String externalId, String idempotencyKey, Timestamp startTime, Timestamp endTime, String description, Timestamp createdAt, Timestamp updatedAt, String status, String imageType, Date imageDate, String imageSourceSign, short scoutReportTemplateId, short season, AgroOperation agroOperation, int automaticScoutingTaskId, int historyItemId) {
         this.id = id;
         this.field = field;
         this.responsibleUser = responsibleUser;
         this.author = author;
-        this.external_id = external_id;
-        this.idempotency_key = idempotency_key;
-        this.start_time = start_time;
-        this.end_time = end_time;
+        this.externalId = externalId;
+        this.idempotencyKey = idempotencyKey;
+        this.startTime = startTime;
+        this.endTime = endTime;
         this.description = description;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
         this.status = status;
-        this.image_type = image_type;
-        this.image_date = image_date;
-        this.image_source_sign = image_source_sign;
-        this.scout_report_template_id = scout_report_template_id;
+        this.imageType = imageType;
+        this.imageDate = imageDate;
+        this.imageSourceSign = imageSourceSign;
+        this.scoutReportTemplateId = scoutReportTemplateId;
         this.season = season;
         this.agroOperation = agroOperation;
-        this.automatic_scouting_task_id = automatic_scouting_task_id;
-        this.history_item_id = history_item_id;
+        this.automaticScoutingTaskId = automaticScoutingTaskId;
+        this.historyItemId = historyItemId;
     }
 
     public ScoutingTask() {
@@ -132,36 +132,36 @@ public class ScoutingTask {
         this.author = author;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
-    public String getIdempotency_key() {
-        return idempotency_key;
+    public String getIdempotencyKey() {
+        return idempotencyKey;
     }
 
-    public void setIdempotency_key(String idempotency_key) {
-        this.idempotency_key = idempotency_key;
+    public void setIdempotencyKey(String idempotencyKey) {
+        this.idempotencyKey = idempotencyKey;
     }
 
-    public Timestamp getStart_time() {
-        return start_time;
+    public Timestamp getStartTime() {
+        return startTime;
     }
 
-    public void setStart_time(Timestamp start_time) {
-        this.start_time = start_time;
+    public void setStartTime(Timestamp startTime) {
+        this.startTime = startTime;
     }
 
-    public Timestamp getEnd_time() {
-        return end_time;
+    public Timestamp getEndTime() {
+        return endTime;
     }
 
-    public void setEnd_time(Timestamp end_time) {
-        this.end_time = end_time;
+    public void setEndTime(Timestamp endTime) {
+        this.endTime = endTime;
     }
 
     public String getDescription() {
@@ -172,20 +172,20 @@ public class ScoutingTask {
         this.description = description;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     public String getStatus() {
@@ -196,36 +196,36 @@ public class ScoutingTask {
         this.status = status;
     }
 
-    public String getImage_type() {
-        return image_type;
+    public String getImageType() {
+        return imageType;
     }
 
-    public void setImage_type(String image_type) {
-        this.image_type = image_type;
+    public void setImageType(String imageType) {
+        this.imageType = imageType;
     }
 
-    public Date getImage_date() {
-        return image_date;
+    public Date getImageDate() {
+        return imageDate;
     }
 
-    public void setImage_date(Date image_date) {
-        this.image_date = image_date;
+    public void setImageDate(Date imageDate) {
+        this.imageDate = imageDate;
     }
 
-    public String getImage_source_sign() {
-        return image_source_sign;
+    public String getImageSourceSign() {
+        return imageSourceSign;
     }
 
-    public void setImage_source_sign(String image_source_sign) {
-        this.image_source_sign = image_source_sign;
+    public void setImageSourceSign(String imageSourceSign) {
+        this.imageSourceSign = imageSourceSign;
     }
 
-    public short getScout_report_template_id() {
-        return scout_report_template_id;
+    public short getScoutReportTemplateId() {
+        return scoutReportTemplateId;
     }
 
-    public void setScout_report_template_id(short scout_report_template_id) {
-        this.scout_report_template_id = scout_report_template_id;
+    public void setScoutReportTemplateId(short scoutReportTemplateId) {
+        this.scoutReportTemplateId = scoutReportTemplateId;
     }
 
     public short getSeason() {
@@ -244,20 +244,20 @@ public class ScoutingTask {
         this.agroOperation = agroOperation;
     }
 
-    public int getAutomatic_scouting_task_id() {
-        return automatic_scouting_task_id;
+    public int getAutomaticScoutingTaskId() {
+        return automaticScoutingTaskId;
     }
 
-    public void setAutomatic_scouting_task_id(int automatic_scouting_task_id) {
-        this.automatic_scouting_task_id = automatic_scouting_task_id;
+    public void setAutomaticScoutingTaskId(int automaticScoutingTaskId) {
+        this.automaticScoutingTaskId = automaticScoutingTaskId;
     }
 
-    public int getHistory_item_id() {
-        return history_item_id;
+    public int getHistoryItemId() {
+        return historyItemId;
     }
 
-    public void setHistory_item_id(int history_item_id) {
-        this.history_item_id = history_item_id;
+    public void setHistoryItemId(int historyItemId) {
+        this.historyItemId = historyItemId;
     }
 
     @Override
@@ -265,12 +265,12 @@ public class ScoutingTask {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ScoutingTask that = (ScoutingTask) o;
-        return scout_report_template_id == that.scout_report_template_id && season == that.season && automatic_scouting_task_id == that.automatic_scouting_task_id && history_item_id == that.history_item_id && Objects.equals(id, that.id) && Objects.equals(field, that.field) && Objects.equals(responsibleUser, that.responsibleUser) && Objects.equals(author, that.author) && Objects.equals(external_id, that.external_id) && Objects.equals(idempotency_key, that.idempotency_key) && Objects.equals(start_time, that.start_time) && Objects.equals(end_time, that.end_time) && Objects.equals(description, that.description) && Objects.equals(created_at, that.created_at) && Objects.equals(updated_at, that.updated_at) && Objects.equals(status, that.status) && Objects.equals(image_type, that.image_type) && Objects.equals(image_date, that.image_date) && Objects.equals(image_source_sign, that.image_source_sign) && Objects.equals(agroOperation, that.agroOperation);
+        return scoutReportTemplateId == that.scoutReportTemplateId && season == that.season && automaticScoutingTaskId == that.automaticScoutingTaskId && historyItemId == that.historyItemId && Objects.equals(id, that.id) && Objects.equals(field, that.field) && Objects.equals(responsibleUser, that.responsibleUser) && Objects.equals(author, that.author) && Objects.equals(externalId, that.externalId) && Objects.equals(idempotencyKey, that.idempotencyKey) && Objects.equals(startTime, that.startTime) && Objects.equals(endTime, that.endTime) && Objects.equals(description, that.description) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(status, that.status) && Objects.equals(imageType, that.imageType) && Objects.equals(imageDate, that.imageDate) && Objects.equals(imageSourceSign, that.imageSourceSign) && Objects.equals(agroOperation, that.agroOperation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, field, responsibleUser, author, external_id, idempotency_key, start_time, end_time, description, created_at, updated_at, status, image_type, image_date, image_source_sign, scout_report_template_id, season, agroOperation, automatic_scouting_task_id, history_item_id);
+        return Objects.hash(id, field, responsibleUser, author, externalId, idempotencyKey, startTime, endTime, description, createdAt, updatedAt, status, imageType, imageDate, imageSourceSign, scoutReportTemplateId, season, agroOperation, automaticScoutingTaskId, historyItemId);
     }
 
     @Override
@@ -280,22 +280,22 @@ public class ScoutingTask {
                 ", field=" + field +
                 ", responsibleUser=" + responsibleUser +
                 ", author=" + author +
-                ", external_id='" + external_id + '\'' +
-                ", idempotency_key='" + idempotency_key + '\'' +
-                ", start_time=" + start_time +
-                ", end_time=" + end_time +
+                ", externalId='" + externalId + '\'' +
+                ", idempotencyKey='" + idempotencyKey + '\'' +
+                ", startTime=" + startTime +
+                ", endTime=" + endTime +
                 ", description='" + description + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 ", status='" + status + '\'' +
-                ", image_type='" + image_type + '\'' +
-                ", image_date=" + image_date +
-                ", image_source_sign='" + image_source_sign + '\'' +
-                ", scout_report_template_id=" + scout_report_template_id +
+                ", imageType='" + imageType + '\'' +
+                ", imageDate=" + imageDate +
+                ", imageSourceSign='" + imageSourceSign + '\'' +
+                ", scoutReportTemplateId=" + scoutReportTemplateId +
                 ", season=" + season +
                 ", agroOperation=" + agroOperation +
-                ", automatic_scouting_task_id=" + automatic_scouting_task_id +
-                ", history_item_id=" + history_item_id +
+                ", automaticScoutingTaskId=" + automaticScoutingTaskId +
+                ", historyItemId=" + historyItemId +
                 '}';
     }
 }

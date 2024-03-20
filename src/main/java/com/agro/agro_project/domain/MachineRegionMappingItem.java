@@ -21,29 +21,29 @@ public class MachineRegionMappingItem {
     private MachineRegion machineRegion;
 
     @Column(name="date_start")
-    private Date date_start;
+    private Date dateStart;
 
     @Column(name="date_end")
-    private Date date_end;
+    private Date dateEnd;
 
     @Column(name="no_date_end")
-    private boolean no_date_end;
+    private boolean noDateEnd;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
-    public MachineRegionMappingItem(Short id, Machine machine, MachineRegion machineRegion, Date date_start, Date date_end, boolean no_date_end, Timestamp created_at, Timestamp updated_at) {
+    public MachineRegionMappingItem(Short id, Machine machine, MachineRegion machineRegion, Date dateStart, Date dateEnd, boolean noDateEnd, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.machine = machine;
         this.machineRegion = machineRegion;
-        this.date_start = date_start;
-        this.date_end = date_end;
-        this.no_date_end = no_date_end;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
+        this.dateStart = dateStart;
+        this.dateEnd = dateEnd;
+        this.noDateEnd = noDateEnd;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public MachineRegionMappingItem() {
@@ -73,44 +73,44 @@ public class MachineRegionMappingItem {
         this.machineRegion = machineRegion;
     }
 
-    public Date getDate_start() {
-        return date_start;
+    public Date getDateStart() {
+        return dateStart;
     }
 
-    public void setDate_start(Date date_start) {
-        this.date_start = date_start;
+    public void setDateStart(Date dateStart) {
+        this.dateStart = dateStart;
     }
 
-    public Date getDate_end() {
-        return date_end;
+    public Date getDateEnd() {
+        return dateEnd;
     }
 
-    public void setDate_end(Date date_end) {
-        this.date_end = date_end;
+    public void setDateEnd(Date dateEnd) {
+        this.dateEnd = dateEnd;
     }
 
-    public boolean isNo_date_end() {
-        return no_date_end;
+    public boolean isNoDateEnd() {
+        return noDateEnd;
     }
 
-    public void setNo_date_end(boolean no_date_end) {
-        this.no_date_end = no_date_end;
+    public void setNoDateEnd(boolean noDateEnd) {
+        this.noDateEnd = noDateEnd;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
@@ -118,12 +118,12 @@ public class MachineRegionMappingItem {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MachineRegionMappingItem that = (MachineRegionMappingItem) o;
-        return no_date_end == that.no_date_end && Objects.equals(id, that.id) && Objects.equals(machine, that.machine) && Objects.equals(machineRegion, that.machineRegion) && Objects.equals(date_start, that.date_start) && Objects.equals(date_end, that.date_end) && Objects.equals(created_at, that.created_at) && Objects.equals(updated_at, that.updated_at);
+        return noDateEnd == that.noDateEnd && Objects.equals(id, that.id) && Objects.equals(machine, that.machine) && Objects.equals(machineRegion, that.machineRegion) && Objects.equals(dateStart, that.dateStart) && Objects.equals(dateEnd, that.dateEnd) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, machine, machineRegion, date_start, date_end, no_date_end, created_at, updated_at);
+        return Objects.hash(id, machine, machineRegion, dateStart, dateEnd, noDateEnd, createdAt, updatedAt);
     }
 
     @Override
@@ -132,11 +132,11 @@ public class MachineRegionMappingItem {
                 "id=" + id +
                 ", machine=" + machine +
                 ", machineRegion=" + machineRegion +
-                ", date_start=" + date_start +
-                ", date_end=" + date_end +
-                ", no_date_end=" + no_date_end +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
+                ", dateStart=" + dateStart +
+                ", dateEnd=" + dateEnd +
+                ", noDateEnd=" + noDateEnd +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }

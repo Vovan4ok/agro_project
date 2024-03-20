@@ -25,13 +25,13 @@ public class AgroOperation {
     private AgriWorkPlan agriWorkPlan;
 
     @Column(name="applications_type", length=20)
-    private String applications_type;
+    private String applicationsType;
 
     @Column(name="operation_number", length=10)
-    private String operation_number;
+    private String operationNumber;
 
     @Column(name="custom_name", length=50)
-    private String custom_name;
+    private String customName;
 
     @ManyToOne
     @JoinColumn(name="work_type_id")
@@ -41,158 +41,158 @@ public class AgroOperation {
     private String status;
 
     @Column(name="calc_by", length=10)
-    private String calc_by;
+    private String calcBy;
 
     @Column(name="planned_area")
-    private double planned_area;
+    private double plannedArea;
 
     @Column(name="completed_area")
-    private double completed_area;
+    private double completedArea;
 
     @Column(name="harvested_weight")
-    private double harvested_weight;
+    private double harvestedWeight;
 
     @Column(name="planned_start_date")
-    private Date planned_start_date;
+    private Date plannedStartDate;
 
     @Column(name="planned_end_date")
-    private Date planned_end_date;
+    private Date plannedEndDate;
 
     @Column(name="completed_date")
-    private Date completed_date;
+    private Date completedDate;
 
     @Column(name="completed_datetime")
-    private Timestamp completed_datetime;
+    private Timestamp completedDatetime;
 
     @Column(name="season")
     private short season;
 
     @Column(name="planned_row_spacing")
-    private double planned_row_spacing;
+    private double plannedRowSpacing;
 
     @Column(name="planned_plant_spacing")
-    private double planned_plant_spacing;
+    private double plannedPlantSpacing;
 
     @Column(name="planned_depth")
-    private double planned_depth;
+    private double plannedDepth;
 
     @Column(name="planned_speed")
-    private double planned_speed;
+    private double plannedSpeed;
 
     @Column(name="planned_water_rate")
-    private double planned_water_rate;
+    private double plannedWaterRate;
 
     @Column(name="fact_water_rate")
-    private double fact_water_rate;
+    private double factWaterRate;
 
     @Column(name="covered_area")
-    private double covered_area;
+    private double coveredArea;
 
     @Column(name="covered_area_by_track")
-    private double covered_area_by_track;
+    private double coveredAreaByTrack;
 
     @Column(name="machine_work_area")
-    private double machine_work_area;
+    private double machineWorkArea;
 
     @Column(name="additional_info")
     @Lob
-    private String additional_info;
+    private String additionalInfo;
 
     @Column(name="description")
     @Lob
     private String description;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
     @Column(name="actual_start_datetime")
-    private Timestamp actual_start_datetime;
+    private Timestamp actualStartDatetime;
 
     @Column(name="agro_recommendation_id")
-    private short agro_recommendation_id;
+    private short agroRecommendationId;
 
     @Column(name="locked_to_edit")
-    private boolean locked_to_edit;
+    private boolean lockedToEdit;
 
     @Column(name="idempotency_key", length=100)
-    private String idempotency_key;
+    private String idempotencyKey;
 
     @Column(name="locked_at", length=20)
-    private String locked_at;
+    private String lockedAt;
 
     @Column(name="control_threshing")
-    private double control_threshing;
+    private double controlThreshing;
 
     @Column(name="humidity")
     private double humidity;
 
     @Column(name="protein_content")
-    private double protein_content;
+    private double proteinContent;
 
     @Column(name="oil_content")
-    private double oil_content;
+    private double oilContent;
 
     @Column(name="history_item_id")
-    private int history_item_id;
+    private int historyItemId;
 
     @Column(name="notify_responsible_users")
-    private boolean notify_responsible_users;
+    private boolean notifyResponsibleUsers;
 
     @Column(name="x_custom_fields_data")
     @Lob
-    private String x_custom_fields_data;
+    private String xCustomFieldsData;
 
-    public AgroOperation(Integer id, Field field, FieldShape fieldShape, AgriWorkPlan agriWorkPlan, String applications_type, String operation_number, String custom_name, WorkType workType, String status, String calc_by, double planned_area, double completed_area, double harvested_weight, Date planned_start_date, Date planned_end_date, Date completed_date, Timestamp completed_datetime, short season, double planned_row_spacing, double planned_plant_spacing, double planned_depth, double planned_speed, double planned_water_rate, double fact_water_rate, double covered_area, double covered_area_by_track, double machine_work_area, String additional_info, String description, Timestamp created_at, Timestamp updated_at, String external_id, Timestamp actual_start_datetime, short agro_recommendation_id, boolean locked_to_edit, String idempotency_key, String locked_at, double control_threshing, double humidity, double protein_content, double oil_content, int history_item_id, boolean notify_responsible_users, String x_custom_fields_data) {
+    public AgroOperation(Integer id, Field field, FieldShape fieldShape, AgriWorkPlan agriWorkPlan, String applicationsType, String operationNumber, String customName, WorkType workType, String status, String calcBy, double plannedArea, double completedArea, double harvestedWeight, Date plannedStartDate, Date plannedEndDate, Date completedDate, Timestamp completedDatetime, short season, double plannedRowSpacing, double plannedPlantSpacing, double plannedDepth, double plannedSpeed, double plannedWaterRate, double factWaterRate, double coveredArea, double coveredAreaByTrack, double machineWorkArea, String additionalInfo, String description, Timestamp createdAt, Timestamp updatedAt, String externalId, Timestamp actualStartDatetime, short agroRecommendationId, boolean lockedToEdit, String idempotencyKey, String lockedAt, double controlThreshing, double humidity, double proteinContent, double oilContent, int historyItemId, boolean notifyResponsibleUsers, String xCustomFieldsData) {
         this.id = id;
         this.field = field;
         this.fieldShape = fieldShape;
         this.agriWorkPlan = agriWorkPlan;
-        this.applications_type = applications_type;
-        this.operation_number = operation_number;
-        this.custom_name = custom_name;
+        this.applicationsType = applicationsType;
+        this.operationNumber = operationNumber;
+        this.customName = customName;
         this.workType = workType;
         this.status = status;
-        this.calc_by = calc_by;
-        this.planned_area = planned_area;
-        this.completed_area = completed_area;
-        this.harvested_weight = harvested_weight;
-        this.planned_start_date = planned_start_date;
-        this.planned_end_date = planned_end_date;
-        this.completed_date = completed_date;
-        this.completed_datetime = completed_datetime;
+        this.calcBy = calcBy;
+        this.plannedArea = plannedArea;
+        this.completedArea = completedArea;
+        this.harvestedWeight = harvestedWeight;
+        this.plannedStartDate = plannedStartDate;
+        this.plannedEndDate = plannedEndDate;
+        this.completedDate = completedDate;
+        this.completedDatetime = completedDatetime;
         this.season = season;
-        this.planned_row_spacing = planned_row_spacing;
-        this.planned_plant_spacing = planned_plant_spacing;
-        this.planned_depth = planned_depth;
-        this.planned_speed = planned_speed;
-        this.planned_water_rate = planned_water_rate;
-        this.fact_water_rate = fact_water_rate;
-        this.covered_area = covered_area;
-        this.covered_area_by_track = covered_area_by_track;
-        this.machine_work_area = machine_work_area;
-        this.additional_info = additional_info;
+        this.plannedRowSpacing = plannedRowSpacing;
+        this.plannedPlantSpacing = plannedPlantSpacing;
+        this.plannedDepth = plannedDepth;
+        this.plannedSpeed = plannedSpeed;
+        this.plannedWaterRate = plannedWaterRate;
+        this.factWaterRate = factWaterRate;
+        this.coveredArea = coveredArea;
+        this.coveredAreaByTrack = coveredAreaByTrack;
+        this.machineWorkArea = machineWorkArea;
+        this.additionalInfo = additionalInfo;
         this.description = description;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
-        this.external_id = external_id;
-        this.actual_start_datetime = actual_start_datetime;
-        this.agro_recommendation_id = agro_recommendation_id;
-        this.locked_to_edit = locked_to_edit;
-        this.idempotency_key = idempotency_key;
-        this.locked_at = locked_at;
-        this.control_threshing = control_threshing;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.externalId = externalId;
+        this.actualStartDatetime = actualStartDatetime;
+        this.agroRecommendationId = agroRecommendationId;
+        this.lockedToEdit = lockedToEdit;
+        this.idempotencyKey = idempotencyKey;
+        this.lockedAt = lockedAt;
+        this.controlThreshing = controlThreshing;
         this.humidity = humidity;
-        this.protein_content = protein_content;
-        this.oil_content = oil_content;
-        this.history_item_id = history_item_id;
-        this.notify_responsible_users = notify_responsible_users;
-        this.x_custom_fields_data = x_custom_fields_data;
+        this.proteinContent = proteinContent;
+        this.oilContent = oilContent;
+        this.historyItemId = historyItemId;
+        this.notifyResponsibleUsers = notifyResponsibleUsers;
+        this.xCustomFieldsData = xCustomFieldsData;
     }
 
     public AgroOperation() {
@@ -230,28 +230,28 @@ public class AgroOperation {
         this.agriWorkPlan = agriWorkPlan;
     }
 
-    public String getApplications_type() {
-        return applications_type;
+    public String getApplicationsType() {
+        return applicationsType;
     }
 
-    public void setApplications_type(String applications_type) {
-        this.applications_type = applications_type;
+    public void setApplicationsType(String applicationsType) {
+        this.applicationsType = applicationsType;
     }
 
-    public String getOperation_number() {
-        return operation_number;
+    public String getOperationNumber() {
+        return operationNumber;
     }
 
-    public void setOperation_number(String operation_number) {
-        this.operation_number = operation_number;
+    public void setOperationNumber(String operationNumber) {
+        this.operationNumber = operationNumber;
     }
 
-    public String getCustom_name() {
-        return custom_name;
+    public String getCustomName() {
+        return customName;
     }
 
-    public void setCustom_name(String custom_name) {
-        this.custom_name = custom_name;
+    public void setCustomName(String customName) {
+        this.customName = customName;
     }
 
     public WorkType getWorkType() {
@@ -270,68 +270,68 @@ public class AgroOperation {
         this.status = status;
     }
 
-    public String getCalc_by() {
-        return calc_by;
+    public String getCalcBy() {
+        return calcBy;
     }
 
-    public void setCalc_by(String calc_by) {
-        this.calc_by = calc_by;
+    public void setCalcBy(String calcBy) {
+        this.calcBy = calcBy;
     }
 
-    public double getPlanned_area() {
-        return planned_area;
+    public double getPlannedArea() {
+        return plannedArea;
     }
 
-    public void setPlanned_area(double planned_area) {
-        this.planned_area = planned_area;
+    public void setPlannedArea(double plannedArea) {
+        this.plannedArea = plannedArea;
     }
 
-    public double getCompleted_area() {
-        return completed_area;
+    public double getCompletedArea() {
+        return completedArea;
     }
 
-    public void setCompleted_area(double completed_area) {
-        this.completed_area = completed_area;
+    public void setCompletedArea(double completedArea) {
+        this.completedArea = completedArea;
     }
 
-    public double getHarvested_weight() {
-        return harvested_weight;
+    public double getHarvestedWeight() {
+        return harvestedWeight;
     }
 
-    public void setHarvested_weight(double harvested_weight) {
-        this.harvested_weight = harvested_weight;
+    public void setHarvestedWeight(double harvestedWeight) {
+        this.harvestedWeight = harvestedWeight;
     }
 
-    public Date getPlanned_start_date() {
-        return planned_start_date;
+    public Date getPlannedStartDate() {
+        return plannedStartDate;
     }
 
-    public void setPlanned_start_date(Date planned_start_date) {
-        this.planned_start_date = planned_start_date;
+    public void setPlannedStartDate(Date plannedStartDate) {
+        this.plannedStartDate = plannedStartDate;
     }
 
-    public Date getPlanned_end_date() {
-        return planned_end_date;
+    public Date getPlannedEndDate() {
+        return plannedEndDate;
     }
 
-    public void setPlanned_end_date(Date planned_end_date) {
-        this.planned_end_date = planned_end_date;
+    public void setPlannedEndDate(Date plannedEndDate) {
+        this.plannedEndDate = plannedEndDate;
     }
 
-    public Date getCompleted_date() {
-        return completed_date;
+    public Date getCompletedDate() {
+        return completedDate;
     }
 
-    public void setCompleted_date(Date completed_date) {
-        this.completed_date = completed_date;
+    public void setCompletedDate(Date completedDate) {
+        this.completedDate = completedDate;
     }
 
-    public Timestamp getCompleted_datetime() {
-        return completed_datetime;
+    public Timestamp getCompletedDatetime() {
+        return completedDatetime;
     }
 
-    public void setCompleted_datetime(Timestamp completed_datetime) {
-        this.completed_datetime = completed_datetime;
+    public void setCompletedDatetime(Timestamp completedDatetime) {
+        this.completedDatetime = completedDatetime;
     }
 
     public short getSeason() {
@@ -342,84 +342,84 @@ public class AgroOperation {
         this.season = season;
     }
 
-    public double getPlanned_row_spacing() {
-        return planned_row_spacing;
+    public double getPlannedRowSpacing() {
+        return plannedRowSpacing;
     }
 
-    public void setPlanned_row_spacing(double planned_row_spacing) {
-        this.planned_row_spacing = planned_row_spacing;
+    public void setPlannedRowSpacing(double plannedRowSpacing) {
+        this.plannedRowSpacing = plannedRowSpacing;
     }
 
-    public double getPlanned_plant_spacing() {
-        return planned_plant_spacing;
+    public double getPlannedPlantSpacing() {
+        return plannedPlantSpacing;
     }
 
-    public void setPlanned_plant_spacing(double planned_plant_spacing) {
-        this.planned_plant_spacing = planned_plant_spacing;
+    public void setPlannedPlantSpacing(double plannedPlantSpacing) {
+        this.plannedPlantSpacing = plannedPlantSpacing;
     }
 
-    public double getPlanned_depth() {
-        return planned_depth;
+    public double getPlannedDepth() {
+        return plannedDepth;
     }
 
-    public void setPlanned_depth(double planned_depth) {
-        this.planned_depth = planned_depth;
+    public void setPlannedDepth(double plannedDepth) {
+        this.plannedDepth = plannedDepth;
     }
 
-    public double getPlanned_speed() {
-        return planned_speed;
+    public double getPlannedSpeed() {
+        return plannedSpeed;
     }
 
-    public void setPlanned_speed(double planned_speed) {
-        this.planned_speed = planned_speed;
+    public void setPlannedSpeed(double plannedSpeed) {
+        this.plannedSpeed = plannedSpeed;
     }
 
-    public double getPlanned_water_rate() {
-        return planned_water_rate;
+    public double getPlannedWaterRate() {
+        return plannedWaterRate;
     }
 
-    public void setPlanned_water_rate(double planned_water_rate) {
-        this.planned_water_rate = planned_water_rate;
+    public void setPlannedWaterRate(double plannedWaterRate) {
+        this.plannedWaterRate = plannedWaterRate;
     }
 
-    public double getFact_water_rate() {
-        return fact_water_rate;
+    public double getFactWaterRate() {
+        return factWaterRate;
     }
 
-    public void setFact_water_rate(double fact_water_rate) {
-        this.fact_water_rate = fact_water_rate;
+    public void setFactWaterRate(double factWaterRate) {
+        this.factWaterRate = factWaterRate;
     }
 
-    public double getCovered_area() {
-        return covered_area;
+    public double getCoveredArea() {
+        return coveredArea;
     }
 
-    public void setCovered_area(double covered_area) {
-        this.covered_area = covered_area;
+    public void setCoveredArea(double coveredArea) {
+        this.coveredArea = coveredArea;
     }
 
-    public double getCovered_area_by_track() {
-        return covered_area_by_track;
+    public double getCoveredAreaByTrack() {
+        return coveredAreaByTrack;
     }
 
-    public void setCovered_area_by_track(double covered_area_by_track) {
-        this.covered_area_by_track = covered_area_by_track;
+    public void setCoveredAreaByTrack(double coveredAreaByTrack) {
+        this.coveredAreaByTrack = coveredAreaByTrack;
     }
 
-    public double getMachine_work_area() {
-        return machine_work_area;
+    public double getMachineWorkArea() {
+        return machineWorkArea;
     }
 
-    public void setMachine_work_area(double machine_work_area) {
-        this.machine_work_area = machine_work_area;
+    public void setMachineWorkArea(double machineWorkArea) {
+        this.machineWorkArea = machineWorkArea;
     }
 
-    public String getAdditional_info() {
-        return additional_info;
+    public String getAdditionalInfo() {
+        return additionalInfo;
     }
 
-    public void setAdditional_info(String additional_info) {
-        this.additional_info = additional_info;
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
 
     public String getDescription() {
@@ -430,76 +430,76 @@ public class AgroOperation {
         this.description = description;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
-    public Timestamp getActual_start_datetime() {
-        return actual_start_datetime;
+    public Timestamp getActualStartDatetime() {
+        return actualStartDatetime;
     }
 
-    public void setActual_start_datetime(Timestamp actual_start_datetime) {
-        this.actual_start_datetime = actual_start_datetime;
+    public void setActualStartDatetime(Timestamp actualStartDatetime) {
+        this.actualStartDatetime = actualStartDatetime;
     }
 
-    public short getAgro_recommendation_id() {
-        return agro_recommendation_id;
+    public short getAgroRecommendationId() {
+        return agroRecommendationId;
     }
 
-    public void setAgro_recommendation_id(short agro_recommendation_id) {
-        this.agro_recommendation_id = agro_recommendation_id;
+    public void setAgroRecommendationId(short agroRecommendationId) {
+        this.agroRecommendationId = agroRecommendationId;
     }
 
-    public boolean isLocked_to_edit() {
-        return locked_to_edit;
+    public boolean isLockedToEdit() {
+        return lockedToEdit;
     }
 
-    public void setLocked_to_edit(boolean locked_to_edit) {
-        this.locked_to_edit = locked_to_edit;
+    public void setLockedToEdit(boolean lockedToEdit) {
+        this.lockedToEdit = lockedToEdit;
     }
 
-    public String getIdempotency_key() {
-        return idempotency_key;
+    public String getIdempotencyKey() {
+        return idempotencyKey;
     }
 
-    public void setIdempotency_key(String idempotency_key) {
-        this.idempotency_key = idempotency_key;
+    public void setIdempotencyKey(String idempotencyKey) {
+        this.idempotencyKey = idempotencyKey;
     }
 
-    public String getLocked_at() {
-        return locked_at;
+    public String getLockedAt() {
+        return lockedAt;
     }
 
-    public void setLocked_at(String locked_at) {
-        this.locked_at = locked_at;
+    public void setLockedAt(String lockedAt) {
+        this.lockedAt = lockedAt;
     }
 
-    public double getControl_threshing() {
-        return control_threshing;
+    public double getControlThreshing() {
+        return controlThreshing;
     }
 
-    public void setControl_threshing(double control_threshing) {
-        this.control_threshing = control_threshing;
+    public void setControlThreshing(double controlThreshing) {
+        this.controlThreshing = controlThreshing;
     }
 
     public double getHumidity() {
@@ -510,44 +510,44 @@ public class AgroOperation {
         this.humidity = humidity;
     }
 
-    public double getProtein_content() {
-        return protein_content;
+    public double getProteinContent() {
+        return proteinContent;
     }
 
-    public void setProtein_content(double protein_content) {
-        this.protein_content = protein_content;
+    public void setProteinContent(double proteinContent) {
+        this.proteinContent = proteinContent;
     }
 
-    public double getOil_content() {
-        return oil_content;
+    public double getOilContent() {
+        return oilContent;
     }
 
-    public void setOil_content(double oil_content) {
-        this.oil_content = oil_content;
+    public void setOilContent(double oilContent) {
+        this.oilContent = oilContent;
     }
 
-    public int getHistory_item_id() {
-        return history_item_id;
+    public int getHistoryItemId() {
+        return historyItemId;
     }
 
-    public void setHistory_item_id(int history_item_id) {
-        this.history_item_id = history_item_id;
+    public void setHistoryItemId(int historyItemId) {
+        this.historyItemId = historyItemId;
     }
 
-    public boolean isNotify_responsible_users() {
-        return notify_responsible_users;
+    public boolean isNotifyResponsibleUsers() {
+        return notifyResponsibleUsers;
     }
 
-    public void setNotify_responsible_users(boolean notify_responsible_users) {
-        this.notify_responsible_users = notify_responsible_users;
+    public void setNotifyResponsibleUsers(boolean notifyResponsibleUsers) {
+        this.notifyResponsibleUsers = notifyResponsibleUsers;
     }
 
-    public String getX_custom_fields_data() {
-        return x_custom_fields_data;
+    public String getXCustomFieldsData() {
+        return xCustomFieldsData;
     }
 
-    public void setX_custom_fields_data(String x_custom_fields_data) {
-        this.x_custom_fields_data = x_custom_fields_data;
+    public void setXCustomFieldsData(String xCustomFieldsData) {
+        this.xCustomFieldsData = xCustomFieldsData;
     }
 
     @Override
@@ -555,12 +555,12 @@ public class AgroOperation {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AgroOperation that = (AgroOperation) o;
-        return Double.compare(planned_area, that.planned_area) == 0 && Double.compare(completed_area, that.completed_area) == 0 && Double.compare(harvested_weight, that.harvested_weight) == 0 && season == that.season && Double.compare(planned_row_spacing, that.planned_row_spacing) == 0 && Double.compare(planned_plant_spacing, that.planned_plant_spacing) == 0 && Double.compare(planned_depth, that.planned_depth) == 0 && Double.compare(planned_speed, that.planned_speed) == 0 && Double.compare(planned_water_rate, that.planned_water_rate) == 0 && Double.compare(fact_water_rate, that.fact_water_rate) == 0 && Double.compare(covered_area, that.covered_area) == 0 && Double.compare(covered_area_by_track, that.covered_area_by_track) == 0 && Double.compare(machine_work_area, that.machine_work_area) == 0 && agro_recommendation_id == that.agro_recommendation_id && locked_to_edit == that.locked_to_edit && Double.compare(control_threshing, that.control_threshing) == 0 && Double.compare(humidity, that.humidity) == 0 && Double.compare(protein_content, that.protein_content) == 0 && Double.compare(oil_content, that.oil_content) == 0 && history_item_id == that.history_item_id && notify_responsible_users == that.notify_responsible_users && Objects.equals(id, that.id) && Objects.equals(field, that.field) && Objects.equals(fieldShape, that.fieldShape) && Objects.equals(agriWorkPlan, that.agriWorkPlan) && Objects.equals(applications_type, that.applications_type) && Objects.equals(operation_number, that.operation_number) && Objects.equals(custom_name, that.custom_name) && Objects.equals(workType, that.workType) && Objects.equals(status, that.status) && Objects.equals(calc_by, that.calc_by) && Objects.equals(planned_start_date, that.planned_start_date) && Objects.equals(planned_end_date, that.planned_end_date) && Objects.equals(completed_date, that.completed_date) && Objects.equals(completed_datetime, that.completed_datetime) && Objects.equals(additional_info, that.additional_info) && Objects.equals(description, that.description) && Objects.equals(created_at, that.created_at) && Objects.equals(updated_at, that.updated_at) && Objects.equals(external_id, that.external_id) && Objects.equals(actual_start_datetime, that.actual_start_datetime) && Objects.equals(idempotency_key, that.idempotency_key) && Objects.equals(locked_at, that.locked_at) && Objects.equals(x_custom_fields_data, that.x_custom_fields_data);
+        return Double.compare(plannedArea, that.plannedArea) == 0 && Double.compare(completedArea, that.completedArea) == 0 && Double.compare(harvestedWeight, that.harvestedWeight) == 0 && season == that.season && Double.compare(plannedRowSpacing, that.plannedRowSpacing) == 0 && Double.compare(plannedPlantSpacing, that.plannedPlantSpacing) == 0 && Double.compare(plannedDepth, that.plannedDepth) == 0 && Double.compare(plannedSpeed, that.plannedSpeed) == 0 && Double.compare(plannedWaterRate, that.plannedWaterRate) == 0 && Double.compare(factWaterRate, that.factWaterRate) == 0 && Double.compare(coveredArea, that.coveredArea) == 0 && Double.compare(coveredAreaByTrack, that.coveredAreaByTrack) == 0 && Double.compare(machineWorkArea, that.machineWorkArea) == 0 && agroRecommendationId == that.agroRecommendationId && lockedToEdit == that.lockedToEdit && Double.compare(controlThreshing, that.controlThreshing) == 0 && Double.compare(humidity, that.humidity) == 0 && Double.compare(proteinContent, that.proteinContent) == 0 && Double.compare(oilContent, that.oilContent) == 0 && historyItemId == that.historyItemId && notifyResponsibleUsers == that.notifyResponsibleUsers && Objects.equals(id, that.id) && Objects.equals(field, that.field) && Objects.equals(fieldShape, that.fieldShape) && Objects.equals(agriWorkPlan, that.agriWorkPlan) && Objects.equals(applicationsType, that.applicationsType) && Objects.equals(operationNumber, that.operationNumber) && Objects.equals(customName, that.customName) && Objects.equals(workType, that.workType) && Objects.equals(status, that.status) && Objects.equals(calcBy, that.calcBy) && Objects.equals(plannedStartDate, that.plannedStartDate) && Objects.equals(plannedEndDate, that.plannedEndDate) && Objects.equals(completedDate, that.completedDate) && Objects.equals(completedDatetime, that.completedDatetime) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(description, that.description) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(externalId, that.externalId) && Objects.equals(actualStartDatetime, that.actualStartDatetime) && Objects.equals(idempotencyKey, that.idempotencyKey) && Objects.equals(lockedAt, that.lockedAt) && Objects.equals(xCustomFieldsData, that.xCustomFieldsData);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, field, fieldShape, agriWorkPlan, applications_type, operation_number, custom_name, workType, status, calc_by, planned_area, completed_area, harvested_weight, planned_start_date, planned_end_date, completed_date, completed_datetime, season, planned_row_spacing, planned_plant_spacing, planned_depth, planned_speed, planned_water_rate, fact_water_rate, covered_area, covered_area_by_track, machine_work_area, additional_info, description, created_at, updated_at, external_id, actual_start_datetime, agro_recommendation_id, locked_to_edit, idempotency_key, locked_at, control_threshing, humidity, protein_content, oil_content, history_item_id, notify_responsible_users, x_custom_fields_data);
+        return Objects.hash(id, field, fieldShape, agriWorkPlan, applicationsType, operationNumber, customName, workType, status, calcBy, plannedArea, completedArea, harvestedWeight, plannedStartDate, plannedEndDate, completedDate, completedDatetime, season, plannedRowSpacing, plannedPlantSpacing, plannedDepth, plannedSpeed, plannedWaterRate, factWaterRate, coveredArea, coveredAreaByTrack, machineWorkArea, additionalInfo, description, createdAt, updatedAt, externalId, actualStartDatetime, agroRecommendationId, lockedToEdit, idempotencyKey, lockedAt, controlThreshing, humidity, proteinContent, oilContent, historyItemId, notifyResponsibleUsers, xCustomFieldsData);
     }
 
     @Override
@@ -570,46 +570,46 @@ public class AgroOperation {
                 ", field=" + field +
                 ", fieldShape=" + fieldShape +
                 ", agriWorkPlan=" + agriWorkPlan +
-                ", applications_type='" + applications_type + '\'' +
-                ", operation_number='" + operation_number + '\'' +
-                ", custom_name='" + custom_name + '\'' +
+                ", applicationsType='" + applicationsType + '\'' +
+                ", operationNumber='" + operationNumber + '\'' +
+                ", customName='" + customName + '\'' +
                 ", workType=" + workType +
                 ", status='" + status + '\'' +
-                ", calc_by='" + calc_by + '\'' +
-                ", planned_area=" + planned_area +
-                ", completed_area=" + completed_area +
-                ", harvested_weight=" + harvested_weight +
-                ", planned_start_date=" + planned_start_date +
-                ", planned_end_date=" + planned_end_date +
-                ", completed_date=" + completed_date +
-                ", completed_datetime=" + completed_datetime +
+                ", calcBy='" + calcBy + '\'' +
+                ", plannedArea=" + plannedArea +
+                ", completedArea=" + completedArea +
+                ", harvestedWeight=" + harvestedWeight +
+                ", plannedStartDate=" + plannedStartDate +
+                ", plannedEndDate=" + plannedEndDate +
+                ", completedDate=" + completedDate +
+                ", completedDatetime=" + completedDatetime +
                 ", season=" + season +
-                ", planned_row_spacing=" + planned_row_spacing +
-                ", planned_plant_spacing=" + planned_plant_spacing +
-                ", planned_depth=" + planned_depth +
-                ", planned_speed=" + planned_speed +
-                ", planned_water_rate=" + planned_water_rate +
-                ", fact_water_rate=" + fact_water_rate +
-                ", covered_area=" + covered_area +
-                ", covered_area_by_track=" + covered_area_by_track +
-                ", machine_work_area=" + machine_work_area +
-                ", additional_info='" + additional_info + '\'' +
+                ", plannedRowSpacing=" + plannedRowSpacing +
+                ", plannedPlantSpacing=" + plannedPlantSpacing +
+                ", plannedDepth=" + plannedDepth +
+                ", plannedSpeed=" + plannedSpeed +
+                ", plannedWaterRate=" + plannedWaterRate +
+                ", factWaterRate=" + factWaterRate +
+                ", coveredArea=" + coveredArea +
+                ", coveredAreaByTrack=" + coveredAreaByTrack +
+                ", machineWorkArea=" + machineWorkArea +
+                ", additionalInfo='" + additionalInfo + '\'' +
                 ", description='" + description + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
-                ", external_id='" + external_id + '\'' +
-                ", actual_start_datetime=" + actual_start_datetime +
-                ", agro_recommendation_id=" + agro_recommendation_id +
-                ", locked_to_edit=" + locked_to_edit +
-                ", idempotency_key='" + idempotency_key + '\'' +
-                ", locked_at='" + locked_at + '\'' +
-                ", control_threshing=" + control_threshing +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", externalId='" + externalId + '\'' +
+                ", actualStartDatetime=" + actualStartDatetime +
+                ", agroRecommendationId=" + agroRecommendationId +
+                ", lockedToEdit=" + lockedToEdit +
+                ", idempotencyKey='" + idempotencyKey + '\'' +
+                ", lockedAt='" + lockedAt + '\'' +
+                ", controlThreshing=" + controlThreshing +
                 ", humidity=" + humidity +
-                ", protein_content=" + protein_content +
-                ", oil_content=" + oil_content +
-                ", history_item_id=" + history_item_id +
-                ", notify_responsible_users=" + notify_responsible_users +
-                ", x_custom_fields_data='" + x_custom_fields_data + '\'' +
+                ", proteinContent=" + proteinContent +
+                ", oilContent=" + oilContent +
+                ", historyItemId=" + historyItemId +
+                ", notifyResponsibleUsers=" + notifyResponsibleUsers +
+                ", xCustomFieldsData='" + xCustomFieldsData + '\'' +
                 '}';
     }
 }

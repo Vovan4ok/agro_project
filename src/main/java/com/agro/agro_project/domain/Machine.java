@@ -24,44 +24,44 @@ public class Machine {
     private short year;
 
     @Column(name="registration_number", length=20)
-    private String registration_number;
+    private String registrationNumber;
 
     @Column(name="inventory_number", length=20)
-    private String inventory_number;
+    private String inventoryNumber;
 
     @ManyToOne
     @JoinColumn(name="machine_group_id")
     private MachineGroup machineGroup;
 
     @Column(name="machine_type", length=20)
-    private String machine_type;
+    private String machineType;
 
     @Column(name="machine_subtype", length=20)
-    private String machine_subtype;
+    private String machineSubtype;
 
     @Column(name="avatar_id")
-    private short avatar_id;
+    private short avatarId;
 
     @Column(name="chassis_serial_number", length=20)
-    private String chassis_serial_number;
+    private String chassisSerialNumber;
 
     @Column(name="engine_serial_number", length=20)
-    private String engine_serial_number;
+    private String engineSerialNumber;
 
     @Column(name="engine_power")
-    private short engine_power;
+    private short enginePower;
 
     @Column(name="fuel_type", length=10)
-    private String fuel_type;
+    private String fuelTypeString;
 
     @Column(name="fuel_tank_size")
-    private double fuel_tank_size;
+    private double fuelTankSize;
 
     @Column(name="fuel_consumption_norm")
-    private double fuel_consumption_norm;
+    private double fuelConsumptionNorm;
 
     @Column(name="legal_company", length=50)
-    private String legal_company;
+    private String legalCompany;
 
     @Column(name="description")
     @Lob
@@ -77,37 +77,37 @@ public class Machine {
 
     @Column(name="additional_1")
     @Lob
-    private String additional_1;
+    private String additional1;
 
     @Column(name="additional_2")
     @Lob
-    private String additional_2;
+    private String additional2;
 
     @Column(name="additional_info")
     @Lob
-    private String additional_info;
+    private String additionalInfo;
 
     @Column(name="phone_number", length=20)
-    private String phone_number;
+    private String phoneNumber;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
     @ManyToOne
     @JoinColumn(name="fuel_type_id")
     private FuelType fuelType;
 
     @Column(name="refuel_source", length=20)
-    private String refuel_source;
+    private String refuelSource;
 
     @Column(name="engine_capacity")
-    private double engine_capacity;
+    private double engineCapacity;
 
     @Column(name="weight")
     private double weight;
@@ -122,53 +122,53 @@ public class Machine {
     private double length;
 
     @Column(name="unchanged_default_implement")
-    private boolean unchanged_default_implement;
+    private boolean unchangedDefaultImplement;
 
     @Column(name="min_downtime_in_seconds")
-    private short min_downtime_in_seconds;
+    private short minDowntimeInSeconds;
 
     @Column(name="calculate_downtimes", length=20)
-    private String calculate_downtimes;
+    private String calculateDowntimes;
 
-    public Machine(Integer id, String name, String model, String manufacturer, short year, String registration_number, String inventory_number, MachineGroup machineGroup, String machine_type, String machine_subtype, short avatar_id, String chassis_serial_number, String engine_serial_number, short engine_power, String fuel_type, double fuel_tank_size, double fuel_consumption_norm, String legal_company, String description, Implement defaultImplement, User defaultDriver, String additional_1, String additional_2, String additional_info, String phone_number, Timestamp created_at, Timestamp updated_at, String external_id, FuelType fuelType, String refuel_source, double engine_capacity, double weight, double height, double width, double length, boolean unchanged_default_implement, short min_downtime_in_seconds, String calculate_downtimes) {
+    public Machine(Integer id, String name, String model, String manufacturer, short year, String registrationNumber, String inventoryNumber, MachineGroup machineGroup, String machineType, String machine_subtype, short avatarId, String chassisSerialNumber, String engineSerialNumber, short enginePower, String fuelTypeString, double fuelTankSize, double fuelConsumptionNorm, String legalCompany, String description, Implement defaultImplement, User defaultDriver, String additional1, String additional2, String additionalInfo, String phoneNumber, Timestamp createdAt, Timestamp updatedAt, String externalId, FuelType fuelType, String refuelSource, double engineCapacity, double weight, double height, double width, double length, boolean unchangedDefaultImplement, short minDowntimeInSeconds, String calculateDowntimes) {
         this.id = id;
         this.name = name;
         this.model = model;
         this.manufacturer = manufacturer;
         this.year = year;
-        this.registration_number = registration_number;
-        this.inventory_number = inventory_number;
+        this.registrationNumber = registrationNumber;
+        this.inventoryNumber = inventoryNumber;
         this.machineGroup = machineGroup;
-        this.machine_type = machine_type;
-        this.machine_subtype = machine_subtype;
-        this.avatar_id = avatar_id;
-        this.chassis_serial_number = chassis_serial_number;
-        this.engine_serial_number = engine_serial_number;
-        this.engine_power = engine_power;
-        this.fuel_type = fuel_type;
-        this.fuel_tank_size = fuel_tank_size;
-        this.fuel_consumption_norm = fuel_consumption_norm;
-        this.legal_company = legal_company;
+        this.machineType = machineType;
+        this.machineSubtype = machine_subtype;
+        this.avatarId = avatarId;
+        this.chassisSerialNumber = chassisSerialNumber;
+        this.engineSerialNumber = engineSerialNumber;
+        this.enginePower = enginePower;
+        this.fuelTypeString = fuelTypeString;
+        this.fuelTankSize = fuelTankSize;
+        this.fuelConsumptionNorm = fuelConsumptionNorm;
+        this.legalCompany = legalCompany;
         this.description = description;
         this.defaultImplement = defaultImplement;
         this.defaultDriver = defaultDriver;
-        this.additional_1 = additional_1;
-        this.additional_2 = additional_2;
-        this.additional_info = additional_info;
-        this.phone_number = phone_number;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
-        this.external_id = external_id;
+        this.additional1 = additional1;
+        this.additional2 = additional2;
+        this.additionalInfo = additionalInfo;
+        this.phoneNumber = phoneNumber;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.externalId = externalId;
         this.fuelType = fuelType;
-        this.refuel_source = refuel_source;
-        this.engine_capacity = engine_capacity;
+        this.refuelSource = refuelSource;
+        this.engineCapacity = engineCapacity;
         this.weight = weight;
         this.height = height;
         this.width = width;
         this.length = length;
-        this.unchanged_default_implement = unchanged_default_implement;
-        this.min_downtime_in_seconds = min_downtime_in_seconds;
-        this.calculate_downtimes = calculate_downtimes;
+        this.unchangedDefaultImplement = unchangedDefaultImplement;
+        this.minDowntimeInSeconds = minDowntimeInSeconds;
+        this.calculateDowntimes = calculateDowntimes;
     }
 
     public Machine() {
@@ -214,20 +214,20 @@ public class Machine {
         this.year = year;
     }
 
-    public String getRegistration_number() {
-        return registration_number;
+    public String getRegistrationNumber() {
+        return registrationNumber;
     }
 
-    public void setRegistration_number(String registration_number) {
-        this.registration_number = registration_number;
+    public void setRegistrationNumber(String registrationNumber) {
+        this.registrationNumber = registrationNumber;
     }
 
-    public String getInventory_number() {
-        return inventory_number;
+    public String getInventoryNumber() {
+        return inventoryNumber;
     }
 
-    public void setInventory_number(String inventory_number) {
-        this.inventory_number = inventory_number;
+    public void setInventoryNumber(String inventoryNumber) {
+        this.inventoryNumber = inventoryNumber;
     }
 
     public MachineGroup getMachineGroup() {
@@ -238,84 +238,84 @@ public class Machine {
         this.machineGroup = machineGroup;
     }
 
-    public String getMachine_type() {
-        return machine_type;
+    public String getMachineType() {
+        return machineType;
     }
 
-    public void setMachine_type(String machine_type) {
-        this.machine_type = machine_type;
+    public void setMachineType(String machineType) {
+        this.machineType = machineType;
     }
 
-    public String getMachine_subtype() {
-        return machine_subtype;
+    public String getMachineSubtype() {
+        return machineSubtype;
     }
 
-    public void setMachine_subtype(String machine_subtype) {
-        this.machine_subtype = machine_subtype;
+    public void setMachineSubtype(String machineSubtype) {
+        this.machineSubtype = machineSubtype;
     }
 
-    public short getAvatar_id() {
-        return avatar_id;
+    public short getAvatarId() {
+        return avatarId;
     }
 
-    public void setAvatar_id(short avatar_id) {
-        this.avatar_id = avatar_id;
+    public void setAvatarId(short avatarId) {
+        this.avatarId = avatarId;
     }
 
-    public String getChassis_serial_number() {
-        return chassis_serial_number;
+    public String getChassisSerialNumber() {
+        return chassisSerialNumber;
     }
 
-    public void setChassis_serial_number(String chassis_serial_number) {
-        this.chassis_serial_number = chassis_serial_number;
+    public void setChassisSerialNumber(String chassisSerialNumber) {
+        this.chassisSerialNumber = chassisSerialNumber;
     }
 
-    public String getEngine_serial_number() {
-        return engine_serial_number;
+    public String getEngineSerialNumber() {
+        return engineSerialNumber;
     }
 
-    public void setEngine_serial_number(String engine_serial_number) {
-        this.engine_serial_number = engine_serial_number;
+    public void setEngineSerialNumber(String engineSerialNumber) {
+        this.engineSerialNumber = engineSerialNumber;
     }
 
-    public short getEngine_power() {
-        return engine_power;
+    public short getEnginePower() {
+        return enginePower;
     }
 
-    public void setEngine_power(short engine_power) {
-        this.engine_power = engine_power;
+    public void setEnginePower(short enginePower) {
+        this.enginePower = enginePower;
     }
 
-    public String getFuel_type() {
-        return fuel_type;
+    public String getFuelTypeString() {
+        return fuelTypeString;
     }
 
-    public void setFuel_type(String fuel_type) {
-        this.fuel_type = fuel_type;
+    public void setFuelTypeString(String fuelTypeString) {
+        this.fuelTypeString = fuelTypeString;
     }
 
-    public double getFuel_tank_size() {
-        return fuel_tank_size;
+    public double getFuelTankSize() {
+        return fuelTankSize;
     }
 
-    public void setFuel_tank_size(double fuel_tank_size) {
-        this.fuel_tank_size = fuel_tank_size;
+    public void setFuelTankSize(double fuelTankSize) {
+        this.fuelTankSize = fuelTankSize;
     }
 
-    public double getFuel_consumption_norm() {
-        return fuel_consumption_norm;
+    public double getFuelConsumptionNorm() {
+        return fuelConsumptionNorm;
     }
 
-    public void setFuel_consumption_norm(double fuel_consumption_norm) {
-        this.fuel_consumption_norm = fuel_consumption_norm;
+    public void setFuelConsumptionNorm(double fuelConsumptionNorm) {
+        this.fuelConsumptionNorm = fuelConsumptionNorm;
     }
 
-    public String getLegal_company() {
-        return legal_company;
+    public String getLegalCompany() {
+        return legalCompany;
     }
 
-    public void setLegal_company(String legal_company) {
-        this.legal_company = legal_company;
+    public void setLegalCompany(String legalCompany) {
+        this.legalCompany = legalCompany;
     }
 
     public String getDescription() {
@@ -342,60 +342,60 @@ public class Machine {
         this.defaultDriver = defaultDriver;
     }
 
-    public String getAdditional_1() {
-        return additional_1;
+    public String getAdditional1() {
+        return additional1;
     }
 
-    public void setAdditional_1(String additional_1) {
-        this.additional_1 = additional_1;
+    public void setAdditional1(String additional1) {
+        this.additional1 = additional1;
     }
 
-    public String getAdditional_2() {
-        return additional_2;
+    public String getAdditional2() {
+        return additional2;
     }
 
-    public void setAdditional_2(String additional_2) {
-        this.additional_2 = additional_2;
+    public void setAdditional2(String additional2) {
+        this.additional2 = additional2;
     }
 
-    public String getAdditional_info() {
-        return additional_info;
+    public String getAdditionalInfo() {
+        return additionalInfo;
     }
 
-    public void setAdditional_info(String additional_info) {
-        this.additional_info = additional_info;
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
 
-    public String getPhone_number() {
-        return phone_number;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
     public FuelType getFuelType() {
@@ -406,20 +406,20 @@ public class Machine {
         this.fuelType = fuelType;
     }
 
-    public String getRefuel_source() {
-        return refuel_source;
+    public String getRefuelSource() {
+        return refuelSource;
     }
 
-    public void setRefuel_source(String refuel_source) {
-        this.refuel_source = refuel_source;
+    public void setRefuelSource(String refuelSource) {
+        this.refuelSource = refuelSource;
     }
 
-    public double getEngine_capacity() {
-        return engine_capacity;
+    public double getEngineCapacity() {
+        return engineCapacity;
     }
 
-    public void setEngine_capacity(double engine_capacity) {
-        this.engine_capacity = engine_capacity;
+    public void setEngineCapacity(double engineCapacity) {
+        this.engineCapacity = engineCapacity;
     }
 
     public double getWeight() {
@@ -454,28 +454,28 @@ public class Machine {
         this.length = length;
     }
 
-    public boolean isUnchanged_default_implement() {
-        return unchanged_default_implement;
+    public boolean isUnchangedDefaultImplement() {
+        return unchangedDefaultImplement;
     }
 
-    public void setUnchanged_default_implement(boolean unchanged_default_implement) {
-        this.unchanged_default_implement = unchanged_default_implement;
+    public void setUnchangedDefaultImplement(boolean unchangedDefaultImplement) {
+        this.unchangedDefaultImplement = unchangedDefaultImplement;
     }
 
-    public short getMin_downtime_in_seconds() {
-        return min_downtime_in_seconds;
+    public short getMinDowntimeInSeconds() {
+        return minDowntimeInSeconds;
     }
 
-    public void setMin_downtime_in_seconds(short min_downtime_in_seconds) {
-        this.min_downtime_in_seconds = min_downtime_in_seconds;
+    public void setMinDowntimeInSeconds(short minDowntimeInSeconds) {
+        this.minDowntimeInSeconds = minDowntimeInSeconds;
     }
 
-    public String getCalculate_downtimes() {
-        return calculate_downtimes;
+    public String getCalculateDowntimes() {
+        return calculateDowntimes;
     }
 
-    public void setCalculate_downtimes(String calculate_downtimes) {
-        this.calculate_downtimes = calculate_downtimes;
+    public void setCalculateDowntimes(String calculateDowntimes) {
+        this.calculateDowntimes = calculateDowntimes;
     }
 
     @Override
@@ -483,12 +483,12 @@ public class Machine {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Machine machine = (Machine) o;
-        return year == machine.year && avatar_id == machine.avatar_id && engine_power == machine.engine_power && Double.compare(fuel_tank_size, machine.fuel_tank_size) == 0 && Double.compare(fuel_consumption_norm, machine.fuel_consumption_norm) == 0 && Double.compare(engine_capacity, machine.engine_capacity) == 0 && Double.compare(weight, machine.weight) == 0 && Double.compare(height, machine.height) == 0 && Double.compare(width, machine.width) == 0 && Double.compare(length, machine.length) == 0 && unchanged_default_implement == machine.unchanged_default_implement && min_downtime_in_seconds == machine.min_downtime_in_seconds && Objects.equals(id, machine.id) && Objects.equals(name, machine.name) && Objects.equals(model, machine.model) && Objects.equals(manufacturer, machine.manufacturer) && Objects.equals(registration_number, machine.registration_number) && Objects.equals(inventory_number, machine.inventory_number) && Objects.equals(machineGroup, machine.machineGroup) && Objects.equals(machine_type, machine.machine_type) && Objects.equals(machine_subtype, machine.machine_subtype) && Objects.equals(chassis_serial_number, machine.chassis_serial_number) && Objects.equals(engine_serial_number, machine.engine_serial_number) && Objects.equals(fuel_type, machine.fuel_type) && Objects.equals(legal_company, machine.legal_company) && Objects.equals(description, machine.description) && Objects.equals(defaultImplement, machine.defaultImplement) && Objects.equals(defaultDriver, machine.defaultDriver) && Objects.equals(additional_1, machine.additional_1) && Objects.equals(additional_2, machine.additional_2) && Objects.equals(additional_info, machine.additional_info) && Objects.equals(phone_number, machine.phone_number) && Objects.equals(created_at, machine.created_at) && Objects.equals(updated_at, machine.updated_at) && Objects.equals(external_id, machine.external_id) && Objects.equals(fuelType, machine.fuelType) && Objects.equals(refuel_source, machine.refuel_source) && Objects.equals(calculate_downtimes, machine.calculate_downtimes);
+        return year == machine.year && avatarId == machine.avatarId && enginePower == machine.enginePower && Double.compare(fuelTankSize, machine.fuelTankSize) == 0 && Double.compare(fuelConsumptionNorm, machine.fuelConsumptionNorm) == 0 && Double.compare(engineCapacity, machine.engineCapacity) == 0 && Double.compare(weight, machine.weight) == 0 && Double.compare(height, machine.height) == 0 && Double.compare(width, machine.width) == 0 && Double.compare(length, machine.length) == 0 && unchangedDefaultImplement == machine.unchangedDefaultImplement && minDowntimeInSeconds == machine.minDowntimeInSeconds && Objects.equals(id, machine.id) && Objects.equals(name, machine.name) && Objects.equals(model, machine.model) && Objects.equals(manufacturer, machine.manufacturer) && Objects.equals(registrationNumber, machine.registrationNumber) && Objects.equals(inventoryNumber, machine.inventoryNumber) && Objects.equals(machineGroup, machine.machineGroup) && Objects.equals(machineType, machine.machineType) && Objects.equals(machineSubtype, machine.machineSubtype) && Objects.equals(chassisSerialNumber, machine.chassisSerialNumber) && Objects.equals(engineSerialNumber, machine.engineSerialNumber) && Objects.equals(fuelTypeString, machine.fuelTypeString) && Objects.equals(legalCompany, machine.legalCompany) && Objects.equals(description, machine.description) && Objects.equals(defaultImplement, machine.defaultImplement) && Objects.equals(defaultDriver, machine.defaultDriver) && Objects.equals(additional1, machine.additional1) && Objects.equals(additional2, machine.additional2) && Objects.equals(additionalInfo, machine.additionalInfo) && Objects.equals(phoneNumber, machine.phoneNumber) && Objects.equals(createdAt, machine.createdAt) && Objects.equals(updatedAt, machine.updatedAt) && Objects.equals(externalId, machine.externalId) && Objects.equals(fuelTypeString, machine.fuelTypeString) && Objects.equals(refuelSource, machine.refuelSource) && Objects.equals(calculateDowntimes, machine.calculateDowntimes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, model, manufacturer, year, registration_number, inventory_number, machineGroup, machine_type, machine_subtype, avatar_id, chassis_serial_number, engine_serial_number, engine_power, fuel_type, fuel_tank_size, fuel_consumption_norm, legal_company, description, defaultImplement, defaultDriver, additional_1, additional_2, additional_info, phone_number, created_at, updated_at, external_id, fuelType, refuel_source, engine_capacity, weight, height, width, length, unchanged_default_implement, min_downtime_in_seconds, calculate_downtimes);
+        return Objects.hash(id, name, model, manufacturer, year, registrationNumber, inventoryNumber, machineGroup, machineType, machineSubtype, avatarId, chassisSerialNumber, engineSerialNumber, enginePower, fuelTypeString, fuelTankSize, fuelConsumptionNorm, legalCompany, description, defaultImplement, defaultDriver, additional1, additional2, additionalInfo, phoneNumber, createdAt, updatedAt, externalId, fuelTypeString, refuelSource, engineCapacity, weight, height, width, length, unchangedDefaultImplement, minDowntimeInSeconds, calculateDowntimes);
     }
 
     @Override
@@ -499,39 +499,39 @@ public class Machine {
                 ", model='" + model + '\'' +
                 ", manufacturer='" + manufacturer + '\'' +
                 ", year=" + year +
-                ", registration_number='" + registration_number + '\'' +
-                ", inventory_number='" + inventory_number + '\'' +
+                ", registrationNumber='" + registrationNumber + '\'' +
+                ", inventoryNumber='" + inventoryNumber + '\'' +
                 ", machineGroup=" + machineGroup +
-                ", machine_type='" + machine_type + '\'' +
-                ", machine_subtype='" + machine_subtype + '\'' +
-                ", avatar_id=" + avatar_id +
-                ", chassis_serial_number='" + chassis_serial_number + '\'' +
-                ", engine_serial_number='" + engine_serial_number + '\'' +
-                ", engine_power=" + engine_power +
-                ", fuel_type='" + fuel_type + '\'' +
-                ", fuel_tank_size=" + fuel_tank_size +
-                ", fuel_consumption_norm=" + fuel_consumption_norm +
-                ", legal_company='" + legal_company + '\'' +
+                ", machineType='" + machineType + '\'' +
+                ", machineSubtype='" + machineSubtype + '\'' +
+                ", avatarId=" + avatarId +
+                ", chassisSerialNumber='" + chassisSerialNumber + '\'' +
+                ", engineSerialNumber='" + engineSerialNumber + '\'' +
+                ", enginePower=" + enginePower +
+                ", fuelTypeString='" + fuelTypeString + '\'' +
+                ", fuelTankSize=" + fuelTankSize +
+                ", fuelConsumptionNorm=" + fuelConsumptionNorm +
+                ", legalCompany='" + legalCompany + '\'' +
                 ", description='" + description + '\'' +
                 ", defaultImplement=" + defaultImplement +
                 ", defaultDriver=" + defaultDriver +
-                ", additional_1='" + additional_1 + '\'' +
-                ", additional_2='" + additional_2 + '\'' +
-                ", additional_info='" + additional_info + '\'' +
-                ", phone_number='" + phone_number + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
-                ", external_id='" + external_id + '\'' +
+                ", additional1='" + additional1 + '\'' +
+                ", additional2='" + additional2 + '\'' +
+                ", additionalInfo='" + additionalInfo + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", externalId='" + externalId + '\'' +
                 ", fuelType=" + fuelType +
-                ", refuel_source='" + refuel_source + '\'' +
-                ", engine_capacity=" + engine_capacity +
+                ", refuelSource='" + refuelSource + '\'' +
+                ", engineCapacity=" + engineCapacity +
                 ", weight=" + weight +
                 ", height=" + height +
                 ", width=" + width +
                 ", length=" + length +
-                ", unchanged_default_implement=" + unchanged_default_implement +
-                ", min_downtime_in_seconds=" + min_downtime_in_seconds +
-                ", calculate_downtimes='" + calculate_downtimes + '\'' +
+                ", unchangedDefaultImplement=" + unchangedDefaultImplement +
+                ", minDowntimeInSeconds=" + minDowntimeInSeconds +
+                ", calculateDowntimes='" + calculateDowntimes + '\'' +
                 '}';
     }
 }

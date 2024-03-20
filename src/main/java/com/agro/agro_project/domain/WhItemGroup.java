@@ -16,7 +16,7 @@ public class WhItemGroup {
     private WhItemGroup parent;
 
     @Column(name="group_type", length=20)
-    private String group_type;
+    private String groupType;
 
     @Column(name="name", length=50)
     private String name;
@@ -26,23 +26,23 @@ public class WhItemGroup {
     private String description;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
-    public WhItemGroup(Short id, WhItemGroup parent, String group_type, String name, String description, String external_id, Timestamp created_at, Timestamp updated_at) {
+    public WhItemGroup(Short id, WhItemGroup parent, String groupType, String name, String description, String externalId, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.parent = parent;
-        this.group_type = group_type;
+        this.groupType = groupType;
         this.name = name;
         this.description = description;
-        this.external_id = external_id;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
+        this.externalId = externalId;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public WhItemGroup() {
@@ -64,12 +64,12 @@ public class WhItemGroup {
         this.parent = parent;
     }
 
-    public String getGroup_type() {
-        return group_type;
+    public String getGroupType() {
+        return groupType;
     }
 
-    public void setGroup_type(String group_type) {
-        this.group_type = group_type;
+    public void setGroupType(String groupType) {
+        this.groupType = groupType;
     }
 
     public String getName() {
@@ -88,28 +88,28 @@ public class WhItemGroup {
         this.description = description;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
@@ -117,12 +117,12 @@ public class WhItemGroup {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         WhItemGroup that = (WhItemGroup) o;
-        return Objects.equals(id, that.id) && Objects.equals(parent, that.parent) && Objects.equals(group_type, that.group_type) && Objects.equals(name, that.name) && Objects.equals(description, that.description) && Objects.equals(external_id, that.external_id) && Objects.equals(created_at, that.created_at) && Objects.equals(updated_at, that.updated_at);
+        return Objects.equals(id, that.id) && Objects.equals(parent, that.parent) && Objects.equals(groupType, that.groupType) && Objects.equals(name, that.name) && Objects.equals(description, that.description) && Objects.equals(externalId, that.externalId) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, parent, group_type, name, description, external_id, created_at, updated_at);
+        return Objects.hash(id, parent, groupType, name, description, externalId, createdAt, updatedAt);
     }
 
     @Override
@@ -130,12 +130,12 @@ public class WhItemGroup {
         return "WhItemGroup{" +
                 "id=" + id +
                 ", parent=" + parent +
-                ", group_type='" + group_type + '\'' +
+                ", groupType='" + groupType + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", external_id='" + external_id + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
+                ", externalId='" + externalId + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }

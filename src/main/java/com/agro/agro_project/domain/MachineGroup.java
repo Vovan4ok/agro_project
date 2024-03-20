@@ -16,29 +16,29 @@ public class MachineGroup {
 
     @Column(name="additional_info")
     @Lob
-    private String additional_info;
+    private String additionalInfo;
 
     @Column(name="description")
     @Lob
     private String description;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
-    public MachineGroup(Short id, String name, String additional_info, String description, String external_id, Timestamp created_at, Timestamp updated_at) {
+    public MachineGroup(Short id, String name, String additionalInfo, String description, String externalId, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.name = name;
-        this.additional_info = additional_info;
+        this.additionalInfo = additionalInfo;
         this.description = description;
-        this.external_id = external_id;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
+        this.externalId = externalId;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public MachineGroup() {
@@ -60,12 +60,12 @@ public class MachineGroup {
         this.name = name;
     }
 
-    public String getAdditional_info() {
-        return additional_info;
+    public String getAdditionalInfo() {
+        return additionalInfo;
     }
 
-    public void setAdditional_info(String additional_info) {
-        this.additional_info = additional_info;
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
 
     public String getDescription() {
@@ -76,28 +76,28 @@ public class MachineGroup {
         this.description = description;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
@@ -105,12 +105,12 @@ public class MachineGroup {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MachineGroup that = (MachineGroup) o;
-        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(additional_info, that.additional_info) && Objects.equals(description, that.description) && Objects.equals(external_id, that.external_id) && Objects.equals(created_at, that.created_at) && Objects.equals(updated_at, that.updated_at);
+        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(description, that.description) && Objects.equals(externalId, that.externalId) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, additional_info, description, external_id, created_at, updated_at);
+        return Objects.hash(id, name, additionalInfo, description, externalId, createdAt, updatedAt);
     }
 
     @Override
@@ -118,11 +118,11 @@ public class MachineGroup {
         return "MachineGroup{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", additional_info='" + additional_info + '\'' +
+                ", additionalInfo='" + additionalInfo + '\'' +
                 ", description='" + description + '\'' +
-                ", external_id='" + external_id + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
+                ", externalId='" + externalId + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }

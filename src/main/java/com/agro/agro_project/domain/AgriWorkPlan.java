@@ -16,10 +16,10 @@ public class AgriWorkPlan {
     private String status;
 
     @Column(name="work_type", length=20)
-    private String work_type;
+    private String workTypeString;
 
     @Column(name="work_subtype", length=50)
-    private String work_subtype;
+    private String workSubtype;
 
     @ManyToOne
     @JoinColumn(name="work_type_id")
@@ -29,86 +29,86 @@ public class AgriWorkPlan {
     private short season;
 
     @Column(name="planned_start_date")
-    private Date planned_start_date;
+    private Date plannedStartDate;
 
     @Column(name="planned_end_date")
-    private Date planned_end_date;
+    private Date plannedEndDate;
 
     @Column(name="additional_info")
     @Lob
-    private String additional_info;
+    private String additionalInfo;
 
     @Column(name="description")
     @Lob
     private String description;
 
     @Column(name="planned_water_rate")
-    private double planned_water_rate;
+    private double plannedWaterRate;
 
     @Column(name="planned_row_spacing")
-    private double planned_row_spacing;
+    private double plannedRowSpacing;
 
     @Column(name="planned_plant_spacing")
-    private double planned_plant_spacing;
+    private double plannedPlantSpacing;
 
     @Column(name="planned_depth")
-    private double planned_depth;
+    private double plannedDepth;
 
     @Column(name="planned_speed")
-    private double planned_speed;
+    private double plannedSpeed;
 
     @Column(name="responsible_person_id")
-    private int responsible_person_id;
+    private int responsiblePersonId;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
     @Column(name="groupable_id")
-    private short groupable_id;
+    private short groupableId;
 
     @Column(name="groupable_type", length=20)
-    private String groupable_type;
+    private String groupableType;
 
     @Column(name="agro_recommendation_id")
-    private short agro_recommendation_id;
+    private short agroRecommendationId;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
     @Column(name="notify_responsible_users")
-    private boolean notify_responsible_users;
+    private boolean notifyResponsibleUsers;
 
     @ManyToOne
     @JoinColumn(name="current_season_id")
     private Season currentSeason;
 
-    public AgriWorkPlan(Short id, String status, String work_type, String work_subtype, WorkType workType, short season, Date planned_start_date, Date planned_end_date, String additional_info, String description, double planned_water_rate, double planned_row_spacing, double planned_plant_spacing, double planned_depth, double planned_speed, int responsible_person_id, String external_id, short groupable_id, String groupable_type, short agro_recommendation_id, Timestamp created_at, Timestamp updated_at, boolean notify_responsible_users, Season currentSeason) {
+    public AgriWorkPlan(Short id, String status, String workTypeString, String workSubtype, WorkType workType, short season, Date plannedStartDate, Date plannedEndDate, String additionalInfo, String description, double plannedWaterRate, double plannedRowSpacing, double plannedPlantSpacing, double plannedDepth, double plannedSpeed, int responsiblePersonId, String externalId, short groupableId, String groupableType, short agroRecommendationId, Timestamp createdAt, Timestamp updatedAt, boolean notifyResponsibleUsers, Season currentSeason) {
         this.id = id;
         this.status = status;
-        this.work_type = work_type;
-        this.work_subtype = work_subtype;
+        this.workTypeString = workTypeString;
+        this.workSubtype = workSubtype;
         this.workType = workType;
         this.season = season;
-        this.planned_start_date = planned_start_date;
-        this.planned_end_date = planned_end_date;
-        this.additional_info = additional_info;
+        this.plannedStartDate = plannedStartDate;
+        this.plannedEndDate = plannedEndDate;
+        this.additionalInfo = additionalInfo;
         this.description = description;
-        this.planned_water_rate = planned_water_rate;
-        this.planned_row_spacing = planned_row_spacing;
-        this.planned_plant_spacing = planned_plant_spacing;
-        this.planned_depth = planned_depth;
-        this.planned_speed = planned_speed;
-        this.responsible_person_id = responsible_person_id;
-        this.external_id = external_id;
-        this.groupable_id = groupable_id;
-        this.groupable_type = groupable_type;
-        this.agro_recommendation_id = agro_recommendation_id;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
-        this.notify_responsible_users = notify_responsible_users;
+        this.plannedWaterRate = plannedWaterRate;
+        this.plannedRowSpacing = plannedRowSpacing;
+        this.plannedPlantSpacing = plannedPlantSpacing;
+        this.plannedDepth = plannedDepth;
+        this.plannedSpeed = plannedSpeed;
+        this.responsiblePersonId = responsiblePersonId;
+        this.externalId = externalId;
+        this.groupableId = groupableId;
+        this.groupableType = groupableType;
+        this.agroRecommendationId = agroRecommendationId;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.notifyResponsibleUsers = notifyResponsibleUsers;
         this.currentSeason = currentSeason;
     }
 
@@ -131,20 +131,20 @@ public class AgriWorkPlan {
         this.status = status;
     }
 
-    public String getWork_type() {
-        return work_type;
+    public String getWorkTypeString() {
+        return workTypeString;
     }
 
-    public void setWork_type(String work_type) {
-        this.work_type = work_type;
+    public void setWorkTypeString(String workTypeString) {
+        this.workTypeString = workTypeString;
     }
 
-    public String getWork_subtype() {
-        return work_subtype;
+    public String getWorkSubtype() {
+        return workSubtype;
     }
 
-    public void setWork_subtype(String work_subtype) {
-        this.work_subtype = work_subtype;
+    public void setWorkSubtype(String workSubtype) {
+        this.workSubtype = workSubtype;
     }
 
     public WorkType getWorkType() {
@@ -163,28 +163,28 @@ public class AgriWorkPlan {
         this.season = season;
     }
 
-    public Date getPlanned_start_date() {
-        return planned_start_date;
+    public Date getPlannedStartDate() {
+        return plannedStartDate;
     }
 
-    public void setPlanned_start_date(Date planned_start_date) {
-        this.planned_start_date = planned_start_date;
+    public void setPlannedStartDate(Date plannedStartDate) {
+        this.plannedStartDate = plannedStartDate;
     }
 
-    public Date getPlanned_end_date() {
-        return planned_end_date;
+    public Date getPlannedEndDate() {
+        return plannedEndDate;
     }
 
-    public void setPlanned_end_date(Date planned_end_date) {
-        this.planned_end_date = planned_end_date;
+    public void setPlannedEndDate(Date plannedEndDate) {
+        this.plannedEndDate = plannedEndDate;
     }
 
-    public String getAdditional_info() {
-        return additional_info;
+    public String getAdditionalInfo() {
+        return additionalInfo;
     }
 
-    public void setAdditional_info(String additional_info) {
-        this.additional_info = additional_info;
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
 
     public String getDescription() {
@@ -195,108 +195,108 @@ public class AgriWorkPlan {
         this.description = description;
     }
 
-    public double getPlanned_water_rate() {
-        return planned_water_rate;
+    public double getPlannedWaterRate() {
+        return plannedWaterRate;
     }
 
-    public void setPlanned_water_rate(double planned_water_rate) {
-        this.planned_water_rate = planned_water_rate;
+    public void setPlannedWaterRate(double plannedWaterRate) {
+        this.plannedWaterRate = plannedWaterRate;
     }
 
-    public double getPlanned_row_spacing() {
-        return planned_row_spacing;
+    public double getPlannedRowSpacing() {
+        return plannedRowSpacing;
     }
 
-    public void setPlanned_row_spacing(double planned_row_spacing) {
-        this.planned_row_spacing = planned_row_spacing;
+    public void setPlannedRowSpacing(double plannedRowSpacing) {
+        this.plannedRowSpacing = plannedRowSpacing;
     }
 
-    public double getPlanned_plant_spacing() {
-        return planned_plant_spacing;
+    public double getPlannedPlantSpacing() {
+        return plannedPlantSpacing;
     }
 
-    public void setPlanned_plant_spacing(double planned_plant_spacing) {
-        this.planned_plant_spacing = planned_plant_spacing;
+    public void setPlannedPlantSpacing(double plannedPlantSpacing) {
+        this.plannedPlantSpacing = plannedPlantSpacing;
     }
 
-    public double getPlanned_depth() {
-        return planned_depth;
+    public double getPlannedDepth() {
+        return plannedDepth;
     }
 
-    public void setPlanned_depth(double planned_depth) {
-        this.planned_depth = planned_depth;
+    public void setPlannedDepth(double plannedDepth) {
+        this.plannedDepth = plannedDepth;
     }
 
-    public double getPlanned_speed() {
-        return planned_speed;
+    public double getPlannedSpeed() {
+        return plannedSpeed;
     }
 
-    public void setPlanned_speed(double planned_speed) {
-        this.planned_speed = planned_speed;
+    public void setPlannedSpeed(double plannedSpeed) {
+        this.plannedSpeed = plannedSpeed;
     }
 
-    public int getResponsible_person_id() {
-        return responsible_person_id;
+    public int getResponsiblePersonId() {
+        return responsiblePersonId;
     }
 
-    public void setResponsible_person_id(int responsible_person_id) {
-        this.responsible_person_id = responsible_person_id;
+    public void setResponsiblePersonId(int responsiblePersonId) {
+        this.responsiblePersonId = responsiblePersonId;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
-    public short getGroupable_id() {
-        return groupable_id;
+    public short getGroupableId() {
+        return groupableId;
     }
 
-    public void setGroupable_id(short groupable_id) {
-        this.groupable_id = groupable_id;
+    public void setGroupableId(short groupableId) {
+        this.groupableId = groupableId;
     }
 
-    public String getGroupable_type() {
-        return groupable_type;
+    public String getGroupableType() {
+        return groupableType;
     }
 
-    public void setGroupable_type(String groupable_type) {
-        this.groupable_type = groupable_type;
+    public void setGroupableType(String groupableType) {
+        this.groupableType = groupableType;
     }
 
-    public short getAgro_recommendation_id() {
-        return agro_recommendation_id;
+    public short getAgroRecommendationId() {
+        return agroRecommendationId;
     }
 
-    public void setAgro_recommendation_id(short agro_recommendation_id) {
-        this.agro_recommendation_id = agro_recommendation_id;
+    public void setAgroRecommendationId(short agroRecommendationId) {
+        this.agroRecommendationId = agroRecommendationId;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
-    public boolean isNotify_responsible_users() {
-        return notify_responsible_users;
+    public boolean isNotifyResponsibleUsers() {
+        return notifyResponsibleUsers;
     }
 
-    public void setNotify_responsible_users(boolean notify_responsible_users) {
-        this.notify_responsible_users = notify_responsible_users;
+    public void setNotifyResponsibleUsers(boolean notifyResponsibleUsers) {
+        this.notifyResponsibleUsers = notifyResponsibleUsers;
     }
 
     public Season getCurrentSeason() {
@@ -312,12 +312,12 @@ public class AgriWorkPlan {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AgriWorkPlan that = (AgriWorkPlan) o;
-        return season == that.season && Double.compare(planned_water_rate, that.planned_water_rate) == 0 && Double.compare(planned_row_spacing, that.planned_row_spacing) == 0 && Double.compare(planned_plant_spacing, that.planned_plant_spacing) == 0 && Double.compare(planned_depth, that.planned_depth) == 0 && Double.compare(planned_speed, that.planned_speed) == 0 && responsible_person_id == that.responsible_person_id && groupable_id == that.groupable_id && agro_recommendation_id == that.agro_recommendation_id && notify_responsible_users == that.notify_responsible_users && Objects.equals(id, that.id) && Objects.equals(status, that.status) && Objects.equals(work_type, that.work_type) && Objects.equals(work_subtype, that.work_subtype) && Objects.equals(workType, that.workType) && Objects.equals(planned_start_date, that.planned_start_date) && Objects.equals(planned_end_date, that.planned_end_date) && Objects.equals(additional_info, that.additional_info) && Objects.equals(description, that.description) && Objects.equals(external_id, that.external_id) && Objects.equals(groupable_type, that.groupable_type) && Objects.equals(created_at, that.created_at) && Objects.equals(updated_at, that.updated_at) && Objects.equals(currentSeason, that.currentSeason);
+        return season == that.season && Double.compare(plannedWaterRate, that.plannedWaterRate) == 0 && Double.compare(plannedRowSpacing, that.plannedRowSpacing) == 0 && Double.compare(plannedPlantSpacing, that.plannedPlantSpacing) == 0 && Double.compare(plannedDepth, that.plannedDepth) == 0 && Double.compare(plannedSpeed, that.plannedSpeed) == 0 && responsiblePersonId == that.responsiblePersonId && groupableId == that.groupableId && agroRecommendationId == that.agroRecommendationId && notifyResponsibleUsers == that.notifyResponsibleUsers && Objects.equals(id, that.id) && Objects.equals(status, that.status) && Objects.equals(workTypeString, that.workTypeString) && Objects.equals(workSubtype, that.workSubtype) && Objects.equals(workTypeString, that.workTypeString) && Objects.equals(plannedStartDate, that.plannedStartDate) && Objects.equals(plannedEndDate, that.plannedEndDate) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(description, that.description) && Objects.equals(externalId, that.externalId) && Objects.equals(groupableType, that.groupableType) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(currentSeason, that.currentSeason);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, status, work_type, work_subtype, workType, season, planned_start_date, planned_end_date, additional_info, description, planned_water_rate, planned_row_spacing, planned_plant_spacing, planned_depth, planned_speed, responsible_person_id, external_id, groupable_id, groupable_type, agro_recommendation_id, created_at, updated_at, notify_responsible_users, currentSeason);
+        return Objects.hash(id, status, workTypeString, workSubtype, workTypeString, season, plannedStartDate, plannedEndDate, additionalInfo, description, plannedWaterRate, plannedRowSpacing, plannedPlantSpacing, plannedDepth, plannedSpeed, responsiblePersonId, externalId, groupableId, groupableType, agroRecommendationId, createdAt, updatedAt, notifyResponsibleUsers, currentSeason);
     }
 
     @Override
@@ -325,27 +325,27 @@ public class AgriWorkPlan {
         return "AgriWorkPlan{" +
                 "id=" + id +
                 ", status='" + status + '\'' +
-                ", work_type='" + work_type + '\'' +
-                ", work_subtype='" + work_subtype + '\'' +
+                ", workTypeString='" + workTypeString + '\'' +
+                ", workSubtype='" + workSubtype + '\'' +
                 ", workType=" + workType +
                 ", season=" + season +
-                ", planned_start_date=" + planned_start_date +
-                ", planned_end_date=" + planned_end_date +
-                ", additional_info='" + additional_info + '\'' +
+                ", plannedStartDate=" + plannedStartDate +
+                ", plannedEndDate=" + plannedEndDate +
+                ", additionalInfo='" + additionalInfo + '\'' +
                 ", description='" + description + '\'' +
-                ", planned_water_rate=" + planned_water_rate +
-                ", planned_row_spacing=" + planned_row_spacing +
-                ", planned_plant_spacing=" + planned_plant_spacing +
-                ", planned_depth=" + planned_depth +
-                ", planned_speed=" + planned_speed +
-                ", responsible_person_id=" + responsible_person_id +
-                ", external_id='" + external_id + '\'' +
-                ", groupable_id=" + groupable_id +
-                ", groupable_type='" + groupable_type + '\'' +
-                ", agro_recommendation_id=" + agro_recommendation_id +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
-                ", notify_responsible_users=" + notify_responsible_users +
+                ", plannedWaterRate=" + plannedWaterRate +
+                ", plannedRowSpacing=" + plannedRowSpacing +
+                ", plannedPlantSpacing=" + plannedPlantSpacing +
+                ", plannedDepth=" + plannedDepth +
+                ", plannedSpeed=" + plannedSpeed +
+                ", responsiblePersonId=" + responsiblePersonId +
+                ", externalId='" + externalId + '\'' +
+                ", groupableId=" + groupableId +
+                ", groupableType='" + groupableType + '\'' +
+                ", agroRecommendationId=" + agroRecommendationId +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", notifyResponsibleUsers=" + notifyResponsibleUsers +
                 ", currentSeason=" + currentSeason +
                 '}';
     }

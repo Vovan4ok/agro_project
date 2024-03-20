@@ -15,29 +15,29 @@ public class WorkTypeGroup {
     private String name;
 
     @Column(name="standard_name", length=30)
-    private String standard_name;
+    private String standardName;
 
     @Column(name="description")
     @Lob
     private String description;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
-    public WorkTypeGroup(Short id, String name, String standard_name, String description, String external_id, Timestamp created_at, Timestamp updated_at) {
+    public WorkTypeGroup(Short id, String name, String standardName, String description, String externalId, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.name = name;
-        this.standard_name = standard_name;
+        this.standardName = standardName;
         this.description = description;
-        this.external_id = external_id;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
+        this.externalId = externalId;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public WorkTypeGroup() {
@@ -59,12 +59,12 @@ public class WorkTypeGroup {
         this.name = name;
     }
 
-    public String getStandard_name() {
-        return standard_name;
+    public String getStandardName() {
+        return standardName;
     }
 
-    public void setStandard_name(String standard_name) {
-        this.standard_name = standard_name;
+    public void setStandardName(String standardName) {
+        this.standardName = standardName;
     }
 
     public String getDescription() {
@@ -75,28 +75,28 @@ public class WorkTypeGroup {
         this.description = description;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
@@ -104,12 +104,12 @@ public class WorkTypeGroup {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         WorkTypeGroup that = (WorkTypeGroup) o;
-        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(standard_name, that.standard_name) && Objects.equals(description, that.description) && Objects.equals(external_id, that.external_id) && Objects.equals(created_at, that.created_at) && Objects.equals(updated_at, that.updated_at);
+        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(standardName, that.standardName) && Objects.equals(description, that.description) && Objects.equals(externalId, that.externalId) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, standard_name, description, external_id, created_at, updated_at);
+        return Objects.hash(id, name, standardName, description, externalId, createdAt, updatedAt);
     }
 
     @Override
@@ -117,11 +117,11 @@ public class WorkTypeGroup {
         return "WorkTypeGroup{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", standard_name='" + standard_name + '\'' +
+                ", standardName='" + standardName + '\'' +
                 ", description='" + description + '\'' +
-                ", external_id='" + external_id + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
+                ", externalId='" + externalId + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }

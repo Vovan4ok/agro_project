@@ -19,63 +19,63 @@ public class AdditionalObject {
     private String name;
 
     @Column(name="object_type", length=50)
-    private String object_type;
+    private String objectType;
 
     @Column(name="calculated_area")
-    private double calculated_area;
+    private double calculatedArea;
 
     @Column(name="additional_info")
     @Lob
-    private String additional_info;
+    private String additionalInfo;
 
     @Column(name="description")
     @Lob
     private String description;
 
     @Column(name="geometry_type", length=30)
-    private String geometry_type;
+    private String geometryType;
 
     @Column(name="ppoint_lon")
-    private double point_lon;
+    private double pointLon;
 
     @Column(name="point_lat")
-    private double point_lat;
+    private double pointLat;
 
     @Column(name="administrative_area_name", length=50)
-    private String administrative_area_name;
+    private String administrativeAreaName;
 
     @Column(name="subadministrative_area_name", length=50)
-    private String subadministrative_area_name;
+    private String subadministrativeAreaName;
 
     @Column(name="locality", length=50)
     private String locality;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
-    public AdditionalObject(Short id, FieldGroup fieldGroup, String name, String object_type, double calculated_area, String additional_info, String description, String geometry_type, double point_lon, double point_lat, String administrative_area_name, String subadministrative_area_name, String locality, String external_id, Timestamp created_at, Timestamp updated_at) {
+    public AdditionalObject(Short id, FieldGroup fieldGroup, String name, String objectType, double calculatedArea, String additionalInfo, String description, String geometryType, double pointLon, double pointLat, String administrativeAreaName, String subadministrativeAreaName, String locality, String externalId, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.fieldGroup = fieldGroup;
         this.name = name;
-        this.object_type = object_type;
-        this.calculated_area = calculated_area;
-        this.additional_info = additional_info;
+        this.objectType = objectType;
+        this.calculatedArea = calculatedArea;
+        this.additionalInfo = additionalInfo;
         this.description = description;
-        this.geometry_type = geometry_type;
-        this.point_lon = point_lon;
-        this.point_lat = point_lat;
-        this.administrative_area_name = administrative_area_name;
-        this.subadministrative_area_name = subadministrative_area_name;
+        this.geometryType = geometryType;
+        this.pointLon = pointLon;
+        this.pointLat = pointLat;
+        this.administrativeAreaName = administrativeAreaName;
+        this.subadministrativeAreaName = subadministrativeAreaName;
         this.locality = locality;
-        this.external_id = external_id;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
+        this.externalId = externalId;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public AdditionalObject() {
@@ -105,28 +105,28 @@ public class AdditionalObject {
         this.name = name;
     }
 
-    public String getObject_type() {
-        return object_type;
+    public String getObjectType() {
+        return objectType;
     }
 
-    public void setObject_type(String object_type) {
-        this.object_type = object_type;
+    public void setObjectType(String objectType) {
+        this.objectType = objectType;
     }
 
-    public double getCalculated_area() {
-        return calculated_area;
+    public double getCalculatedArea() {
+        return calculatedArea;
     }
 
-    public void setCalculated_area(double calculated_area) {
-        this.calculated_area = calculated_area;
+    public void setCalculatedArea(double calculatedArea) {
+        this.calculatedArea = calculatedArea;
     }
 
-    public String getAdditional_info() {
-        return additional_info;
+    public String getAdditionalInfo() {
+        return additionalInfo;
     }
 
-    public void setAdditional_info(String additional_info) {
-        this.additional_info = additional_info;
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
 
     public String getDescription() {
@@ -137,44 +137,44 @@ public class AdditionalObject {
         this.description = description;
     }
 
-    public String getGeometry_type() {
-        return geometry_type;
+    public String getGeometryType() {
+        return geometryType;
     }
 
-    public void setGeometry_type(String geometry_type) {
-        this.geometry_type = geometry_type;
+    public void setGeometryType(String geometryType) {
+        this.geometryType = geometryType;
     }
 
-    public double getPoint_lon() {
-        return point_lon;
+    public double getPointLon() {
+        return pointLon;
     }
 
-    public void setPoint_lon(double point_lon) {
-        this.point_lon = point_lon;
+    public void setPointLon(double pointLon) {
+        this.pointLon = pointLon;
     }
 
-    public double getPoint_lat() {
-        return point_lat;
+    public double getPointLat() {
+        return pointLat;
     }
 
-    public void setPoint_lat(double point_lat) {
-        this.point_lat = point_lat;
+    public void setPointLat(double pointLat) {
+        this.pointLat = pointLat;
     }
 
-    public String getAdministrative_area_name() {
-        return administrative_area_name;
+    public String getAdministrativeAreaName() {
+        return administrativeAreaName;
     }
 
-    public void setAdministrative_area_name(String administrative_area_name) {
-        this.administrative_area_name = administrative_area_name;
+    public void setAdministrativeAreaName(String administrativeAreaName) {
+        this.administrativeAreaName = administrativeAreaName;
     }
 
-    public String getSubadministrative_area_name() {
-        return subadministrative_area_name;
+    public String getSubadministrativeAreaName() {
+        return subadministrativeAreaName;
     }
 
-    public void setSubadministrative_area_name(String subadministrative_area_name) {
-        this.subadministrative_area_name = subadministrative_area_name;
+    public void setSubadministrativeAreaName(String subadministrativeAreaName) {
+        this.subadministrativeAreaName = subadministrativeAreaName;
     }
 
     public String getLocality() {
@@ -185,28 +185,28 @@ public class AdditionalObject {
         this.locality = locality;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
@@ -214,12 +214,12 @@ public class AdditionalObject {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AdditionalObject that = (AdditionalObject) o;
-        return Double.compare(calculated_area, that.calculated_area) == 0 && Double.compare(point_lon, that.point_lon) == 0 && Double.compare(point_lat, that.point_lat) == 0 && Objects.equals(id, that.id) && Objects.equals(fieldGroup, that.fieldGroup) && Objects.equals(name, that.name) && Objects.equals(object_type, that.object_type) && Objects.equals(additional_info, that.additional_info) && Objects.equals(description, that.description) && Objects.equals(geometry_type, that.geometry_type) && Objects.equals(administrative_area_name, that.administrative_area_name) && Objects.equals(subadministrative_area_name, that.subadministrative_area_name) && Objects.equals(locality, that.locality) && Objects.equals(external_id, that.external_id) && Objects.equals(created_at, that.created_at) && Objects.equals(updated_at, that.updated_at);
+        return Double.compare(calculatedArea, that.calculatedArea) == 0 && Double.compare(pointLon, that.pointLon) == 0 && Double.compare(pointLat, that.pointLat) == 0 && Objects.equals(id, that.id) && Objects.equals(fieldGroup, that.fieldGroup) && Objects.equals(name, that.name) && Objects.equals(objectType, that.objectType) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(description, that.description) && Objects.equals(geometryType, that.geometryType) && Objects.equals(administrativeAreaName, that.administrativeAreaName) && Objects.equals(subadministrativeAreaName, that.subadministrativeAreaName) && Objects.equals(locality, that.locality) && Objects.equals(externalId, that.externalId) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, fieldGroup, name, object_type, calculated_area, additional_info, description, geometry_type, point_lon, point_lat, administrative_area_name, subadministrative_area_name, locality, external_id, created_at, updated_at);
+        return Objects.hash(id, fieldGroup, name, objectType, calculatedArea, additionalInfo, description, geometryType, pointLon, pointLat, administrativeAreaName, subadministrativeAreaName, locality, externalId, createdAt, updatedAt);
     }
 
     @Override
@@ -228,19 +228,19 @@ public class AdditionalObject {
                 "id=" + id +
                 ", fieldGroup=" + fieldGroup +
                 ", name='" + name + '\'' +
-                ", object_type='" + object_type + '\'' +
-                ", calculated_area=" + calculated_area +
-                ", additional_info='" + additional_info + '\'' +
+                ", objectType='" + objectType + '\'' +
+                ", calculatedArea=" + calculatedArea +
+                ", additionalInfo='" + additionalInfo + '\'' +
                 ", description='" + description + '\'' +
-                ", geometry_type='" + geometry_type + '\'' +
-                ", point_lon=" + point_lon +
-                ", point_lat=" + point_lat +
-                ", administrative_area_name='" + administrative_area_name + '\'' +
-                ", subadministrative_area_name='" + subadministrative_area_name + '\'' +
+                ", geometryType='" + geometryType + '\'' +
+                ", pointLon=" + pointLon +
+                ", pointLat=" + pointLat +
+                ", administrativeAreaName='" + administrativeAreaName + '\'' +
+                ", subadministrativeAreaName='" + subadministrativeAreaName + '\'' +
                 ", locality='" + locality + '\'' +
-                ", external_id='" + external_id + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
+                ", externalId='" + externalId + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }

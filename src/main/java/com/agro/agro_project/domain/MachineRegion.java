@@ -23,26 +23,26 @@ public class MachineRegion {
 
     @Column(name="additional_info")
     @Lob
-    private String additional_info;
+    private String additionalInfo;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
-    public MachineRegion(Short id, String name, String ancestry, String description, String additional_info, Timestamp created_at, Timestamp updated_at, String external_id) {
+    public MachineRegion(Short id, String name, String ancestry, String description, String additionalInfo, Timestamp createdAt, Timestamp updatedAt, String externalId) {
         this.id = id;
         this.name = name;
         this.ancestry = ancestry;
         this.description = description;
-        this.additional_info = additional_info;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
-        this.external_id = external_id;
+        this.additionalInfo = additionalInfo;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.externalId = externalId;
     }
 
     public MachineRegion() {
@@ -80,36 +80,36 @@ public class MachineRegion {
         this.description = description;
     }
 
-    public String getAdditional_info() {
-        return additional_info;
+    public String getAdditionalInfo() {
+        return additionalInfo;
     }
 
-    public void setAdditional_info(String additional_info) {
-        this.additional_info = additional_info;
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
     @Override
@@ -117,12 +117,12 @@ public class MachineRegion {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MachineRegion that = (MachineRegion) o;
-        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(ancestry, that.ancestry) && Objects.equals(description, that.description) && Objects.equals(additional_info, that.additional_info) && Objects.equals(created_at, that.created_at) && Objects.equals(updated_at, that.updated_at) && Objects.equals(external_id, that.external_id);
+        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(ancestry, that.ancestry) && Objects.equals(description, that.description) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(externalId, that.externalId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, ancestry, description, additional_info, created_at, updated_at, external_id);
+        return Objects.hash(id, name, ancestry, description, additionalInfo, createdAt, updatedAt, externalId);
     }
 
     @Override
@@ -132,10 +132,10 @@ public class MachineRegion {
                 ", name='" + name + '\'' +
                 ", ancestry='" + ancestry + '\'' +
                 ", description='" + description + '\'' +
-                ", additional_info='" + additional_info + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
-                ", external_id='" + external_id + '\'' +
+                ", additionalInfo='" + additionalInfo + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", externalId='" + externalId + '\'' +
                 '}';
     }
 }

@@ -1,7 +1,5 @@
 package com.agro.agro_project.domain;
 
-import com.fasterxml.jackson.databind.ser.Serializers;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -17,24 +15,24 @@ public class Crop {
     private String name;
 
     @Column(name="short_name", length=20)
-    private String short_name;
+    private String shortName;
 
     @Column(name="standard_name", length=30)
-    private String standard_name;
+    private String standardName;
 
     @Column(name="color", length=20)
     private String color;
 
     @Column(name="additional_info")
     @Lob
-    private String additional_info;
+    private String additionalInfo;
 
     @Column(name="description")
     @Lob
     private String description;
 
     @Column(name="season_type", length=10)
-    private String season_type;
+    private String seasonType;
 
     @Column(name="parts", length=10)
     private String parts;
@@ -44,40 +42,40 @@ public class Crop {
     private BaseCrop baseCrop;
 
     @Column(name="productivity_estimate_crop_name", length=20)
-    private String productivity_estimate_crop_name;
+    private String productivityEstimateCropName;
 
     @Column(name="plant_threat_crop_name", length=20)
-    private String plant_threat_crop_name;
+    private String plantThreatCropName;
 
     @Column(name="hidden")
     private boolean hidden;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
-    public Crop(Short id, String name, String short_name, String standard_name, String color, String additional_info, String description, String season_type, String parts, BaseCrop baseCrop, String productivity_estimate_crop_name, String plant_threat_crop_name, boolean hidden, String external_id, Timestamp created_at, Timestamp updated_at) {
+    public Crop(Short id, String name, String shortName, String standardName, String color, String additionalInfo, String description, String seasonType, String parts, BaseCrop baseCrop, String productivityEstimateCropName, String plantThreatCropName, boolean hidden, String externalId, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.name = name;
-        this.short_name = short_name;
-        this.standard_name = standard_name;
+        this.shortName = shortName;
+        this.standardName = standardName;
         this.color = color;
-        this.additional_info = additional_info;
+        this.additionalInfo = additionalInfo;
         this.description = description;
-        this.season_type = season_type;
+        this.seasonType = seasonType;
         this.parts = parts;
         this.baseCrop = baseCrop;
-        this.productivity_estimate_crop_name = productivity_estimate_crop_name;
-        this.plant_threat_crop_name = plant_threat_crop_name;
+        this.productivityEstimateCropName = productivityEstimateCropName;
+        this.plantThreatCropName = plantThreatCropName;
         this.hidden = hidden;
-        this.external_id = external_id;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
+        this.externalId = externalId;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public Crop() {
@@ -99,20 +97,20 @@ public class Crop {
         this.name = name;
     }
 
-    public String getShort_name() {
-        return short_name;
+    public String getShortName() {
+        return shortName;
     }
 
-    public void setShort_name(String short_name) {
-        this.short_name = short_name;
+    public void setShortName(String shortName) {
+        this.shortName = shortName;
     }
 
-    public String getStandard_name() {
-        return standard_name;
+    public String getStandardName() {
+        return standardName;
     }
 
-    public void setStandard_name(String standard_name) {
-        this.standard_name = standard_name;
+    public void setStandardName(String standardName) {
+        this.standardName = standardName;
     }
 
     public String getColor() {
@@ -123,12 +121,12 @@ public class Crop {
         this.color = color;
     }
 
-    public String getAdditional_info() {
-        return additional_info;
+    public String getAdditionalInfo() {
+        return additionalInfo;
     }
 
-    public void setAdditional_info(String additional_info) {
-        this.additional_info = additional_info;
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
 
     public String getDescription() {
@@ -139,12 +137,12 @@ public class Crop {
         this.description = description;
     }
 
-    public String getSeason_type() {
-        return season_type;
+    public String getSeasonType() {
+        return seasonType;
     }
 
-    public void setSeason_type(String season_type) {
-        this.season_type = season_type;
+    public void setSeasonType(String seasonType) {
+        this.seasonType = seasonType;
     }
 
     public String getParts() {
@@ -163,20 +161,20 @@ public class Crop {
         this.baseCrop = baseCrop;
     }
 
-    public String getProductivity_estimate_crop_name() {
-        return productivity_estimate_crop_name;
+    public String getProductivityEstimateCropName() {
+        return productivityEstimateCropName;
     }
 
-    public void setProductivity_estimate_crop_name(String productivity_estimate_crop_name) {
-        this.productivity_estimate_crop_name = productivity_estimate_crop_name;
+    public void setProductivityEstimateCropName(String productivityEstimateCropName) {
+        this.productivityEstimateCropName = productivityEstimateCropName;
     }
 
-    public String getPlant_threat_crop_name() {
-        return plant_threat_crop_name;
+    public String getPlantThreatCropName() {
+        return plantThreatCropName;
     }
 
-    public void setPlant_threat_crop_name(String plant_threat_crop_name) {
-        this.plant_threat_crop_name = plant_threat_crop_name;
+    public void setPlantThreatCropName(String plantThreatCropName) {
+        this.plantThreatCropName = plantThreatCropName;
     }
 
     public boolean isHidden() {
@@ -187,28 +185,28 @@ public class Crop {
         this.hidden = hidden;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
@@ -216,12 +214,12 @@ public class Crop {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Crop crop = (Crop) o;
-        return hidden == crop.hidden && Objects.equals(id, crop.id) && Objects.equals(name, crop.name) && Objects.equals(short_name, crop.short_name) && Objects.equals(standard_name, crop.standard_name) && Objects.equals(color, crop.color) && Objects.equals(additional_info, crop.additional_info) && Objects.equals(description, crop.description) && Objects.equals(season_type, crop.season_type) && Objects.equals(parts, crop.parts) && Objects.equals(baseCrop, crop.baseCrop) && Objects.equals(productivity_estimate_crop_name, crop.productivity_estimate_crop_name) && Objects.equals(plant_threat_crop_name, crop.plant_threat_crop_name) && Objects.equals(external_id, crop.external_id) && Objects.equals(created_at, crop.created_at) && Objects.equals(updated_at, crop.updated_at);
+        return hidden == crop.hidden && Objects.equals(id, crop.id) && Objects.equals(name, crop.name) && Objects.equals(shortName, crop.shortName) && Objects.equals(standardName, crop.standardName) && Objects.equals(color, crop.color) && Objects.equals(additionalInfo, crop.additionalInfo) && Objects.equals(description, crop.description) && Objects.equals(seasonType, crop.seasonType) && Objects.equals(parts, crop.parts) && Objects.equals(baseCrop, crop.baseCrop) && Objects.equals(productivityEstimateCropName, crop.productivityEstimateCropName) && Objects.equals(plantThreatCropName, crop.plantThreatCropName) && Objects.equals(externalId, crop.externalId) && Objects.equals(createdAt, crop.createdAt) && Objects.equals(updatedAt, crop.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, short_name, standard_name, color, additional_info, description, season_type, parts, baseCrop, productivity_estimate_crop_name, plant_threat_crop_name, hidden, external_id, created_at, updated_at);
+        return Objects.hash(id, name, shortName, standardName, color, additionalInfo, description, seasonType, parts, baseCrop, productivityEstimateCropName, plantThreatCropName, hidden, externalId, createdAt, updatedAt);
     }
 
     @Override
@@ -229,20 +227,20 @@ public class Crop {
         return "Crop{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", short_name='" + short_name + '\'' +
-                ", standard_name='" + standard_name + '\'' +
+                ", shortName='" + shortName + '\'' +
+                ", standardName='" + standardName + '\'' +
                 ", color='" + color + '\'' +
-                ", additional_info='" + additional_info + '\'' +
+                ", additionalInfo='" + additionalInfo + '\'' +
                 ", description='" + description + '\'' +
-                ", season_type='" + season_type + '\'' +
+                ", seasonType='" + seasonType + '\'' +
                 ", parts='" + parts + '\'' +
                 ", baseCrop=" + baseCrop +
-                ", productivity_estimate_crop_name='" + productivity_estimate_crop_name + '\'' +
-                ", plant_threat_crop_name='" + plant_threat_crop_name + '\'' +
+                ", productivityEstimateCropName='" + productivityEstimateCropName + '\'' +
+                ", plantThreatCropName='" + plantThreatCropName + '\'' +
                 ", hidden=" + hidden +
-                ", external_id='" + external_id + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
+                ", externalId='" + externalId + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }

@@ -19,22 +19,22 @@ public class GroupFolder {
     private String name;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
 
-    public GroupFolder(Short id, GroupFolder parent, String name, Timestamp created_at, Timestamp updated_at, String external_id) {
+    public GroupFolder(Short id, GroupFolder parent, String name, Timestamp createdAt, Timestamp updatedAt, String externalId) {
         this.id = id;
         this.parent = parent;
         this.name = name;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
-        this.external_id = external_id;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.externalId = externalId;
     }
 
     public GroupFolder() {
@@ -64,28 +64,28 @@ public class GroupFolder {
         this.name = name;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
     @Override
@@ -93,12 +93,12 @@ public class GroupFolder {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         GroupFolder that = (GroupFolder) o;
-        return Objects.equals(id, that.id) && Objects.equals(parent, that.parent) && Objects.equals(name, that.name) && Objects.equals(created_at, that.created_at) && Objects.equals(updated_at, that.updated_at) && Objects.equals(external_id, that.external_id);
+        return Objects.equals(id, that.id) && Objects.equals(parent, that.parent) && Objects.equals(name, that.name) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(externalId, that.externalId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, parent, name, created_at, updated_at, external_id);
+        return Objects.hash(id, parent, name, createdAt, updatedAt, externalId);
     }
 
     @Override
@@ -107,9 +107,9 @@ public class GroupFolder {
                 "id=" + id +
                 ", parent=" + parent +
                 ", name='" + name + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
-                ", external_id='" + external_id + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", externalId='" + externalId + '\'' +
                 '}';
     }
 }

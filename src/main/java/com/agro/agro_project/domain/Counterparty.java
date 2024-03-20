@@ -13,43 +13,43 @@ public class Counterparty {
     private Short id;
 
     @Column(name="first_name", length=50)
-    private String first_name;
+    private String firstName;
 
     @Column(name="middle_name", length=50)
-    private String middle_name;
+    private String middleName;
 
     @Column(name="last_name", length=70)
-    private String last_name;
+    private String lastName;
 
     @Column(name="birth_date")
-    private Date birth_date;
+    private Date birthDate;
 
     @Column(name="phone_number", length=50)
-    private String phone_number;
+    private String phoneNumber;
 
     @Column(name="passport_code", length=20)
-    private String passport_code;
+    private String passportCode;
 
     @Column(name="email", length=30)
     private String email;
 
     @Column(name="passport_issuing_date")
-    private Date passport_issuing_date;
+    private Date passportIssuingDate;
 
     @Column(name="identification_code", length=20)
-    private String identification_code;
+    private String identificationCode;
 
     @Column(name="passport_issued_by")
-    private String passport_issued_by;
+    private String passportIssuedBy;
 
     @Column(name="passport_issuing_date_presence")
-    private boolean passport_issuing_date_presence;
+    private boolean passportIssuingDatePresence;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
     @Column(name="counterparty_type", length=30)
-    private String counterparty_type;
+    private String counterpartyType;
 
     @Column(name="street", length=30)
     private String street;
@@ -64,80 +64,80 @@ public class Counterparty {
     private String district;
 
     @Column(name="house_number", length=20)
-    private String house_number;
+    private String houseNumber;
 
     @Column(name="postcode", length=20)
     private String postcode;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
     @Column(name="legal_name", length=50)
-    private String legal_name;
+    private String legalName;
 
     @Column(name="legal_address", length=50)
-    private String legal_address;
+    private String legalAddress;
 
     @Column(name="index")
     private short index;
 
     @Column(name="company_number", length=30)
-    private String company_number;
+    private String companyNumber;
 
     @Column(name="signatory", length=50)
     private String signatory;
 
     @Column(name="contact_person", length=50)
-    private String contact_person;
+    private String contactPerson;
 
     @Column(name="vat_payer")
-    private boolean vat_payer;
+    private boolean vatPayer;
 
     @Column(name="counterparty_group_id")
-    private short counterparty_group_id;
+    private short counterpartyGroupId;
 
     @Column(name="x_custom_rozrakhunkovii_rakhunok", length=20)
-    private String x_custom_rozrakhunkovii_rakhunok;
+    private String xCustomRozrakhunkoviiRakhunok;
 
     @Column(name="x_custom_nomer_karti", length=100)
-    private String x_custom_nomer_karti;
+    private String xCustomNomerKarti;
 
-    public Counterparty(Short id, String first_name, String middle_name, String last_name, Date birth_date, String phone_number, String passport_code, String email, Date passport_issuing_date, String identification_code, String passport_issued_by, boolean passport_issuing_date_presence, String external_id, String counterparty_type, String street, String region, String locality, String district, String house_number, String postcode, Timestamp created_at, Timestamp updated_at, String legal_name, String legal_address, short index, String company_number, String signatory, String contact_person, boolean vat_payer, short counterparty_group_id, String x_custom_rozrakhunkovii_rakhunok, String x_custom_nomer_karti) {
+    public Counterparty(Short id, String firstName, String middleName, String lastName, Date birthDate, String phoneNumber, String passportCode, String email, Date passportIssuingDate, String identificationCode, String passportIssuedBy, boolean passportIssuingDatePresence, String externalId, String counterpartyType, String street, String region, String locality, String district, String houseNumber, String postcode, Timestamp createdAt, Timestamp updatedAt, String legalName, String legalAddress, short index, String companyNumber, String signatory, String contactPerson, boolean vatPayer, short counterpartyGroupId, String xCustomRozrakhunkoviiRakhunok, String xCustomNomerKarti) {
         this.id = id;
-        this.first_name = first_name;
-        this.middle_name = middle_name;
-        this.last_name = last_name;
-        this.birth_date = birth_date;
-        this.phone_number = phone_number;
-        this.passport_code = passport_code;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+        this.phoneNumber = phoneNumber;
+        this.passportCode = passportCode;
         this.email = email;
-        this.passport_issuing_date = passport_issuing_date;
-        this.identification_code = identification_code;
-        this.passport_issued_by = passport_issued_by;
-        this.passport_issuing_date_presence = passport_issuing_date_presence;
-        this.external_id = external_id;
-        this.counterparty_type = counterparty_type;
+        this.passportIssuingDate = passportIssuingDate;
+        this.identificationCode = identificationCode;
+        this.passportIssuedBy = passportIssuedBy;
+        this.passportIssuingDatePresence = passportIssuingDatePresence;
+        this.externalId = externalId;
+        this.counterpartyType = counterpartyType;
         this.street = street;
         this.region = region;
         this.locality = locality;
         this.district = district;
-        this.house_number = house_number;
+        this.houseNumber = houseNumber;
         this.postcode = postcode;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
-        this.legal_name = legal_name;
-        this.legal_address = legal_address;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.legalName = legalName;
+        this.legalAddress = legalAddress;
         this.index = index;
-        this.company_number = company_number;
+        this.companyNumber = companyNumber;
         this.signatory = signatory;
-        this.contact_person = contact_person;
-        this.vat_payer = vat_payer;
-        this.counterparty_group_id = counterparty_group_id;
-        this.x_custom_rozrakhunkovii_rakhunok = x_custom_rozrakhunkovii_rakhunok;
-        this.x_custom_nomer_karti = x_custom_nomer_karti;
+        this.contactPerson = contactPerson;
+        this.vatPayer = vatPayer;
+        this.counterpartyGroupId = counterpartyGroupId;
+        this.xCustomRozrakhunkoviiRakhunok = xCustomRozrakhunkoviiRakhunok;
+        this.xCustomNomerKarti = xCustomNomerKarti;
     }
 
     public Counterparty() {
@@ -151,52 +151,52 @@ public class Counterparty {
         this.id = id;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getMiddle_name() {
-        return middle_name;
+    public String getMiddleName() {
+        return middleName;
     }
 
-    public void setMiddle_name(String middle_name) {
-        this.middle_name = middle_name;
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public Date getBirth_date() {
-        return birth_date;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setBirth_date(Date birth_date) {
-        this.birth_date = birth_date;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
-    public String getPhone_number() {
-        return phone_number;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
-    public String getPassport_code() {
-        return passport_code;
+    public String getPassportCode() {
+        return passportCode;
     }
 
-    public void setPassport_code(String passport_code) {
-        this.passport_code = passport_code;
+    public void setPassportCode(String passportCode) {
+        this.passportCode = passportCode;
     }
 
     public String getEmail() {
@@ -207,52 +207,52 @@ public class Counterparty {
         this.email = email;
     }
 
-    public Date getPassport_issuing_date() {
-        return passport_issuing_date;
+    public Date getPassportIssuingDate() {
+        return passportIssuingDate;
     }
 
-    public void setPassport_issuing_date(Date passport_issuing_date) {
-        this.passport_issuing_date = passport_issuing_date;
+    public void setPassportIssuingDate(Date passportIssuingDate) {
+        this.passportIssuingDate = passportIssuingDate;
     }
 
-    public String getIdentification_code() {
-        return identification_code;
+    public String getIdentificationCode() {
+        return identificationCode;
     }
 
-    public void setIdentification_code(String identification_code) {
-        this.identification_code = identification_code;
+    public void setIdentificationCode(String identificationCode) {
+        this.identificationCode = identificationCode;
     }
 
-    public String getPassport_issued_by() {
-        return passport_issued_by;
+    public String getPassportIssuedBy() {
+        return passportIssuedBy;
     }
 
-    public void setPassport_issued_by(String passport_issued_by) {
-        this.passport_issued_by = passport_issued_by;
+    public void setPassportIssuedBy(String passportIssuedBy) {
+        this.passportIssuedBy = passportIssuedBy;
     }
 
-    public boolean isPassport_issuing_date_presence() {
-        return passport_issuing_date_presence;
+    public boolean isPassportIssuingDatePresence() {
+        return passportIssuingDatePresence;
     }
 
-    public void setPassport_issuing_date_presence(boolean passport_issuing_date_presence) {
-        this.passport_issuing_date_presence = passport_issuing_date_presence;
+    public void setPassportIssuingDatePresence(boolean passportIssuingDatePresence) {
+        this.passportIssuingDatePresence = passportIssuingDatePresence;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
-    public String getCounterparty_type() {
-        return counterparty_type;
+    public String getCounterpartyType() {
+        return counterpartyType;
     }
 
-    public void setCounterparty_type(String counterparty_type) {
-        this.counterparty_type = counterparty_type;
+    public void setCounterpartyType(String counterpartyType) {
+        this.counterpartyType = counterpartyType;
     }
 
     public String getStreet() {
@@ -287,12 +287,12 @@ public class Counterparty {
         this.district = district;
     }
 
-    public String getHouse_number() {
-        return house_number;
+    public String getHouseNumber() {
+        return houseNumber;
     }
 
-    public void setHouse_number(String house_number) {
-        this.house_number = house_number;
+    public void setHouseNumber(String houseNumber) {
+        this.houseNumber = houseNumber;
     }
 
     public String getPostcode() {
@@ -303,36 +303,36 @@ public class Counterparty {
         this.postcode = postcode;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
-    public String getLegal_name() {
-        return legal_name;
+    public String getLegalName() {
+        return legalName;
     }
 
-    public void setLegal_name(String legal_name) {
-        this.legal_name = legal_name;
+    public void setLegalName(String legalName) {
+        this.legalName = legalName;
     }
 
-    public String getLegal_address() {
-        return legal_address;
+    public String getLegalAddress() {
+        return legalAddress;
     }
 
-    public void setLegal_address(String legal_address) {
-        this.legal_address = legal_address;
+    public void setLegalAddress(String legalAddress) {
+        this.legalAddress = legalAddress;
     }
 
     public short getIndex() {
@@ -343,12 +343,12 @@ public class Counterparty {
         this.index = index;
     }
 
-    public String getCompany_number() {
-        return company_number;
+    public String getCompanyNumber() {
+        return companyNumber;
     }
 
-    public void setCompany_number(String company_number) {
-        this.company_number = company_number;
+    public void setCompanyNumber(String companyNumber) {
+        this.companyNumber = companyNumber;
     }
 
     public String getSignatory() {
@@ -359,44 +359,44 @@ public class Counterparty {
         this.signatory = signatory;
     }
 
-    public String getContact_person() {
-        return contact_person;
+    public String getContactPerson() {
+        return contactPerson;
     }
 
-    public void setContact_person(String contact_person) {
-        this.contact_person = contact_person;
+    public void setContactPerson(String contactPerson) {
+        this.contactPerson = contactPerson;
     }
 
-    public boolean isVat_payer() {
-        return vat_payer;
+    public boolean isVatPayer() {
+        return vatPayer;
     }
 
-    public void setVat_payer(boolean vat_payer) {
-        this.vat_payer = vat_payer;
+    public void setVatPayer(boolean vatPayer) {
+        this.vatPayer = vatPayer;
     }
 
-    public short getCounterparty_group_id() {
-        return counterparty_group_id;
+    public short getCounterpartyGroupId() {
+        return counterpartyGroupId;
     }
 
-    public void setCounterparty_group_id(short counterparty_group_id) {
-        this.counterparty_group_id = counterparty_group_id;
+    public void setCounterpartyGroupId(short counterpartyGroupId) {
+        this.counterpartyGroupId = counterpartyGroupId;
     }
 
-    public String getX_custom_rozrakhunkovii_rakhunok() {
-        return x_custom_rozrakhunkovii_rakhunok;
+    public String getXCustomRozrakhunkoviiRakhunok() {
+        return xCustomRozrakhunkoviiRakhunok;
     }
 
-    public void setX_custom_rozrakhunkovii_rakhunok(String x_custom_rozrakhunkovii_rakhunok) {
-        this.x_custom_rozrakhunkovii_rakhunok = x_custom_rozrakhunkovii_rakhunok;
+    public void setXCustomRozrakhunkoviiRakhunok(String xCustomRozrakhunkoviiRakhunok) {
+        this.xCustomRozrakhunkoviiRakhunok = xCustomRozrakhunkoviiRakhunok;
     }
 
-    public String getX_custom_nomer_karti() {
-        return x_custom_nomer_karti;
+    public String getXCustomNomerKarti() {
+        return xCustomNomerKarti;
     }
 
-    public void setX_custom_nomer_karti(String x_custom_nomer_karti) {
-        this.x_custom_nomer_karti = x_custom_nomer_karti;
+    public void setXCustomNomerKarti(String xCustomNomerKarti) {
+        this.xCustomNomerKarti = xCustomNomerKarti;
     }
 
     @Override
@@ -404,49 +404,49 @@ public class Counterparty {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Counterparty that = (Counterparty) o;
-        return passport_issuing_date_presence == that.passport_issuing_date_presence && index == that.index && vat_payer == that.vat_payer && counterparty_group_id == that.counterparty_group_id && Objects.equals(id, that.id) && Objects.equals(first_name, that.first_name) && Objects.equals(middle_name, that.middle_name) && Objects.equals(last_name, that.last_name) && Objects.equals(birth_date, that.birth_date) && Objects.equals(phone_number, that.phone_number) && Objects.equals(passport_code, that.passport_code) && Objects.equals(email, that.email) && Objects.equals(passport_issuing_date, that.passport_issuing_date) && Objects.equals(identification_code, that.identification_code) && Objects.equals(passport_issued_by, that.passport_issued_by) && Objects.equals(external_id, that.external_id) && Objects.equals(counterparty_type, that.counterparty_type) && Objects.equals(street, that.street) && Objects.equals(region, that.region) && Objects.equals(locality, that.locality) && Objects.equals(district, that.district) && Objects.equals(house_number, that.house_number) && Objects.equals(postcode, that.postcode) && Objects.equals(created_at, that.created_at) && Objects.equals(updated_at, that.updated_at) && Objects.equals(legal_name, that.legal_name) && Objects.equals(legal_address, that.legal_address) && Objects.equals(company_number, that.company_number) && Objects.equals(signatory, that.signatory) && Objects.equals(contact_person, that.contact_person) && Objects.equals(x_custom_rozrakhunkovii_rakhunok, that.x_custom_rozrakhunkovii_rakhunok) && Objects.equals(x_custom_nomer_karti, that.x_custom_nomer_karti);
+        return passportIssuingDatePresence == that.passportIssuingDatePresence && index == that.index && vatPayer == that.vatPayer && counterpartyGroupId == that.counterpartyGroupId && Objects.equals(id, that.id) && Objects.equals(firstName, that.firstName) && Objects.equals(middleName, that.middleName) && Objects.equals(lastName, that.lastName) && Objects.equals(birthDate, that.birthDate) && Objects.equals(phoneNumber, that.phoneNumber) && Objects.equals(passportCode, that.passportCode) && Objects.equals(email, that.email) && Objects.equals(passportIssuingDate, that.passportIssuingDate) && Objects.equals(identificationCode, that.identificationCode) && Objects.equals(passportIssuedBy, that.passportIssuedBy) && Objects.equals(externalId, that.externalId) && Objects.equals(counterpartyType, that.counterpartyType) && Objects.equals(street, that.street) && Objects.equals(region, that.region) && Objects.equals(locality, that.locality) && Objects.equals(district, that.district) && Objects.equals(houseNumber, that.houseNumber) && Objects.equals(postcode, that.postcode) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(legalName, that.legalName) && Objects.equals(legalAddress, that.legalAddress) && Objects.equals(companyNumber, that.companyNumber) && Objects.equals(signatory, that.signatory) && Objects.equals(contactPerson, that.contactPerson) && Objects.equals(xCustomRozrakhunkoviiRakhunok, that.xCustomRozrakhunkoviiRakhunok) && Objects.equals(xCustomNomerKarti, that.xCustomNomerKarti);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, first_name, middle_name, last_name, birth_date, phone_number, passport_code, email, passport_issuing_date, identification_code, passport_issued_by, passport_issuing_date_presence, external_id, counterparty_type, street, region, locality, district, house_number, postcode, created_at, updated_at, legal_name, legal_address, index, company_number, signatory, contact_person, vat_payer, counterparty_group_id, x_custom_rozrakhunkovii_rakhunok, x_custom_nomer_karti);
+        return Objects.hash(id, firstName, middleName, lastName, birthDate, phoneNumber, passportCode, email, passportIssuingDate, identificationCode, passportIssuedBy, passportIssuingDatePresence, externalId, counterpartyType, street, region, locality, district, houseNumber, postcode, createdAt, updatedAt, legalName, legalAddress, index, companyNumber, signatory, contactPerson, vatPayer, counterpartyGroupId, xCustomRozrakhunkoviiRakhunok, xCustomNomerKarti);
     }
 
     @Override
     public String toString() {
         return "Counterparty{" +
                 "id=" + id +
-                ", first_name='" + first_name + '\'' +
-                ", middle_name='" + middle_name + '\'' +
-                ", last_name='" + last_name + '\'' +
-                ", birth_date=" + birth_date +
-                ", phone_number='" + phone_number + '\'' +
-                ", passport_code='" + passport_code + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", middleName='" + middleName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", birthDate=" + birthDate +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", passportCode='" + passportCode + '\'' +
                 ", email='" + email + '\'' +
-                ", passport_issuing_date=" + passport_issuing_date +
-                ", identification_code='" + identification_code + '\'' +
-                ", passport_issued_by='" + passport_issued_by + '\'' +
-                ", passport_issuing_date_presence=" + passport_issuing_date_presence +
-                ", external_id='" + external_id + '\'' +
-                ", counterparty_type='" + counterparty_type + '\'' +
+                ", passportIssuingDate=" + passportIssuingDate +
+                ", identificationCode='" + identificationCode + '\'' +
+                ", passportIssuedBy='" + passportIssuedBy + '\'' +
+                ", passportIssuingDatePresence=" + passportIssuingDatePresence +
+                ", externalId='" + externalId + '\'' +
+                ", counterpartyType='" + counterpartyType + '\'' +
                 ", street='" + street + '\'' +
                 ", region='" + region + '\'' +
                 ", locality='" + locality + '\'' +
                 ", district='" + district + '\'' +
-                ", house_number='" + house_number + '\'' +
+                ", houseNumber='" + houseNumber + '\'' +
                 ", postcode='" + postcode + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
-                ", legal_name='" + legal_name + '\'' +
-                ", legal_address='" + legal_address + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", legalName='" + legalName + '\'' +
+                ", legalAddress='" + legalAddress + '\'' +
                 ", index=" + index +
-                ", company_number='" + company_number + '\'' +
+                ", companyNumber='" + companyNumber + '\'' +
                 ", signatory='" + signatory + '\'' +
-                ", contact_person='" + contact_person + '\'' +
-                ", vat_payer=" + vat_payer +
-                ", counterparty_group_id=" + counterparty_group_id +
-                ", x_custom_rozrakhunkovii_rakhunok='" + x_custom_rozrakhunkovii_rakhunok + '\'' +
-                ", x_custom_nomer_karti='" + x_custom_nomer_karti + '\'' +
+                ", contactPerson='" + contactPerson + '\'' +
+                ", vatPayer=" + vatPayer +
+                ", counterpartyGroupId=" + counterpartyGroupId +
+                ", xCustomRozrakhunkoviiRakhunok='" + xCustomRozrakhunkoviiRakhunok + '\'' +
+                ", xCustomNomerKarti='" + xCustomNomerKarti + '\'' +
                 '}';
     }
 }

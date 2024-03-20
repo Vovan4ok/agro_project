@@ -16,16 +16,16 @@ public class Fertilizer {
     private String name;
 
     @Column(name="fertilizer_type", length=50)
-    private String fertilizer_type;
+    private String fertilizerType;
 
     @Column(name="source_type", length=50)
-    private String source_type;
+    private String sourceType;
 
     @Column(name="nutrient_type", length=50)
-    private String nutrient_type;
+    private String nutrientType;
 
     @Column(name="units_of_measurement", length=10)
-    private String units_of_measurement;
+    private String unitsOfMeasurement;
 
     @Column(name="elements")
     @Lob
@@ -44,37 +44,37 @@ public class Fertilizer {
 
     @Column(name="additional_info")
     @Lob
-    private String additional_info;
+    private String additionalInfo;
 
     @Column(name="description")
     @Lob
     private String description;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
-    public Fertilizer(Integer id, String name, String fertilizer_type, String source_type, String nutrient_type, String units_of_measurement, JsonObject elements, boolean archived, WhItem whItem, Unit whItemBaseUnit, String additional_info, String description, String external_id, Timestamp created_at, Timestamp updated_at) {
+    public Fertilizer(Integer id, String name, String fertilizerType, String sourceType, String nutrientType, String unitsOfMeasurement, JsonObject elements, boolean archived, WhItem whItem, Unit whItemBaseUnit, String additionalInfo, String description, String externalId, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.name = name;
-        this.fertilizer_type = fertilizer_type;
-        this.source_type = source_type;
-        this.nutrient_type = nutrient_type;
-        this.units_of_measurement = units_of_measurement;
+        this.fertilizerType = fertilizerType;
+        this.sourceType = sourceType;
+        this.nutrientType = nutrientType;
+        this.unitsOfMeasurement = unitsOfMeasurement;
         this.elements = elements;
         this.archived = archived;
         this.whItem = whItem;
         this.whItemBaseUnit = whItemBaseUnit;
-        this.additional_info = additional_info;
+        this.additionalInfo = additionalInfo;
         this.description = description;
-        this.external_id = external_id;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
+        this.externalId = externalId;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public Fertilizer() {
@@ -96,36 +96,36 @@ public class Fertilizer {
         this.name = name;
     }
 
-    public String getFertilizer_type() {
-        return fertilizer_type;
+    public String getFertilizerType() {
+        return fertilizerType;
     }
 
-    public void setFertilizer_type(String fertilizer_type) {
-        this.fertilizer_type = fertilizer_type;
+    public void setFertilizerType(String fertilizerType) {
+        this.fertilizerType = fertilizerType;
     }
 
-    public String getSource_type() {
-        return source_type;
+    public String getSourceType() {
+        return sourceType;
     }
 
-    public void setSource_type(String source_type) {
-        this.source_type = source_type;
+    public void setSourceType(String sourceType) {
+        this.sourceType = sourceType;
     }
 
-    public String getNutrient_type() {
-        return nutrient_type;
+    public String getNutrientType() {
+        return nutrientType;
     }
 
-    public void setNutrient_type(String nutrient_type) {
-        this.nutrient_type = nutrient_type;
+    public void setNutrientType(String nutrientType) {
+        this.nutrientType = nutrientType;
     }
 
-    public String getUnits_of_measurement() {
-        return units_of_measurement;
+    public String getUnitsOfMeasurement() {
+        return unitsOfMeasurement;
     }
 
-    public void setUnits_of_measurement(String units_of_measurement) {
-        this.units_of_measurement = units_of_measurement;
+    public void setUnitsOfMeasurement(String unitsOfMeasurement) {
+        this.unitsOfMeasurement = unitsOfMeasurement;
     }
 
     public JsonObject getElements() {
@@ -160,12 +160,12 @@ public class Fertilizer {
         this.whItemBaseUnit = whItemBaseUnit;
     }
 
-    public String getAdditional_info() {
-        return additional_info;
+    public String getAdditionalInfo() {
+        return additionalInfo;
     }
 
-    public void setAdditional_info(String additional_info) {
-        this.additional_info = additional_info;
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
 
     public String getDescription() {
@@ -176,28 +176,28 @@ public class Fertilizer {
         this.description = description;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
@@ -205,12 +205,12 @@ public class Fertilizer {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Fertilizer that = (Fertilizer) o;
-        return archived == that.archived && Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(fertilizer_type, that.fertilizer_type) && Objects.equals(source_type, that.source_type) && Objects.equals(nutrient_type, that.nutrient_type) && Objects.equals(units_of_measurement, that.units_of_measurement) && Objects.equals(elements, that.elements) && Objects.equals(whItem, that.whItem) && Objects.equals(whItemBaseUnit, that.whItemBaseUnit) && Objects.equals(additional_info, that.additional_info) && Objects.equals(description, that.description) && Objects.equals(external_id, that.external_id) && Objects.equals(created_at, that.created_at) && Objects.equals(updated_at, that.updated_at);
+        return archived == that.archived && Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(fertilizerType, that.fertilizerType) && Objects.equals(sourceType, that.sourceType) && Objects.equals(nutrientType, that.nutrientType) && Objects.equals(unitsOfMeasurement, that.unitsOfMeasurement) && Objects.equals(elements, that.elements) && Objects.equals(whItem, that.whItem) && Objects.equals(whItemBaseUnit, that.whItemBaseUnit) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(description, that.description) && Objects.equals(externalId, that.externalId) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, fertilizer_type, source_type, nutrient_type, units_of_measurement, elements, archived, whItem, whItemBaseUnit, additional_info, description, external_id, created_at, updated_at);
+        return Objects.hash(id, name, fertilizerType, sourceType, nutrientType, unitsOfMeasurement, elements, archived, whItem, whItemBaseUnit, additionalInfo, description, externalId, createdAt, updatedAt);
     }
 
     @Override
@@ -218,19 +218,19 @@ public class Fertilizer {
         return "Fertilizer{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", fertilizer_type='" + fertilizer_type + '\'' +
-                ", source_type='" + source_type + '\'' +
-                ", nutrient_type='" + nutrient_type + '\'' +
-                ", units_of_measurement='" + units_of_measurement + '\'' +
+                ", fertilizerType='" + fertilizerType + '\'' +
+                ", sourceType='" + sourceType + '\'' +
+                ", nutrientType='" + nutrientType + '\'' +
+                ", unitsOfMeasurement='" + unitsOfMeasurement + '\'' +
                 ", elements=" + elements +
                 ", archived=" + archived +
                 ", whItem=" + whItem +
                 ", whItemBaseUnit=" + whItemBaseUnit +
-                ", additional_info='" + additional_info + '\'' +
+                ", additionalInfo='" + additionalInfo + '\'' +
                 ", description='" + description + '\'' +
-                ", external_id='" + external_id + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
+                ", externalId='" + externalId + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }

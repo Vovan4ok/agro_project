@@ -12,47 +12,47 @@ public class Unit {
     private Short id;
 
     @Column(name="human_name", length=30)
-    private String human_name;
+    private String humanName;
 
     @Column(name="system_name", length=30)
-    private String system_name;
+    private String systemName;
 
     @Column(name="base_unit", length=10)
-    private String base_unit;
+    private String baseUnit;
 
     @Column(name="coefficient_to_base_unit", length=15)
-    private String coefficient_to_base_unit;
+    private String coefficientToBaseUnit;
 
     @Column(name="description")
     @Lob
     private String description;
 
     @Column(name="idempotency_key", length=20)
-    private String idempotency_key;
+    private String idempotencyKey;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
     @Column(name="archived")
     private boolean archived;
 
-    public Unit(Short id, String human_name, String system_name, String base_unit, String coefficient_to_base_unit, String description, String idempotency_key, String external_id, Timestamp created_at, Timestamp updated_at, boolean archived) {
+    public Unit(Short id, String humanName, String systemName, String baseUnit, String coefficientToBaseUnit, String description, String idempotencyKey, String externalId, Timestamp createdAt, Timestamp updatedAt, boolean archived) {
         this.id = id;
-        this.human_name = human_name;
-        this.system_name = system_name;
-        this.base_unit = base_unit;
-        this.coefficient_to_base_unit = coefficient_to_base_unit;
+        this.humanName = humanName;
+        this.systemName = systemName;
+        this.baseUnit = baseUnit;
+        this.coefficientToBaseUnit = coefficientToBaseUnit;
         this.description = description;
-        this.idempotency_key = idempotency_key;
-        this.external_id = external_id;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
+        this.idempotencyKey = idempotencyKey;
+        this.externalId = externalId;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
         this.archived = archived;
     }
 
@@ -67,36 +67,36 @@ public class Unit {
         this.id = id;
     }
 
-    public String getHuman_name() {
-        return human_name;
+    public String getHumanName() {
+        return humanName;
     }
 
-    public void setHuman_name(String human_name) {
-        this.human_name = human_name;
+    public void setHumanName(String humanName) {
+        this.humanName = humanName;
     }
 
-    public String getSystem_name() {
-        return system_name;
+    public String getSystemName() {
+        return systemName;
     }
 
-    public void setSystem_name(String system_name) {
-        this.system_name = system_name;
+    public void setSystemName(String systemName) {
+        this.systemName = systemName;
     }
 
-    public String getBase_unit() {
-        return base_unit;
+    public String getBaseUnit() {
+        return baseUnit;
     }
 
-    public void setBase_unit(String base_unit) {
-        this.base_unit = base_unit;
+    public void setBaseUnit(String baseUnit) {
+        this.baseUnit = baseUnit;
     }
 
-    public String getCoefficient_to_base_unit() {
-        return coefficient_to_base_unit;
+    public String getCoefficientToBaseUnit() {
+        return coefficientToBaseUnit;
     }
 
-    public void setCoefficient_to_base_unit(String coefficient_to_base_unit) {
-        this.coefficient_to_base_unit = coefficient_to_base_unit;
+    public void setCoefficientToBaseUnit(String coefficientToBaseUnit) {
+        this.coefficientToBaseUnit = coefficientToBaseUnit;
     }
 
     public String getDescription() {
@@ -107,36 +107,36 @@ public class Unit {
         this.description = description;
     }
 
-    public String getIdempotency_key() {
-        return idempotency_key;
+    public String getIdempotencyKey() {
+        return idempotencyKey;
     }
 
-    public void setIdempotency_key(String idempotency_key) {
-        this.idempotency_key = idempotency_key;
+    public void setIdempotencyKey(String idempotencyKey) {
+        this.idempotencyKey = idempotencyKey;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     public boolean isArchived() {
@@ -152,27 +152,27 @@ public class Unit {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Unit unit = (Unit) o;
-        return archived == unit.archived && Objects.equals(id, unit.id) && Objects.equals(human_name, unit.human_name) && Objects.equals(system_name, unit.system_name) && Objects.equals(base_unit, unit.base_unit) && Objects.equals(coefficient_to_base_unit, unit.coefficient_to_base_unit) && Objects.equals(description, unit.description) && Objects.equals(idempotency_key, unit.idempotency_key) && Objects.equals(external_id, unit.external_id) && Objects.equals(created_at, unit.created_at) && Objects.equals(updated_at, unit.updated_at);
+        return archived == unit.archived && Objects.equals(id, unit.id) && Objects.equals(humanName, unit.humanName) && Objects.equals(systemName, unit.systemName) && Objects.equals(baseUnit, unit.baseUnit) && Objects.equals(coefficientToBaseUnit, unit.coefficientToBaseUnit) && Objects.equals(description, unit.description) && Objects.equals(idempotencyKey, unit.idempotencyKey) && Objects.equals(externalId, unit.externalId) && Objects.equals(createdAt, unit.createdAt) && Objects.equals(updatedAt, unit.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, human_name, system_name, base_unit, coefficient_to_base_unit, description, idempotency_key, external_id, created_at, updated_at, archived);
+        return Objects.hash(id, humanName, systemName, baseUnit, coefficientToBaseUnit, description, idempotencyKey, externalId, createdAt, updatedAt, archived);
     }
 
     @Override
     public String toString() {
         return "Unit{" +
                 "id=" + id +
-                ", human_name='" + human_name + '\'' +
-                ", system_name='" + system_name + '\'' +
-                ", base_unit='" + base_unit + '\'' +
-                ", coefficient_to_base_unit='" + coefficient_to_base_unit + '\'' +
+                ", humanName='" + humanName + '\'' +
+                ", systemName='" + systemName + '\'' +
+                ", baseUnit='" + baseUnit + '\'' +
+                ", coefficientToBaseUnit='" + coefficientToBaseUnit + '\'' +
                 ", description='" + description + '\'' +
-                ", idempotency_key='" + idempotency_key + '\'' +
-                ", external_id='" + external_id + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
+                ", idempotencyKey='" + idempotencyKey + '\'' +
+                ", externalId='" + externalId + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 ", archived=" + archived +
                 '}';
     }

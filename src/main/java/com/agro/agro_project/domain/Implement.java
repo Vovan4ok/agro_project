@@ -24,29 +24,29 @@ public class Implement {
     private short year;
 
     @Column(name="registration_number", length=20)
-    private String registration_number;
+    private String registrationNumber;
 
     @Column(name="inventory_number", length=20)
-    private String inventory_number;
+    private String inventoryNumber;
 
     @Column(name="implement_type", length=20)
-    private String implement_type;
+    private String implementType;
 
     @Column(name="width")
     private double width;
 
     @Column(name="official_width")
-    private double official_width;
+    private double officialWidth;
 
     @Column(name="avatar_id")
-    private short avatar_id;
+    private short avatarId;
 
     @Column(name="chassis_serial_number", length=50)
-    private String chassis_serial_number;
+    private String chassisSerialNumber;
 
     @Column(name="legal_company")
     @Lob
-    private String legal_company;
+    private String legalCompany;
 
     @Column(name="description")
     @Lob
@@ -58,52 +58,52 @@ public class Implement {
 
     @Column(name="additional_info")
     @Lob
-    private String additional_info;
+    private String additionalInfo;
 
     @Column(name="variable_width")
-    private boolean variable_width;
+    private boolean variableWidth;
 
     @Column(name="min_width")
-    private double min_width;
+    private double minWidth;
 
     @Column(name="max_width")
-    private double max_width;
+    private double maxWidth;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
     @Column(name="virtual")
     private boolean virtual;
 
-    public Implement(Short id, String name, String model, String manufacturer, short year, String registration_number, String inventory_number, String implement_type, double width, double official_width, short avatar_id, String chassis_serial_number, String legal_company, String description, String additional, String additional_info, boolean variable_width, double min_width, double max_width, Timestamp created_at, Timestamp updated_at, String external_id, boolean virtual) {
+    public Implement(Short id, String name, String model, String manufacturer, short year, String registrationNumber, String inventoryNumber, String implementType, double width, double officialWidth, short avatarId, String chassisSerialNumber, String legalCompany, String description, String additional, String additionalInfo, boolean variableWidth, double minWidth, double maxWidth, Timestamp createdAt, Timestamp updatedAt, String externalId, boolean virtual) {
         this.id = id;
         this.name = name;
         this.model = model;
         this.manufacturer = manufacturer;
         this.year = year;
-        this.registration_number = registration_number;
-        this.inventory_number = inventory_number;
-        this.implement_type = implement_type;
+        this.registrationNumber = registrationNumber;
+        this.inventoryNumber = inventoryNumber;
+        this.implementType = implementType;
         this.width = width;
-        this.official_width = official_width;
-        this.avatar_id = avatar_id;
-        this.chassis_serial_number = chassis_serial_number;
-        this.legal_company = legal_company;
+        this.officialWidth = officialWidth;
+        this.avatarId = avatarId;
+        this.chassisSerialNumber = chassisSerialNumber;
+        this.legalCompany = legalCompany;
         this.description = description;
         this.additional = additional;
-        this.additional_info = additional_info;
-        this.variable_width = variable_width;
-        this.min_width = min_width;
-        this.max_width = max_width;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
-        this.external_id = external_id;
+        this.additionalInfo = additionalInfo;
+        this.variableWidth = variableWidth;
+        this.minWidth = minWidth;
+        this.maxWidth = maxWidth;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.externalId = externalId;
         this.virtual = virtual;
     }
 
@@ -150,28 +150,28 @@ public class Implement {
         this.year = year;
     }
 
-    public String getRegistration_number() {
-        return registration_number;
+    public String getRegistrationNumber() {
+        return registrationNumber;
     }
 
-    public void setRegistration_number(String registration_number) {
-        this.registration_number = registration_number;
+    public void setRegistrationNumber(String registrationNumber) {
+        this.registrationNumber = registrationNumber;
     }
 
-    public String getInventory_number() {
-        return inventory_number;
+    public String getInventoryNumber() {
+        return inventoryNumber;
     }
 
-    public void setInventory_number(String inventory_number) {
-        this.inventory_number = inventory_number;
+    public void setInventoryNumber(String inventoryNumber) {
+        this.inventoryNumber = inventoryNumber;
     }
 
-    public String getImplement_type() {
-        return implement_type;
+    public String getImplementType() {
+        return implementType;
     }
 
-    public void setImplement_type(String implement_type) {
-        this.implement_type = implement_type;
+    public void setImplementType(String implementType) {
+        this.implementType = implementType;
     }
 
     public double getWidth() {
@@ -182,36 +182,36 @@ public class Implement {
         this.width = width;
     }
 
-    public double getOfficial_width() {
-        return official_width;
+    public double getOfficialWidth() {
+        return officialWidth;
     }
 
-    public void setOfficial_width(double official_width) {
-        this.official_width = official_width;
+    public void setOfficialWidth(double officialWidth) {
+        this.officialWidth = officialWidth;
     }
 
-    public short getAvatar_id() {
-        return avatar_id;
+    public short getAvatarId() {
+        return avatarId;
     }
 
-    public void setAvatar_id(short avatar_id) {
-        this.avatar_id = avatar_id;
+    public void setAvatarId(short avatarId) {
+        this.avatarId = avatarId;
     }
 
-    public String getChassis_serial_number() {
-        return chassis_serial_number;
+    public String getChassisSerialNumber() {
+        return chassisSerialNumber;
     }
 
-    public void setChassis_serial_number(String chassis_serial_number) {
-        this.chassis_serial_number = chassis_serial_number;
+    public void setChassisSerialNumber(String chassisSerialNumber) {
+        this.chassisSerialNumber = chassisSerialNumber;
     }
 
-    public String getLegal_company() {
-        return legal_company;
+    public String getLegalCompany() {
+        return legalCompany;
     }
 
-    public void setLegal_company(String legal_company) {
-        this.legal_company = legal_company;
+    public void setLegalCompany(String legalCompany) {
+        this.legalCompany = legalCompany;
     }
 
     public String getDescription() {
@@ -230,60 +230,60 @@ public class Implement {
         this.additional = additional;
     }
 
-    public String getAdditional_info() {
-        return additional_info;
+    public String getAdditionalInfo() {
+        return additionalInfo;
     }
 
-    public void setAdditional_info(String additional_info) {
-        this.additional_info = additional_info;
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
 
-    public boolean isVariable_width() {
-        return variable_width;
+    public boolean isVariableWidth() {
+        return variableWidth;
     }
 
-    public void setVariable_width(boolean variable_width) {
-        this.variable_width = variable_width;
+    public void setVariableWidth(boolean variableWidth) {
+        this.variableWidth = variableWidth;
     }
 
-    public double getMin_width() {
-        return min_width;
+    public double getMinWidth() {
+        return minWidth;
     }
 
-    public void setMin_width(double min_width) {
-        this.min_width = min_width;
+    public void setMinWidth(double minWidth) {
+        this.minWidth = minWidth;
     }
 
-    public double getMax_width() {
-        return max_width;
+    public double getMaxWidth() {
+        return maxWidth;
     }
 
-    public void setMax_width(double max_width) {
-        this.max_width = max_width;
+    public void setMaxWidth(double maxWidth) {
+        this.maxWidth = maxWidth;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
     public boolean isVirtual() {
@@ -299,12 +299,12 @@ public class Implement {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Implement implement = (Implement) o;
-        return year == implement.year && Double.compare(width, implement.width) == 0 && Double.compare(official_width, implement.official_width) == 0 && avatar_id == implement.avatar_id && variable_width == implement.variable_width && Double.compare(min_width, implement.min_width) == 0 && Double.compare(max_width, implement.max_width) == 0 && virtual == implement.virtual && Objects.equals(id, implement.id) && Objects.equals(name, implement.name) && Objects.equals(model, implement.model) && Objects.equals(manufacturer, implement.manufacturer) && Objects.equals(registration_number, implement.registration_number) && Objects.equals(inventory_number, implement.inventory_number) && Objects.equals(implement_type, implement.implement_type) && Objects.equals(chassis_serial_number, implement.chassis_serial_number) && Objects.equals(legal_company, implement.legal_company) && Objects.equals(description, implement.description) && Objects.equals(additional, implement.additional) && Objects.equals(additional_info, implement.additional_info) && Objects.equals(created_at, implement.created_at) && Objects.equals(updated_at, implement.updated_at) && Objects.equals(external_id, implement.external_id);
+        return year == implement.year && Double.compare(width, implement.width) == 0 && Double.compare(officialWidth, implement.officialWidth) == 0 && avatarId == implement.avatarId && variableWidth == implement.variableWidth && Double.compare(minWidth, implement.minWidth) == 0 && Double.compare(maxWidth, implement.maxWidth) == 0 && virtual == implement.virtual && Objects.equals(id, implement.id) && Objects.equals(name, implement.name) && Objects.equals(model, implement.model) && Objects.equals(manufacturer, implement.manufacturer) && Objects.equals(registrationNumber, implement.registrationNumber) && Objects.equals(inventoryNumber, implement.inventoryNumber) && Objects.equals(implementType, implement.implementType) && Objects.equals(chassisSerialNumber, implement.chassisSerialNumber) && Objects.equals(legalCompany, implement.legalCompany) && Objects.equals(description, implement.description) && Objects.equals(additional, implement.additional) && Objects.equals(additionalInfo, implement.additionalInfo) && Objects.equals(createdAt, implement.createdAt) && Objects.equals(updatedAt, implement.updatedAt) && Objects.equals(externalId, implement.externalId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, model, manufacturer, year, registration_number, inventory_number, implement_type, width, official_width, avatar_id, chassis_serial_number, legal_company, description, additional, additional_info, variable_width, min_width, max_width, created_at, updated_at, external_id, virtual);
+        return Objects.hash(id, name, model, manufacturer, year, registrationNumber, inventoryNumber, implementType, width, officialWidth, avatarId, chassisSerialNumber, legalCompany, description, additional, additionalInfo, variableWidth, minWidth, maxWidth, createdAt, updatedAt, externalId, virtual);
     }
 
     @Override
@@ -315,23 +315,23 @@ public class Implement {
                 ", model='" + model + '\'' +
                 ", manufacturer='" + manufacturer + '\'' +
                 ", year=" + year +
-                ", registration_number='" + registration_number + '\'' +
-                ", inventory_number='" + inventory_number + '\'' +
-                ", implement_type='" + implement_type + '\'' +
+                ", registrationNumber='" + registrationNumber + '\'' +
+                ", inventoryNumber='" + inventoryNumber + '\'' +
+                ", implementType='" + implementType + '\'' +
                 ", width=" + width +
-                ", official_width=" + official_width +
-                ", avatar_id=" + avatar_id +
-                ", chassis_serial_number='" + chassis_serial_number + '\'' +
-                ", legal_company='" + legal_company + '\'' +
+                ", officialWidth=" + officialWidth +
+                ", avatarId=" + avatarId +
+                ", chassisSerialNumber='" + chassisSerialNumber + '\'' +
+                ", legalCompany='" + legalCompany + '\'' +
                 ", description='" + description + '\'' +
                 ", additional='" + additional + '\'' +
-                ", additional_info='" + additional_info + '\'' +
-                ", variable_width=" + variable_width +
-                ", min_width=" + min_width +
-                ", max_width=" + max_width +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
-                ", external_id='" + external_id + '\'' +
+                ", additionalInfo='" + additionalInfo + '\'' +
+                ", variableWidth=" + variableWidth +
+                ", minWidth=" + minWidth +
+                ", maxWidth=" + maxWidth +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", externalId='" + externalId + '\'' +
                 ", virtual=" + virtual +
                 '}';
     }

@@ -28,10 +28,10 @@ public class WorkType {
     private boolean sowing;
 
     @Column(name="re_sowing")
-    private boolean re_sowing;
+    private boolean reSowing;
 
     @Column(name="additional_sowing")
-    private boolean additional_sowing;
+    private boolean additionalSowing;
 
     @Column(name="harvesting")
     private boolean harvesting;
@@ -40,7 +40,7 @@ public class WorkType {
     private boolean soil;
 
     @Column(name="standard_name", length=100)
-    private String standard_name;
+    private String standardName;
 
     @Column(name="hidden")
     private boolean hidden;
@@ -50,35 +50,35 @@ public class WorkType {
     private String description;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
     @Column(name="disable_first_track_rule_coverage")
-    private boolean disable_first_track_rule_coverage;
+    private boolean disableFirstTrackRuleCoverage;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
-    public WorkType(Short id, WorkTypeGroup workTypeGroup, String name, boolean agri, boolean application, boolean sowing, boolean re_sowing, boolean additional_sowing, boolean harvesting, boolean soil, String standard_name, boolean hidden, String description, String external_id, boolean disable_first_track_rule_coverage, Timestamp created_at, Timestamp updated_at) {
+    public WorkType(Short id, WorkTypeGroup workTypeGroup, String name, boolean agri, boolean application, boolean sowing, boolean reSowing, boolean additionalSowing, boolean harvesting, boolean soil, String standardName, boolean hidden, String description, String externalId, boolean disableFirstTrackRuleCoverage, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.workTypeGroup = workTypeGroup;
         this.name = name;
         this.agri = agri;
         this.application = application;
         this.sowing = sowing;
-        this.re_sowing = re_sowing;
-        this.additional_sowing = additional_sowing;
+        this.reSowing = reSowing;
+        this.additionalSowing = additionalSowing;
         this.harvesting = harvesting;
         this.soil = soil;
-        this.standard_name = standard_name;
+        this.standardName = standardName;
         this.hidden = hidden;
         this.description = description;
-        this.external_id = external_id;
-        this.disable_first_track_rule_coverage = disable_first_track_rule_coverage;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
+        this.externalId = externalId;
+        this.disableFirstTrackRuleCoverage = disableFirstTrackRuleCoverage;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public WorkType() {
@@ -132,20 +132,20 @@ public class WorkType {
         this.sowing = sowing;
     }
 
-    public boolean isRe_sowing() {
-        return re_sowing;
+    public boolean isReSowing() {
+        return reSowing;
     }
 
-    public void setRe_sowing(boolean re_sowing) {
-        this.re_sowing = re_sowing;
+    public void setReSowing(boolean reSowing) {
+        this.reSowing = reSowing;
     }
 
-    public boolean isAdditional_sowing() {
-        return additional_sowing;
+    public boolean isAdditionalSowing() {
+        return additionalSowing;
     }
 
-    public void setAdditional_sowing(boolean additional_sowing) {
-        this.additional_sowing = additional_sowing;
+    public void setAdditionalSowing(boolean additionalSowing) {
+        this.additionalSowing = additionalSowing;
     }
 
     public boolean isHarvesting() {
@@ -164,12 +164,12 @@ public class WorkType {
         this.soil = soil;
     }
 
-    public String getStandard_name() {
-        return standard_name;
+    public String getStandardName() {
+        return standardName;
     }
 
-    public void setStandard_name(String standard_name) {
-        this.standard_name = standard_name;
+    public void setStandardName(String standardName) {
+        this.standardName = standardName;
     }
 
     public boolean isHidden() {
@@ -188,36 +188,36 @@ public class WorkType {
         this.description = description;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
-    public boolean isDisable_first_track_rule_coverage() {
-        return disable_first_track_rule_coverage;
+    public boolean isDisableFirstTrackRuleCoverage() {
+        return disableFirstTrackRuleCoverage;
     }
 
-    public void setDisable_first_track_rule_coverage(boolean disable_first_track_rule_coverage) {
-        this.disable_first_track_rule_coverage = disable_first_track_rule_coverage;
+    public void setDisableFirstTrackRuleCoverage(boolean disableFirstTrackRuleCoverage) {
+        this.disableFirstTrackRuleCoverage = disableFirstTrackRuleCoverage;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
@@ -225,12 +225,12 @@ public class WorkType {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         WorkType workType = (WorkType) o;
-        return agri == workType.agri && application == workType.application && sowing == workType.sowing && re_sowing == workType.re_sowing && additional_sowing == workType.additional_sowing && harvesting == workType.harvesting && soil == workType.soil && hidden == workType.hidden && disable_first_track_rule_coverage == workType.disable_first_track_rule_coverage && Objects.equals(id, workType.id) && Objects.equals(workTypeGroup, workType.workTypeGroup) && Objects.equals(name, workType.name) && Objects.equals(standard_name, workType.standard_name) && Objects.equals(description, workType.description) && Objects.equals(external_id, workType.external_id) && Objects.equals(created_at, workType.created_at) && Objects.equals(updated_at, workType.updated_at);
+        return agri == workType.agri && application == workType.application && sowing == workType.sowing && reSowing == workType.reSowing && additionalSowing == workType.additionalSowing && harvesting == workType.harvesting && soil == workType.soil && hidden == workType.hidden && disableFirstTrackRuleCoverage == workType.disableFirstTrackRuleCoverage && Objects.equals(id, workType.id) && Objects.equals(workTypeGroup, workType.workTypeGroup) && Objects.equals(name, workType.name) && Objects.equals(standardName, workType.standardName) && Objects.equals(description, workType.description) && Objects.equals(externalId, workType.externalId) && Objects.equals(createdAt, workType.createdAt) && Objects.equals(updatedAt, workType.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, workTypeGroup, name, agri, application, sowing, re_sowing, additional_sowing, harvesting, soil, standard_name, hidden, description, external_id, disable_first_track_rule_coverage, created_at, updated_at);
+        return Objects.hash(id, workTypeGroup, name, agri, application, sowing, reSowing, additionalSowing, harvesting, soil, standardName, hidden, description, externalId, disableFirstTrackRuleCoverage, createdAt, updatedAt);
     }
 
     @Override
@@ -242,17 +242,17 @@ public class WorkType {
                 ", agri=" + agri +
                 ", application=" + application +
                 ", sowing=" + sowing +
-                ", re_sowing=" + re_sowing +
-                ", additional_sowing=" + additional_sowing +
+                ", reSowing=" + reSowing +
+                ", additionalSowing=" + additionalSowing +
                 ", harvesting=" + harvesting +
                 ", soil=" + soil +
-                ", standard_name='" + standard_name + '\'' +
+                ", standardName='" + standardName + '\'' +
                 ", hidden=" + hidden +
                 ", description='" + description + '\'' +
-                ", external_id='" + external_id + '\'' +
-                ", disable_first_track_rule_coverage=" + disable_first_track_rule_coverage +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
+                ", externalId='" + externalId + '\'' +
+                ", disableFirstTrackRuleCoverage=" + disableFirstTrackRuleCoverage +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }

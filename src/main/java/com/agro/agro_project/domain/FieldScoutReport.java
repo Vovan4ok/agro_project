@@ -20,14 +20,14 @@ public class FieldScoutReport {
     private User user;
 
     @Column(name="report_time")
-    private Timestamp report_time;
+    private Timestamp reportTime;
 
     @Column(name="season")
     private short season;
 
     @Column(name="additional_info")
     @Lob
-    private String additional_info;
+    private String additionalInfo;
 
     @ManyToOne
     @JoinColumn(name="growth_stage_id")
@@ -38,67 +38,67 @@ public class FieldScoutReport {
     private FieldShape fieldShape;
 
     @Column(name="ears_cover")
-    private double ears_cover;
+    private double earsCover;
 
     @Column(name="plants_cover")
-    private double plants_cover;
+    private double plantsCover;
 
     @Column(name="ground_cover")
-    private double ground_cover;
+    private double groundCover;
 
     @Column(name="created_by_user_at")
-    private Timestamp created_by_user_at;
+    private Timestamp createdByUserAt;
 
     @Column(name="updated_by_user_at")
-    private Timestamp updated_by_user_at;
+    private Timestamp updatedByUserAt;
 
     @ManyToOne
     @JoinColumn(name="scouting_task_id")
     private ScoutingTask scoutingTask;
 
     @Column(name="scout_report_template_id")
-    private int scout_report_template_id;
+    private int scoutReportTemplateId;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
     @Column(name="idempotency_key", length=100)
-    private String idempotency_key;
+    private String idempotencyKey;
 
     @Column(name="history_item_id")
-    private int history_item_id;
+    private int historyItemId;
 
     @Column(name="x_custom_fields_data")
-    private String x_custom_fields_data;
+    private String xCustomFieldsData;
 
-    public FieldScoutReport(Integer id, Field field, User user, Timestamp report_time, short season, String additional_info, GrowthStage growthStage, FieldShape fieldShape, double ears_cover, double plants_cover, double ground_cover, Timestamp created_by_user_at, Timestamp updated_by_user_at, ScoutingTask scoutingTask, int scout_report_template_id, String external_id, Timestamp created_at, Timestamp updated_at, String idempotency_key, int history_item_id, String x_custom_fields_data) {
+    public FieldScoutReport(Integer id, Field field, User user, Timestamp reportTime, short season, String additionalInfo, GrowthStage growthStage, FieldShape fieldShape, double earsCover, double plantsCover, double groundCover, Timestamp createdByUserAt, Timestamp updatedByUserAt, ScoutingTask scoutingTask, int scoutReportTemplateId, String externalId, Timestamp createdAt, Timestamp updatedAt, String idempotencyKey, int historyItemId, String xCustomFieldsData) {
         this.id = id;
         this.field = field;
         this.user = user;
-        this.report_time = report_time;
+        this.reportTime = reportTime;
         this.season = season;
-        this.additional_info = additional_info;
+        this.additionalInfo = additionalInfo;
         this.growthStage = growthStage;
         this.fieldShape = fieldShape;
-        this.ears_cover = ears_cover;
-        this.plants_cover = plants_cover;
-        this.ground_cover = ground_cover;
-        this.created_by_user_at = created_by_user_at;
-        this.updated_by_user_at = updated_by_user_at;
+        this.earsCover = earsCover;
+        this.plantsCover = plantsCover;
+        this.groundCover = groundCover;
+        this.createdByUserAt = createdByUserAt;
+        this.updatedByUserAt = updatedByUserAt;
         this.scoutingTask = scoutingTask;
-        this.scout_report_template_id = scout_report_template_id;
-        this.external_id = external_id;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
-        this.idempotency_key = idempotency_key;
-        this.history_item_id = history_item_id;
-        this.x_custom_fields_data = x_custom_fields_data;
+        this.scoutReportTemplateId = scoutReportTemplateId;
+        this.externalId = externalId;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.idempotencyKey = idempotencyKey;
+        this.historyItemId = historyItemId;
+        this.xCustomFieldsData = xCustomFieldsData;
     }
 
     public FieldScoutReport() {
@@ -128,12 +128,12 @@ public class FieldScoutReport {
         this.user = user;
     }
 
-    public Timestamp getReport_time() {
-        return report_time;
+    public Timestamp getReportTime() {
+        return reportTime;
     }
 
-    public void setReport_time(Timestamp report_time) {
-        this.report_time = report_time;
+    public void setReportTime(Timestamp reportTime) {
+        this.reportTime = reportTime;
     }
 
     public short getSeason() {
@@ -144,12 +144,12 @@ public class FieldScoutReport {
         this.season = season;
     }
 
-    public String getAdditional_info() {
-        return additional_info;
+    public String getAdditionalInfo() {
+        return additionalInfo;
     }
 
-    public void setAdditional_info(String additional_info) {
-        this.additional_info = additional_info;
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
 
     public GrowthStage getGrowthStage() {
@@ -168,44 +168,44 @@ public class FieldScoutReport {
         this.fieldShape = fieldShape;
     }
 
-    public double getEars_cover() {
-        return ears_cover;
+    public double getEarsCover() {
+        return earsCover;
     }
 
-    public void setEars_cover(double ears_cover) {
-        this.ears_cover = ears_cover;
+    public void setEarsCover(double earsCover) {
+        this.earsCover = earsCover;
     }
 
-    public double getPlants_cover() {
-        return plants_cover;
+    public double getPlantsCover() {
+        return plantsCover;
     }
 
-    public void setPlants_cover(double plants_cover) {
-        this.plants_cover = plants_cover;
+    public void setPlantsCover(double plantsCover) {
+        this.plantsCover = plantsCover;
     }
 
-    public double getGround_cover() {
-        return ground_cover;
+    public double getGroundCover() {
+        return groundCover;
     }
 
-    public void setGround_cover(double ground_cover) {
-        this.ground_cover = ground_cover;
+    public void setGroundCover(double groundCover) {
+        this.groundCover = groundCover;
     }
 
-    public Timestamp getCreated_by_user_at() {
-        return created_by_user_at;
+    public Timestamp getCreatedByUserAt() {
+        return createdByUserAt;
     }
 
-    public void setCreated_by_user_at(Timestamp created_by_user_at) {
-        this.created_by_user_at = created_by_user_at;
+    public void setCreatedByUserAt(Timestamp createdByUserAt) {
+        this.createdByUserAt = createdByUserAt;
     }
 
-    public Timestamp getUpdated_by_user_at() {
-        return updated_by_user_at;
+    public Timestamp getUpdatedByUserAt() {
+        return updatedByUserAt;
     }
 
-    public void setUpdated_by_user_at(Timestamp updated_by_user_at) {
-        this.updated_by_user_at = updated_by_user_at;
+    public void setUpdatedByUserAt(Timestamp updatedByUserAt) {
+        this.updatedByUserAt = updatedByUserAt;
     }
 
     public ScoutingTask getScoutingTask() {
@@ -216,60 +216,60 @@ public class FieldScoutReport {
         this.scoutingTask = scoutingTask;
     }
 
-    public int getScout_report_template_id() {
-        return scout_report_template_id;
+    public int getScoutReportTemplateId() {
+        return scoutReportTemplateId;
     }
 
-    public void setScout_report_template_id(int scout_report_template_id) {
-        this.scout_report_template_id = scout_report_template_id;
+    public void setScoutReportTemplateId(int scoutReportTemplateId) {
+        this.scoutReportTemplateId = scoutReportTemplateId;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
-    public String getIdempotency_key() {
-        return idempotency_key;
+    public String getIdempotencyKey() {
+        return idempotencyKey;
     }
 
-    public void setIdempotency_key(String idempotency_key) {
-        this.idempotency_key = idempotency_key;
+    public void setIdempotencyKey(String idempotencyKey) {
+        this.idempotencyKey = idempotencyKey;
     }
 
-    public int getHistory_item_id() {
-        return history_item_id;
+    public int getHistoryItemId() {
+        return historyItemId;
     }
 
-    public void setHistory_item_id(int history_item_id) {
-        this.history_item_id = history_item_id;
+    public void setHistoryItemId(int historyItemId) {
+        this.historyItemId = historyItemId;
     }
 
-    public String getX_custom_fields_data() {
-        return x_custom_fields_data;
+    public String getXCustomFieldsData() {
+        return xCustomFieldsData;
     }
 
-    public void setX_custom_fields_data(String x_custom_fields_data) {
-        this.x_custom_fields_data = x_custom_fields_data;
+    public void setXCustomFieldsData(String xCustomFieldsData) {
+        this.xCustomFieldsData = xCustomFieldsData;
     }
 
     @Override
@@ -277,12 +277,12 @@ public class FieldScoutReport {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         FieldScoutReport that = (FieldScoutReport) o;
-        return season == that.season && Double.compare(ears_cover, that.ears_cover) == 0 && Double.compare(plants_cover, that.plants_cover) == 0 && Double.compare(ground_cover, that.ground_cover) == 0 && scout_report_template_id == that.scout_report_template_id && history_item_id == that.history_item_id && Objects.equals(id, that.id) && Objects.equals(field, that.field) && Objects.equals(user, that.user) && Objects.equals(report_time, that.report_time) && Objects.equals(additional_info, that.additional_info) && Objects.equals(growthStage, that.growthStage) && Objects.equals(fieldShape, that.fieldShape) && Objects.equals(created_by_user_at, that.created_by_user_at) && Objects.equals(updated_by_user_at, that.updated_by_user_at) && Objects.equals(scoutingTask, that.scoutingTask) && Objects.equals(external_id, that.external_id) && Objects.equals(created_at, that.created_at) && Objects.equals(updated_at, that.updated_at) && Objects.equals(idempotency_key, that.idempotency_key) && Objects.equals(x_custom_fields_data, that.x_custom_fields_data);
+        return season == that.season && Double.compare(earsCover, that.earsCover) == 0 && Double.compare(plantsCover, that.plantsCover) == 0 && Double.compare(groundCover, that.groundCover) == 0 && scoutReportTemplateId == that.scoutReportTemplateId && historyItemId == that.historyItemId && Objects.equals(id, that.id) && Objects.equals(field, that.field) && Objects.equals(user, that.user) && Objects.equals(reportTime, that.reportTime) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(growthStage, that.growthStage) && Objects.equals(fieldShape, that.fieldShape) && Objects.equals(createdByUserAt, that.createdByUserAt) && Objects.equals(updatedByUserAt, that.updatedByUserAt) && Objects.equals(scoutingTask, that.scoutingTask) && Objects.equals(externalId, that.externalId) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(idempotencyKey, that.idempotencyKey) && Objects.equals(xCustomFieldsData, that.xCustomFieldsData);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, field, user, report_time, season, additional_info, growthStage, fieldShape, ears_cover, plants_cover, ground_cover, created_by_user_at, updated_by_user_at, scoutingTask, scout_report_template_id, external_id, created_at, updated_at, idempotency_key, history_item_id, x_custom_fields_data);
+        return Objects.hash(id, field, user, reportTime, season, additionalInfo, growthStage, fieldShape, earsCover, plantsCover, groundCover, createdByUserAt, updatedByUserAt, scoutingTask, scoutReportTemplateId, externalId, createdAt, updatedAt, idempotencyKey, historyItemId, xCustomFieldsData);
     }
 
     @Override
@@ -291,24 +291,24 @@ public class FieldScoutReport {
                 "id=" + id +
                 ", field=" + field +
                 ", user=" + user +
-                ", report_time=" + report_time +
+                ", reportTime=" + reportTime +
                 ", season=" + season +
-                ", additional_info='" + additional_info + '\'' +
+                ", additionalInfo='" + additionalInfo + '\'' +
                 ", growthStage=" + growthStage +
                 ", fieldShape=" + fieldShape +
-                ", ears_cover=" + ears_cover +
-                ", plants_cover=" + plants_cover +
-                ", ground_cover=" + ground_cover +
-                ", created_by_user_at=" + created_by_user_at +
-                ", updated_by_user_at=" + updated_by_user_at +
+                ", earsCover=" + earsCover +
+                ", plantsCover=" + plantsCover +
+                ", groundCover=" + groundCover +
+                ", createdByUserAt=" + createdByUserAt +
+                ", updatedByUserAt=" + updatedByUserAt +
                 ", scoutingTask=" + scoutingTask +
-                ", scout_report_template_id=" + scout_report_template_id +
-                ", external_id='" + external_id + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
-                ", idempotency_key='" + idempotency_key + '\'' +
-                ", history_item_id=" + history_item_id +
-                ", x_custom_fields_data='" + x_custom_fields_data + '\'' +
+                ", scoutReportTemplateId=" + scoutReportTemplateId +
+                ", externalId='" + externalId + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", idempotencyKey='" + idempotencyKey + '\'' +
+                ", historyItemId=" + historyItemId +
+                ", xCustomFieldsData='" + xCustomFieldsData + '\'' +
                 '}';
     }
 }

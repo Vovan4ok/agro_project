@@ -19,7 +19,7 @@ public class MaintenanceType {
     private String name;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
     @Column(name="description")
     @Lob
@@ -29,20 +29,20 @@ public class MaintenanceType {
     private boolean hidden;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
-    public MaintenanceType(Short id, MaintenanceTypeGroup maintenanceTypeGroup, String name, String external_id, String description, boolean hidden, Timestamp created_at, Timestamp updated_at) {
+    public MaintenanceType(Short id, MaintenanceTypeGroup maintenanceTypeGroup, String name, String externalId, String description, boolean hidden, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.maintenanceTypeGroup = maintenanceTypeGroup;
         this.name = name;
-        this.external_id = external_id;
+        this.externalId = externalId;
         this.description = description;
         this.hidden = hidden;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public MaintenanceType() {
@@ -72,12 +72,12 @@ public class MaintenanceType {
         this.name = name;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
     public String getDescription() {
@@ -96,20 +96,20 @@ public class MaintenanceType {
         this.hidden = hidden;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
@@ -117,12 +117,12 @@ public class MaintenanceType {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MaintenanceType that = (MaintenanceType) o;
-        return hidden == that.hidden && Objects.equals(id, that.id) && Objects.equals(maintenanceTypeGroup, that.maintenanceTypeGroup) && Objects.equals(name, that.name) && Objects.equals(external_id, that.external_id) && Objects.equals(description, that.description) && Objects.equals(created_at, that.created_at) && Objects.equals(updated_at, that.updated_at);
+        return hidden == that.hidden && Objects.equals(id, that.id) && Objects.equals(maintenanceTypeGroup, that.maintenanceTypeGroup) && Objects.equals(name, that.name) && Objects.equals(externalId, that.externalId) && Objects.equals(description, that.description) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, maintenanceTypeGroup, name, external_id, description, hidden, created_at, updated_at);
+        return Objects.hash(id, maintenanceTypeGroup, name, externalId, description, hidden, createdAt, updatedAt);
     }
 
     @Override
@@ -131,11 +131,11 @@ public class MaintenanceType {
                 "id=" + id +
                 ", maintenanceTypeGroup=" + maintenanceTypeGroup +
                 ", name='" + name + '\'' +
-                ", external_id='" + external_id + '\'' +
+                ", externalId='" + externalId + '\'' +
                 ", description='" + description + '\'' +
                 ", hidden=" + hidden +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }

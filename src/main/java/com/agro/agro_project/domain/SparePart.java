@@ -19,39 +19,39 @@ public class SparePart {
     private String name;
 
     @Column(name="part_number", length=10)
-    private String part_number;
+    private String partNumber;
 
     @Column(name="description")
     @Lob
     private String description;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
     @Column(name="archived")
     private boolean archived;
 
     @Column(name="additional_info")
     @Lob
-    private String additional_info;
+    private String additionalInfo;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
-    public SparePart(Short id, SparePartManufacturer sparePartManufacturer, String name, String part_number, String description, String external_id, boolean archived, String additional_info, Timestamp created_at, Timestamp updated_at) {
+    public SparePart(Short id, SparePartManufacturer sparePartManufacturer, String name, String partNumber, String description, String externalId, boolean archived, String additionalInfo, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.sparePartManufacturer = sparePartManufacturer;
         this.name = name;
-        this.part_number = part_number;
+        this.partNumber = partNumber;
         this.description = description;
-        this.external_id = external_id;
+        this.externalId = externalId;
         this.archived = archived;
-        this.additional_info = additional_info;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
+        this.additionalInfo = additionalInfo;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public SparePart() {
@@ -81,12 +81,12 @@ public class SparePart {
         this.name = name;
     }
 
-    public String getPart_number() {
-        return part_number;
+    public String getPartNumber() {
+        return partNumber;
     }
 
-    public void setPart_number(String part_number) {
-        this.part_number = part_number;
+    public void setPartNumber(String partNumber) {
+        this.partNumber = partNumber;
     }
 
     public String getDescription() {
@@ -97,12 +97,12 @@ public class SparePart {
         this.description = description;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
     public boolean isArchived() {
@@ -113,28 +113,28 @@ public class SparePart {
         this.archived = archived;
     }
 
-    public String getAdditional_info() {
-        return additional_info;
+    public String getAdditionalInfo() {
+        return additionalInfo;
     }
 
-    public void setAdditional_info(String additional_info) {
-        this.additional_info = additional_info;
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
@@ -142,12 +142,12 @@ public class SparePart {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         SparePart sparePart = (SparePart) o;
-        return archived == sparePart.archived && Objects.equals(id, sparePart.id) && Objects.equals(sparePartManufacturer, sparePart.sparePartManufacturer) && Objects.equals(name, sparePart.name) && Objects.equals(part_number, sparePart.part_number) && Objects.equals(description, sparePart.description) && Objects.equals(external_id, sparePart.external_id) && Objects.equals(additional_info, sparePart.additional_info) && Objects.equals(created_at, sparePart.created_at) && Objects.equals(updated_at, sparePart.updated_at);
+        return archived == sparePart.archived && Objects.equals(id, sparePart.id) && Objects.equals(sparePartManufacturer, sparePart.sparePartManufacturer) && Objects.equals(name, sparePart.name) && Objects.equals(partNumber, sparePart.partNumber) && Objects.equals(description, sparePart.description) && Objects.equals(externalId, sparePart.externalId) && Objects.equals(additionalInfo, sparePart.additionalInfo) && Objects.equals(createdAt, sparePart.createdAt) && Objects.equals(updatedAt, sparePart.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, sparePartManufacturer, name, part_number, description, external_id, archived, additional_info, created_at, updated_at);
+        return Objects.hash(id, sparePartManufacturer, name, partNumber, description, externalId, archived, additionalInfo, createdAt, updatedAt);
     }
 
     @Override
@@ -156,13 +156,13 @@ public class SparePart {
                 "id=" + id +
                 ", sparePartManufacturer=" + sparePartManufacturer +
                 ", name='" + name + '\'' +
-                ", part_number='" + part_number + '\'' +
+                ", partNumber='" + partNumber + '\'' +
                 ", description='" + description + '\'' +
-                ", external_id='" + external_id + '\'' +
+                ", externalId='" + externalId + '\'' +
                 ", archived=" + archived +
-                ", additional_info='" + additional_info + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
+                ", additionalInfo='" + additionalInfo + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }

@@ -15,33 +15,33 @@ public class MachineDowntimeTypeGroup {
     private String name;
 
     @Column(name="custom_name", length=50)
-    private String custom_name;
+    private String customName;
 
     @Column(name="standard_name", length=50)
-    private String standard_name;
+    private String standardName;
 
     @Column(name="additional_info")
     @Lob
-    private String additional_info;
+    private String additionalInfo;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
-    public MachineDowntimeTypeGroup(Short id, String name, String custom_name, String standard_name, String additional_info, Timestamp created_at, Timestamp updated_at, String external_id) {
+    public MachineDowntimeTypeGroup(Short id, String name, String customName, String standardName, String additionalInfo, Timestamp createdAt, Timestamp updatedAt, String externalId) {
         this.id = id;
         this.name = name;
-        this.custom_name = custom_name;
-        this.standard_name = standard_name;
-        this.additional_info = additional_info;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
-        this.external_id = external_id;
+        this.customName = customName;
+        this.standardName = standardName;
+        this.additionalInfo = additionalInfo;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.externalId = externalId;
     }
 
     public MachineDowntimeTypeGroup() {
@@ -63,52 +63,52 @@ public class MachineDowntimeTypeGroup {
         this.name = name;
     }
 
-    public String getCustom_name() {
-        return custom_name;
+    public String getCustomName() {
+        return customName;
     }
 
-    public void setCustom_name(String custom_name) {
-        this.custom_name = custom_name;
+    public void setCustomName(String customName) {
+        this.customName = customName;
     }
 
-    public String getStandard_name() {
-        return standard_name;
+    public String getStandardName() {
+        return standardName;
     }
 
-    public void setStandard_name(String standard_name) {
-        this.standard_name = standard_name;
+    public void setStandardName(String standardName) {
+        this.standardName = standardName;
     }
 
-    public String getAdditional_info() {
-        return additional_info;
+    public String getAdditionalInfo() {
+        return additionalInfo;
     }
 
-    public void setAdditional_info(String additional_info) {
-        this.additional_info = additional_info;
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
     @Override
@@ -116,12 +116,12 @@ public class MachineDowntimeTypeGroup {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MachineDowntimeTypeGroup that = (MachineDowntimeTypeGroup) o;
-        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(custom_name, that.custom_name) && Objects.equals(standard_name, that.standard_name) && Objects.equals(additional_info, that.additional_info) && Objects.equals(created_at, that.created_at) && Objects.equals(updated_at, that.updated_at) && Objects.equals(external_id, that.external_id);
+        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(customName, that.customName) && Objects.equals(standardName, that.standardName) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(externalId, that.externalId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, custom_name, standard_name, additional_info, created_at, updated_at, external_id);
+        return Objects.hash(id, name, customName, standardName, additionalInfo, createdAt, updatedAt, externalId);
     }
 
     @Override
@@ -129,12 +129,12 @@ public class MachineDowntimeTypeGroup {
         return "MachineDowntimeTypeGroup{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", custom_name='" + custom_name + '\'' +
-                ", standard_name='" + standard_name + '\'' +
-                ", additional_info='" + additional_info + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
-                ", external_id='" + external_id + '\'' +
+                ", customName='" + customName + '\'' +
+                ", standardName='" + standardName + '\'' +
+                ", additionalInfo='" + additionalInfo + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", externalId='" + externalId + '\'' +
                 '}';
     }
 }

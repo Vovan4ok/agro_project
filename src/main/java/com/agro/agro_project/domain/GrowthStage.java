@@ -12,7 +12,7 @@ public class GrowthStage {
     private Short id;
 
     @Column(name="growth_scale_id")
-    private short growth_scale_id;
+    private short growthScaleId;
 
     @ManyToOne
     @JoinColumn(name="growth_stage_group_id")
@@ -26,37 +26,37 @@ public class GrowthStage {
 
     @Column(name="localized_name")
     @Lob
-    private String localized_name;
+    private String localizedName;
 
     @Column(name="external_id", length=50)
-    private String external_id;
+    private String externalId;
 
     @Column(name="additional_info")
     @Lob
-    private String additional_info;
+    private String additionalInfo;
 
     @Column(name="description")
     @Lob
     private String description;
 
     @Column(name="created_at")
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name="updated_at")
-    private Timestamp updated_at;
+    private Timestamp updatedAt;
 
-    public GrowthStage(Short id, short growth_scale_id, GrowthStageGroup growthStageGroup, String code, String name, String localized_name, String external_id, String additional_info, String description, Timestamp created_at, Timestamp updated_at) {
+    public GrowthStage(Short id, short growthScaleId, GrowthStageGroup growthStageGroup, String code, String name, String localizedName, String externalId, String additionalInfo, String description, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
-        this.growth_scale_id = growth_scale_id;
+        this.growthScaleId = growthScaleId;
         this.growthStageGroup = growthStageGroup;
         this.code = code;
         this.name = name;
-        this.localized_name = localized_name;
-        this.external_id = external_id;
-        this.additional_info = additional_info;
+        this.localizedName = localizedName;
+        this.externalId = externalId;
+        this.additionalInfo = additionalInfo;
         this.description = description;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public GrowthStage() {
@@ -70,12 +70,12 @@ public class GrowthStage {
         this.id = id;
     }
 
-    public short getGrowth_scale_id() {
-        return growth_scale_id;
+    public short getGrowthScaleId() {
+        return growthScaleId;
     }
 
-    public void setGrowth_scale_id(short growth_scale_id) {
-        this.growth_scale_id = growth_scale_id;
+    public void setGrowthScaleId(short growthScaleId) {
+        this.growthScaleId = growthScaleId;
     }
 
     public GrowthStageGroup getGrowthStageGroup() {
@@ -102,28 +102,28 @@ public class GrowthStage {
         this.name = name;
     }
 
-    public String getLocalized_name() {
-        return localized_name;
+    public String getLocalizedName() {
+        return localizedName;
     }
 
-    public void setLocalized_name(String localized_name) {
-        this.localized_name = localized_name;
+    public void setLocalizedName(String localizedName) {
+        this.localizedName = localizedName;
     }
 
-    public String getExternal_id() {
-        return external_id;
+    public String getExternalId() {
+        return externalId;
     }
 
-    public void setExternal_id(String external_id) {
-        this.external_id = external_id;
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
-    public String getAdditional_info() {
-        return additional_info;
+    public String getAdditionalInfo() {
+        return additionalInfo;
     }
 
-    public void setAdditional_info(String additional_info) {
-        this.additional_info = additional_info;
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
     }
 
     public String getDescription() {
@@ -134,20 +134,20 @@ public class GrowthStage {
         this.description = description;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdated_at() {
-        return updated_at;
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdated_at(Timestamp updated_at) {
-        this.updated_at = updated_at;
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
@@ -155,28 +155,28 @@ public class GrowthStage {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         GrowthStage that = (GrowthStage) o;
-        return growth_scale_id == that.growth_scale_id && Objects.equals(id, that.id) && Objects.equals(growthStageGroup, that.growthStageGroup) && Objects.equals(code, that.code) && Objects.equals(name, that.name) && Objects.equals(localized_name, that.localized_name) && Objects.equals(external_id, that.external_id) && Objects.equals(additional_info, that.additional_info) && Objects.equals(description, that.description) && Objects.equals(created_at, that.created_at) && Objects.equals(updated_at, that.updated_at);
+        return growthScaleId == that.growthScaleId && Objects.equals(id, that.id) && Objects.equals(growthStageGroup, that.growthStageGroup) && Objects.equals(code, that.code) && Objects.equals(name, that.name) && Objects.equals(localizedName, that.localizedName) && Objects.equals(externalId, that.externalId) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(description, that.description) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, growth_scale_id, growthStageGroup, code, name, localized_name, external_id, additional_info, description, created_at, updated_at);
+        return Objects.hash(id, growthScaleId, growthStageGroup, code, name, localizedName, externalId, additionalInfo, description, createdAt, updatedAt);
     }
 
     @Override
     public String toString() {
         return "GrowthStage{" +
                 "id=" + id +
-                ", growth_scale_id=" + growth_scale_id +
+                ", growthScaleId=" + growthScaleId +
                 ", growthStageGroup=" + growthStageGroup +
                 ", code='" + code + '\'' +
                 ", name='" + name + '\'' +
-                ", localized_name='" + localized_name + '\'' +
-                ", external_id='" + external_id + '\'' +
-                ", additional_info='" + additional_info + '\'' +
+                ", localizedName='" + localizedName + '\'' +
+                ", externalId='" + externalId + '\'' +
+                ", additionalInfo='" + additionalInfo + '\'' +
                 ", description='" + description + '\'' +
-                ", created_at=" + created_at +
-                ", updated_at=" + updated_at +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }
