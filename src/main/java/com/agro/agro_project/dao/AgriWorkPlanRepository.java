@@ -13,5 +13,5 @@ public interface AgriWorkPlanRepository extends JpaRepository<AgriWorkPlan, Shor
 
     List<AgriWorkPlan> findAll();
 
-    List<AgriWorkPlan> readAgriWorkPlansBySeason(short season);
+    List<AgriWorkPlan> findAllBySeason(short season);
 }

@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Repository("harvestWeighingRepository")
 public interface HarvestWeighingRepository extends JpaRepository<HarvestWeighing, Integer> {
-    Optional<HarvestWeighing> findById(Integer integer);
+    Optional<HarvestWeighing> findById(Integer id);
 
-    List<HarvestWeighing> readHarvestWeighingsByMachine(Machine machine);
+    List<HarvestWeighing> findAllByMachine(Machine machine);
 }

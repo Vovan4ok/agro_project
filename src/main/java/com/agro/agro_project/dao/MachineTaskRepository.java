@@ -10,9 +10,9 @@ import java.util.List;
 
 @Repository("machineTaskRepository")
 public interface MachineTaskRepository extends JpaRepository<MachineTask, Integer> {
-    Optional<MachineTask> findById(Integer integer);
+    Optional<MachineTask> findById(Integer id);
 
-    List<MachineTask> readMachineTasksByMachine(Machine machine);
+    List<MachineTask> findAllByMachine(Machine machine);
 
-    List<MachineTask> readMachineTasksByImplementId(short id);
+    List<MachineTask> findAllByImplementId(short id);
 }

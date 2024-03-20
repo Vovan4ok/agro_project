@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @Repository("implementRepository")
 public interface ImplementRepository extends JpaRepository<Implement, Short> {
-    Optional<Implement> findById(Short aShort);
+    Optional<Implement> findById(Short id);
 
     List<Implement> findAll();
 }

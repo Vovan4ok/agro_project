@@ -14,7 +14,7 @@ public interface ScoutingTaskRepository extends JpaRepository<ScoutingTask, Shor
 
     List<ScoutingTask> findAll();
 
-    List<ScoutingTask> readScoutingTasksByField(Field field);
+    List<ScoutingTask> findAllByField(Field field);
 
-    List<ScoutingTask> readScoutingTasksBySeason(short season);
+    List<ScoutingTask> findAllBySeason(short season);
 }

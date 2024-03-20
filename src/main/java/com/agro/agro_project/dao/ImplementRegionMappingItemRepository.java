@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository("implementRegionMappingItemRepository")
 public interface ImplementRegionMappingItemRepository extends JpaRepository<ImplementRegionMappingItem, Short> {
-    List<ImplementRegionMappingItem> readImplementRegionMappingItemsByImplement(Implement implement);
+    List<ImplementRegionMappingItem> findAllByImplement(Implement implement);
 }

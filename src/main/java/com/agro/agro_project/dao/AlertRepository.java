@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @Repository("alertRepository")
 public interface AlertRepository extends JpaRepository<Alert, Integer> {
-    Optional<Alert> findById(Integer integer);
+    Optional<Alert> findById(Integer id);
 
-    List<Alert> readAlertsByAlertableIdAndAlertableType(int id, String type);
+    List<Alert> findAllByAlertableIdAndAlertableType(int id, String alertableType);
 }

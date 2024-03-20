@@ -15,9 +15,9 @@ public interface AgroOperationRepository extends JpaRepository<AgroOperation, In
 
     List<AgroOperation> findAll();
 
-    List<AgroOperation> readAgroOperationsBySeason(short season);
+    List<AgroOperation> findAllBySeason(short season);
 
-    List<AgroOperation> readAgroOperationsByAgriWorkPlan(AgriWorkPlan agriWorkPlan);
+    List<AgroOperation> findAllByAgriWorkPlan(AgriWorkPlan agriWorkPlan);
 
-    List<AgroOperation> readAgroOperationsByField(Field field);
+    List<AgroOperation> findAllByField(Field field);
 }

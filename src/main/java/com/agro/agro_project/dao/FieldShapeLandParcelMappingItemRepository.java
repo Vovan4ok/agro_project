@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository("fieldShapeLandParcelMappingItem")
 public interface FieldShapeLandParcelMappingItemRepository extends JpaRepository<FieldShapeLandParcelMappingItem, Short> {
-    List<FieldShapeLandParcelMappingItem> readFieldShapeLandParcelMappingItemsByFieldShape(FieldShape fieldShape);
+    List<FieldShapeLandParcelMappingItem> findAllByFieldShape(FieldShape fieldShape);
 }

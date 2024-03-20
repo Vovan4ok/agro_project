@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository("fieldShapeRepository")
 public interface FieldShapeRepository extends JpaRepository<FieldShape, Integer> {
-    List<FieldShape> readFieldShapesByField(Field field);
+    List<FieldShape> findAllByField(Field field);
 }

@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository("scoutingTaskPointRepository")
 public interface ScoutingTaskPointRepository extends JpaRepository<ScoutingTaskPoint, Short> {
-    List<ScoutingTaskPoint> readScoutingTaskPointsByScoutingTask(ScoutingTask scoutingTask);
+    List<ScoutingTaskPoint> findAllByScoutingTask(ScoutingTask scoutingTask);
 }

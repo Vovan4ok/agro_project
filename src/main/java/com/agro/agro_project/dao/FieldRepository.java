@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @Repository("fieldRepository")
 public interface FieldRepository extends JpaRepository<Field, Integer> {
-    Optional<Field> findById(Integer integer);
+    Optional<Field> findById(Integer id);
 
     List<Field> findAll();
 }

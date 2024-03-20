@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @Repository("machineRepository")
 public interface MachineRepository extends JpaRepository<Machine, Integer> {
-    Optional<Machine> findById(Integer integer);
+    Optional<Machine> findById(Integer id);
 
     List<Machine> findAll();
 }
