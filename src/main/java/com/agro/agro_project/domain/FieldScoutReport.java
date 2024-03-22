@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="field_scout_reports")
+@Table(name="field_scout_reports", schema="cropwise_data")
 public class FieldScoutReport {
     @Id
     @Column(name="id")
@@ -23,10 +23,9 @@ public class FieldScoutReport {
     private Timestamp reportTime;
 
     @Column(name="season")
-    private short season;
+    private Short season;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @ManyToOne
@@ -38,13 +37,13 @@ public class FieldScoutReport {
     private FieldShape fieldShape;
 
     @Column(name="ears_cover")
-    private double earsCover;
+    private Double earsCover;
 
     @Column(name="plants_cover")
-    private double plantsCover;
+    private Double plantsCover;
 
     @Column(name="ground_cover")
-    private double groundCover;
+    private Double groundCover;
 
     @Column(name="created_by_user_at")
     private Timestamp createdByUserAt;
@@ -57,7 +56,7 @@ public class FieldScoutReport {
     private ScoutingTask scoutingTask;
 
     @Column(name="scout_report_template_id")
-    private int scoutReportTemplateId;
+    private Integer scoutReportTemplateId;
 
     @Column(name="external_id", length=50)
     private String externalId;
@@ -72,12 +71,12 @@ public class FieldScoutReport {
     private String idempotencyKey;
 
     @Column(name="history_item_id")
-    private int historyItemId;
+    private Integer historyItemId;
 
     @Column(name="x_custom_fields_data")
     private String xCustomFieldsData;
 
-    public FieldScoutReport(Integer id, Field field, User user, Timestamp reportTime, short season, String additionalInfo, GrowthStage growthStage, FieldShape fieldShape, double earsCover, double plantsCover, double groundCover, Timestamp createdByUserAt, Timestamp updatedByUserAt, ScoutingTask scoutingTask, int scoutReportTemplateId, String externalId, Timestamp createdAt, Timestamp updatedAt, String idempotencyKey, int historyItemId, String xCustomFieldsData) {
+    public FieldScoutReport(Integer id, Field field, User user, Timestamp reportTime, Short season, String additionalInfo, GrowthStage growthStage, FieldShape fieldShape, Double earsCover, Double plantsCover, Double groundCover, Timestamp createdByUserAt, Timestamp updatedByUserAt, ScoutingTask scoutingTask, Integer scoutReportTemplateId, String externalId, Timestamp createdAt, Timestamp updatedAt, String idempotencyKey, Integer historyItemId, String xCustomFieldsData) {
         this.id = id;
         this.field = field;
         this.user = user;
@@ -136,11 +135,11 @@ public class FieldScoutReport {
         this.reportTime = reportTime;
     }
 
-    public short getSeason() {
+    public Short getSeason() {
         return season;
     }
 
-    public void setSeason(short season) {
+    public void setSeason(Short season) {
         this.season = season;
     }
 
@@ -168,27 +167,27 @@ public class FieldScoutReport {
         this.fieldShape = fieldShape;
     }
 
-    public double getEarsCover() {
+    public Double getEarsCover() {
         return earsCover;
     }
 
-    public void setEarsCover(double earsCover) {
+    public void setEarsCover(Double earsCover) {
         this.earsCover = earsCover;
     }
 
-    public double getPlantsCover() {
+    public Double getPlantsCover() {
         return plantsCover;
     }
 
-    public void setPlantsCover(double plantsCover) {
+    public void setPlantsCover(Double plantsCover) {
         this.plantsCover = plantsCover;
     }
 
-    public double getGroundCover() {
+    public Double getGroundCover() {
         return groundCover;
     }
 
-    public void setGroundCover(double groundCover) {
+    public void setGroundCover(Double groundCover) {
         this.groundCover = groundCover;
     }
 
@@ -216,11 +215,11 @@ public class FieldScoutReport {
         this.scoutingTask = scoutingTask;
     }
 
-    public int getScoutReportTemplateId() {
+    public Integer getScoutReportTemplateId() {
         return scoutReportTemplateId;
     }
 
-    public void setScoutReportTemplateId(int scoutReportTemplateId) {
+    public void setScoutReportTemplateId(Integer scoutReportTemplateId) {
         this.scoutReportTemplateId = scoutReportTemplateId;
     }
 
@@ -256,11 +255,11 @@ public class FieldScoutReport {
         this.idempotencyKey = idempotencyKey;
     }
 
-    public int getHistoryItemId() {
+    public Integer getHistoryItemId() {
         return historyItemId;
     }
 
-    public void setHistoryItemId(int historyItemId) {
+    public void setHistoryItemId(Integer historyItemId) {
         this.historyItemId = historyItemId;
     }
 
@@ -277,7 +276,7 @@ public class FieldScoutReport {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         FieldScoutReport that = (FieldScoutReport) o;
-        return season == that.season && Double.compare(earsCover, that.earsCover) == 0 && Double.compare(plantsCover, that.plantsCover) == 0 && Double.compare(groundCover, that.groundCover) == 0 && scoutReportTemplateId == that.scoutReportTemplateId && historyItemId == that.historyItemId && Objects.equals(id, that.id) && Objects.equals(field, that.field) && Objects.equals(user, that.user) && Objects.equals(reportTime, that.reportTime) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(growthStage, that.growthStage) && Objects.equals(fieldShape, that.fieldShape) && Objects.equals(createdByUserAt, that.createdByUserAt) && Objects.equals(updatedByUserAt, that.updatedByUserAt) && Objects.equals(scoutingTask, that.scoutingTask) && Objects.equals(externalId, that.externalId) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(idempotencyKey, that.idempotencyKey) && Objects.equals(xCustomFieldsData, that.xCustomFieldsData);
+        return Objects.equals(season, that.season) && Double.compare(earsCover, that.earsCover) == 0 && Double.compare(plantsCover, that.plantsCover) == 0 && Double.compare(groundCover, that.groundCover) == 0 && Objects.equals(scoutReportTemplateId, that.scoutReportTemplateId) && Objects.equals(historyItemId, that.historyItemId) && Objects.equals(id, that.id) && Objects.equals(field, that.field) && Objects.equals(user, that.user) && Objects.equals(reportTime, that.reportTime) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(growthStage, that.growthStage) && Objects.equals(fieldShape, that.fieldShape) && Objects.equals(createdByUserAt, that.createdByUserAt) && Objects.equals(updatedByUserAt, that.updatedByUserAt) && Objects.equals(scoutingTask, that.scoutingTask) && Objects.equals(externalId, that.externalId) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(idempotencyKey, that.idempotencyKey) && Objects.equals(xCustomFieldsData, that.xCustomFieldsData);
     }
 
     @Override

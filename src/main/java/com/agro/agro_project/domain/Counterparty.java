@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="counterparties")
+@Table(name="counterparties", schema="cropwise_data")
 public class Counterparty {
     @Id
     @Column(name="id")
@@ -43,7 +43,7 @@ public class Counterparty {
     private String passportIssuedBy;
 
     @Column(name="passport_issuing_date_presence")
-    private boolean passportIssuingDatePresence;
+    private Boolean passportIssuingDatePresence;
 
     @Column(name="external_id", length=50)
     private String externalId;
@@ -82,7 +82,7 @@ public class Counterparty {
     private String legalAddress;
 
     @Column(name="index")
-    private short index;
+    private Short index;
 
     @Column(name="company_number", length=30)
     private String companyNumber;
@@ -94,10 +94,10 @@ public class Counterparty {
     private String contactPerson;
 
     @Column(name="vat_payer")
-    private boolean vatPayer;
+    private Boolean vatPayer;
 
     @Column(name="counterparty_group_id")
-    private short counterpartyGroupId;
+    private Short counterpartyGroupId;
 
     @Column(name="x_custom_rozrakhunkovii_rakhunok", length=20)
     private String xCustomRozrakhunkoviiRakhunok;
@@ -105,7 +105,7 @@ public class Counterparty {
     @Column(name="x_custom_nomer_karti", length=100)
     private String xCustomNomerKarti;
 
-    public Counterparty(Short id, String firstName, String middleName, String lastName, Date birthDate, String phoneNumber, String passportCode, String email, Date passportIssuingDate, String identificationCode, String passportIssuedBy, boolean passportIssuingDatePresence, String externalId, String counterpartyType, String street, String region, String locality, String district, String houseNumber, String postcode, Timestamp createdAt, Timestamp updatedAt, String legalName, String legalAddress, short index, String companyNumber, String signatory, String contactPerson, boolean vatPayer, short counterpartyGroupId, String xCustomRozrakhunkoviiRakhunok, String xCustomNomerKarti) {
+    public Counterparty(Short id, String firstName, String middleName, String lastName, Date birthDate, String phoneNumber, String passportCode, String email, Date passportIssuingDate, String identificationCode, String passportIssuedBy, Boolean passportIssuingDatePresence, String externalId, String counterpartyType, String street, String region, String locality, String district, String houseNumber, String postcode, Timestamp createdAt, Timestamp updatedAt, String legalName, String legalAddress, Short index, String companyNumber, String signatory, String contactPerson, Boolean vatPayer, Short counterpartyGroupId, String xCustomRozrakhunkoviiRakhunok, String xCustomNomerKarti) {
         this.id = id;
         this.firstName = firstName;
         this.middleName = middleName;
@@ -231,11 +231,11 @@ public class Counterparty {
         this.passportIssuedBy = passportIssuedBy;
     }
 
-    public boolean isPassportIssuingDatePresence() {
+    public Boolean isPassportIssuingDatePresence() {
         return passportIssuingDatePresence;
     }
 
-    public void setPassportIssuingDatePresence(boolean passportIssuingDatePresence) {
+    public void setPassportIssuingDatePresence(Boolean passportIssuingDatePresence) {
         this.passportIssuingDatePresence = passportIssuingDatePresence;
     }
 
@@ -335,11 +335,11 @@ public class Counterparty {
         this.legalAddress = legalAddress;
     }
 
-    public short getIndex() {
+    public Short getIndex() {
         return index;
     }
 
-    public void setIndex(short index) {
+    public void setIndex(Short index) {
         this.index = index;
     }
 
@@ -367,19 +367,19 @@ public class Counterparty {
         this.contactPerson = contactPerson;
     }
 
-    public boolean isVatPayer() {
+    public Boolean isVatPayer() {
         return vatPayer;
     }
 
-    public void setVatPayer(boolean vatPayer) {
+    public void setVatPayer(Boolean vatPayer) {
         this.vatPayer = vatPayer;
     }
 
-    public short getCounterpartyGroupId() {
+    public Short getCounterpartyGroupId() {
         return counterpartyGroupId;
     }
 
-    public void setCounterpartyGroupId(short counterpartyGroupId) {
+    public void setCounterpartyGroupId(Short counterpartyGroupId) {
         this.counterpartyGroupId = counterpartyGroupId;
     }
 
@@ -404,7 +404,7 @@ public class Counterparty {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Counterparty that = (Counterparty) o;
-        return passportIssuingDatePresence == that.passportIssuingDatePresence && index == that.index && vatPayer == that.vatPayer && counterpartyGroupId == that.counterpartyGroupId && Objects.equals(id, that.id) && Objects.equals(firstName, that.firstName) && Objects.equals(middleName, that.middleName) && Objects.equals(lastName, that.lastName) && Objects.equals(birthDate, that.birthDate) && Objects.equals(phoneNumber, that.phoneNumber) && Objects.equals(passportCode, that.passportCode) && Objects.equals(email, that.email) && Objects.equals(passportIssuingDate, that.passportIssuingDate) && Objects.equals(identificationCode, that.identificationCode) && Objects.equals(passportIssuedBy, that.passportIssuedBy) && Objects.equals(externalId, that.externalId) && Objects.equals(counterpartyType, that.counterpartyType) && Objects.equals(street, that.street) && Objects.equals(region, that.region) && Objects.equals(locality, that.locality) && Objects.equals(district, that.district) && Objects.equals(houseNumber, that.houseNumber) && Objects.equals(postcode, that.postcode) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(legalName, that.legalName) && Objects.equals(legalAddress, that.legalAddress) && Objects.equals(companyNumber, that.companyNumber) && Objects.equals(signatory, that.signatory) && Objects.equals(contactPerson, that.contactPerson) && Objects.equals(xCustomRozrakhunkoviiRakhunok, that.xCustomRozrakhunkoviiRakhunok) && Objects.equals(xCustomNomerKarti, that.xCustomNomerKarti);
+        return passportIssuingDatePresence == that.passportIssuingDatePresence && Objects.equals(index, that.index) && vatPayer == that.vatPayer && Objects.equals(counterpartyGroupId, that.counterpartyGroupId) && Objects.equals(id, that.id) && Objects.equals(firstName, that.firstName) && Objects.equals(middleName, that.middleName) && Objects.equals(lastName, that.lastName) && Objects.equals(birthDate, that.birthDate) && Objects.equals(phoneNumber, that.phoneNumber) && Objects.equals(passportCode, that.passportCode) && Objects.equals(email, that.email) && Objects.equals(passportIssuingDate, that.passportIssuingDate) && Objects.equals(identificationCode, that.identificationCode) && Objects.equals(passportIssuedBy, that.passportIssuedBy) && Objects.equals(externalId, that.externalId) && Objects.equals(counterpartyType, that.counterpartyType) && Objects.equals(street, that.street) && Objects.equals(region, that.region) && Objects.equals(locality, that.locality) && Objects.equals(district, that.district) && Objects.equals(houseNumber, that.houseNumber) && Objects.equals(postcode, that.postcode) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(legalName, that.legalName) && Objects.equals(legalAddress, that.legalAddress) && Objects.equals(companyNumber, that.companyNumber) && Objects.equals(signatory, that.signatory) && Objects.equals(contactPerson, that.contactPerson) && Objects.equals(xCustomRozrakhunkoviiRakhunok, that.xCustomRozrakhunkoviiRakhunok) && Objects.equals(xCustomNomerKarti, that.xCustomNomerKarti);
     }
 
     @Override

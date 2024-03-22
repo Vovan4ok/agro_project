@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="harvest_weighings")
+@Table(name="harvest_weighings", schema="cropwise_data")
 public class HarvestWeighing {
     @Id
     @Column(name="id")
@@ -31,39 +31,37 @@ public class HarvestWeighing {
     private Timestamp departureFromFieldTime;
 
     @Column(name="weight")
-    private double weight;
+    private Double weight;
 
     @Column(name="brutto_weight")
-    private double bruttoWeight;
+    private Double bruttoWeight;
 
     @Column(name="seed_moisture")
-    private double seedMoisture;
+    private Double seedMoisture;
 
     @Column(name="seed_admixture")
-    private double seedAdmixture;
+    private Double seedAdmixture;
 
     @Column(name="weighing_time")
     private Timestamp weighingTime;
 
     @Column(name="last_truck")
-    private boolean lastTruck;
+    private Boolean lastTruck;
 
     @Column(name="track_length")
-    private double trackLength;
+    private Double trackLength;
 
     @Column(name="manually_set_track_length")
-    private boolean manuallySetTrackLength;
+    private Boolean manuallySetTrackLength;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="season")
-    private short season;
+    private Short season;
 
     @ManyToOne
     @JoinColumn(name="created_by_user_id")
@@ -85,13 +83,12 @@ public class HarvestWeighing {
     private Date waybillDate;
 
     @Column(name="history_item_id")
-    private int historyItemId;
+    private Integer historyItemId;
 
     @Column(name="unloaded_machines")
-    @Lob
     private String unloadedMachines;
 
-    public HarvestWeighing(Integer id, Machine machine, Field field, AdditionalObject weighingplace, String typeOfRoute, Timestamp departureFromFieldTime, double weight, double bruttoWeight, double seedMoisture, double seedAdmixture, Timestamp weighingTime, boolean lastTruck, double trackLength, boolean manuallySetTrackLength, String additionalInfo, String description, short season, User createdBy, String externalId, Timestamp createdAt, Timestamp updatedAt, String waybillNumber, Date waybillDate, int historyItemId, String unloadedMachines) {
+    public HarvestWeighing(Integer id, Machine machine, Field field, AdditionalObject weighingplace, String typeOfRoute, Timestamp departureFromFieldTime, Double weight, Double bruttoWeight, Double seedMoisture, Double seedAdmixture, Timestamp weighingTime, Boolean lastTruck, Double trackLength, Boolean manuallySetTrackLength, String additionalInfo, String description, Short season, User createdBy, String externalId, Timestamp createdAt, Timestamp updatedAt, String waybillNumber, Date waybillDate, Integer historyItemId, String unloadedMachines) {
         this.id = id;
         this.machine = machine;
         this.field = field;
@@ -170,35 +167,35 @@ public class HarvestWeighing {
         this.departureFromFieldTime = departureFromFieldTime;
     }
 
-    public double getWeight() {
+    public Double getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(Double weight) {
         this.weight = weight;
     }
 
-    public double getBruttoWeight() {
+    public Double getBruttoWeight() {
         return bruttoWeight;
     }
 
-    public void setBruttoWeight(double bruttoWeight) {
+    public void setBruttoWeight(Double bruttoWeight) {
         this.bruttoWeight = bruttoWeight;
     }
 
-    public double getSeedMoisture() {
+    public Double getSeedMoisture() {
         return seedMoisture;
     }
 
-    public void setSeedMoisture(double seedMoisture) {
+    public void setSeedMoisture(Double seedMoisture) {
         this.seedMoisture = seedMoisture;
     }
 
-    public double getSeedAdmixture() {
+    public Double getSeedAdmixture() {
         return seedAdmixture;
     }
 
-    public void setSeedAdmixture(double seedAdmixture) {
+    public void setSeedAdmixture(Double seedAdmixture) {
         this.seedAdmixture = seedAdmixture;
     }
 
@@ -210,27 +207,27 @@ public class HarvestWeighing {
         this.weighingTime = weighingTime;
     }
 
-    public boolean isLastTruck() {
+    public Boolean isLastTruck() {
         return lastTruck;
     }
 
-    public void setLastTruck(boolean lastTruck) {
+    public void setLastTruck(Boolean lastTruck) {
         this.lastTruck = lastTruck;
     }
 
-    public double getTrackLength() {
+    public Double getTrackLength() {
         return trackLength;
     }
 
-    public void setTrackLength(double trackLength) {
+    public void setTrackLength(Double trackLength) {
         this.trackLength = trackLength;
     }
 
-    public boolean isManuallySetTrackLength() {
+    public Boolean isManuallySetTrackLength() {
         return manuallySetTrackLength;
     }
 
-    public void setManuallySetTrackLength(boolean manuallySetTrackLength) {
+    public void setManuallySetTrackLength(Boolean manuallySetTrackLength) {
         this.manuallySetTrackLength = manuallySetTrackLength;
     }
 
@@ -250,11 +247,11 @@ public class HarvestWeighing {
         this.description = description;
     }
 
-    public short getSeason() {
+    public Short getSeason() {
         return season;
     }
 
-    public void setSeason(short season) {
+    public void setSeason(Short season) {
         this.season = season;
     }
 
@@ -306,11 +303,11 @@ public class HarvestWeighing {
         this.waybillDate = waybillDate;
     }
 
-    public int getHistoryItemId() {
+    public Integer getHistoryItemId() {
         return historyItemId;
     }
 
-    public void setHistoryItemId(int historyItemId) {
+    public void setHistoryItemId(Integer historyItemId) {
         this.historyItemId = historyItemId;
     }
 
@@ -327,7 +324,7 @@ public class HarvestWeighing {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         HarvestWeighing that = (HarvestWeighing) o;
-        return Double.compare(weight, that.weight) == 0 && Double.compare(bruttoWeight, that.bruttoWeight) == 0 && Double.compare(seedMoisture, that.seedMoisture) == 0 && Double.compare(seedAdmixture, that.seedAdmixture) == 0 && lastTruck == that.lastTruck && Double.compare(trackLength, that.trackLength) == 0 && manuallySetTrackLength == that.manuallySetTrackLength && season == that.season && historyItemId == that.historyItemId && Objects.equals(id, that.id) && Objects.equals(machine, that.machine) && Objects.equals(field, that.field) && Objects.equals(weighingplace, that.weighingplace) && Objects.equals(typeOfRoute, that.typeOfRoute) && Objects.equals(departureFromFieldTime, that.departureFromFieldTime) && Objects.equals(weighingTime, that.weighingTime) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(description, that.description) && Objects.equals(createdBy, that.createdBy) && Objects.equals(externalId, that.externalId) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(waybillNumber, that.waybillNumber) && Objects.equals(waybillDate, that.waybillDate) && Objects.equals(unloadedMachines, that.unloadedMachines);
+        return Double.compare(weight, that.weight) == 0 && Double.compare(bruttoWeight, that.bruttoWeight) == 0 && Double.compare(seedMoisture, that.seedMoisture) == 0 && Double.compare(seedAdmixture, that.seedAdmixture) == 0 && lastTruck == that.lastTruck && Double.compare(trackLength, that.trackLength) == 0 && manuallySetTrackLength == that.manuallySetTrackLength && Objects.equals(season, that.season) && Objects.equals(historyItemId, that.historyItemId) && Objects.equals(id, that.id) && Objects.equals(machine, that.machine) && Objects.equals(field, that.field) && Objects.equals(weighingplace, that.weighingplace) && Objects.equals(typeOfRoute, that.typeOfRoute) && Objects.equals(departureFromFieldTime, that.departureFromFieldTime) && Objects.equals(weighingTime, that.weighingTime) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(description, that.description) && Objects.equals(createdBy, that.createdBy) && Objects.equals(externalId, that.externalId) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(waybillNumber, that.waybillNumber) && Objects.equals(waybillDate, that.waybillDate) && Objects.equals(unloadedMachines, that.unloadedMachines);
     }
 
     @Override

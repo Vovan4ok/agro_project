@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @Repository("machineTaskFieldMappingItemRepository")
 public interface MachineTaskFieldMappingItemRepository extends JpaRepository<MachineTaskFieldMappingItem, Integer> {
-    List<MachineTaskFieldMappingItem> findAllByFieldId(int fieldId);
+    List<MachineTaskFieldMappingItem> findAllByFieldId(Integer fieldId);
 
-    Optional<MachineTaskFieldMappingItem> findByMachineTaskId(int machineTaskId);
+    Optional<MachineTaskFieldMappingItem> findByMachineTaskId(Integer machineTaskId);
 }

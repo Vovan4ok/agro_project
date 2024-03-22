@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="maintenance_record_rows")
+@Table(name="maintenance_record_rows", schema="cropwise_data")
 public class MaintenanceRecordRow {
     @Id
     @Column(name="id")
@@ -20,7 +20,6 @@ public class MaintenanceRecordRow {
     private MaintenanceType maintenanceType;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="repair_stage", length=20)

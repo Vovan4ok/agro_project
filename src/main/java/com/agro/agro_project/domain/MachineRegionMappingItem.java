@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="machine_region_mapping_items")
+@Table(name="machine_region_mapping_items", schema="cropwise_data")
 public class MachineRegionMappingItem {
     @Id
     @Column(name="id")
@@ -27,7 +27,7 @@ public class MachineRegionMappingItem {
     private Date dateEnd;
 
     @Column(name="no_date_end")
-    private boolean noDateEnd;
+    private Boolean noDateEnd;
 
     @Column(name="created_at")
     private Timestamp createdAt;
@@ -35,7 +35,7 @@ public class MachineRegionMappingItem {
     @Column(name="updated_at")
     private Timestamp updatedAt;
 
-    public MachineRegionMappingItem(Short id, Machine machine, MachineRegion machineRegion, Date dateStart, Date dateEnd, boolean noDateEnd, Timestamp createdAt, Timestamp updatedAt) {
+    public MachineRegionMappingItem(Short id, Machine machine, MachineRegion machineRegion, Date dateStart, Date dateEnd, Boolean noDateEnd, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.machine = machine;
         this.machineRegion = machineRegion;
@@ -89,11 +89,11 @@ public class MachineRegionMappingItem {
         this.dateEnd = dateEnd;
     }
 
-    public boolean isNoDateEnd() {
+    public Boolean isNoDateEnd() {
         return noDateEnd;
     }
 
-    public void setNoDateEnd(boolean noDateEnd) {
+    public void setNoDateEnd(Boolean noDateEnd) {
         this.noDateEnd = noDateEnd;
     }
 

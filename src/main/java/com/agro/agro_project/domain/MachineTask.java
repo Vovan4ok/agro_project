@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="machine_tasks")
+@Table(name="machine_tasks", schema="cropwise_data")
 public class MachineTask {
     @Id
     @Column(name="id")
@@ -36,45 +36,43 @@ public class MachineTask {
     private User driver;
 
     @Column(name="implement_id")
-    private short implementId;
+    private Short implementId;
 
     @Column(name="work_for_contractors")
-    private boolean workForContractors;
+    private Boolean workForContractors;
 
     @Column(name="work_for_land_owners")
-    private boolean workForLandOwners;
+    private Boolean workForLandOwners;
 
     @Column(name="real_implement_width")
-    private double realImplementWidth;
+    private Double realImplementWidth;
 
     @Column(name="total_distance")
-    private double totalDistance;
+    private Double totalDistance;
 
     @Column(name="work_distance")
-    private double workDistance;
+    private Double workDistance;
 
     @Column(name="work_area")
-    private double workArea;
+    private Double workArea;
 
     @Column(name="covered_area")
-    private double coveredArea;
+    private Double coveredArea;
 
     @Column(name="manual_covered_area")
-    private double manualCoveredArea;
+    private Double manualCoveredArea;
 
     @Column(name="work_duration")
-    private int workDuration;
+    private Integer workDuration;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="season")
-    private short season;
+    private Short season;
 
     @Column(name="external_id", length=50)
     private String externalId;
@@ -83,55 +81,55 @@ public class MachineTask {
     private String status;
 
     @Column(name="stops_on_road_duration")
-    private int stopsOnRoadDuration;
+    private Integer stopsOnRoadDuration;
 
     @Column(name="movements_on_road_duration")
-    private int movementsOnRoadDuration;
+    private Integer movementsOnRoadDuration;
 
     @Column(name="time_without_gps_data")
-    private int timeWithoutGpsData;
+    private Integer timeWithoutGpsData;
 
     @Column(name="fuel_consumption")
-    private double fuelConsumption;
+    private Double fuelConsumption;
 
     @Column(name="fuel_consumption_per_ha")
-    private double fuelConsumptionPerHa;
+    private Double fuelConsumptionPerHa;
 
     @Column(name="fuel_consumption_on_road")
-    private double fuelConsumptionOnRoad;
+    private Double fuelConsumptionOnRoad;
 
     @Column(name="fuel_consumption_on_road_average")
-    private double fuelConsumptionOnRoadAverage;
+    private Double fuelConsumptionOnRoadAverage;
 
     @Column(name="track_integrity_coef")
-    private double trackIntegrityCoef;
+    private Double trackIntegrityCoef;
 
     @Column(name="engine_work_duration_on_fields")
-    private double engineWorkDurationOnFields;
+    private Double engineWorkDurationOnFields;
 
     @Column(name="engine_work_duration_on_road")
-    private double engineWorkDurationOnRoad;
+    private Double engineWorkDurationOnRoad;
 
     @Column(name="locked_to_edit")
-    private double lockedToEdit;
+    private Double lockedToEdit;
 
     @Column(name="locked_at")
-    private double lockedAt;
+    private Double lockedAt;
 
     @Column(name="plan_speed_min")
-    private short planSpeedMin;
+    private Short planSpeedMin;
 
     @Column(name="plan_speed_max")
-    private short planSpeedMax;
+    private Short planSpeedMax;
 
     @Column(name="start_fuel_level")
-    private double startFuelLevel;
+    private Double startFuelLevel;
 
     @Column(name="end_fuel_level")
-    private double endFuelLevel;
+    private Double endFuelLevel;
 
     @Column(name="refuel")
-    private double refuel;
+    private Double refuel;
 
     @Column(name="created_at")
     private Timestamp createdAt;
@@ -140,9 +138,9 @@ public class MachineTask {
     private Timestamp updatedAt;
 
     @Column(name="notify_responsible_users")
-    private boolean notifyResponsibleUsers;
+    private Boolean notifyResponsibleUsers;
 
-    public MachineTask(Integer id, Machine machine, Timestamp startTime, Timestamp endTime, String actionType, String actionSubtype, WorkType workType, User driver, short implementId, boolean workForContractors, boolean workForLandOwners, double realImplementWidth, double totalDistance, double workDistance, double workArea, double coveredArea, double manualCoveredArea, int workDuration, String additionalInfo, String description, short season, String externalId, String status, int stopsOnRoadDuration, int movementsOnRoadDuration, int timeWithoutGpsData, double fuelConsumption, double fuelConsumptionPerHa, double fuelConsumptionOnRoad, double fuelConsumptionOnRoadAverage, double trackIntegrityCoef, double engineWorkDurationOnFields, double engineWorkDurationOnRoad, double lockedToEdit, double lockedAt, short planSpeedMin, short planSpeedMax, double startFuelLevel, double endFuelLevel, double refuel, Timestamp createdAt, Timestamp updatedAt, boolean notifyResponsibleUsers) {
+    public MachineTask(Integer id, Machine machine, Timestamp startTime, Timestamp endTime, String actionType, String actionSubtype, WorkType workType, User driver, Short implementId, Boolean workForContractors, Boolean workForLandOwners, Double realImplementWidth, Double totalDistance, Double workDistance, Double workArea, Double coveredArea, Double manualCoveredArea, Integer workDuration, String additionalInfo, String description, Short season, String externalId, String status, Integer stopsOnRoadDuration, Integer movementsOnRoadDuration, Integer timeWithoutGpsData, Double fuelConsumption, Double fuelConsumptionPerHa, Double fuelConsumptionOnRoad, Double fuelConsumptionOnRoadAverage, Double trackIntegrityCoef, Double engineWorkDurationOnFields, Double engineWorkDurationOnRoad, Double lockedToEdit, Double lockedAt, Short planSpeedMin, Short planSpeedMax, Double startFuelLevel, Double endFuelLevel, Double refuel, Timestamp createdAt, Timestamp updatedAt, Boolean notifyResponsibleUsers) {
         this.id = id;
         this.machine = machine;
         this.startTime = startTime;
@@ -255,83 +253,83 @@ public class MachineTask {
         this.driver = driver;
     }
 
-    public short getImplementId() {
+    public Short getImplementId() {
         return implementId;
     }
 
-    public void setImplementId(short implementId) {
+    public void setImplementId(Short implementId) {
         this.implementId = implementId;
     }
 
-    public boolean isWorkForContractors() {
+    public Boolean isWorkForContractors() {
         return workForContractors;
     }
 
-    public void setWorkForContractors(boolean workForContractors) {
+    public void setWorkForContractors(Boolean workForContractors) {
         this.workForContractors = workForContractors;
     }
 
-    public boolean isWorkForLandOwners() {
+    public Boolean isWorkForLandOwners() {
         return workForLandOwners;
     }
 
-    public void setWorkForLandOwners(boolean workForLandOwners) {
+    public void setWorkForLandOwners(Boolean workForLandOwners) {
         this.workForLandOwners = workForLandOwners;
     }
 
-    public double getRealImplementWidth() {
+    public Double getRealImplementWidth() {
         return realImplementWidth;
     }
 
-    public void setRealImplementWidth(double realImplementWidth) {
+    public void setRealImplementWidth(Double realImplementWidth) {
         this.realImplementWidth = realImplementWidth;
     }
 
-    public double getTotalDistance() {
+    public Double getTotalDistance() {
         return totalDistance;
     }
 
-    public void setTotalDistance(double totalDistance) {
+    public void setTotalDistance(Double totalDistance) {
         this.totalDistance = totalDistance;
     }
 
-    public double getWorkDistance() {
+    public Double getWorkDistance() {
         return workDistance;
     }
 
-    public void setWorkDistance(double workDistance) {
+    public void setWorkDistance(Double workDistance) {
         this.workDistance = workDistance;
     }
 
-    public double getWorkArea() {
+    public Double getWorkArea() {
         return workArea;
     }
 
-    public void setWorkArea(double workArea) {
+    public void setWorkArea(Double workArea) {
         this.workArea = workArea;
     }
 
-    public double getCoveredArea() {
+    public Double getCoveredArea() {
         return coveredArea;
     }
 
-    public void setCoveredArea(double coveredArea) {
+    public void setCoveredArea(Double coveredArea) {
         this.coveredArea = coveredArea;
     }
 
-    public double getManualCoveredArea() {
+    public Double getManualCoveredArea() {
         return manualCoveredArea;
     }
 
-    public void setManualCoveredArea(double manualCoveredArea) {
+    public void setManualCoveredArea(Double manualCoveredArea) {
         this.manualCoveredArea = manualCoveredArea;
     }
 
-    public int getWorkDuration() {
+    public Integer getWorkDuration() {
         return workDuration;
     }
 
-    public void setWorkDuration(int workDuration) {
+    public void setWorkDuration(Integer workDuration) {
         this.workDuration = workDuration;
     }
 
@@ -351,11 +349,11 @@ public class MachineTask {
         this.description = description;
     }
 
-    public short getSeason() {
+    public Short getSeason() {
         return season;
     }
 
-    public void setSeason(short season) {
+    public void setSeason(Short season) {
         this.season = season;
     }
 
@@ -375,139 +373,139 @@ public class MachineTask {
         this.status = status;
     }
 
-    public int getStopsOnRoadDuration() {
+    public Integer getStopsOnRoadDuration() {
         return stopsOnRoadDuration;
     }
 
-    public void setStopsOnRoadDuration(int stopsOnRoadDuration) {
+    public void setStopsOnRoadDuration(Integer stopsOnRoadDuration) {
         this.stopsOnRoadDuration = stopsOnRoadDuration;
     }
 
-    public int getMovementsOnRoadDuration() {
+    public Integer getMovementsOnRoadDuration() {
         return movementsOnRoadDuration;
     }
 
-    public void setMovementsOnRoadDuration(int movementsOnRoadDuration) {
+    public void setMovementsOnRoadDuration(Integer movementsOnRoadDuration) {
         this.movementsOnRoadDuration = movementsOnRoadDuration;
     }
 
-    public int getTimeWithoutGpsData() {
+    public Integer getTimeWithoutGpsData() {
         return timeWithoutGpsData;
     }
 
-    public void setTimeWithoutGpsData(int timeWithoutGpsData) {
+    public void setTimeWithoutGpsData(Integer timeWithoutGpsData) {
         this.timeWithoutGpsData = timeWithoutGpsData;
     }
 
-    public double getFuelConsumption() {
+    public Double getFuelConsumption() {
         return fuelConsumption;
     }
 
-    public void setFuelConsumption(double fuelConsumption) {
+    public void setFuelConsumption(Double fuelConsumption) {
         this.fuelConsumption = fuelConsumption;
     }
 
-    public double getFuelConsumptionPerHa() {
+    public Double getFuelConsumptionPerHa() {
         return fuelConsumptionPerHa;
     }
 
-    public void setFuelConsumptionPerHa(double fuelConsumptionPerHa) {
+    public void setFuelConsumptionPerHa(Double fuelConsumptionPerHa) {
         this.fuelConsumptionPerHa = fuelConsumptionPerHa;
     }
 
-    public double getFuelConsumptionOnRoad() {
+    public Double getFuelConsumptionOnRoad() {
         return fuelConsumptionOnRoad;
     }
 
-    public void setFuelConsumptionOnRoad(double fuelConsumptionOnRoad) {
+    public void setFuelConsumptionOnRoad(Double fuelConsumptionOnRoad) {
         this.fuelConsumptionOnRoad = fuelConsumptionOnRoad;
     }
 
-    public double getFuelConsumptionOnRoadAverage() {
+    public Double getFuelConsumptionOnRoadAverage() {
         return fuelConsumptionOnRoadAverage;
     }
 
-    public void setFuelConsumptionOnRoadAverage(double fuelConsumptionOnRoadAverage) {
+    public void setFuelConsumptionOnRoadAverage(Double fuelConsumptionOnRoadAverage) {
         this.fuelConsumptionOnRoadAverage = fuelConsumptionOnRoadAverage;
     }
 
-    public double getTrackIntegrityCoef() {
+    public Double getTrackIntegrityCoef() {
         return trackIntegrityCoef;
     }
 
-    public void setTrackIntegrityCoef(double trackIntegrityCoef) {
+    public void setTrackIntegrityCoef(Double trackIntegrityCoef) {
         this.trackIntegrityCoef = trackIntegrityCoef;
     }
 
-    public double getEngineWorkDurationOnFields() {
+    public Double getEngineWorkDurationOnFields() {
         return engineWorkDurationOnFields;
     }
 
-    public void setEngineWorkDurationOnFields(double engineWorkDurationOnFields) {
+    public void setEngineWorkDurationOnFields(Double engineWorkDurationOnFields) {
         this.engineWorkDurationOnFields = engineWorkDurationOnFields;
     }
 
-    public double getEngineWorkDurationOnRoad() {
+    public Double getEngineWorkDurationOnRoad() {
         return engineWorkDurationOnRoad;
     }
 
-    public void setEngineWorkDurationOnRoad(double engineWorkDurationOnRoad) {
+    public void setEngineWorkDurationOnRoad(Double engineWorkDurationOnRoad) {
         this.engineWorkDurationOnRoad = engineWorkDurationOnRoad;
     }
 
-    public double getLockedToEdit() {
+    public Double getLockedToEdit() {
         return lockedToEdit;
     }
 
-    public void setLockedToEdit(double lockedToEdit) {
+    public void setLockedToEdit(Double lockedToEdit) {
         this.lockedToEdit = lockedToEdit;
     }
 
-    public double getLockedAt() {
+    public Double getLockedAt() {
         return lockedAt;
     }
 
-    public void setLockedAt(double lockedAt) {
+    public void setLockedAt(Double lockedAt) {
         this.lockedAt = lockedAt;
     }
 
-    public short getPlanSpeedMin() {
+    public Short getPlanSpeedMin() {
         return planSpeedMin;
     }
 
-    public void setPlanSpeedMin(short planSpeedMin) {
+    public void setPlanSpeedMin(Short planSpeedMin) {
         this.planSpeedMin = planSpeedMin;
     }
 
-    public short getPlanSpeedMax() {
+    public Short getPlanSpeedMax() {
         return planSpeedMax;
     }
 
-    public void setPlanSpeedMax(short planSpeedMax) {
+    public void setPlanSpeedMax(Short planSpeedMax) {
         this.planSpeedMax = planSpeedMax;
     }
 
-    public double getStartFuelLevel() {
+    public Double getStartFuelLevel() {
         return startFuelLevel;
     }
 
-    public void setStartFuelLevel(double startFuelLevel) {
+    public void setStartFuelLevel(Double startFuelLevel) {
         this.startFuelLevel = startFuelLevel;
     }
 
-    public double getEndFuelLevel() {
+    public Double getEndFuelLevel() {
         return endFuelLevel;
     }
 
-    public void setEndFuelLevel(double endFuelLevel) {
+    public void setEndFuelLevel(Double endFuelLevel) {
         this.endFuelLevel = endFuelLevel;
     }
 
-    public double getRefuel() {
+    public Double getRefuel() {
         return refuel;
     }
 
-    public void setRefuel(double refuel) {
+    public void setRefuel(Double refuel) {
         this.refuel = refuel;
     }
 
@@ -527,11 +525,11 @@ public class MachineTask {
         this.updatedAt = updatedAt;
     }
 
-    public boolean isNotifyResponsibleUsers() {
+    public Boolean isNotifyResponsibleUsers() {
         return notifyResponsibleUsers;
     }
 
-    public void setNotifyResponsibleUsers(boolean notifyResponsibleUsers) {
+    public void setNotifyResponsibleUsers(Boolean notifyResponsibleUsers) {
         this.notifyResponsibleUsers = notifyResponsibleUsers;
     }
 
@@ -540,7 +538,7 @@ public class MachineTask {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MachineTask that = (MachineTask) o;
-        return workForContractors == that.workForContractors && workForLandOwners == that.workForLandOwners && Double.compare(realImplementWidth, that.realImplementWidth) == 0 && Double.compare(totalDistance, that.totalDistance) == 0 && Double.compare(workDistance, that.workDistance) == 0 && Double.compare(workArea, that.workArea) == 0 && Double.compare(coveredArea, that.coveredArea) == 0 && Double.compare(manualCoveredArea, that.manualCoveredArea) == 0 && workDuration == that.workDuration && season == that.season && stopsOnRoadDuration == that.stopsOnRoadDuration && movementsOnRoadDuration == that.movementsOnRoadDuration && timeWithoutGpsData == that.timeWithoutGpsData && Double.compare(fuelConsumption, that.fuelConsumption) == 0 && Double.compare(fuelConsumptionPerHa, that.fuelConsumptionPerHa) == 0 && Double.compare(fuelConsumptionOnRoad, that.fuelConsumptionOnRoad) == 0 && Double.compare(fuelConsumptionOnRoadAverage, that.fuelConsumptionOnRoadAverage) == 0 && Double.compare(trackIntegrityCoef, that.trackIntegrityCoef) == 0 && Double.compare(engineWorkDurationOnFields, that.engineWorkDurationOnFields) == 0 && Double.compare(engineWorkDurationOnRoad, that.engineWorkDurationOnRoad) == 0 && Double.compare(lockedToEdit, that.lockedToEdit) == 0 && Double.compare(lockedAt, that.lockedAt) == 0 && planSpeedMin == that.planSpeedMin && planSpeedMax == that.planSpeedMax && Double.compare(startFuelLevel, that.startFuelLevel) == 0 && Double.compare(endFuelLevel, that.endFuelLevel) == 0 && Double.compare(refuel, that.refuel) == 0 && notifyResponsibleUsers == that.notifyResponsibleUsers && Objects.equals(id, that.id) && Objects.equals(machine, that.machine) && Objects.equals(startTime, that.startTime) && Objects.equals(endTime, that.endTime) && Objects.equals(actionType, that.actionType) && Objects.equals(actionSubtype, that.actionSubtype) && Objects.equals(workType, that.workType) && Objects.equals(driver, that.driver) && implementId == that.implementId && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(description, that.description) && Objects.equals(externalId, that.externalId) && Objects.equals(status, that.status) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
+        return workForContractors == that.workForContractors && workForLandOwners == that.workForLandOwners && Double.compare(realImplementWidth, that.realImplementWidth) == 0 && Double.compare(totalDistance, that.totalDistance) == 0 && Double.compare(workDistance, that.workDistance) == 0 && Double.compare(workArea, that.workArea) == 0 && Double.compare(coveredArea, that.coveredArea) == 0 && Double.compare(manualCoveredArea, that.manualCoveredArea) == 0 && Objects.equals(workDuration, that.workDuration) && Objects.equals(season, that.season) && Objects.equals(stopsOnRoadDuration, that.stopsOnRoadDuration) && Objects.equals(movementsOnRoadDuration, that.movementsOnRoadDuration) && Objects.equals(timeWithoutGpsData, that.timeWithoutGpsData) && Double.compare(fuelConsumption, that.fuelConsumption) == 0 && Double.compare(fuelConsumptionPerHa, that.fuelConsumptionPerHa) == 0 && Double.compare(fuelConsumptionOnRoad, that.fuelConsumptionOnRoad) == 0 && Double.compare(fuelConsumptionOnRoadAverage, that.fuelConsumptionOnRoadAverage) == 0 && Double.compare(trackIntegrityCoef, that.trackIntegrityCoef) == 0 && Double.compare(engineWorkDurationOnFields, that.engineWorkDurationOnFields) == 0 && Double.compare(engineWorkDurationOnRoad, that.engineWorkDurationOnRoad) == 0 && Double.compare(lockedToEdit, that.lockedToEdit) == 0 && Double.compare(lockedAt, that.lockedAt) == 0 && Objects.equals(planSpeedMin, that.planSpeedMin) && Objects.equals(planSpeedMax, that.planSpeedMax) && Double.compare(startFuelLevel, that.startFuelLevel) == 0 && Double.compare(endFuelLevel, that.endFuelLevel) == 0 && Double.compare(refuel, that.refuel) == 0 && notifyResponsibleUsers == that.notifyResponsibleUsers && Objects.equals(id, that.id) && Objects.equals(machine, that.machine) && Objects.equals(startTime, that.startTime) && Objects.equals(endTime, that.endTime) && Objects.equals(actionType, that.actionType) && Objects.equals(actionSubtype, that.actionSubtype) && Objects.equals(workType, that.workType) && Objects.equals(driver, that.driver) && Objects.equals(implementId, that.implementId) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(description, that.description) && Objects.equals(externalId, that.externalId) && Objects.equals(status, that.status) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override

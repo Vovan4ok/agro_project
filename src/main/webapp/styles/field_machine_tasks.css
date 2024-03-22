@@ -1,0 +1,29 @@
+@import url(main.css);
+@import url(fields_menu.css);
+
+.content-info{
+    width: 1040px;
+}
+.work-type-cell{
+    width: 30%;
+}
+.machine-cell{
+    width: 15%;
+}
+.shape2-cell, .shape1-cell{
+    width: 12.5%;
+}
+.implement-cell{
+    width: 30%;
+}
+.date-start, .date-end{
+    font-size: 14px;
+    color: #8E8E8E;
+}
+.table-link{
+    color: black;
+    transition: font-weight 0.5s;
+}
+.table-link:hover{
+    font-weight: bold;
+}

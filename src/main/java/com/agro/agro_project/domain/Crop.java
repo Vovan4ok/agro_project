@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="crops")
+@Table(name="crops", schema="cropwise_data")
 public class Crop {
     @Id
     @Column(name="id")
@@ -24,11 +24,9 @@ public class Crop {
     private String color;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="season_type", length=10)
@@ -48,7 +46,7 @@ public class Crop {
     private String plantThreatCropName;
 
     @Column(name="hidden")
-    private boolean hidden;
+    private Boolean hidden;
 
     @Column(name="external_id", length=50)
     private String externalId;
@@ -177,11 +175,11 @@ public class Crop {
         this.plantThreatCropName = plantThreatCropName;
     }
 
-    public boolean isHidden() {
+    public Boolean isHidden() {
         return hidden;
     }
 
-    public void setHidden(boolean hidden) {
+    public void setHidden(Boolean hidden) {
         this.hidden = hidden;
     }
 

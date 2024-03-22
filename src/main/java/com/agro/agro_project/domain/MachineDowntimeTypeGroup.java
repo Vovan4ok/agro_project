@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="machine_downtime_type_groups")
+@Table(name="machine_downtime_type_groups", schema="cropwise_data")
 public class MachineDowntimeTypeGroup {
     @Id
     @Column(name="id")
@@ -21,7 +21,6 @@ public class MachineDowntimeTypeGroup {
     private String standardName;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="created_at")

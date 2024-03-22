@@ -4,19 +4,19 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name="machine_task_field_mapping_items")
+@Table(name="machine_task_field_mapping_items", schema="cropwise_data")
 public class MachineTaskFieldMappingItem {
     @Id
     @Column
     private Integer id;
 
     @Column(name="machine_task_id")
-    private int machineTaskId;
+    private Integer machineTaskId;
 
     @Column(name="field_id")
-    private int fieldId;
+    private Integer fieldId;
 
-    public MachineTaskFieldMappingItem(Integer id, int machineTaskId, int fieldId) {
+    public MachineTaskFieldMappingItem(Integer id, Integer machineTaskId, Integer fieldId) {
         this.id = id;
         this.machineTaskId = machineTaskId;
         this.fieldId = fieldId;
@@ -33,19 +33,19 @@ public class MachineTaskFieldMappingItem {
         this.id = id;
     }
 
-    public int getMachineTaskId() {
+    public Integer getMachineTaskId() {
         return machineTaskId;
     }
 
-    public void setMachineTaskId(int machineTaskId) {
+    public void setMachineTaskId(Integer machineTaskId) {
         this.machineTaskId = machineTaskId;
     }
 
-    public int getFieldId() {
+    public Integer getFieldId() {
         return fieldId;
     }
 
-    public void setFieldId(int fieldId) {
+    public void setFieldId(Integer fieldId) {
         this.fieldId = fieldId;
     }
 
@@ -54,7 +54,7 @@ public class MachineTaskFieldMappingItem {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MachineTaskFieldMappingItem that = (MachineTaskFieldMappingItem) o;
-        return machineTaskId == that.machineTaskId && fieldId == that.fieldId && Objects.equals(id, that.id);
+        return Objects.equals(machineTaskId, that.machineTaskId) && Objects.equals(fieldId, that.fieldId) && Objects.equals(id, that.id);
     }
 
     @Override

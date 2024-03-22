@@ -11,5 +11,5 @@ import java.util.Optional;
 public interface AlertRepository extends JpaRepository<Alert, Integer> {
     Optional<Alert> findById(Integer id);
 
-    List<Alert> findAllByAlertableIdAndAlertableType(int id, String alertableType);
+    List<Alert> findAllByAlertableIdAndAlertableType(Integer id, String alertableType);
 }

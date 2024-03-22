@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="seasons")
+@Table(name="seasons", schema="cropwise_data")
 public class Season {
     @Id
     @Column(name="id")
@@ -16,7 +16,7 @@ public class Season {
     private String name;
 
     @Column(name="year")
-    private short year;
+    private Short year;
 
     @Column(name="start_date")
     private Date startDate;
@@ -25,11 +25,9 @@ public class Season {
     private Date endDate;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="external_id", length=50)
@@ -41,7 +39,7 @@ public class Season {
     @Column(name="updated_at")
     private Timestamp updatedAt;
 
-    public Season(Short id, String name, short year, Date startDate, Date endDate, String additionalInfo, String description, String externalId, Timestamp createdAt, Timestamp updatedAt) {
+    public Season(Short id, String name, Short year, Date startDate, Date endDate, String additionalInfo, String description, String externalId, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.name = name;
         this.year = year;
@@ -73,11 +71,11 @@ public class Season {
         this.name = name;
     }
 
-    public short getYear() {
+    public Short getYear() {
         return year;
     }
 
-    public void setYear(short year) {
+    public void setYear(Short year) {
         this.year = year;
     }
 
@@ -142,7 +140,7 @@ public class Season {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Season season = (Season) o;
-        return year == season.year && Objects.equals(id, season.id) && Objects.equals(name, season.name) && Objects.equals(startDate, season.startDate) && Objects.equals(endDate, season.endDate) && Objects.equals(additionalInfo, season.additionalInfo) && Objects.equals(description, season.description) && Objects.equals(externalId, season.externalId) && Objects.equals(createdAt, season.createdAt) && Objects.equals(updatedAt, season.updatedAt);
+        return Objects.equals(year, season.year) && Objects.equals(id, season.id) && Objects.equals(name, season.name) && Objects.equals(startDate, season.startDate) && Objects.equals(endDate, season.endDate) && Objects.equals(additionalInfo, season.additionalInfo) && Objects.equals(description, season.description) && Objects.equals(externalId, season.externalId) && Objects.equals(createdAt, season.createdAt) && Objects.equals(updatedAt, season.updatedAt);
     }
 
     @Override

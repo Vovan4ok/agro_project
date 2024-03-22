@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="units")
+@Table(name="units", schema="cropwise_data")
 public class Unit {
     @Id
     @Column(name="id")
@@ -24,7 +24,6 @@ public class Unit {
     private String coefficientToBaseUnit;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="idempotency_key", length=20)
@@ -40,9 +39,9 @@ public class Unit {
     private Timestamp updatedAt;
 
     @Column(name="archived")
-    private boolean archived;
+    private Boolean archived;
 
-    public Unit(Short id, String humanName, String systemName, String baseUnit, String coefficientToBaseUnit, String description, String idempotencyKey, String externalId, Timestamp createdAt, Timestamp updatedAt, boolean archived) {
+    public Unit(Short id, String humanName, String systemName, String baseUnit, String coefficientToBaseUnit, String description, String idempotencyKey, String externalId, Timestamp createdAt, Timestamp updatedAt, Boolean archived) {
         this.id = id;
         this.humanName = humanName;
         this.systemName = systemName;
@@ -139,11 +138,11 @@ public class Unit {
         this.updatedAt = updatedAt;
     }
 
-    public boolean isArchived() {
+    public Boolean isArchived() {
         return archived;
     }
 
-    public void setArchived(boolean archived) {
+    public void setArchived(Boolean archived) {
         this.archived = archived;
     }
 

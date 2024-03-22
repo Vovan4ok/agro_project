@@ -24,7 +24,10 @@ public class ImplementService {
     }
 
     public Implement findImplementById(Short id) {
-        return implementRepository.findById(id).get();
+        if(implementRepository.findById(id).isPresent()) {
+            return implementRepository.findById(id).get();
+        }
+        return null;
     }
 
     public List<Implement> findAllImplements() {

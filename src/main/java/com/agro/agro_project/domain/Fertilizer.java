@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="fertilizers")
+@Table(name="fertilizers", schema="cropwise_data")
 public class Fertilizer {
     @Id
     @Column(name="id")
@@ -32,7 +32,7 @@ public class Fertilizer {
     private JsonObject elements;
 
     @Column(name="archived")
-    private boolean archived;
+    private Boolean archived;
 
     @ManyToOne
     @JoinColumn(name="wh_item_id")
@@ -43,11 +43,9 @@ public class Fertilizer {
     private Unit whItemBaseUnit;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="external_id", length=50)
@@ -136,11 +134,11 @@ public class Fertilizer {
         this.elements = elements;
     }
 
-    public boolean isArchived() {
+    public Boolean isArchived() {
         return archived;
     }
 
-    public void setArchived(boolean archived) {
+    public void setArchived(Boolean archived) {
         this.archived = archived;
     }
 

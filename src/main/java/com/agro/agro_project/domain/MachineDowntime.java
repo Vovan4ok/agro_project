@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="machine_downtimes")
+@Table(name="machine_downtimes", schema="cropwise_data")
 public class MachineDowntime {
     @Id
     @Column(name="id")
@@ -18,20 +18,19 @@ public class MachineDowntime {
     private Timestamp endTime;
 
     @Column(name="duration_in_seconds")
-    private int durationInSeconds;
+    private Integer durationInSeconds;
 
     @ManyToOne
     @JoinColumn(name="machine_downtime_type_id")
     private MachineDowntimeType machineDowntimeType;
 
     @Column(name="machine_id")
-    private short machineId;
+    private Short machineId;
 
     @Column(name="status", length=20)
     private String status;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="created_at")
@@ -41,12 +40,12 @@ public class MachineDowntime {
     private Timestamp updatedAt;
 
     @Column(name="point_lon")
-    private double pointLon;
+    private Double pointLon;
 
     @Column(name="point_lat")
-    private double pointLat;
+    private Double pointLat;
 
-    public MachineDowntime(Integer id, Timestamp startTime, Timestamp endTime, int durationInSeconds, MachineDowntimeType machineDowntimeType, short machineId, String status, String additionalInfo, Timestamp createdAt, Timestamp updatedAt, double pointLon, double pointLat) {
+    public MachineDowntime(Integer id, Timestamp startTime, Timestamp endTime, Integer durationInSeconds, MachineDowntimeType machineDowntimeType, Short machineId, String status, String additionalInfo, Timestamp createdAt, Timestamp updatedAt, Double pointLon, Double pointLat) {
         this.id = id;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -88,11 +87,11 @@ public class MachineDowntime {
         this.endTime = endTime;
     }
 
-    public int getDurationInSeconds() {
+    public Integer getDurationInSeconds() {
         return durationInSeconds;
     }
 
-    public void setDurationInSeconds(int durationInSeconds) {
+    public void setDurationInSeconds(Integer durationInSeconds) {
         this.durationInSeconds = durationInSeconds;
     }
 
@@ -104,11 +103,11 @@ public class MachineDowntime {
         this.machineDowntimeType = machineDowntimeType;
     }
 
-    public short getMachineId() {
+    public Short getMachineId() {
         return machineId;
     }
 
-    public void setMachineId(short machineId) {
+    public void setMachineId(Short machineId) {
         this.machineId = machineId;
     }
 
@@ -144,19 +143,19 @@ public class MachineDowntime {
         this.updatedAt = updatedAt;
     }
 
-    public double getPointLon() {
+    public Double getPointLon() {
         return pointLon;
     }
 
-    public void setPointLon(double pointLon) {
+    public void setPointLon(Double pointLon) {
         this.pointLon = pointLon;
     }
 
-    public double getPointLat() {
+    public Double getPointLat() {
         return pointLat;
     }
 
-    public void setPointLat(double pointLat) {
+    public void setPointLat(Double pointLat) {
         this.pointLat = pointLat;
     }
 
@@ -165,7 +164,7 @@ public class MachineDowntime {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MachineDowntime that = (MachineDowntime) o;
-        return durationInSeconds == that.durationInSeconds && Double.compare(pointLon, that.pointLon) == 0 && Double.compare(pointLat, that.pointLat) == 0 && Objects.equals(id, that.id) && Objects.equals(startTime, that.startTime) && Objects.equals(endTime, that.endTime) && Objects.equals(machineDowntimeType, that.machineDowntimeType) && Objects.equals(machineId, that.machineId) && Objects.equals(status, that.status) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
+        return Objects.equals(durationInSeconds, that.durationInSeconds) && Double.compare(pointLon, that.pointLon) == 0 && Double.compare(pointLat, that.pointLat) == 0 && Objects.equals(id, that.id) && Objects.equals(startTime, that.startTime) && Objects.equals(endTime, that.endTime) && Objects.equals(machineDowntimeType, that.machineDowntimeType) && Objects.equals(machineId, that.machineId) && Objects.equals(status, that.status) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override

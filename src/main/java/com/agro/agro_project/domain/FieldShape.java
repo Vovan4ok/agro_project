@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="field_shapes")
+@Table(name="field_shapes", schema="cropwise_data")
 public class FieldShape {
     @Id
     @Column(name="id")
@@ -22,40 +22,36 @@ public class FieldShape {
     private Timestamp endTime;
 
     @Column(name="calculated_area")
-    private double calculatedArea;
+    private Double calculatedArea;
 
     @Column(name="legal_area")
-    private double legalArea;
+    private Double legalArea;
 
     @Column(name="tillable_area")
-    private double tillableArea;
+    private Double tillableArea;
 
     @Column(name="simplified_shape")
-    @Lob
     private String simplifiedShape;
 
     @Column(name="shape_simplified_geojson")
-    @Lob
     private String shapeSimplifiedGeojson;
 
     @Column(name="point_lon")
-    private double pointLon;
+    private Double pointLon;
 
     @Column(name="point_lat")
-    private double pointLat;
+    private Double pointLat;
 
     @Column(name="external_id", length=50)
     private String externalId;
 
     @Column(name="legal_perimeter")
-    private double legalPerimeter;
+    private Double legalPerimeter;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="land_quality_assessment")
-    @Lob
     private String landQualityAssessment;
 
     @Column(name="created_at")
@@ -64,7 +60,7 @@ public class FieldShape {
     @Column(name="updated_at")
     private Timestamp updatedAt;
 
-    public FieldShape(Integer id, Field field, Timestamp startTime, Timestamp endTime, double calculatedArea, double legalArea, double tillableArea, String simplifiedShape, String shapeSimplifiedGeojson, double pointLon, double pointLat, String externalId, double legalPerimeter, String description, String landQualityAssessment, Timestamp createdAt, Timestamp updatedAt) {
+    public FieldShape(Integer id, Field field, Timestamp startTime, Timestamp endTime, Double calculatedArea, Double legalArea, Double tillableArea, String simplifiedShape, String shapeSimplifiedGeojson, Double pointLon, Double pointLat, String externalId, Double legalPerimeter, String description, String landQualityAssessment, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.field = field;
         this.startTime = startTime;
@@ -119,27 +115,27 @@ public class FieldShape {
         this.endTime = endTime;
     }
 
-    public double getCalculatedArea() {
+    public Double getCalculatedArea() {
         return calculatedArea;
     }
 
-    public void setCalculatedArea(double calculatedArea) {
+    public void setCalculatedArea(Double calculatedArea) {
         this.calculatedArea = calculatedArea;
     }
 
-    public double getLegalArea() {
+    public Double getLegalArea() {
         return legalArea;
     }
 
-    public void setLegalArea(double legalArea) {
+    public void setLegalArea(Double legalArea) {
         this.legalArea = legalArea;
     }
 
-    public double getTillableArea() {
+    public Double getTillableArea() {
         return tillableArea;
     }
 
-    public void setTillableArea(double tillableArea) {
+    public void setTillableArea(Double tillableArea) {
         this.tillableArea = tillableArea;
     }
 
@@ -159,7 +155,7 @@ public class FieldShape {
         this.shapeSimplifiedGeojson = shapeSimplifiedGeojson;
     }
 
-    public double getPointLon() {
+    public Double getPointLon() {
         return pointLon;
     }
 
@@ -167,7 +163,7 @@ public class FieldShape {
         this.pointLon = pointLon;
     }
 
-    public double getPointLat() {
+    public Double getPointLat() {
         return pointLat;
     }
 
@@ -183,11 +179,11 @@ public class FieldShape {
         this.externalId = externalId;
     }
 
-    public double getLegalPerimeter() {
+    public Double getLegalPerimeter() {
         return legalPerimeter;
     }
 
-    public void setLegalPerimeter(double legalPerimeter) {
+    public void setLegalPerimeter(Double legalPerimeter) {
         this.legalPerimeter = legalPerimeter;
     }
 

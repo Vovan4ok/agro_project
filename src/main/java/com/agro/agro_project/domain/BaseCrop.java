@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name="base_crops")
+@Table(name="base_crops", schema="cropwise_data")
 public class BaseCrop {
     @Id
     @Column(name="id")

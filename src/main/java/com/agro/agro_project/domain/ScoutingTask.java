@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="scouting_tasks")
+@Table(name="scouting_tasks", schema="cropwise_data")
 public class ScoutingTask {
     @Id
     @Column(name="id")
@@ -37,7 +37,6 @@ public class ScoutingTask {
     private Timestamp endTime;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="created_at")
@@ -59,22 +58,22 @@ public class ScoutingTask {
     private String imageSourceSign;
 
     @Column(name="scout_report_template_id")
-    private short scoutReportTemplateId;
+    private Short scoutReportTemplateId;
 
     @Column(name="season")
-    private short season;
+    private Short season;
 
     @ManyToOne
     @JoinColumn(name="agro_operation_id")
     private AgroOperation agroOperation;
 
     @Column(name="automatic_scouting_task_id")
-    private int automaticScoutingTaskId;
+    private Integer automaticScoutingTaskId;
 
     @Column(name="history_item_id")
-    private int historyItemId;
+    private Integer historyItemId;
 
-    public ScoutingTask(Short id, Field field, User responsibleUser, User author, String externalId, String idempotencyKey, Timestamp startTime, Timestamp endTime, String description, Timestamp createdAt, Timestamp updatedAt, String status, String imageType, Date imageDate, String imageSourceSign, short scoutReportTemplateId, short season, AgroOperation agroOperation, int automaticScoutingTaskId, int historyItemId) {
+    public ScoutingTask(Short id, Field field, User responsibleUser, User author, String externalId, String idempotencyKey, Timestamp startTime, Timestamp endTime, String description, Timestamp createdAt, Timestamp updatedAt, String status, String imageType, Date imageDate, String imageSourceSign, Short scoutReportTemplateId, Short season, AgroOperation agroOperation, Integer automaticScoutingTaskId, Integer historyItemId) {
         this.id = id;
         this.field = field;
         this.responsibleUser = responsibleUser;
@@ -220,19 +219,19 @@ public class ScoutingTask {
         this.imageSourceSign = imageSourceSign;
     }
 
-    public short getScoutReportTemplateId() {
+    public Short getScoutReportTemplateId() {
         return scoutReportTemplateId;
     }
 
-    public void setScoutReportTemplateId(short scoutReportTemplateId) {
+    public void setScoutReportTemplateId(Short scoutReportTemplateId) {
         this.scoutReportTemplateId = scoutReportTemplateId;
     }
 
-    public short getSeason() {
+    public Short getSeason() {
         return season;
     }
 
-    public void setSeason(short season) {
+    public void setSeason(Short season) {
         this.season = season;
     }
 
@@ -244,19 +243,19 @@ public class ScoutingTask {
         this.agroOperation = agroOperation;
     }
 
-    public int getAutomaticScoutingTaskId() {
+    public Integer getAutomaticScoutingTaskId() {
         return automaticScoutingTaskId;
     }
 
-    public void setAutomaticScoutingTaskId(int automaticScoutingTaskId) {
+    public void setAutomaticScoutingTaskId(Integer automaticScoutingTaskId) {
         this.automaticScoutingTaskId = automaticScoutingTaskId;
     }
 
-    public int getHistoryItemId() {
+    public Integer getHistoryItemId() {
         return historyItemId;
     }
 
-    public void setHistoryItemId(int historyItemId) {
+    public void setHistoryItemId(Integer historyItemId) {
         this.historyItemId = historyItemId;
     }
 
@@ -265,7 +264,7 @@ public class ScoutingTask {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ScoutingTask that = (ScoutingTask) o;
-        return scoutReportTemplateId == that.scoutReportTemplateId && season == that.season && automaticScoutingTaskId == that.automaticScoutingTaskId && historyItemId == that.historyItemId && Objects.equals(id, that.id) && Objects.equals(field, that.field) && Objects.equals(responsibleUser, that.responsibleUser) && Objects.equals(author, that.author) && Objects.equals(externalId, that.externalId) && Objects.equals(idempotencyKey, that.idempotencyKey) && Objects.equals(startTime, that.startTime) && Objects.equals(endTime, that.endTime) && Objects.equals(description, that.description) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(status, that.status) && Objects.equals(imageType, that.imageType) && Objects.equals(imageDate, that.imageDate) && Objects.equals(imageSourceSign, that.imageSourceSign) && Objects.equals(agroOperation, that.agroOperation);
+        return Objects.equals(scoutReportTemplateId, that.scoutReportTemplateId) && Objects.equals(season, that.season) && Objects.equals(automaticScoutingTaskId, that.automaticScoutingTaskId) && Objects.equals(historyItemId, that.historyItemId) && Objects.equals(id, that.id) && Objects.equals(field, that.field) && Objects.equals(responsibleUser, that.responsibleUser) && Objects.equals(author, that.author) && Objects.equals(externalId, that.externalId) && Objects.equals(idempotencyKey, that.idempotencyKey) && Objects.equals(startTime, that.startTime) && Objects.equals(endTime, that.endTime) && Objects.equals(description, that.description) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(status, that.status) && Objects.equals(imageType, that.imageType) && Objects.equals(imageDate, that.imageDate) && Objects.equals(imageSourceSign, that.imageSourceSign) && Objects.equals(agroOperation, that.agroOperation);
     }
 
     @Override

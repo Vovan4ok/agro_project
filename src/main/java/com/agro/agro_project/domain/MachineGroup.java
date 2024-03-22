@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="machine_groups")
+@Table(name="machine_groups", schema="cropwise_data")
 public class MachineGroup {
     @Id
     @Column(name="id")
@@ -15,11 +15,9 @@ public class MachineGroup {
     private String name;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="external_id", length=50)

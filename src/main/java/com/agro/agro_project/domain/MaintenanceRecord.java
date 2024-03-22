@@ -5,32 +5,32 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="maintenance_records")
+@Table(name="maintenance_records", schema="cropwise_data")
 public class MaintenanceRecord {
     @Id
     @Column(name="id")
     private Short id;
 
     @Column(name="maintainable_id")
-    private int maintainableId;
+    private Integer maintainableId;
 
     @Column(name="maintainable_type", length=20)
     private String maintainableType;
 
     @Column(name="maintenance_plan_id")
-    private short maintenancePlanId;
+    private Short maintenancePlanId;
 
     @Column(name="status", length=15)
     private String status;
 
     @Column(name="season")
-    private short season;
+    private Short season;
 
     @Column(name="motohours")
-    private int motohours;
+    private Integer motohours;
 
     @Column(name="mileage")
-    private int mileage;
+    private Integer mileage;
 
     @Column(name="start_time")
     private Timestamp startTime;
@@ -45,7 +45,6 @@ public class MaintenanceRecord {
     private Timestamp plannedEndTime;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="created_at")
@@ -54,7 +53,7 @@ public class MaintenanceRecord {
     @Column(name="updated_at")
     private Timestamp updatedAt;
 
-    public MaintenanceRecord(Short id, int maintainableId, String maintainableType, short maintenancePlanId, String status, short season, int motohours, int mileage, Timestamp startTime, Timestamp endTime, Timestamp plannedStartTime, Timestamp plannedEndTime, String description, Timestamp createdAt, Timestamp updatedAt) {
+    public MaintenanceRecord(Short id, Integer maintainableId, String maintainableType, Short maintenancePlanId, String status, Short season, Integer motohours, Integer mileage, Timestamp startTime, Timestamp endTime, Timestamp plannedStartTime, Timestamp plannedEndTime, String description, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.maintainableId = maintainableId;
         this.maintainableType = maintainableType;
@@ -83,11 +82,11 @@ public class MaintenanceRecord {
         this.id = id;
     }
 
-    public int getMaintainableId() {
+    public Integer getMaintainableId() {
         return maintainableId;
     }
 
-    public void setMaintainableId(int maintainableId) {
+    public void setMaintainableId(Integer maintainableId) {
         this.maintainableId = maintainableId;
     }
 
@@ -99,11 +98,11 @@ public class MaintenanceRecord {
         this.maintainableType = maintainableType;
     }
 
-    public short getMaintenancePlanId() {
+    public Short getMaintenancePlanId() {
         return maintenancePlanId;
     }
 
-    public void setMaintenancePlanId(short maintenancePlanId) {
+    public void setMaintenancePlanId(Short maintenancePlanId) {
         this.maintenancePlanId = maintenancePlanId;
     }
 
@@ -115,27 +114,27 @@ public class MaintenanceRecord {
         this.status = status;
     }
 
-    public short getSeason() {
+    public Short getSeason() {
         return season;
     }
 
-    public void setSeason(short season) {
+    public void setSeason(Short season) {
         this.season = season;
     }
 
-    public int getMotohours() {
+    public Integer getMotohours() {
         return motohours;
     }
 
-    public void setMotohours(int motohours) {
+    public void setMotohours(Integer motohours) {
         this.motohours = motohours;
     }
 
-    public int getMileage() {
+    public Integer getMileage() {
         return mileage;
     }
 
-    public void setMileage(int mileage) {
+    public void setMileage(Integer mileage) {
         this.mileage = mileage;
     }
 
@@ -200,7 +199,7 @@ public class MaintenanceRecord {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MaintenanceRecord that = (MaintenanceRecord) o;
-        return maintainableId == that.maintainableId && maintenancePlanId == that.maintenancePlanId && season == that.season && motohours == that.motohours && mileage == that.mileage && Objects.equals(id, that.id) && Objects.equals(maintainableType, that.maintainableType) && Objects.equals(status, that.status) && Objects.equals(startTime, that.startTime) && Objects.equals(endTime, that.endTime) && Objects.equals(plannedStartTime, that.plannedStartTime) && Objects.equals(plannedEndTime, that.plannedEndTime) && Objects.equals(description, that.description) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
+        return Objects.equals(maintainableId, that.maintainableId) && Objects.equals(maintenancePlanId, that.maintenancePlanId) && Objects.equals(season, that.season) && Objects.equals(motohours, that.motohours) && Objects.equals(mileage, that.mileage) && Objects.equals(id, that.id) && Objects.equals(maintainableType, that.maintainableType) && Objects.equals(status, that.status) && Objects.equals(startTime, that.startTime) && Objects.equals(endTime, that.endTime) && Objects.equals(plannedStartTime, that.plannedStartTime) && Objects.equals(plannedEndTime, that.plannedEndTime) && Objects.equals(description, that.description) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override

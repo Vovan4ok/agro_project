@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="additional_objects")
+@Table(name="additional_objects", schema="cropwise_data")
 public class AdditionalObject {
     @Id
     @Column(name="id")
@@ -22,24 +22,22 @@ public class AdditionalObject {
     private String objectType;
 
     @Column(name="calculated_area")
-    private double calculatedArea;
+    private Double calculatedArea;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="geometry_type", length=30)
     private String geometryType;
 
     @Column(name="ppoint_lon")
-    private double pointLon;
+    private Double pointLon;
 
     @Column(name="point_lat")
-    private double pointLat;
+    private Double pointLat;
 
     @Column(name="administrative_area_name", length=50)
     private String administrativeAreaName;
@@ -59,7 +57,7 @@ public class AdditionalObject {
     @Column(name="updated_at")
     private Timestamp updatedAt;
 
-    public AdditionalObject(Short id, FieldGroup fieldGroup, String name, String objectType, double calculatedArea, String additionalInfo, String description, String geometryType, double pointLon, double pointLat, String administrativeAreaName, String subadministrativeAreaName, String locality, String externalId, Timestamp createdAt, Timestamp updatedAt) {
+    public AdditionalObject(Short id, FieldGroup fieldGroup, String name, String objectType, Double calculatedArea, String additionalInfo, String description, String geometryType, Double pointLon, Double pointLat, String administrativeAreaName, String subadministrativeAreaName, String locality, String externalId, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.fieldGroup = fieldGroup;
         this.name = name;
@@ -113,11 +111,11 @@ public class AdditionalObject {
         this.objectType = objectType;
     }
 
-    public double getCalculatedArea() {
+    public Double getCalculatedArea() {
         return calculatedArea;
     }
 
-    public void setCalculatedArea(double calculatedArea) {
+    public void setCalculatedArea(Double calculatedArea) {
         this.calculatedArea = calculatedArea;
     }
 
@@ -145,19 +143,19 @@ public class AdditionalObject {
         this.geometryType = geometryType;
     }
 
-    public double getPointLon() {
+    public Double getPointLon() {
         return pointLon;
     }
 
-    public void setPointLon(double pointLon) {
+    public void setPointLon(Double pointLon) {
         this.pointLon = pointLon;
     }
 
-    public double getPointLat() {
+    public Double getPointLat() {
         return pointLat;
     }
 
-    public void setPointLat(double pointLat) {
+    public void setPointLat(Double pointLat) {
         this.pointLat = pointLat;
     }
 

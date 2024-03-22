@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="warehouse_groups")
+@Table(name="warehouse_groups", schema="cropwise_data")
 public class WarehouseGroup {
     @Id
     @Column(name="id")
@@ -19,7 +19,6 @@ public class WarehouseGroup {
     private String name;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="created_at")

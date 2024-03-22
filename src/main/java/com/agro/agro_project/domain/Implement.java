@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="implements")
+@Table(name="implements", schema="cropwise_data")
 public class Implement {
     @Id
     @Column(name="id")
@@ -21,7 +21,7 @@ public class Implement {
     private String manufacturer;
 
     @Column(name="year")
-    private short year;
+    private Short year;
 
     @Column(name="registration_number", length=20)
     private String registrationNumber;
@@ -33,41 +33,37 @@ public class Implement {
     private String implementType;
 
     @Column(name="width")
-    private double width;
+    private Double width;
 
     @Column(name="official_width")
-    private double officialWidth;
+    private Double officialWidth;
 
     @Column(name="avatar_id")
-    private short avatarId;
+    private Short avatarId;
 
     @Column(name="chassis_serial_number", length=50)
     private String chassisSerialNumber;
 
     @Column(name="legal_company")
-    @Lob
     private String legalCompany;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="additional")
-    @Lob
     private String additional;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="variable_width")
-    private boolean variableWidth;
+    private Boolean variableWidth;
 
     @Column(name="min_width")
-    private double minWidth;
+    private Double minWidth;
 
     @Column(name="max_width")
-    private double maxWidth;
+    private Double maxWidth;
 
     @Column(name="created_at")
     private Timestamp createdAt;
@@ -79,9 +75,9 @@ public class Implement {
     private String externalId;
 
     @Column(name="virtual")
-    private boolean virtual;
+    private Boolean virtual;
 
-    public Implement(Short id, String name, String model, String manufacturer, short year, String registrationNumber, String inventoryNumber, String implementType, double width, double officialWidth, short avatarId, String chassisSerialNumber, String legalCompany, String description, String additional, String additionalInfo, boolean variableWidth, double minWidth, double maxWidth, Timestamp createdAt, Timestamp updatedAt, String externalId, boolean virtual) {
+    public Implement(Short id, String name, String model, String manufacturer, Short year, String registrationNumber, String inventoryNumber, String implementType, Double width, Double officialWidth, Short avatarId, String chassisSerialNumber, String legalCompany, String description, String additional, String additionalInfo, Boolean variableWidth, Double minWidth, Double maxWidth, Timestamp createdAt, Timestamp updatedAt, String externalId, Boolean virtual) {
         this.id = id;
         this.name = name;
         this.model = model;
@@ -142,11 +138,11 @@ public class Implement {
         this.manufacturer = manufacturer;
     }
 
-    public short getYear() {
+    public Short getYear() {
         return year;
     }
 
-    public void setYear(short year) {
+    public void setYear(Short year) {
         this.year = year;
     }
 
@@ -174,27 +170,27 @@ public class Implement {
         this.implementType = implementType;
     }
 
-    public double getWidth() {
+    public Double getWidth() {
         return width;
     }
 
-    public void setWidth(double width) {
+    public void setWidth(Double width) {
         this.width = width;
     }
 
-    public double getOfficialWidth() {
+    public Double getOfficialWidth() {
         return officialWidth;
     }
 
-    public void setOfficialWidth(double officialWidth) {
+    public void setOfficialWidth(Double officialWidth) {
         this.officialWidth = officialWidth;
     }
 
-    public short getAvatarId() {
+    public Short getAvatarId() {
         return avatarId;
     }
 
-    public void setAvatarId(short avatarId) {
+    public void setAvatarId(Short avatarId) {
         this.avatarId = avatarId;
     }
 
@@ -238,27 +234,27 @@ public class Implement {
         this.additionalInfo = additionalInfo;
     }
 
-    public boolean isVariableWidth() {
+    public Boolean isVariableWidth() {
         return variableWidth;
     }
 
-    public void setVariableWidth(boolean variableWidth) {
+    public void setVariableWidth(Boolean variableWidth) {
         this.variableWidth = variableWidth;
     }
 
-    public double getMinWidth() {
+    public Double getMinWidth() {
         return minWidth;
     }
 
-    public void setMinWidth(double minWidth) {
+    public void setMinWidth(Double minWidth) {
         this.minWidth = minWidth;
     }
 
-    public double getMaxWidth() {
+    public Double getMaxWidth() {
         return maxWidth;
     }
 
-    public void setMaxWidth(double maxWidth) {
+    public void setMaxWidth(Double maxWidth) {
         this.maxWidth = maxWidth;
     }
 
@@ -286,11 +282,11 @@ public class Implement {
         this.externalId = externalId;
     }
 
-    public boolean isVirtual() {
+    public Boolean isVirtual() {
         return virtual;
     }
 
-    public void setVirtual(boolean virtual) {
+    public void setVirtual(Boolean virtual) {
         this.virtual = virtual;
     }
 
@@ -299,7 +295,7 @@ public class Implement {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Implement implement = (Implement) o;
-        return year == implement.year && Double.compare(width, implement.width) == 0 && Double.compare(officialWidth, implement.officialWidth) == 0 && avatarId == implement.avatarId && variableWidth == implement.variableWidth && Double.compare(minWidth, implement.minWidth) == 0 && Double.compare(maxWidth, implement.maxWidth) == 0 && virtual == implement.virtual && Objects.equals(id, implement.id) && Objects.equals(name, implement.name) && Objects.equals(model, implement.model) && Objects.equals(manufacturer, implement.manufacturer) && Objects.equals(registrationNumber, implement.registrationNumber) && Objects.equals(inventoryNumber, implement.inventoryNumber) && Objects.equals(implementType, implement.implementType) && Objects.equals(chassisSerialNumber, implement.chassisSerialNumber) && Objects.equals(legalCompany, implement.legalCompany) && Objects.equals(description, implement.description) && Objects.equals(additional, implement.additional) && Objects.equals(additionalInfo, implement.additionalInfo) && Objects.equals(createdAt, implement.createdAt) && Objects.equals(updatedAt, implement.updatedAt) && Objects.equals(externalId, implement.externalId);
+        return Objects.equals(year, implement.year) && Double.compare(width, implement.width) == 0 && Double.compare(officialWidth, implement.officialWidth) == 0 && Objects.equals(avatarId, implement.avatarId) && variableWidth == implement.variableWidth && Double.compare(minWidth, implement.minWidth) == 0 && Double.compare(maxWidth, implement.maxWidth) == 0 && virtual == implement.virtual && Objects.equals(id, implement.id) && Objects.equals(name, implement.name) && Objects.equals(model, implement.model) && Objects.equals(manufacturer, implement.manufacturer) && Objects.equals(registrationNumber, implement.registrationNumber) && Objects.equals(inventoryNumber, implement.inventoryNumber) && Objects.equals(implementType, implement.implementType) && Objects.equals(chassisSerialNumber, implement.chassisSerialNumber) && Objects.equals(legalCompany, implement.legalCompany) && Objects.equals(description, implement.description) && Objects.equals(additional, implement.additional) && Objects.equals(additionalInfo, implement.additionalInfo) && Objects.equals(createdAt, implement.createdAt) && Objects.equals(updatedAt, implement.updatedAt) && Objects.equals(externalId, implement.externalId);
     }
 
     @Override

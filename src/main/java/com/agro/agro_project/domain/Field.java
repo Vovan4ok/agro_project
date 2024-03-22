@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="fields")
+@Table(name="fields", schema="cropwise_data")
 public class Field {
     @Id
     @Column(name="id")
@@ -23,11 +23,9 @@ public class Field {
     private String additionalName;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="administrative_area_name", length=50)
@@ -64,7 +62,6 @@ public class Field {
     private AdminRegion district;
 
     @Column(name="x_custom_fields_data")
-    @Lob
     private String xCustomFieldsData;
 
     public Field(Integer id, FieldGroup fieldGroup, String name, String additionalName, String additionalInfo, String description, String administrativeAreaName, String subadministrativeAreaName, String locality, Timestamp createdAt, Timestamp updatedAt, String externalId, String idempotencyKey, AdminRegion region, AdminRegion country, AdminRegion district, String xCustomFieldsData) {

@@ -5,14 +5,13 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="land_parcels")
+@Table(name="land_parcels", schema="cropwise_data")
 public class LandParcel {
     @Id
     @Column(name="id")
     private Integer id;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="address", length=50)
@@ -22,16 +21,16 @@ public class LandParcel {
     private String areaType;
 
     @Column(name="cadastral_area")
-    private double cadastralArea;
+    private Double cadastralArea;
 
     @Column(name="cadastral_number", length=30)
     private String cadastralNumber;
 
     @Column(name="cadastral_price")
-    private double cadastralPrice;
+    private Double cadastralPrice;
 
     @Column(name="calculated_area")
-    private double calculatedArea;
+    private Double calculatedArea;
 
     @Column(name="country_code", length=5)
     private String countryCode;
@@ -40,7 +39,6 @@ public class LandParcel {
     private Timestamp createdAt;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="document_status", length=20)
@@ -54,21 +52,19 @@ public class LandParcel {
     private FieldGroup fieldGroup;
 
     @Column(name="geo_json")
-    @Lob
     private String geoJson;
 
     @Column(name="in_archive")
-    private boolean inArchive;
+    private Boolean inArchive;
 
     @Column(name="ownership_type", length=20)
     private String ownershipType;
 
     @Column(name="permitted_use")
-    @Lob
     private String permittedUse;
 
     @Column(name="planned_action")
-    private boolean plannedAction;
+    private Boolean plannedAction;
 
     @Column(name="region", length=50)
     private String region;
@@ -86,10 +82,9 @@ public class LandParcel {
     private String villageCouncil;
 
     @Column(name="x_custom_vlasnik_zemelnoyi_dilyanki")
-    @Lob
     private String xCustomVlasnikZemelnoyiDilyanki;
 
-    public LandParcel(Integer id, String additionalInfo, String address, String areaType, double cadastralArea, String cadastralNumber, double cadastralPrice, double calculatedArea, String countryCode, Timestamp createdAt, String description, String documentStatus, String externalId, FieldGroup fieldGroup, String geoJson, boolean inArchive, String ownershipType, String permittedUse, boolean plannedAction, String region, String registrationNumber, String subadministrativeAreaName, Timestamp updatedAt, String villageCouncil, String xCustomVlasnikZemelnoyiDilyanki) {
+    public LandParcel(Integer id, String additionalInfo, String address, String areaType, Double cadastralArea, String cadastralNumber, Double cadastralPrice, Double calculatedArea, String countryCode, Timestamp createdAt, String description, String documentStatus, String externalId, FieldGroup fieldGroup, String geoJson, Boolean inArchive, String ownershipType, String permittedUse, Boolean plannedAction, String region, String registrationNumber, String subadministrativeAreaName, Timestamp updatedAt, String villageCouncil, String xCustomVlasnikZemelnoyiDilyanki) {
         this.id = id;
         this.additionalInfo = additionalInfo;
         this.address = address;
@@ -152,11 +147,11 @@ public class LandParcel {
         this.areaType = areaType;
     }
 
-    public double getCadastralArea() {
+    public Double getCadastralArea() {
         return cadastralArea;
     }
 
-    public void setCadastralArea(double cadastralArea) {
+    public void setCadastralArea(Double cadastralArea) {
         this.cadastralArea = cadastralArea;
     }
 
@@ -168,19 +163,19 @@ public class LandParcel {
         this.cadastralNumber = cadastralNumber;
     }
 
-    public double getCadastralPrice() {
+    public Double getCadastralPrice() {
         return cadastralPrice;
     }
 
-    public void setCadastralPrice(double cadastralPrice) {
+    public void setCadastralPrice(Double cadastralPrice) {
         this.cadastralPrice = cadastralPrice;
     }
 
-    public double getCalculatedArea() {
+    public Double getCalculatedArea() {
         return calculatedArea;
     }
 
-    public void setCalculatedArea(double calculatedArea) {
+    public void setCalculatedArea(Double calculatedArea) {
         this.calculatedArea = calculatedArea;
     }
 
@@ -240,11 +235,11 @@ public class LandParcel {
         this.geoJson = geoJson;
     }
 
-    public boolean isInArchive() {
+    public Boolean isInArchive() {
         return inArchive;
     }
 
-    public void setInArchive(boolean inArchive) {
+    public void setInArchive(Boolean inArchive) {
         this.inArchive = inArchive;
     }
 
@@ -264,11 +259,11 @@ public class LandParcel {
         this.permittedUse = permittedUse;
     }
 
-    public boolean isPlannedAction() {
+    public Boolean isPlannedAction() {
         return plannedAction;
     }
 
-    public void setPlannedAction(boolean plannedAction) {
+    public void setPlannedAction(Boolean plannedAction) {
         this.plannedAction = plannedAction;
     }
 

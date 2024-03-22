@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="agro_operations")
+@Table(name="agro_operations", schema="cropwise_data")
 public class AgroOperation {
     @Id
     @Column
@@ -44,13 +44,13 @@ public class AgroOperation {
     private String calcBy;
 
     @Column(name="planned_area")
-    private double plannedArea;
+    private Double plannedArea;
 
     @Column(name="completed_area")
-    private double completedArea;
+    private Double completedArea;
 
     @Column(name="harvested_weight")
-    private double harvestedWeight;
+    private Double harvestedWeight;
 
     @Column(name="planned_start_date")
     private Date plannedStartDate;
@@ -65,41 +65,39 @@ public class AgroOperation {
     private Timestamp completedDatetime;
 
     @Column(name="season")
-    private short season;
+    private Short season;
 
     @Column(name="planned_row_spacing")
-    private double plannedRowSpacing;
+    private Double plannedRowSpacing;
 
     @Column(name="planned_plant_spacing")
-    private double plannedPlantSpacing;
+    private Double plannedPlantSpacing;
 
     @Column(name="planned_depth")
-    private double plannedDepth;
+    private Double plannedDepth;
 
     @Column(name="planned_speed")
-    private double plannedSpeed;
+    private Double plannedSpeed;
 
     @Column(name="planned_water_rate")
-    private double plannedWaterRate;
+    private Double plannedWaterRate;
 
     @Column(name="fact_water_rate")
-    private double factWaterRate;
+    private Double factWaterRate;
 
     @Column(name="covered_area")
-    private double coveredArea;
+    private Double coveredArea;
 
     @Column(name="covered_area_by_track")
-    private double coveredAreaByTrack;
+    private Double coveredAreaByTrack;
 
     @Column(name="machine_work_area")
-    private double machineWorkArea;
+    private Double machineWorkArea;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="created_at")
@@ -115,10 +113,10 @@ public class AgroOperation {
     private Timestamp actualStartDatetime;
 
     @Column(name="agro_recommendation_id")
-    private short agroRecommendationId;
+    private Short agroRecommendationId;
 
     @Column(name="locked_to_edit")
-    private boolean lockedToEdit;
+    private Boolean lockedToEdit;
 
     @Column(name="idempotency_key", length=100)
     private String idempotencyKey;
@@ -127,28 +125,27 @@ public class AgroOperation {
     private String lockedAt;
 
     @Column(name="control_threshing")
-    private double controlThreshing;
+    private Double controlThreshing;
 
     @Column(name="humidity")
-    private double humidity;
+    private Double humidity;
 
     @Column(name="protein_content")
-    private double proteinContent;
+    private Double proteinContent;
 
     @Column(name="oil_content")
-    private double oilContent;
+    private Double oilContent;
 
     @Column(name="history_item_id")
-    private int historyItemId;
+    private Integer historyItemId;
 
     @Column(name="notify_responsible_users")
-    private boolean notifyResponsibleUsers;
+    private Boolean notifyResponsibleUsers;
 
     @Column(name="x_custom_fields_data")
-    @Lob
     private String xCustomFieldsData;
 
-    public AgroOperation(Integer id, Field field, FieldShape fieldShape, AgriWorkPlan agriWorkPlan, String applicationsType, String operationNumber, String customName, WorkType workType, String status, String calcBy, double plannedArea, double completedArea, double harvestedWeight, Date plannedStartDate, Date plannedEndDate, Date completedDate, Timestamp completedDatetime, short season, double plannedRowSpacing, double plannedPlantSpacing, double plannedDepth, double plannedSpeed, double plannedWaterRate, double factWaterRate, double coveredArea, double coveredAreaByTrack, double machineWorkArea, String additionalInfo, String description, Timestamp createdAt, Timestamp updatedAt, String externalId, Timestamp actualStartDatetime, short agroRecommendationId, boolean lockedToEdit, String idempotencyKey, String lockedAt, double controlThreshing, double humidity, double proteinContent, double oilContent, int historyItemId, boolean notifyResponsibleUsers, String xCustomFieldsData) {
+    public AgroOperation(Integer id, Field field, FieldShape fieldShape, AgriWorkPlan agriWorkPlan, String applicationsType, String operationNumber, String customName, WorkType workType, String status, String calcBy, Double plannedArea, Double completedArea, Double harvestedWeight, Date plannedStartDate, Date plannedEndDate, Date completedDate, Timestamp completedDatetime, Short season, Double plannedRowSpacing, Double plannedPlantSpacing, Double plannedDepth, Double plannedSpeed, Double plannedWaterRate, Double factWaterRate, Double coveredArea, Double coveredAreaByTrack, Double machineWorkArea, String additionalInfo, String description, Timestamp createdAt, Timestamp updatedAt, String externalId, Timestamp actualStartDatetime, Short agroRecommendationId, Boolean lockedToEdit, String idempotencyKey, String lockedAt, Double controlThreshing, Double humidity, Double proteinContent, Double oilContent, Integer historyItemId, Boolean notifyResponsibleUsers, String xCustomFieldsData) {
         this.id = id;
         this.field = field;
         this.fieldShape = fieldShape;
@@ -278,27 +275,27 @@ public class AgroOperation {
         this.calcBy = calcBy;
     }
 
-    public double getPlannedArea() {
+    public Double getPlannedArea() {
         return plannedArea;
     }
 
-    public void setPlannedArea(double plannedArea) {
+    public void setPlannedArea(Double plannedArea) {
         this.plannedArea = plannedArea;
     }
 
-    public double getCompletedArea() {
+    public Double getCompletedArea() {
         return completedArea;
     }
 
-    public void setCompletedArea(double completedArea) {
+    public void setCompletedArea(Double completedArea) {
         this.completedArea = completedArea;
     }
 
-    public double getHarvestedWeight() {
+    public Double getHarvestedWeight() {
         return harvestedWeight;
     }
 
-    public void setHarvestedWeight(double harvestedWeight) {
+    public void setHarvestedWeight(Double harvestedWeight) {
         this.harvestedWeight = harvestedWeight;
     }
 
@@ -334,83 +331,83 @@ public class AgroOperation {
         this.completedDatetime = completedDatetime;
     }
 
-    public short getSeason() {
+    public Short getSeason() {
         return season;
     }
 
-    public void setSeason(short season) {
+    public void setSeason(Short season) {
         this.season = season;
     }
 
-    public double getPlannedRowSpacing() {
+    public Double getPlannedRowSpacing() {
         return plannedRowSpacing;
     }
 
-    public void setPlannedRowSpacing(double plannedRowSpacing) {
+    public void setPlannedRowSpacing(Double plannedRowSpacing) {
         this.plannedRowSpacing = plannedRowSpacing;
     }
 
-    public double getPlannedPlantSpacing() {
+    public Double getPlannedPlantSpacing() {
         return plannedPlantSpacing;
     }
 
-    public void setPlannedPlantSpacing(double plannedPlantSpacing) {
+    public void setPlannedPlantSpacing(Double plannedPlantSpacing) {
         this.plannedPlantSpacing = plannedPlantSpacing;
     }
 
-    public double getPlannedDepth() {
+    public Double getPlannedDepth() {
         return plannedDepth;
     }
 
-    public void setPlannedDepth(double plannedDepth) {
+    public void setPlannedDepth(Double plannedDepth) {
         this.plannedDepth = plannedDepth;
     }
 
-    public double getPlannedSpeed() {
+    public Double getPlannedSpeed() {
         return plannedSpeed;
     }
 
-    public void setPlannedSpeed(double plannedSpeed) {
+    public void setPlannedSpeed(Double plannedSpeed) {
         this.plannedSpeed = plannedSpeed;
     }
 
-    public double getPlannedWaterRate() {
+    public Double getPlannedWaterRate() {
         return plannedWaterRate;
     }
 
-    public void setPlannedWaterRate(double plannedWaterRate) {
+    public void setPlannedWaterRate(Double plannedWaterRate) {
         this.plannedWaterRate = plannedWaterRate;
     }
 
-    public double getFactWaterRate() {
+    public Double getFactWaterRate() {
         return factWaterRate;
     }
 
-    public void setFactWaterRate(double factWaterRate) {
+    public void setFactWaterRate(Double factWaterRate) {
         this.factWaterRate = factWaterRate;
     }
 
-    public double getCoveredArea() {
+    public Double getCoveredArea() {
         return coveredArea;
     }
 
-    public void setCoveredArea(double coveredArea) {
+    public void setCoveredArea(Double coveredArea) {
         this.coveredArea = coveredArea;
     }
 
-    public double getCoveredAreaByTrack() {
+    public Double getCoveredAreaByTrack() {
         return coveredAreaByTrack;
     }
 
-    public void setCoveredAreaByTrack(double coveredAreaByTrack) {
+    public void setCoveredAreaByTrack(Double coveredAreaByTrack) {
         this.coveredAreaByTrack = coveredAreaByTrack;
     }
 
-    public double getMachineWorkArea() {
+    public Double getMachineWorkArea() {
         return machineWorkArea;
     }
 
-    public void setMachineWorkArea(double machineWorkArea) {
+    public void setMachineWorkArea(Double machineWorkArea) {
         this.machineWorkArea = machineWorkArea;
     }
 
@@ -462,19 +459,19 @@ public class AgroOperation {
         this.actualStartDatetime = actualStartDatetime;
     }
 
-    public short getAgroRecommendationId() {
+    public Short getAgroRecommendationId() {
         return agroRecommendationId;
     }
 
-    public void setAgroRecommendationId(short agroRecommendationId) {
+    public void setAgroRecommendationId(Short agroRecommendationId) {
         this.agroRecommendationId = agroRecommendationId;
     }
 
-    public boolean isLockedToEdit() {
+    public Boolean isLockedToEdit() {
         return lockedToEdit;
     }
 
-    public void setLockedToEdit(boolean lockedToEdit) {
+    public void setLockedToEdit(Boolean lockedToEdit) {
         this.lockedToEdit = lockedToEdit;
     }
 
@@ -494,51 +491,51 @@ public class AgroOperation {
         this.lockedAt = lockedAt;
     }
 
-    public double getControlThreshing() {
+    public Double getControlThreshing() {
         return controlThreshing;
     }
 
-    public void setControlThreshing(double controlThreshing) {
+    public void setControlThreshing(Double controlThreshing) {
         this.controlThreshing = controlThreshing;
     }
 
-    public double getHumidity() {
+    public Double getHumidity() {
         return humidity;
     }
 
-    public void setHumidity(double humidity) {
+    public void setHumidity(Double humidity) {
         this.humidity = humidity;
     }
 
-    public double getProteinContent() {
+    public Double getProteinContent() {
         return proteinContent;
     }
 
-    public void setProteinContent(double proteinContent) {
+    public void setProteinContent(Double proteinContent) {
         this.proteinContent = proteinContent;
     }
 
-    public double getOilContent() {
+    public Double getOilContent() {
         return oilContent;
     }
 
-    public void setOilContent(double oilContent) {
+    public void setOilContent(Double oilContent) {
         this.oilContent = oilContent;
     }
 
-    public int getHistoryItemId() {
+    public Integer getHistoryItemId() {
         return historyItemId;
     }
 
-    public void setHistoryItemId(int historyItemId) {
+    public void setHistoryItemId(Integer historyItemId) {
         this.historyItemId = historyItemId;
     }
 
-    public boolean isNotifyResponsibleUsers() {
+    public Boolean isNotifyResponsibleUsers() {
         return notifyResponsibleUsers;
     }
 
-    public void setNotifyResponsibleUsers(boolean notifyResponsibleUsers) {
+    public void setNotifyResponsibleUsers(Boolean notifyResponsibleUsers) {
         this.notifyResponsibleUsers = notifyResponsibleUsers;
     }
 
@@ -555,7 +552,7 @@ public class AgroOperation {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AgroOperation that = (AgroOperation) o;
-        return Double.compare(plannedArea, that.plannedArea) == 0 && Double.compare(completedArea, that.completedArea) == 0 && Double.compare(harvestedWeight, that.harvestedWeight) == 0 && season == that.season && Double.compare(plannedRowSpacing, that.plannedRowSpacing) == 0 && Double.compare(plannedPlantSpacing, that.plannedPlantSpacing) == 0 && Double.compare(plannedDepth, that.plannedDepth) == 0 && Double.compare(plannedSpeed, that.plannedSpeed) == 0 && Double.compare(plannedWaterRate, that.plannedWaterRate) == 0 && Double.compare(factWaterRate, that.factWaterRate) == 0 && Double.compare(coveredArea, that.coveredArea) == 0 && Double.compare(coveredAreaByTrack, that.coveredAreaByTrack) == 0 && Double.compare(machineWorkArea, that.machineWorkArea) == 0 && agroRecommendationId == that.agroRecommendationId && lockedToEdit == that.lockedToEdit && Double.compare(controlThreshing, that.controlThreshing) == 0 && Double.compare(humidity, that.humidity) == 0 && Double.compare(proteinContent, that.proteinContent) == 0 && Double.compare(oilContent, that.oilContent) == 0 && historyItemId == that.historyItemId && notifyResponsibleUsers == that.notifyResponsibleUsers && Objects.equals(id, that.id) && Objects.equals(field, that.field) && Objects.equals(fieldShape, that.fieldShape) && Objects.equals(agriWorkPlan, that.agriWorkPlan) && Objects.equals(applicationsType, that.applicationsType) && Objects.equals(operationNumber, that.operationNumber) && Objects.equals(customName, that.customName) && Objects.equals(workType, that.workType) && Objects.equals(status, that.status) && Objects.equals(calcBy, that.calcBy) && Objects.equals(plannedStartDate, that.plannedStartDate) && Objects.equals(plannedEndDate, that.plannedEndDate) && Objects.equals(completedDate, that.completedDate) && Objects.equals(completedDatetime, that.completedDatetime) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(description, that.description) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(externalId, that.externalId) && Objects.equals(actualStartDatetime, that.actualStartDatetime) && Objects.equals(idempotencyKey, that.idempotencyKey) && Objects.equals(lockedAt, that.lockedAt) && Objects.equals(xCustomFieldsData, that.xCustomFieldsData);
+        return Double.compare(plannedArea, that.plannedArea) == 0 && Double.compare(completedArea, that.completedArea) == 0 && Double.compare(harvestedWeight, that.harvestedWeight) == 0 && Objects.equals(season, that.season) && Double.compare(plannedRowSpacing, that.plannedRowSpacing) == 0 && Double.compare(plannedPlantSpacing, that.plannedPlantSpacing) == 0 && Double.compare(plannedDepth, that.plannedDepth) == 0 && Double.compare(plannedSpeed, that.plannedSpeed) == 0 && Double.compare(plannedWaterRate, that.plannedWaterRate) == 0 && Double.compare(factWaterRate, that.factWaterRate) == 0 && Double.compare(coveredArea, that.coveredArea) == 0 && Double.compare(coveredAreaByTrack, that.coveredAreaByTrack) == 0 && Double.compare(machineWorkArea, that.machineWorkArea) == 0 && Objects.equals(agroRecommendationId, that.agroRecommendationId) && lockedToEdit == that.lockedToEdit && Double.compare(controlThreshing, that.controlThreshing) == 0 && Double.compare(humidity, that.humidity) == 0 && Double.compare(proteinContent, that.proteinContent) == 0 && Double.compare(oilContent, that.oilContent) == 0 && Objects.equals(historyItemId, that.historyItemId) && notifyResponsibleUsers == that.notifyResponsibleUsers && Objects.equals(id, that.id) && Objects.equals(field, that.field) && Objects.equals(fieldShape, that.fieldShape) && Objects.equals(agriWorkPlan, that.agriWorkPlan) && Objects.equals(applicationsType, that.applicationsType) && Objects.equals(operationNumber, that.operationNumber) && Objects.equals(customName, that.customName) && Objects.equals(workType, that.workType) && Objects.equals(status, that.status) && Objects.equals(calcBy, that.calcBy) && Objects.equals(plannedStartDate, that.plannedStartDate) && Objects.equals(plannedEndDate, that.plannedEndDate) && Objects.equals(completedDate, that.completedDate) && Objects.equals(completedDatetime, that.completedDatetime) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(description, that.description) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(externalId, that.externalId) && Objects.equals(actualStartDatetime, that.actualStartDatetime) && Objects.equals(idempotencyKey, that.idempotencyKey) && Objects.equals(lockedAt, that.lockedAt) && Objects.equals(xCustomFieldsData, that.xCustomFieldsData);
     }
 
     @Override

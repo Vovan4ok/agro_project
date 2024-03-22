@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="admin_regions")
+@Table(name="admin_regions", schema="cropwise_data")
 public class AdminRegion {
     @Id
     @Column(name="id")

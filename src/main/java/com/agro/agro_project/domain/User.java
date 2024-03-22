@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="users")
+@Table(name="users", schema="cropwise_data")
 public class User {
     @Id
     @Column(name="id")
@@ -33,29 +33,27 @@ public class User {
     private String yieldUnits;
 
     @Column(name="telematics_specialist")
-    private boolean telematicsSpecialist;
+    private Boolean telematicsSpecialist;
 
     @Column(name="individual_insurance_number")
-    private int individualInsuranceNumber;
+    private Integer individualInsuranceNumber;
 
     @Column(name="status", length=20)
     private String status;
 
     @Column(name="dispatcher")
-    private boolean dispatcher;
+    private Boolean dispatcher;
 
     @Column(name="driver")
-    private boolean driver;
+    private Boolean driver;
 
     @Column(name="agronomist")
-    private boolean agronomist;
+    private Boolean agronomist;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="rfid",length=15)
@@ -71,7 +69,7 @@ public class User {
     private Timestamp currentSignInAt;
 
     @Column(name="consulting_company_id")
-    private int consultingCompanyId;
+    private Integer consultingCompanyId;
 
     @Column(name="created_at")
     private Timestamp createdAt;
@@ -85,7 +83,7 @@ public class User {
     @Column(name="auth_method", length=15)
     private String authMethod;
 
-    public User(Integer id, String username, String email, String mobilePhone, String position, String language, String timeZone, String yieldUnits, boolean telematicsSpecialist, int individualInsuranceNumber, String status, boolean dispatcher, boolean driver, boolean agronomist, String additionalInfo, String description, String rfid, String taxIdentificationNumber, Timestamp lastSignInAt, Timestamp currentSignInAt, int consultingCompanyId, Timestamp createdAt, Timestamp updatedAt, String externalId, String authMethod) {
+    public User(Integer id, String username, String email, String mobilePhone, String position, String language, String timeZone, String yieldUnits, Boolean telematicsSpecialist, Integer individualInsuranceNumber, String status, Boolean dispatcher, Boolean driver, Boolean agronomist, String additionalInfo, String description, String rfid, String taxIdentificationNumber, Timestamp lastSignInAt, Timestamp currentSignInAt, Integer consultingCompanyId, Timestamp createdAt, Timestamp updatedAt, String externalId, String authMethod) {
         this.id = id;
         this.username = username;
         this.email = email;
@@ -180,19 +178,19 @@ public class User {
         this.yieldUnits = yieldUnits;
     }
 
-    public boolean isTelematicsSpecialist() {
+    public Boolean isTelematicsSpecialist() {
         return telematicsSpecialist;
     }
 
-    public void setTelematicsSpecialist(boolean telematicsSpecialist) {
+    public void setTelematicsSpecialist(Boolean telematicsSpecialist) {
         this.telematicsSpecialist = telematicsSpecialist;
     }
 
-    public int getIndividualInsuranceNumber() {
+    public Integer getIndividualInsuranceNumber() {
         return individualInsuranceNumber;
     }
 
-    public void setIndividualInsuranceNumber(int individualInsuranceNumber) {
+    public void setIndividualInsuranceNumber(Integer individualInsuranceNumber) {
         this.individualInsuranceNumber = individualInsuranceNumber;
     }
 
@@ -204,27 +202,27 @@ public class User {
         this.status = status;
     }
 
-    public boolean isDispatcher() {
+    public Boolean isDispatcher() {
         return dispatcher;
     }
 
-    public void setDispatcher(boolean dispatcher) {
+    public void setDispatcher(Boolean dispatcher) {
         this.dispatcher = dispatcher;
     }
 
-    public boolean isDriver() {
+    public Boolean isDriver() {
         return driver;
     }
 
-    public void setDriver(boolean driver) {
+    public void setDriver(Boolean driver) {
         this.driver = driver;
     }
 
-    public boolean isAgronomist() {
+    public Boolean isAgronomist() {
         return agronomist;
     }
 
-    public void setAgronomist(boolean agronomist) {
+    public void setAgronomist(Boolean agronomist) {
         this.agronomist = agronomist;
     }
 
@@ -276,11 +274,11 @@ public class User {
         this.currentSignInAt = currentSignInAt;
     }
 
-    public int getConsultingCompanyId() {
+    public Integer getConsultingCompanyId() {
         return consultingCompanyId;
     }
 
-    public void setConsultingCompanyId(int consultingCompanyId) {
+    public void setConsultingCompanyId(Integer consultingCompanyId) {
         this.consultingCompanyId = consultingCompanyId;
     }
 
@@ -321,7 +319,7 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return telematicsSpecialist == user.telematicsSpecialist && individualInsuranceNumber == user.individualInsuranceNumber && dispatcher == user.dispatcher && driver == user.driver && agronomist == user.agronomist && consultingCompanyId == user.consultingCompanyId && Objects.equals(id, user.id) && Objects.equals(username, user.username) && Objects.equals(email, user.email) && Objects.equals(mobilePhone, user.mobilePhone) && Objects.equals(position, user.position) && Objects.equals(language, user.language) && Objects.equals(timeZone, user.timeZone) && Objects.equals(yieldUnits, user.yieldUnits) && Objects.equals(status, user.status) && Objects.equals(additionalInfo, user.additionalInfo) && Objects.equals(description, user.description) && Objects.equals(rfid, user.rfid) && Objects.equals(taxIdentificationNumber, user.taxIdentificationNumber) && Objects.equals(lastSignInAt, user.lastSignInAt) && Objects.equals(currentSignInAt, user.currentSignInAt) && Objects.equals(createdAt, user.createdAt) && Objects.equals(updatedAt, user.updatedAt) && Objects.equals(externalId, user.externalId) && Objects.equals(authMethod, user.authMethod);
+        return telematicsSpecialist == user.telematicsSpecialist && Objects.equals(individualInsuranceNumber, user.individualInsuranceNumber) && dispatcher == user.dispatcher && driver == user.driver && agronomist == user.agronomist && Objects.equals(consultingCompanyId, user.consultingCompanyId) && Objects.equals(id, user.id) && Objects.equals(username, user.username) && Objects.equals(email, user.email) && Objects.equals(mobilePhone, user.mobilePhone) && Objects.equals(position, user.position) && Objects.equals(language, user.language) && Objects.equals(timeZone, user.timeZone) && Objects.equals(yieldUnits, user.yieldUnits) && Objects.equals(status, user.status) && Objects.equals(additionalInfo, user.additionalInfo) && Objects.equals(description, user.description) && Objects.equals(rfid, user.rfid) && Objects.equals(taxIdentificationNumber, user.taxIdentificationNumber) && Objects.equals(lastSignInAt, user.lastSignInAt) && Objects.equals(currentSignInAt, user.currentSignInAt) && Objects.equals(createdAt, user.createdAt) && Objects.equals(updatedAt, user.updatedAt) && Objects.equals(externalId, user.externalId) && Objects.equals(authMethod, user.authMethod);
     }
 
     @Override

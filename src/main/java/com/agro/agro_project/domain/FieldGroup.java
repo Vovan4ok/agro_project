@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="field_groups")
+@Table(name="field_groups", schema="cropwise_data")
 public class FieldGroup {
     @Id
     @Column(name="id")
@@ -21,7 +21,6 @@ public class FieldGroup {
     private String name;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="administrative_area_name", length=30)
@@ -34,7 +33,7 @@ public class FieldGroup {
     private String locality;
 
     @Column(name="hidden")
-    private boolean hidden;
+    private Boolean hidden;
 
     @Column(name="external_id", length=20)
     private String externalId;
@@ -138,11 +137,11 @@ public class FieldGroup {
         this.locality = locality;
     }
 
-    public boolean isHidden() {
+    public Boolean isHidden() {
         return hidden;
     }
 
-    public void setHidden(boolean hidden) {
+    public void setHidden(Boolean hidden) {
         this.hidden = hidden;
     }
 

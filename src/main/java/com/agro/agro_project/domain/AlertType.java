@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="alert_types")
+@Table(name="alert_types", schema="cropwise_data")
 public class AlertType {
     @Id
     @Column(name="id")
@@ -21,15 +21,13 @@ public class AlertType {
     private String priority;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="archived")
-    private boolean archived;
+    private Boolean archived;
 
     @Column(name="created_at")
     private Timestamp createdAt;
@@ -37,7 +35,7 @@ public class AlertType {
     @Column(name="updated_at")
     private Timestamp updatedAt;
 
-    public AlertType(Short id, String alertType, String name, String priority, String description, String additionalInfo, boolean archived, Timestamp createdAt, Timestamp updatedAt) {
+    public AlertType(Short id, String alertType, String name, String priority, String description, String additionalInfo, Boolean archived, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.alertType = alertType;
         this.name = name;
@@ -100,11 +98,11 @@ public class AlertType {
         this.additionalInfo = additionalInfo;
     }
 
-    public boolean isArchived() {
+    public Boolean isArchived() {
         return archived;
     }
 
-    public void setArchived(boolean archived) {
+    public void setArchived(Boolean archived) {
         this.archived = archived;
     }
 

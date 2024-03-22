@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="growth_stage_groups")
+@Table(name="growth_stage_groups", schema="cropwise_data")
 public class GrowthStageGroup {
     @Id
     @Column(name="id")

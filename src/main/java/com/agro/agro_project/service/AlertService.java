@@ -20,7 +20,7 @@ public class AlertService {
         return alertRepository.findById(id).get();
     }
 
-    public List<Alert> findAllByAlertableIdAndAlertableType(int id, String alertableType) {
+    public List<Alert> findAllByAlertableIdAndAlertableType(Integer id, String alertableType) {
         return alertRepository.findAllByAlertableIdAndAlertableType(id, alertableType);
     }
 }

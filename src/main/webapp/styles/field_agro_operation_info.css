@@ -1,0 +1,75 @@
+@import url(main.css);
+@import url(fields_menu.css);
+
+.content-info{
+    width: 800px;
+}
+.agri-work-plan{
+    font-size: 18px;
+    color: #8E8E8E;
+}
+.agri-work-plan-link:hover{
+    font-weight: bold;
+}
+.status-block{
+    margin-top: 20px;
+}
+.info-block{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.info-block-part{
+    margin-top: 20px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 15px;
+}
+.part1{
+    width: 285px;
+}
+.part2{
+    width: 320px;
+}
+.part3{
+    width: 320px;
+    height: fit-content;
+}
+.part4{
+    width: 320px;
+}
+.machine-task-cell{
+    width: 25%;
+}
+.machine-cell{
+    width: 15%;
+}
+.implement-cell{
+    width: 25%;
+}
+.result-cell{
+    width: 35%;
+}
+.machine-cell-wrapper{
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+.date-start, .date-end{
+    font-size: 14px;
+    color: #8E8E8E;
+}
+.table-link{
+    color: black;
+    transition: font-weight 0.5s;
+}
+.driver-link{
+    font-size: 14px;
+    margin-top: 20px;
+    color: #8E8E8E;
+    transition: font-weight 0.5s;
+}
+.table-link:hover, .driver-link:hover{
+    font-weight: bold;
+}

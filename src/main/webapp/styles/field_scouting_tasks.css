@@ -1,0 +1,25 @@
+@import url(main.css);
+@import url(fields_menu.css);
+
+.content-info{
+    width: 1040px;
+}
+.table-link{
+    color: black;
+    transition: font-weight 0.5s;
+}
+.table-link:hover{
+    font-weight: bold;
+}
+.task-cell, .season-cell{
+    width: 10%;
+}
+.responsible-cell, .author-cell{
+    width: 25%;
+}
+.dates-cell{
+    width: 20%;
+}
+.status-cell{
+    width: 10%;
+}

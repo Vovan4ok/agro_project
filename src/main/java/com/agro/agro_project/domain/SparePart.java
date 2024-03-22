@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="spare_parts")
+@Table(name="spare_parts", schema="cropwise_data")
 public class SparePart {
     @Id
     @Column(name="id")
@@ -22,17 +22,15 @@ public class SparePart {
     private String partNumber;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="external_id", length=50)
     private String externalId;
 
     @Column(name="archived")
-    private boolean archived;
+    private Boolean archived;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="created_at")
@@ -41,7 +39,7 @@ public class SparePart {
     @Column(name="updated_at")
     private Timestamp updatedAt;
 
-    public SparePart(Short id, SparePartManufacturer sparePartManufacturer, String name, String partNumber, String description, String externalId, boolean archived, String additionalInfo, Timestamp createdAt, Timestamp updatedAt) {
+    public SparePart(Short id, SparePartManufacturer sparePartManufacturer, String name, String partNumber, String description, String externalId, Boolean archived, String additionalInfo, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.sparePartManufacturer = sparePartManufacturer;
         this.name = name;
@@ -105,11 +103,11 @@ public class SparePart {
         this.externalId = externalId;
     }
 
-    public boolean isArchived() {
+    public Boolean isArchived() {
         return archived;
     }
 
-    public void setArchived(boolean archived) {
+    public void setArchived(Boolean archived) {
         this.archived = archived;
     }
 

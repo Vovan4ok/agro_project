@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="seeds")
+@Table(name="seeds", schema="cropwise_data")
 public class Seed {
     @Id
     @Column(name="id")
@@ -19,14 +19,12 @@ public class Seed {
     private Crop crop;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="archived")
-    private boolean archived;
+    private Boolean archived;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="units_of_measurement", length=20)
@@ -36,7 +34,7 @@ public class Seed {
     private String variety;
 
     @Column(name="reproduction_number")
-    private short reproductionNumber;
+    private Short reproductionNumber;
 
     @Column(name="reproduction", length=20)
     private String reproduction;
@@ -59,12 +57,12 @@ public class Seed {
     private String externalId;
 
     @Column(name="ripeness_group")
-    private short ripenessGroup;
+    private Short ripenessGroup;
 
     @Column(name="ripeness_group_name", length=20)
     private String ripenessGroupName;
 
-    public Seed(Short id, String name, Crop crop, String additionalInfo, boolean archived, String description, String unitsOfMeasurement, String variety, short reproductionNumber, String reproduction, WhItem whItem, Unit whItemBaseUnit, Timestamp createdAt, Timestamp updatedAt, String externalId, short ripenessGroup, String ripenessGroupName) {
+    public Seed(Short id, String name, Crop crop, String additionalInfo, Boolean archived, String description, String unitsOfMeasurement, String variety, Short reproductionNumber, String reproduction, WhItem whItem, Unit whItemBaseUnit, Timestamp createdAt, Timestamp updatedAt, String externalId, Short ripenessGroup, String ripenessGroupName) {
         this.id = id;
         this.name = name;
         this.crop = crop;
@@ -119,11 +117,11 @@ public class Seed {
         this.additionalInfo = additionalInfo;
     }
 
-    public boolean isArchived() {
+    public Boolean isArchived() {
         return archived;
     }
 
-    public void setArchived(boolean archived) {
+    public void setArchived(Boolean archived) {
         this.archived = archived;
     }
 
@@ -151,11 +149,11 @@ public class Seed {
         this.variety = variety;
     }
 
-    public short getReproductionNumber() {
+    public Short getReproductionNumber() {
         return reproductionNumber;
     }
 
-    public void setReproductionNumber(short reproductionNumber) {
+    public void setReproductionNumber(Short reproductionNumber) {
         this.reproductionNumber = reproductionNumber;
     }
 
@@ -207,11 +205,11 @@ public class Seed {
         this.externalId = externalId;
     }
 
-    public short getRipenessGroup() {
+    public Short getRipenessGroup() {
         return ripenessGroup;
     }
 
-    public void setRipenessGroup(short ripenessGroup) {
+    public void setRipenessGroup(Short ripenessGroup) {
         this.ripenessGroup = ripenessGroup;
     }
 
@@ -228,7 +226,7 @@ public class Seed {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Seed seed = (Seed) o;
-        return archived == seed.archived && reproductionNumber == seed.reproductionNumber && ripenessGroup == seed.ripenessGroup && Objects.equals(id, seed.id) && Objects.equals(name, seed.name) && Objects.equals(crop, seed.crop) && Objects.equals(additionalInfo, seed.additionalInfo) && Objects.equals(description, seed.description) && Objects.equals(unitsOfMeasurement, seed.unitsOfMeasurement) && Objects.equals(variety, seed.variety) && Objects.equals(reproduction, seed.reproduction) && Objects.equals(whItem, seed.whItem) && Objects.equals(whItemBaseUnit, seed.whItemBaseUnit) && Objects.equals(createdAt, seed.createdAt) && Objects.equals(updatedAt, seed.updatedAt) && Objects.equals(externalId, seed.externalId) && Objects.equals(ripenessGroupName, seed.ripenessGroupName);
+        return archived == seed.archived && Objects.equals(reproductionNumber, seed.reproductionNumber) && Objects.equals(ripenessGroup, seed.ripenessGroup) && Objects.equals(id, seed.id) && Objects.equals(name, seed.name) && Objects.equals(crop, seed.crop) && Objects.equals(additionalInfo, seed.additionalInfo) && Objects.equals(description, seed.description) && Objects.equals(unitsOfMeasurement, seed.unitsOfMeasurement) && Objects.equals(variety, seed.variety) && Objects.equals(reproduction, seed.reproduction) && Objects.equals(whItem, seed.whItem) && Objects.equals(whItemBaseUnit, seed.whItemBaseUnit) && Objects.equals(createdAt, seed.createdAt) && Objects.equals(updatedAt, seed.updatedAt) && Objects.equals(externalId, seed.externalId) && Objects.equals(ripenessGroupName, seed.ripenessGroupName);
     }
 
     @Override

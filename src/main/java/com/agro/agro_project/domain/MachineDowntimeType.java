@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="machine_downtime_types")
+@Table(name="machine_downtime_types", schema="cropwise_data")
 public class MachineDowntimeType {
     @Id
     @Column(name="id")
@@ -25,11 +25,10 @@ public class MachineDowntimeType {
     private MachineDowntimeTypeGroup machineDowntimeTypeGroup;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="hidden")
-    private boolean hidden;
+    private Boolean hidden;
 
     @Column(name="created_at")
     private Timestamp createdAt;
@@ -40,7 +39,7 @@ public class MachineDowntimeType {
     @Column(name="external_id", length=50)
     private String externalId;
 
-    public MachineDowntimeType(Short id, String name, String shortName, String standardName, MachineDowntimeTypeGroup machineDowntimeTypeGroup, String additionalInfo, boolean hidden, Timestamp createdAt, Timestamp updatedAt, String externalId) {
+    public MachineDowntimeType(Short id, String name, String shortName, String standardName, MachineDowntimeTypeGroup machineDowntimeTypeGroup, String additionalInfo, Boolean hidden, Timestamp createdAt, Timestamp updatedAt, String externalId) {
         this.id = id;
         this.name = name;
         this.shortName = shortName;
@@ -104,11 +103,11 @@ public class MachineDowntimeType {
         this.additionalInfo = additionalInfo;
     }
 
-    public boolean isHidden() {
+    public Boolean isHidden() {
         return hidden;
     }
 
-    public void setHidden(boolean hidden) {
+    public void setHidden(Boolean hidden) {
         this.hidden = hidden;
     }
 

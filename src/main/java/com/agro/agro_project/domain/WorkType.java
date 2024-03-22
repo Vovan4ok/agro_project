@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="work_types")
+@Table(name="work_types", schema="cropwise_data")
 public class WorkType {
     @Id
     @Column(name="id")
@@ -19,41 +19,40 @@ public class WorkType {
     private String name;
 
     @Column(name="agri")
-    private boolean agri;
+    private Boolean agri;
 
     @Column(name="application")
-    private boolean application;
+    private Boolean application;
 
     @Column(name="sowing")
-    private boolean sowing;
+    private Boolean sowing;
 
     @Column(name="re_sowing")
-    private boolean reSowing;
+    private Boolean reSowing;
 
     @Column(name="additional_sowing")
-    private boolean additionalSowing;
+    private Boolean additionalSowing;
 
     @Column(name="harvesting")
-    private boolean harvesting;
+    private Boolean harvesting;
 
     @Column(name="soil")
-    private boolean soil;
+    private Boolean soil;
 
     @Column(name="standard_name", length=100)
     private String standardName;
 
     @Column(name="hidden")
-    private boolean hidden;
+    private Boolean hidden;
 
     @Column(name="decription")
-    @Lob
     private String description;
 
     @Column(name="external_id", length=50)
     private String externalId;
 
     @Column(name="disable_first_track_rule_coverage")
-    private boolean disableFirstTrackRuleCoverage;
+    private Boolean disableFirstTrackRuleCoverage;
 
     @Column(name="created_at")
     private Timestamp createdAt;
@@ -61,7 +60,7 @@ public class WorkType {
     @Column(name="updated_at")
     private Timestamp updatedAt;
 
-    public WorkType(Short id, WorkTypeGroup workTypeGroup, String name, boolean agri, boolean application, boolean sowing, boolean reSowing, boolean additionalSowing, boolean harvesting, boolean soil, String standardName, boolean hidden, String description, String externalId, boolean disableFirstTrackRuleCoverage, Timestamp createdAt, Timestamp updatedAt) {
+    public WorkType(Short id, WorkTypeGroup workTypeGroup, String name, Boolean agri, Boolean application, Boolean sowing, Boolean reSowing, Boolean additionalSowing, Boolean harvesting, Boolean soil, String standardName, Boolean hidden, String description, String externalId, Boolean disableFirstTrackRuleCoverage, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.workTypeGroup = workTypeGroup;
         this.name = name;
@@ -108,59 +107,59 @@ public class WorkType {
         this.name = name;
     }
 
-    public boolean isAgri() {
+    public Boolean isAgri() {
         return agri;
     }
 
-    public void setAgri(boolean agri) {
+    public void setAgri(Boolean agri) {
         this.agri = agri;
     }
 
-    public boolean isApplication() {
+    public Boolean isApplication() {
         return application;
     }
 
-    public void setApplication(boolean application) {
+    public void setApplication(Boolean application) {
         this.application = application;
     }
 
-    public boolean isSowing() {
+    public Boolean isSowing() {
         return sowing;
     }
 
-    public void setSowing(boolean sowing) {
+    public void setSowing(Boolean sowing) {
         this.sowing = sowing;
     }
 
-    public boolean isReSowing() {
+    public Boolean isReSowing() {
         return reSowing;
     }
 
-    public void setReSowing(boolean reSowing) {
+    public void setReSowing(Boolean reSowing) {
         this.reSowing = reSowing;
     }
 
-    public boolean isAdditionalSowing() {
+    public Boolean isAdditionalSowing() {
         return additionalSowing;
     }
 
-    public void setAdditionalSowing(boolean additionalSowing) {
+    public void setAdditionalSowing(Boolean additionalSowing) {
         this.additionalSowing = additionalSowing;
     }
 
-    public boolean isHarvesting() {
+    public Boolean isHarvesting() {
         return harvesting;
     }
 
-    public void setHarvesting(boolean harvesting) {
+    public void setHarvesting(Boolean harvesting) {
         this.harvesting = harvesting;
     }
 
-    public boolean isSoil() {
+    public Boolean isSoil() {
         return soil;
     }
 
-    public void setSoil(boolean soil) {
+    public void setSoil(Boolean soil) {
         this.soil = soil;
     }
 
@@ -172,11 +171,11 @@ public class WorkType {
         this.standardName = standardName;
     }
 
-    public boolean isHidden() {
+    public Boolean isHidden() {
         return hidden;
     }
 
-    public void setHidden(boolean hidden) {
+    public void setHidden(Boolean hidden) {
         this.hidden = hidden;
     }
 
@@ -196,11 +195,11 @@ public class WorkType {
         this.externalId = externalId;
     }
 
-    public boolean isDisableFirstTrackRuleCoverage() {
+    public Boolean isDisableFirstTrackRuleCoverage() {
         return disableFirstTrackRuleCoverage;
     }
 
-    public void setDisableFirstTrackRuleCoverage(boolean disableFirstTrackRuleCoverage) {
+    public void setDisableFirstTrackRuleCoverage(Boolean disableFirstTrackRuleCoverage) {
         this.disableFirstTrackRuleCoverage = disableFirstTrackRuleCoverage;
     }
 

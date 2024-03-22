@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="chemicals")
+@Table(name="chemicals", schema="cropwise_data")
 public class Chemical {
     @Id
     @Column(name="id")
@@ -22,7 +22,6 @@ public class Chemical {
     private String unitsOfMeasurement;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="description")
@@ -35,16 +34,16 @@ public class Chemical {
     private Timestamp updatedAt;
 
     @Column(name="archived")
-    private boolean archived;
+    private Boolean archived;
 
     @Column(name="external_id", length=50)
     private String externalId;
 
     @Column(name="toxicity_class")
-    private short toxicityClass;
+    private Short toxicityClass;
 
     @Column(name="action_term")
-    private short actionTerm;
+    private Short actionTerm;
 
     @Column(name="action_term_units", length=10)
     private String actionTermUnits;
@@ -59,7 +58,7 @@ public class Chemical {
     private String influenceMethod;
 
     @Column(name="bees_isolating_recommended_term")
-    private short beesIsolatingRecommendedTerm;
+    private Short beesIsolatingRecommendedTerm;
 
     @Column(name="bees_isolating_recommended_term_units", length=10)
     private String beesIsolatingRecommendedTermUnits;
@@ -78,7 +77,7 @@ public class Chemical {
     @JoinColumn(name="wh_item_base_unit_id")
     private Unit whItemBaseUnit;
 
-    public Chemical(Short id, String name, String chemicalType, String unitsOfMeasurement, String additionalInfo, String description, Timestamp createdAt, Timestamp updatedAt, boolean archived, String externalId, short toxicityClass, short actionTerm, String actionTermUnits, String activeSubstance, String drugForm, String influenceMethod, short beesIsolatingRecommendedTerm, String beesIsolatingRecommendedTermUnits, Date saleTerm, Date termOfUse, WhItem whItem, Unit whItemBaseUnit) {
+    public Chemical(Short id, String name, String chemicalType, String unitsOfMeasurement, String additionalInfo, String description, Timestamp createdAt, Timestamp updatedAt, Boolean archived, String externalId, Short toxicityClass, Short actionTerm, String actionTermUnits, String activeSubstance, String drugForm, String influenceMethod, Short beesIsolatingRecommendedTerm, String beesIsolatingRecommendedTermUnits, Date saleTerm, Date termOfUse, WhItem whItem, Unit whItemBaseUnit) {
         this.id = id;
         this.name = name;
         this.chemicalType = chemicalType;
@@ -170,7 +169,7 @@ public class Chemical {
         this.updatedAt = updatedAt;
     }
 
-    public boolean isArchived() {
+    public Boolean isArchived() {
         return archived;
     }
 
@@ -186,19 +185,19 @@ public class Chemical {
         this.externalId = externalId;
     }
 
-    public short getToxicityClass() {
+    public Short getToxicityClass() {
         return toxicityClass;
     }
 
-    public void setToxicityClass(short toxicityClass) {
+    public void setToxicityClass(Short toxicityClass) {
         this.toxicityClass = toxicityClass;
     }
 
-    public short getActionTerm() {
+    public Short getActionTerm() {
         return actionTerm;
     }
 
-    public void setActionTerm(short actionTerm) {
+    public void setActionTerm(Short actionTerm) {
         this.actionTerm = actionTerm;
     }
 
@@ -234,11 +233,11 @@ public class Chemical {
         this.influenceMethod = influenceMethod;
     }
 
-    public short getBeesIsolatingRecommendedTerm() {
+    public Short getBeesIsolatingRecommendedTerm() {
         return beesIsolatingRecommendedTerm;
     }
 
-    public void setBeesIsolatingRecommendedTerm(short beesIsolatingRecommendedTerm) {
+    public void setBeesIsolatingRecommendedTerm(Short beesIsolatingRecommendedTerm) {
         this.beesIsolatingRecommendedTerm = beesIsolatingRecommendedTerm;
     }
 
@@ -287,7 +286,7 @@ public class Chemical {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Chemical chemical = (Chemical) o;
-        return archived == chemical.archived && toxicityClass == chemical.toxicityClass && actionTerm == chemical.actionTerm && beesIsolatingRecommendedTerm == chemical.beesIsolatingRecommendedTerm && Objects.equals(id, chemical.id) && Objects.equals(name, chemical.name) && Objects.equals(chemicalType, chemical.chemicalType) && Objects.equals(unitsOfMeasurement, chemical.unitsOfMeasurement) && Objects.equals(additionalInfo, chemical.additionalInfo) && Objects.equals(description, chemical.description) && Objects.equals(createdAt, chemical.createdAt) && Objects.equals(updatedAt, chemical.updatedAt) && Objects.equals(externalId, chemical.externalId) && Objects.equals(actionTermUnits, chemical.actionTermUnits) && Objects.equals(activeSubstance, chemical.activeSubstance) && Objects.equals(drugForm, chemical.drugForm) && Objects.equals(influenceMethod, chemical.influenceMethod) && Objects.equals(beesIsolatingRecommendedTermUnits, chemical.beesIsolatingRecommendedTermUnits) && Objects.equals(saleTerm, chemical.saleTerm) && Objects.equals(termOfUse, chemical.termOfUse) && Objects.equals(whItem, chemical.whItem) && Objects.equals(whItemBaseUnit, chemical.whItemBaseUnit);
+        return archived == chemical.archived && Objects.equals(toxicityClass, chemical.toxicityClass) && Objects.equals(actionTerm, chemical.actionTerm) && Objects.equals(beesIsolatingRecommendedTerm, chemical.beesIsolatingRecommendedTerm) && Objects.equals(id, chemical.id) && Objects.equals(name, chemical.name) && Objects.equals(chemicalType, chemical.chemicalType) && Objects.equals(unitsOfMeasurement, chemical.unitsOfMeasurement) && Objects.equals(additionalInfo, chemical.additionalInfo) && Objects.equals(description, chemical.description) && Objects.equals(createdAt, chemical.createdAt) && Objects.equals(updatedAt, chemical.updatedAt) && Objects.equals(externalId, chemical.externalId) && Objects.equals(actionTermUnits, chemical.actionTermUnits) && Objects.equals(activeSubstance, chemical.activeSubstance) && Objects.equals(drugForm, chemical.drugForm) && Objects.equals(influenceMethod, chemical.influenceMethod) && Objects.equals(beesIsolatingRecommendedTermUnits, chemical.beesIsolatingRecommendedTermUnits) && Objects.equals(saleTerm, chemical.saleTerm) && Objects.equals(termOfUse, chemical.termOfUse) && Objects.equals(whItem, chemical.whItem) && Objects.equals(whItemBaseUnit, chemical.whItemBaseUnit);
     }
 
     @Override

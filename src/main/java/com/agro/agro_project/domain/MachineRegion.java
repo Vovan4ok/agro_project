@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="machine_regions")
+@Table(name="machine_regions", schema="cropwise_data")
 public class MachineRegion {
     @Id
     @Column(name="id")
@@ -18,11 +18,9 @@ public class MachineRegion {
     private String ancestry;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="created_at")

@@ -1,0 +1,44 @@
+@import url(main.css);
+@import url(fields_menu.css);
+
+.content-info{
+    width: 1040px;
+}
+.status-cell{
+    width: 10%;
+}
+.field-cell{
+    width: 20%;
+}
+.season-cell{
+    width: 7%;
+    margin-left: 10px;
+}
+.plan-cell{
+    width: 12%;
+}
+.start-cell, .end-cell{
+    width: 15%;
+}
+.status-info{
+    font-weight: 400;
+}
+.end-date-info{
+    color: #8E8E8E;
+    font-size: 14px;
+}
+.shape-percentage{
+    font-size: 14px;
+    font-weight: bold;
+}
+.agrooperation-link, .agri-work-plan a{
+    color: black;
+    transition: font-weight 0.5s;
+}
+.agrooperation-link:hover, .agri-work-plan a:hover{
+    font-weight: bold;
+}
+.agri-work-plan{
+    margin-top: 2px;
+    font-size: 14px;
+}

@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="spare_part_manufacturers")
+@Table(name="spare_part_manufacturers", schema="cropwise_data")
 public class SparePartManufacturer {
     @Id
     @Column(name="id")

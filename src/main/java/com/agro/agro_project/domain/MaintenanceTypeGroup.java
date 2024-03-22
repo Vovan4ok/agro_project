@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="maintenance_type_groups")
+@Table(name="maintenance_type_groups", schema="cropwise_data")
 public class MaintenanceTypeGroup {
     @Id
     @Column(name="id")
@@ -18,7 +18,6 @@ public class MaintenanceTypeGroup {
     private String externalId;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="created_at")

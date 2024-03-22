@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="field_shape_land_parcel_mapping_items")
+@Table(name="field_shape_land_parcel_mapping_items", schema="cropwise_data")
 public class FieldShapeLandParcelMappingItem {
     @Id
     @Column(name="id")

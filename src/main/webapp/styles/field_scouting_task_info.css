@@ -1,0 +1,40 @@
+@import url(main.css);
+@import url(fields_menu.css);
+
+.content-info{
+    width: 800px;
+}
+.info-part{
+    width: 33.3%;
+}
+.info-block2{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.part1, .part2{
+    width: 280px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.username{
+    display: block;
+    color: black;
+    margin-top: 10px;
+    transition: font-weight 0.5s;
+}
+.username:hover{
+    font-weight: bold;
+}
+.user-email{
+    font-size: 14px;
+}
+.number-cell{
+    width: 20%;
+}
+.long-cell, .lat-cell{
+    width: 40%;
+}

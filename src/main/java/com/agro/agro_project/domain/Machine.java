@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="machines")
+@Table(name="machines", schema="cropwise_data")
 public class Machine {
     @Id
     @Column(name="id")
@@ -21,7 +21,7 @@ public class Machine {
     private String manufacturer;
 
     @Column(name="year")
-    private short year;
+    private Short year;
 
     @Column(name="registration_number", length=20)
     private String registrationNumber;
@@ -40,7 +40,7 @@ public class Machine {
     private String machineSubtype;
 
     @Column(name="avatar_id")
-    private short avatarId;
+    private Short avatarId;
 
     @Column(name="chassis_serial_number", length=20)
     private String chassisSerialNumber;
@@ -49,22 +49,21 @@ public class Machine {
     private String engineSerialNumber;
 
     @Column(name="engine_power")
-    private short enginePower;
+    private Short enginePower;
 
     @Column(name="fuel_type", length=10)
     private String fuelTypeString;
 
     @Column(name="fuel_tank_size")
-    private double fuelTankSize;
+    private Double fuelTankSize;
 
     @Column(name="fuel_consumption_norm")
-    private double fuelConsumptionNorm;
+    private Double fuelConsumptionNorm;
 
     @Column(name="legal_company", length=50)
     private String legalCompany;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @ManyToOne
@@ -76,15 +75,12 @@ public class Machine {
     private User defaultDriver;
 
     @Column(name="additional_1")
-    @Lob
     private String additional1;
 
     @Column(name="additional_2")
-    @Lob
     private String additional2;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="phone_number", length=20)
@@ -107,30 +103,30 @@ public class Machine {
     private String refuelSource;
 
     @Column(name="engine_capacity")
-    private double engineCapacity;
+    private Double engineCapacity;
 
     @Column(name="weight")
-    private double weight;
+    private Double weight;
 
     @Column(name="height")
-    private double height;
+    private Double height;
 
     @Column(name="width")
-    private double width;
+    private Double width;
 
     @Column(name="length")
-    private double length;
+    private Double length;
 
     @Column(name="unchanged_default_implement")
-    private boolean unchangedDefaultImplement;
+    private Boolean unchangedDefaultImplement;
 
     @Column(name="min_downtime_in_seconds")
-    private short minDowntimeInSeconds;
+    private Short minDowntimeInSeconds;
 
     @Column(name="calculate_downtimes", length=20)
     private String calculateDowntimes;
 
-    public Machine(Integer id, String name, String model, String manufacturer, short year, String registrationNumber, String inventoryNumber, MachineGroup machineGroup, String machineType, String machine_subtype, short avatarId, String chassisSerialNumber, String engineSerialNumber, short enginePower, String fuelTypeString, double fuelTankSize, double fuelConsumptionNorm, String legalCompany, String description, Implement defaultImplement, User defaultDriver, String additional1, String additional2, String additionalInfo, String phoneNumber, Timestamp createdAt, Timestamp updatedAt, String externalId, FuelType fuelType, String refuelSource, double engineCapacity, double weight, double height, double width, double length, boolean unchangedDefaultImplement, short minDowntimeInSeconds, String calculateDowntimes) {
+    public Machine(Integer id, String name, String model, String manufacturer, Short year, String registrationNumber, String inventoryNumber, MachineGroup machineGroup, String machineType, String machine_subtype, Short avatarId, String chassisSerialNumber, String engineSerialNumber, Short enginePower, String fuelTypeString, Double fuelTankSize, Double fuelConsumptionNorm, String legalCompany, String description, Implement defaultImplement, User defaultDriver, String additional1, String additional2, String additionalInfo, String phoneNumber, Timestamp createdAt, Timestamp updatedAt, String externalId, FuelType fuelType, String refuelSource, Double engineCapacity, Double weight, Double height, Double width, Double length, Boolean unchangedDefaultImplement, Short minDowntimeInSeconds, String calculateDowntimes) {
         this.id = id;
         this.name = name;
         this.model = model;
@@ -206,11 +202,11 @@ public class Machine {
         this.manufacturer = manufacturer;
     }
 
-    public short getYear() {
+    public Short getYear() {
         return year;
     }
 
-    public void setYear(short year) {
+    public void setYear(Short year) {
         this.year = year;
     }
 
@@ -254,11 +250,11 @@ public class Machine {
         this.machineSubtype = machineSubtype;
     }
 
-    public short getAvatarId() {
+    public Short getAvatarId() {
         return avatarId;
     }
 
-    public void setAvatarId(short avatarId) {
+    public void setAvatarId(Short avatarId) {
         this.avatarId = avatarId;
     }
 
@@ -278,11 +274,11 @@ public class Machine {
         this.engineSerialNumber = engineSerialNumber;
     }
 
-    public short getEnginePower() {
+    public Short getEnginePower() {
         return enginePower;
     }
 
-    public void setEnginePower(short enginePower) {
+    public void setEnginePower(Short enginePower) {
         this.enginePower = enginePower;
     }
 
@@ -294,19 +290,19 @@ public class Machine {
         this.fuelTypeString = fuelTypeString;
     }
 
-    public double getFuelTankSize() {
+    public Double getFuelTankSize() {
         return fuelTankSize;
     }
 
-    public void setFuelTankSize(double fuelTankSize) {
+    public void setFuelTankSize(Double fuelTankSize) {
         this.fuelTankSize = fuelTankSize;
     }
 
-    public double getFuelConsumptionNorm() {
+    public Double getFuelConsumptionNorm() {
         return fuelConsumptionNorm;
     }
 
-    public void setFuelConsumptionNorm(double fuelConsumptionNorm) {
+    public void setFuelConsumptionNorm(Double fuelConsumptionNorm) {
         this.fuelConsumptionNorm = fuelConsumptionNorm;
     }
 
@@ -414,59 +410,59 @@ public class Machine {
         this.refuelSource = refuelSource;
     }
 
-    public double getEngineCapacity() {
+    public Double getEngineCapacity() {
         return engineCapacity;
     }
 
-    public void setEngineCapacity(double engineCapacity) {
+    public void setEngineCapacity(Double engineCapacity) {
         this.engineCapacity = engineCapacity;
     }
 
-    public double getWeight() {
+    public Double getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(Double weight) {
         this.weight = weight;
     }
 
-    public double getHeight() {
+    public Double getHeight() {
         return height;
     }
 
-    public void setHeight(double height) {
+    public void setHeight(Double height) {
         this.height = height;
     }
 
-    public double getWidth() {
+    public Double getWidth() {
         return width;
     }
 
-    public void setWidth(double width) {
+    public void setWidth(Double width) {
         this.width = width;
     }
 
-    public double getLength() {
+    public Double getLength() {
         return length;
     }
 
-    public void setLength(double length) {
+    public void setLength(Double length) {
         this.length = length;
     }
 
-    public boolean isUnchangedDefaultImplement() {
+    public Boolean isUnchangedDefaultImplement() {
         return unchangedDefaultImplement;
     }
 
-    public void setUnchangedDefaultImplement(boolean unchangedDefaultImplement) {
+    public void setUnchangedDefaultImplement(Boolean unchangedDefaultImplement) {
         this.unchangedDefaultImplement = unchangedDefaultImplement;
     }
 
-    public short getMinDowntimeInSeconds() {
+    public Short getMinDowntimeInSeconds() {
         return minDowntimeInSeconds;
     }
 
-    public void setMinDowntimeInSeconds(short minDowntimeInSeconds) {
+    public void setMinDowntimeInSeconds(Short minDowntimeInSeconds) {
         this.minDowntimeInSeconds = minDowntimeInSeconds;
     }
 
@@ -483,7 +479,7 @@ public class Machine {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Machine machine = (Machine) o;
-        return year == machine.year && avatarId == machine.avatarId && enginePower == machine.enginePower && Double.compare(fuelTankSize, machine.fuelTankSize) == 0 && Double.compare(fuelConsumptionNorm, machine.fuelConsumptionNorm) == 0 && Double.compare(engineCapacity, machine.engineCapacity) == 0 && Double.compare(weight, machine.weight) == 0 && Double.compare(height, machine.height) == 0 && Double.compare(width, machine.width) == 0 && Double.compare(length, machine.length) == 0 && unchangedDefaultImplement == machine.unchangedDefaultImplement && minDowntimeInSeconds == machine.minDowntimeInSeconds && Objects.equals(id, machine.id) && Objects.equals(name, machine.name) && Objects.equals(model, machine.model) && Objects.equals(manufacturer, machine.manufacturer) && Objects.equals(registrationNumber, machine.registrationNumber) && Objects.equals(inventoryNumber, machine.inventoryNumber) && Objects.equals(machineGroup, machine.machineGroup) && Objects.equals(machineType, machine.machineType) && Objects.equals(machineSubtype, machine.machineSubtype) && Objects.equals(chassisSerialNumber, machine.chassisSerialNumber) && Objects.equals(engineSerialNumber, machine.engineSerialNumber) && Objects.equals(fuelTypeString, machine.fuelTypeString) && Objects.equals(legalCompany, machine.legalCompany) && Objects.equals(description, machine.description) && Objects.equals(defaultImplement, machine.defaultImplement) && Objects.equals(defaultDriver, machine.defaultDriver) && Objects.equals(additional1, machine.additional1) && Objects.equals(additional2, machine.additional2) && Objects.equals(additionalInfo, machine.additionalInfo) && Objects.equals(phoneNumber, machine.phoneNumber) && Objects.equals(createdAt, machine.createdAt) && Objects.equals(updatedAt, machine.updatedAt) && Objects.equals(externalId, machine.externalId) && Objects.equals(fuelTypeString, machine.fuelTypeString) && Objects.equals(refuelSource, machine.refuelSource) && Objects.equals(calculateDowntimes, machine.calculateDowntimes);
+        return Objects.equals(year, machine.year) && Objects.equals(avatarId, machine.avatarId) && Objects.equals(enginePower, machine.enginePower) && Double.compare(fuelTankSize, machine.fuelTankSize) == 0 && Double.compare(fuelConsumptionNorm, machine.fuelConsumptionNorm) == 0 && Double.compare(engineCapacity, machine.engineCapacity) == 0 && Double.compare(weight, machine.weight) == 0 && Double.compare(height, machine.height) == 0 && Double.compare(width, machine.width) == 0 && Double.compare(length, machine.length) == 0 && unchangedDefaultImplement == machine.unchangedDefaultImplement && minDowntimeInSeconds == machine.minDowntimeInSeconds && Objects.equals(id, machine.id) && Objects.equals(name, machine.name) && Objects.equals(model, machine.model) && Objects.equals(manufacturer, machine.manufacturer) && Objects.equals(registrationNumber, machine.registrationNumber) && Objects.equals(inventoryNumber, machine.inventoryNumber) && Objects.equals(machineGroup, machine.machineGroup) && Objects.equals(machineType, machine.machineType) && Objects.equals(machineSubtype, machine.machineSubtype) && Objects.equals(chassisSerialNumber, machine.chassisSerialNumber) && Objects.equals(engineSerialNumber, machine.engineSerialNumber) && Objects.equals(fuelTypeString, machine.fuelTypeString) && Objects.equals(legalCompany, machine.legalCompany) && Objects.equals(description, machine.description) && Objects.equals(defaultImplement, machine.defaultImplement) && Objects.equals(defaultDriver, machine.defaultDriver) && Objects.equals(additional1, machine.additional1) && Objects.equals(additional2, machine.additional2) && Objects.equals(additionalInfo, machine.additionalInfo) && Objects.equals(phoneNumber, machine.phoneNumber) && Objects.equals(createdAt, machine.createdAt) && Objects.equals(updatedAt, machine.updatedAt) && Objects.equals(externalId, machine.externalId) && Objects.equals(fuelType, machine.fuelType) && Objects.equals(refuelSource, machine.refuelSource) && Objects.equals(calculateDowntimes, machine.calculateDowntimes);
     }
 
     @Override

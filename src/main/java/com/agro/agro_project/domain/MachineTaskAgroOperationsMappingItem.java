@@ -5,17 +5,17 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="machine_task_agro_operations_mapping_item")
+@Table(name="machine_task_agro_operations_mapping_item", schema="cropwise_data")
 public class MachineTaskAgroOperationsMappingItem {
     @Id
     @Column(name="id")
     private Integer id;
 
     @Column(name="machine_task_id")
-    private int machineTaskId;
+    private Integer machineTaskId;
 
     @Column(name="agro_operation_id")
-    private int agroOperationId;
+    private Integer agroOperationId;
 
     @Column(name="created_at")
     private Timestamp createdAt;
@@ -23,7 +23,7 @@ public class MachineTaskAgroOperationsMappingItem {
     @Column(name="updated_at")
     private Timestamp updatedAt;
 
-    public MachineTaskAgroOperationsMappingItem(Integer id, int machineTaskId, int agroOperationId, Timestamp createdAt, Timestamp updatedAt) {
+    public MachineTaskAgroOperationsMappingItem(Integer id, Integer machineTaskId, Integer agroOperationId, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.machineTaskId = machineTaskId;
         this.agroOperationId = agroOperationId;
@@ -42,19 +42,19 @@ public class MachineTaskAgroOperationsMappingItem {
         this.id = id;
     }
 
-    public int getMachineTaskId() {
+    public Integer getMachineTaskId() {
         return machineTaskId;
     }
 
-    public void setMachineTaskId(int machineTaskId) {
+    public void setMachineTaskId(Integer machineTaskId) {
         this.machineTaskId = machineTaskId;
     }
 
-    public int getAgroOperationId() {
+    public Integer getAgroOperationId() {
         return agroOperationId;
     }
 
-    public void setAgroOperationId(int agroOperationId) {
+    public void setAgroOperationId(Integer agroOperationId) {
         this.agroOperationId = agroOperationId;
     }
 

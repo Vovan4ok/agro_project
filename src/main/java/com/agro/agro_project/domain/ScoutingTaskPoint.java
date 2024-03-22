@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="scouting_task_points")
+@Table(name="scouting_task_points", schema="cropwise_data")
 public class ScoutingTaskPoint {
     @Id
     @Column(name="id")
@@ -22,13 +22,12 @@ public class ScoutingTaskPoint {
     private String externalId;
 
     @Column(name="latitude")
-    private double latitude;
+    private Double latitude;
 
     @Column(name="longitude")
-    private double longitude;
+    private Double longitude;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="created_at")
@@ -41,9 +40,9 @@ public class ScoutingTaskPoint {
     private String name;
 
     @Column(name="sequence_number")
-    private short sequenceNumber;
+    private Short sequenceNumber;
 
-    public ScoutingTaskPoint(Short id, ScoutingTask scoutingTask, String idempotencyKey, String externalId, double latitude, double longitude, String description, Timestamp createdAt, Timestamp updatedAt, String name, short sequenceNumber) {
+    public ScoutingTaskPoint(Short id, ScoutingTask scoutingTask, String idempotencyKey, String externalId, Double latitude, Double longitude, String description, Timestamp createdAt, Timestamp updatedAt, String name, Short sequenceNumber) {
         this.id = id;
         this.scoutingTask = scoutingTask;
         this.idempotencyKey = idempotencyKey;
@@ -92,19 +91,19 @@ public class ScoutingTaskPoint {
         this.externalId = externalId;
     }
 
-    public double getLatitude() {
+    public Double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(double latitude) {
+    public void setLatitude(Double latitude) {
         this.latitude = latitude;
     }
 
-    public double getLongitude() {
+    public Double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(double longitude) {
+    public void setLongitude(Double longitude) {
         this.longitude = longitude;
     }
 
@@ -140,11 +139,11 @@ public class ScoutingTaskPoint {
         this.name = name;
     }
 
-    public short getSequenceNumber() {
+    public Short getSequenceNumber() {
         return sequenceNumber;
     }
 
-    public void setSequenceNumber(short sequenceNumber) {
+    public void setSequenceNumber(Short sequenceNumber) {
         this.sequenceNumber = sequenceNumber;
     }
 
@@ -153,7 +152,7 @@ public class ScoutingTaskPoint {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ScoutingTaskPoint that = (ScoutingTaskPoint) o;
-        return Double.compare(latitude, that.latitude) == 0 && Double.compare(longitude, that.longitude) == 0 && sequenceNumber == that.sequenceNumber && Objects.equals(id, that.id) && Objects.equals(scoutingTask, that.scoutingTask) && Objects.equals(idempotencyKey, that.idempotencyKey) && Objects.equals(externalId, that.externalId) && Objects.equals(description, that.description) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(name, that.name);
+        return Double.compare(latitude, that.latitude) == 0 && Double.compare(longitude, that.longitude) == 0 && Objects.equals(sequenceNumber, that.sequenceNumber) && Objects.equals(id, that.id) && Objects.equals(scoutingTask, that.scoutingTask) && Objects.equals(idempotencyKey, that.idempotencyKey) && Objects.equals(externalId, that.externalId) && Objects.equals(description, that.description) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(name, that.name);
     }
 
     @Override

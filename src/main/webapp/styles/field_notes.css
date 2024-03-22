@@ -1,0 +1,70 @@
+@import url(main.css);
+@import url(fields_menu.css);
+
+.content-info{
+    width: 840px;
+}
+.block-info{
+    background-color: #fff;
+    width: 700px;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 20px;
+}
+.block-info-header{
+    font-size: 20px;
+    font-weight: 600;
+}
+.blocks{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.author-block, .information-block{
+    height: fit-content;
+    background-color: #F4F4F4;
+    border-radius: 10px;
+    padding: 20px;
+}
+.author-block{
+    width: 225px;
+}
+.information-block{
+    width: 330px;
+}
+.username{
+    display: block;
+    margin-top: 20px;
+    color: black;
+    font-weight: 300;
+    font-size: 18px;
+    transition: font-weight 0.5s;
+}
+.username:hover{
+    font-weight: bold;
+}
+.email{
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+.profession{
+    font-size: 18px;
+}
+.information-block-div{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.information-block-part-header{
+    font-size: 18px;
+    font-weight: 500;
+}
+.information-block-part-text{
+    font-size: 18px;
+    margin-top: 10px;
+}

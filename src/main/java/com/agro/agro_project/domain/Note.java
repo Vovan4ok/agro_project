@@ -5,14 +5,14 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="notes")
+@Table(name="notes", schema="cropwise_data")
 public class Note {
     @Id
     @Column(name="id")
     private Short id;
 
     @Column(name="notable_id")
-    private int notableId;
+    private Integer notableId;
 
     @Column(name="notable_type", length=20)
     private String notableType;
@@ -25,7 +25,6 @@ public class Note {
     private String title;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="created_by_user_at")
@@ -40,7 +39,7 @@ public class Note {
     @Column(name="updated_at")
     private Timestamp updatedAt;
 
-    public Note(Short id, int notableId, String notableType, User user, String title, String description, Timestamp createdByUserAt, Timestamp updatedByUserAt, Timestamp createdAt, Timestamp updatedAt) {
+    public Note(Short id, Integer notableId, String notableType, User user, String title, String description, Timestamp createdByUserAt, Timestamp updatedByUserAt, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.notableId = notableId;
         this.notableType = notableType;
@@ -64,11 +63,11 @@ public class Note {
         this.id = id;
     }
 
-    public int getNotableId() {
+    public Integer getNotableId() {
         return notableId;
     }
 
-    public void setNotableId(int notableId) {
+    public void setNotableId(Integer notableId) {
         this.notableId = notableId;
     }
 
@@ -141,7 +140,7 @@ public class Note {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Note note = (Note) o;
-        return notableId == note.notableId && Objects.equals(id, note.id) && Objects.equals(notableType, note.notableType) && Objects.equals(user, note.user) && Objects.equals(title, note.title) && Objects.equals(description, note.description) && Objects.equals(createdByUserAt, note.createdByUserAt) && Objects.equals(updatedByUserAt, note.updatedByUserAt) && Objects.equals(createdAt, note.createdAt) && Objects.equals(updatedAt, note.updatedAt);
+        return Objects.equals(notableId, note.notableId) && Objects.equals(id, note.id) && Objects.equals(notableType, note.notableType) && Objects.equals(user, note.user) && Objects.equals(title, note.title) && Objects.equals(description, note.description) && Objects.equals(createdByUserAt, note.createdByUserAt) && Objects.equals(updatedByUserAt, note.updatedByUserAt) && Objects.equals(createdAt, note.createdAt) && Objects.equals(updatedAt, note.updatedAt);
     }
 
     @Override

@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="agri_work_plans")
+@Table(name="agri_work_plans", schema="cropwise_data")
 public class AgriWorkPlan {
     @Id
     @Column(name="id")
@@ -26,7 +26,7 @@ public class AgriWorkPlan {
     private WorkType workType;
 
     @Column(name="season")
-    private short season;
+    private Short season;
 
     @Column(name="planned_start_date")
     private Date plannedStartDate;
@@ -35,42 +35,40 @@ public class AgriWorkPlan {
     private Date plannedEndDate;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="planned_water_rate")
-    private double plannedWaterRate;
+    private Double plannedWaterRate;
 
     @Column(name="planned_row_spacing")
-    private double plannedRowSpacing;
+    private Double plannedRowSpacing;
 
     @Column(name="planned_plant_spacing")
-    private double plannedPlantSpacing;
+    private Double plannedPlantSpacing;
 
     @Column(name="planned_depth")
-    private double plannedDepth;
+    private Double plannedDepth;
 
     @Column(name="planned_speed")
-    private double plannedSpeed;
+    private Double plannedSpeed;
 
     @Column(name="responsible_person_id")
-    private int responsiblePersonId;
+    private Integer responsiblePersonId;
 
     @Column(name="external_id", length=50)
     private String externalId;
 
     @Column(name="groupable_id")
-    private short groupableId;
+    private Short groupableId;
 
     @Column(name="groupable_type", length=20)
     private String groupableType;
 
     @Column(name="agro_recommendation_id")
-    private short agroRecommendationId;
+    private Short agroRecommendationId;
 
     @Column(name="created_at")
     private Timestamp createdAt;
@@ -79,13 +77,13 @@ public class AgriWorkPlan {
     private Timestamp updatedAt;
 
     @Column(name="notify_responsible_users")
-    private boolean notifyResponsibleUsers;
+    private Boolean notifyResponsibleUsers;
 
     @ManyToOne
     @JoinColumn(name="current_season_id")
     private Season currentSeason;
 
-    public AgriWorkPlan(Short id, String status, String workTypeString, String workSubtype, WorkType workType, short season, Date plannedStartDate, Date plannedEndDate, String additionalInfo, String description, double plannedWaterRate, double plannedRowSpacing, double plannedPlantSpacing, double plannedDepth, double plannedSpeed, int responsiblePersonId, String externalId, short groupableId, String groupableType, short agroRecommendationId, Timestamp createdAt, Timestamp updatedAt, boolean notifyResponsibleUsers, Season currentSeason) {
+    public AgriWorkPlan(Short id, String status, String workTypeString, String workSubtype, WorkType workType, Short season, Date plannedStartDate, Date plannedEndDate, String additionalInfo, String description, Double plannedWaterRate, Double plannedRowSpacing, Double plannedPlantSpacing, Double plannedDepth, Double plannedSpeed, Integer responsiblePersonId, String externalId, Short groupableId, String groupableType, Short agroRecommendationId, Timestamp createdAt, Timestamp updatedAt, Boolean notifyResponsibleUsers, Season currentSeason) {
         this.id = id;
         this.status = status;
         this.workTypeString = workTypeString;
@@ -155,11 +153,11 @@ public class AgriWorkPlan {
         this.workType = workType;
     }
 
-    public short getSeason() {
+    public Short getSeason() {
         return season;
     }
 
-    public void setSeason(short season) {
+    public void setSeason(Short season) {
         this.season = season;
     }
 
@@ -195,51 +193,51 @@ public class AgriWorkPlan {
         this.description = description;
     }
 
-    public double getPlannedWaterRate() {
+    public Double getPlannedWaterRate() {
         return plannedWaterRate;
     }
 
-    public void setPlannedWaterRate(double plannedWaterRate) {
+    public void setPlannedWaterRate(Double plannedWaterRate) {
         this.plannedWaterRate = plannedWaterRate;
     }
 
-    public double getPlannedRowSpacing() {
+    public Double getPlannedRowSpacing() {
         return plannedRowSpacing;
     }
 
-    public void setPlannedRowSpacing(double plannedRowSpacing) {
+    public void setPlannedRowSpacing(Double plannedRowSpacing) {
         this.plannedRowSpacing = plannedRowSpacing;
     }
 
-    public double getPlannedPlantSpacing() {
+    public Double getPlannedPlantSpacing() {
         return plannedPlantSpacing;
     }
 
-    public void setPlannedPlantSpacing(double plannedPlantSpacing) {
+    public void setPlannedPlantSpacing(Double plannedPlantSpacing) {
         this.plannedPlantSpacing = plannedPlantSpacing;
     }
 
-    public double getPlannedDepth() {
+    public Double getPlannedDepth() {
         return plannedDepth;
     }
 
-    public void setPlannedDepth(double plannedDepth) {
+    public void setPlannedDepth(Double plannedDepth) {
         this.plannedDepth = plannedDepth;
     }
 
-    public double getPlannedSpeed() {
+    public Double getPlannedSpeed() {
         return plannedSpeed;
     }
 
-    public void setPlannedSpeed(double plannedSpeed) {
+    public void setPlannedSpeed(Double plannedSpeed) {
         this.plannedSpeed = plannedSpeed;
     }
 
-    public int getResponsiblePersonId() {
+    public Integer getResponsiblePersonId() {
         return responsiblePersonId;
     }
 
-    public void setResponsiblePersonId(int responsiblePersonId) {
+    public void setResponsiblePersonId(Integer responsiblePersonId) {
         this.responsiblePersonId = responsiblePersonId;
     }
 
@@ -251,11 +249,11 @@ public class AgriWorkPlan {
         this.externalId = externalId;
     }
 
-    public short getGroupableId() {
+    public Short getGroupableId() {
         return groupableId;
     }
 
-    public void setGroupableId(short groupableId) {
+    public void setGroupableId(Short groupableId) {
         this.groupableId = groupableId;
     }
 
@@ -267,11 +265,11 @@ public class AgriWorkPlan {
         this.groupableType = groupableType;
     }
 
-    public short getAgroRecommendationId() {
+    public Short getAgroRecommendationId() {
         return agroRecommendationId;
     }
 
-    public void setAgroRecommendationId(short agroRecommendationId) {
+    public void setAgroRecommendationId(Short agroRecommendationId) {
         this.agroRecommendationId = agroRecommendationId;
     }
 
@@ -291,11 +289,11 @@ public class AgriWorkPlan {
         this.updatedAt = updatedAt;
     }
 
-    public boolean isNotifyResponsibleUsers() {
+    public Boolean isNotifyResponsibleUsers() {
         return notifyResponsibleUsers;
     }
 
-    public void setNotifyResponsibleUsers(boolean notifyResponsibleUsers) {
+    public void setNotifyResponsibleUsers(Boolean notifyResponsibleUsers) {
         this.notifyResponsibleUsers = notifyResponsibleUsers;
     }
 
@@ -312,7 +310,7 @@ public class AgriWorkPlan {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AgriWorkPlan that = (AgriWorkPlan) o;
-        return season == that.season && Double.compare(plannedWaterRate, that.plannedWaterRate) == 0 && Double.compare(plannedRowSpacing, that.plannedRowSpacing) == 0 && Double.compare(plannedPlantSpacing, that.plannedPlantSpacing) == 0 && Double.compare(plannedDepth, that.plannedDepth) == 0 && Double.compare(plannedSpeed, that.plannedSpeed) == 0 && responsiblePersonId == that.responsiblePersonId && groupableId == that.groupableId && agroRecommendationId == that.agroRecommendationId && notifyResponsibleUsers == that.notifyResponsibleUsers && Objects.equals(id, that.id) && Objects.equals(status, that.status) && Objects.equals(workTypeString, that.workTypeString) && Objects.equals(workSubtype, that.workSubtype) && Objects.equals(workTypeString, that.workTypeString) && Objects.equals(plannedStartDate, that.plannedStartDate) && Objects.equals(plannedEndDate, that.plannedEndDate) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(description, that.description) && Objects.equals(externalId, that.externalId) && Objects.equals(groupableType, that.groupableType) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(currentSeason, that.currentSeason);
+        return Objects.equals(season, that.season) && Double.compare(plannedWaterRate, that.plannedWaterRate) == 0 && Double.compare(plannedRowSpacing, that.plannedRowSpacing) == 0 && Double.compare(plannedPlantSpacing, that.plannedPlantSpacing) == 0 && Double.compare(plannedDepth, that.plannedDepth) == 0 && Double.compare(plannedSpeed, that.plannedSpeed) == 0 && Objects.equals(responsiblePersonId, that.responsiblePersonId) && Objects.equals(groupableId, that.groupableId) && Objects.equals(agroRecommendationId, that.agroRecommendationId) && notifyResponsibleUsers == that.notifyResponsibleUsers && Objects.equals(id, that.id) && Objects.equals(status, that.status) && Objects.equals(workTypeString, that.workTypeString) && Objects.equals(workSubtype, that.workSubtype) && Objects.equals(workType, that.workType) && Objects.equals(plannedStartDate, that.plannedStartDate) && Objects.equals(plannedEndDate, that.plannedEndDate) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(description, that.description) && Objects.equals(externalId, that.externalId) && Objects.equals(groupableType, that.groupableType) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(currentSeason, that.currentSeason);
     }
 
     @Override

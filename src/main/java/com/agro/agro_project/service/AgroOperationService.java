@@ -14,6 +14,7 @@ public class AgroOperationService {
     @Autowired
     AgroOperationRepository agroOperationRepository;
 
+
     public AgroOperationService(AgroOperationRepository agroOperationRepository) {
         this.agroOperationRepository = agroOperationRepository;
     }

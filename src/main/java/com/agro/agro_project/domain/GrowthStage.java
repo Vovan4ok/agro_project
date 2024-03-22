@@ -5,14 +5,14 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="growth_stages")
+@Table(name="growth_stages", schema="cropwise_data")
 public class GrowthStage {
     @Id
     @Column(name="id")
     private Short id;
 
     @Column(name="growth_scale_id")
-    private short growthScaleId;
+    private Short growthScaleId;
 
     @ManyToOne
     @JoinColumn(name="growth_stage_group_id")
@@ -25,18 +25,15 @@ public class GrowthStage {
     private String name;
 
     @Column(name="localized_name")
-    @Lob
     private String localizedName;
 
     @Column(name="external_id", length=50)
     private String externalId;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="created_at")
@@ -45,7 +42,7 @@ public class GrowthStage {
     @Column(name="updated_at")
     private Timestamp updatedAt;
 
-    public GrowthStage(Short id, short growthScaleId, GrowthStageGroup growthStageGroup, String code, String name, String localizedName, String externalId, String additionalInfo, String description, Timestamp createdAt, Timestamp updatedAt) {
+    public GrowthStage(Short id, Short growthScaleId, GrowthStageGroup growthStageGroup, String code, String name, String localizedName, String externalId, String additionalInfo, String description, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.growthScaleId = growthScaleId;
         this.growthStageGroup = growthStageGroup;
@@ -70,11 +67,11 @@ public class GrowthStage {
         this.id = id;
     }
 
-    public short getGrowthScaleId() {
+    public Short getGrowthScaleId() {
         return growthScaleId;
     }
 
-    public void setGrowthScaleId(short growthScaleId) {
+    public void setGrowthScaleId(Short growthScaleId) {
         this.growthScaleId = growthScaleId;
     }
 
@@ -155,7 +152,7 @@ public class GrowthStage {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         GrowthStage that = (GrowthStage) o;
-        return growthScaleId == that.growthScaleId && Objects.equals(id, that.id) && Objects.equals(growthStageGroup, that.growthStageGroup) && Objects.equals(code, that.code) && Objects.equals(name, that.name) && Objects.equals(localizedName, that.localizedName) && Objects.equals(externalId, that.externalId) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(description, that.description) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
+        return Objects.equals(growthScaleId, that.growthScaleId) && Objects.equals(id, that.id) && Objects.equals(growthStageGroup, that.growthStageGroup) && Objects.equals(code, that.code) && Objects.equals(name, that.name) && Objects.equals(localizedName, that.localizedName) && Objects.equals(externalId, that.externalId) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(description, that.description) && Objects.equals(createdAt, that.createdAt) && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override

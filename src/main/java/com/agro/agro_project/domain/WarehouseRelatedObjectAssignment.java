@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="warehouse_related_object_assignments")
+@Table(name="warehouse_related_object_assignments", schema="cropwise_data")
 public class WarehouseRelatedObjectAssignment {
     @Id
     @Column(name="id")

@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="group_folders")
+@Table(name="group_folders", schema="cropwise_data")
 public class GroupFolder {
     @Id
     @Column(name="id")

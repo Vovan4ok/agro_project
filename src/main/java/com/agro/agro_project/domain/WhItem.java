@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="wh_items")
+@Table(name="wh_items", schema="cropwise_data")
 public class WhItem {
     @Id
     @Column(name="id")
@@ -21,7 +21,7 @@ public class WhItem {
     private String barcode;
 
     @Column(name="is_expiration_date")
-    private boolean isExpirationDate;
+    private Boolean isExpirationDate;
 
     @ManyToOne
     @JoinColumn(name="wh_item_group_id")
@@ -38,11 +38,9 @@ public class WhItem {
     private Unit whItemBaseUnit;
 
     @Column(name="additional_info")
-    @Lob
     private String additionalInfo;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @Column(name="external_id", length=50)
@@ -54,7 +52,7 @@ public class WhItem {
     @Column(name="updated_at")
     private Timestamp updatedAt;
 
-    public WhItem(Short id, String name, String variantName, String barcode, boolean isExpirationDate, WhItemGroup whItemGroup, String relatedObjectType, Short relatedObjectId, Unit whItemBaseUnit, String additionalInfo, String description, String externalId, Timestamp createdAt, Timestamp updatedAt) {
+    public WhItem(Short id, String name, String variantName, String barcode, Boolean isExpirationDate, WhItemGroup whItemGroup, String relatedObjectType, Short relatedObjectId, Unit whItemBaseUnit, String additionalInfo, String description, String externalId, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.name = name;
         this.variantName = variantName;
@@ -106,11 +104,11 @@ public class WhItem {
         this.barcode = barcode;
     }
 
-    public boolean isExpirationDate() {
+    public Boolean isExpirationDate() {
         return isExpirationDate;
     }
 
-    public void setExpirationDate(boolean expirationDate) {
+    public void setExpirationDate(Boolean expirationDate) {
         isExpirationDate = expirationDate;
     }
 

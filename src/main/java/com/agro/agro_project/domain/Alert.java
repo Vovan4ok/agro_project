@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name="alerts")
+@Table(name="alerts", schema="cropwise_data")
 public class Alert {
     @Id
     @Column(name="id")
@@ -16,7 +16,7 @@ public class Alert {
     private AlertType alertType;
 
     @Column(name="alertable_id")
-    private int alertableId;
+    private Integer alertableId;
 
     @Column(name="event_start_time")
     private Timestamp eventStartTime;
@@ -25,7 +25,6 @@ public class Alert {
     private String status;
 
     @Column(name="description")
-    @Lob
     private String description;
 
     @ManyToOne
@@ -46,10 +45,9 @@ public class Alert {
     private String alertableType;
 
     @Column(name="automatic_alert_id")
-    private short automaticAlertId;
+    private Short automaticAlertId;
 
     @Column(name="system_info")
-    @Lob
     private String systemInfo;
 
     @Column(name="created_at")
@@ -59,10 +57,9 @@ public class Alert {
     private Timestamp updatedAt;
 
     @Column(name="description_data")
-    @Lob
     private String descriptionData;
 
-    public Alert(Integer id, AlertType alertType, int alertableId, Timestamp eventStartTime, String status, String description, User responsiblePerson, User createdByUser, Timestamp eventStopTime, Timestamp alertClosedAt, String alertableType, short automaticAlertId, String systemInfo, Timestamp createdAt, Timestamp updatedAt, String descriptionData) {
+    public Alert(Integer id, AlertType alertType, Integer alertableId, Timestamp eventStartTime, String status, String description, User responsiblePerson, User createdByUser, Timestamp eventStopTime, Timestamp alertClosedAt, String alertableType, Short automaticAlertId, String systemInfo, Timestamp createdAt, Timestamp updatedAt, String descriptionData) {
         this.id = id;
         this.alertType = alertType;
         this.alertableId = alertableId;
@@ -100,11 +97,11 @@ public class Alert {
         this.alertType = alertType;
     }
 
-    public int getAlertableId() {
+    public Integer getAlertableId() {
         return alertableId;
     }
 
-    public void setAlertableId(int alertableId) {
+    public void setAlertableId(Integer alertableId) {
         this.alertableId = alertableId;
     }
 
@@ -172,11 +169,11 @@ public class Alert {
         this.alertableType = alertableType;
     }
 
-    public short getAutomaticAlertId() {
+    public Short getAutomaticAlertId() {
         return automaticAlertId;
     }
 
-    public void setAutomaticAlertId(short automaticAlertId) {
+    public void setAutomaticAlertId(Short automaticAlertId) {
         this.automaticAlertId = automaticAlertId;
     }
 
@@ -217,7 +214,7 @@ public class Alert {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Alert alert = (Alert) o;
-        return alertableId == alert.alertableId && automaticAlertId == alert.automaticAlertId && Objects.equals(id, alert.id) && Objects.equals(alertType, alert.alertType) && Objects.equals(eventStartTime, alert.eventStartTime) && Objects.equals(status, alert.status) && Objects.equals(description, alert.description) && Objects.equals(responsiblePerson, alert.responsiblePerson) && Objects.equals(createdByUser, alert.createdByUser) && Objects.equals(eventStopTime, alert.eventStopTime) && Objects.equals(alertClosedAt, alert.alertClosedAt) && Objects.equals(alertableType, alert.alertableType) && Objects.equals(systemInfo, alert.systemInfo) && Objects.equals(createdAt, alert.createdAt) && Objects.equals(updatedAt, alert.updatedAt) && Objects.equals(descriptionData, alert.descriptionData);
+        return Objects.equals(alertableId, alert.alertableId) && Objects.equals(automaticAlertId, alert.automaticAlertId) && Objects.equals(id, alert.id) && Objects.equals(alertType, alert.alertType) && Objects.equals(eventStartTime, alert.eventStartTime) && Objects.equals(status, alert.status) && Objects.equals(description, alert.description) && Objects.equals(responsiblePerson, alert.responsiblePerson) && Objects.equals(createdByUser, alert.createdByUser) && Objects.equals(eventStopTime, alert.eventStopTime) && Objects.equals(alertClosedAt, alert.alertClosedAt) && Objects.equals(alertableType, alert.alertableType) && Objects.equals(systemInfo, alert.systemInfo) && Objects.equals(createdAt, alert.createdAt) && Objects.equals(updatedAt, alert.updatedAt) && Objects.equals(descriptionData, alert.descriptionData);
     }
 
     @Override
