@@ -8,16 +8,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${field.name}</title>
+    <title>${machine.name}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../styles/field_machine_tasks.css">
-    <script src="../../js/field_machine_tasks.js"></script>
+    <link rel="stylesheet" href="../../../styles/machine_weighing_info.css">
 </head>
 <body class="body">
 <header class="header">
-    <img src="../../images/logo.png" alt="лого" class="header-image">
+    <img src="../../../images/logo.png" alt="лого" class="header-image">
     <nav class="header-menu">
         <ul class="header-menu-list">
             <li class="header-menu-list-item">
@@ -104,75 +103,178 @@
                 <option value="2024">2020</option>
             </select>
         </div>
-        <img src="../../images/user-avatar.png" alt="аватар">
+        <img src="../../../images/user-avatar.png" alt="аватар">
     </div>
 </header>
 <main class="main">
     <div class="field-name-block">
-        <h1 class="field-name">${field.name}</h1>
-        <span class="field-group">${field.fieldGroup.groupFolder.parent.name}/${field.fieldGroup.groupFolder.name}/${field.fieldGroup.name}</span>
+        <h1 class="field-name">${machine.name}</h1>
+        <span class="field-group">${machine.manufacturer} ${machine.model}</span>
     </div>
     <div class="main-content">
         <ul class="field-menu">
             <li class="field-menu-item">
-                <a href="/fields/${field.id}" class="field-menu-link" >Інформація про поле</a>
+                <a href="/machines/${machine.id}" class="field-menu-link">Інформація про машину</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/agro_operations" class="field-menu-link">Агрооперації</a>
+                <a href="/machines/${machine.id}/notes" class="field-menu-link">Нотатки</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/machine_tasks" class="field-menu-link" style="font-weight: bold;">Роботи машин</a>
+                <a href="/machines/${machine.id}/tasks" class="field-menu-link">Завдання</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/scouting_tasks" class="field-menu-link">Завдання на огляд</a>
+                <a href="/machines/${machine.id}/alerts" class="field-menu-link">Тривоги</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/scout_reports" class="field-menu-link">Звіти оглядів</a>
+                <a href="/machines/${machine.id}/maintenances" class="field-menu-link">Обслуговування</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/shape_land_parcels" class="field-menu-link">Площа поля та ділянки</a>
+                <a href="/machines/${machine.id}/downtimes" class="field-menu-link">Зупинки</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/notes" class="field-menu-link">Нотатки</a>
+                <a href="/machines/${machine.id}/weighings" class="field-menu-link" style="font-weight: bold;">Зважування</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/alerts" class="field-menu-link">Тривоги</a>
+                <a href="/machines/${machine.id}/regions" class="field-menu-link">Регіон</a>
             </li>
         </ul>
         <div class="content-info">
-            <h2 class="content-header">Роботи машин</h2>
-            <input type="text" placeholder="Пошук робіт машин" class="main-content-search">
-            <table class="main-table">
-                <tr class="table-row">
-                    <th class="table-th work-type-cell">Вид робіт</th>
-                    <th class="table-th machine-cell">Машина</th>
-                    <th class="table-th implement-cell">Обладнання</th>
-                    <th class="table-th shape1-cell">Оброблена площа, га</th>
-                    <th class="table-th shape2-cell">Витрата палива, л</th>
-                </tr>
-                <c:forEach var="machine_task_dto" items="${machine_tasks_dtos}">
-                    <tr class="table-row table-td-row">
-                        <td class="table-td work-type-cell">
-                            <a href="/machines/${machine_task_dto.machineTask.machine.id}/tasks/${machine_task_dto.machineTask.id}" class="table-link">${machine_task_dto.machineTask.id} ${machine_task_dto.machineTask.workType.name}/${machine_task_dto.machineTask.workType.workTypeGroup.name}</a>
-                            <p class="date-start">${machine_task_dto.machineTask.startTime} -</p>
-                            <p class="date-end">${machine_task_dto.machineTask.endTime}</p>
-                        </td>
-                        <td class="table-td machine-cell">
-                            <a href="/machines/${machine_task_dto.machineTask.machine.id}" class="table-link">${machine_task_dto.machineTask.machine.name}</a>
-                        </td>
-                        <td class="table-td implement-cell">
-                            <c:if test="${machine_task_dto.implement != null}">
-                                <a href="/implements/${machine_task_dto.implement.id}" class="table-link">${machine_task_dto.implement.name}</a>
-                            </c:if>
-                            <c:if test="${machine_task_dto.implement == null}">
-                                -
-                            </c:if>
-                        </td>
-                        <td class="table-td shape1-cell">${machine_task_dto.machineTask.coveredArea}</td>
-                        <td class="table-td shape2-cell">${machine_task_dto.machineTask.fuelConsumption}</td>
-                    </tr>
-                </c:forEach>
-            </table>
+            <h2 class="content-header">Зважування ${weighing.id}</h2>
+            <div class="info-block">
+                <div class="info-part">
+                    <h3 class="info-part-header">Час зважування</h3>
+                    <span class="info-part-info">${weighing.weighingTime}</span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Сезон</h3>
+                    <span class="info-part-info">${weighing.season}</span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Місце зважування</h3>
+                    <span class="info-part-info">
+                        <c:if test="${weighing.weighingplace == null}">
+                            -
+                        </c:if>
+                        <c:if test="${weighing.weighingplace != null}">
+                            <a href="/additional_objects/${weighing.weighingplace.id}" class="link">${weighing.weighingplace.name}</a>
+                        </c:if>
+                    </span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Тип маршруту</h3>
+                    <span class="info-part-info">
+                        <c:if test="${weighing.typeOfRoute == null}">
+                            -
+                        </c:if>
+                        <c:if test="${weighing.typeOfRoute != null}">
+                            ${weighing.typeOfRoute}
+                        </c:if>
+                    </span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Вага (нетто), кг</h3>
+                    <span class="info-part-info">17560.0</span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Вага (брутто), кг</h3>
+                    <span class="info-part-info">
+                        <c:if test="${weighing.bruttoWeight == null}">
+                            -
+                        </c:if>
+                        <c:if test="${weighing.bruttoWeight != null}">
+                            ${weighing.bruttoWeight}
+                        </c:if>
+                    </span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Вологість зерна</h3>
+                    <span class="info-part-info">
+                        <c:if test="${weighing.seedMoisture == null}">
+                            -
+                        </c:if>
+                        <c:if test="${weighing.seedMoisture != null}">
+                            ${weighing.seedMoisture}
+                        </c:if>
+                    </span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Сміттєва домішка</h3>
+                    <span class="info-part-info">
+                        <c:if test="${weighing.seedAdmixture == null}">
+                            -
+                        </c:if>
+                        <c:if test="${weighing.seedAdmixture != null}">
+                            ${weighing.seedAdmixture}
+                        </c:if>
+                    </span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Урожай з поля</h3>
+                    <span class="info-part-info">
+                        <c:if test="${weighing.field == null}">
+                            -
+                        </c:if>
+                        <c:if test="${weighing.field != null}">
+                            <a href="/field/${weighing.field.id}" class="link">${weighing.field.name}</a>
+                        </c:if>
+                    </span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Час відправки з поля</h3>
+                    <span class="info-part-info">
+                        <c:if test="${weighing.departureFromFieldTime == null}">
+                            -
+                        </c:if>
+                        <c:if test="${weighing.departureFromFieldTime != null}">
+                            ${weighing.departureFromFieldTime}
+                        </c:if>
+                    </span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Довжина треку</h3>
+                    <span class="info-part-info">
+                        <c:if test="${weighing.trackLength == null}">
+                            -
+                        </c:if>
+                        <c:if test="${weighing.trackLength != null}">
+                            ${weighing.trackLength}
+                        </c:if>
+                    </span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Опис</h3>
+                    <span class="info-part-info">
+                        <c:if test="${weighing.description == null}">
+                            -
+                        </c:if>
+                        <c:if test="${weighing.description != null}">
+                            ${weighing.description}
+                        </c:if>
+                    </span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Номер ТТН</h3>
+                    <span class="info-part-info">
+                        <c:if test="${weighing.waybillNumber == null}">
+                            -
+                        </c:if>
+                        <c:if test="${weighing.waybillNumber != null}">
+                            ${weighing.waybillNumber}
+                        </c:if>
+                    </span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Дата ТТН</h3>
+                    <span class="info-part-info">
+                        <c:if test="${weighing.waybillDate == null}">
+                            -
+                        </c:if>
+                        <c:if test="${weighing.waybillDate != null}">
+                            ${weighing.waybillDate}
+                        </c:if>
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
 </main>

@@ -244,7 +244,7 @@
                     <c:forEach var="machine_task_dto" items="${machine_tasks_dtos}">
                         <tr class="table-row">
                             <td class="table-td machine-task-cell">
-                                <a href="/machines/${machine_task_dto.machineTask.machine.id}/machine_tasks/${machine_task_dto.machineTask.id}" class="table-link">${machine_task_dto.machineTask.id} ${machine_task_dto.machineTask.workType.name}/${machine_task_dto.machineTask.workType.workTypeGroup.name}</a>
+                                <a href="/machines/${machine_task_dto.machineTask.machine.id}/tasks/${machine_task_dto.machineTask.id}" class="table-link">${machine_task_dto.machineTask.id} ${machine_task_dto.machineTask.workType.name}/${machine_task_dto.machineTask.workType.workTypeGroup.name}</a>
                                 <p class="date-start">${machine_task_dto.machineTask.startTime} -</p>
                                 <p class="date-end">${machine_task_dto.machineTask.endTime}</p>
                             </td>

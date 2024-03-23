@@ -1,0 +1,20 @@
+@import url(main.css);
+@import url(fields_menu.css);
+
+.content-info{
+    width: 1040px;
+}
+.time-cell, place-cell{
+    width: 20%;
+}
+.field-cell, .weight-cell, .number-ttn-cell, .date-ttn-cell{
+    width: 15%;
+}
+.table-link{
+    color: black;
+    font-weight: 300;
+    transition: font-weight 0.5s;
+}
+.table-link:hover{
+    font-weight: bold;
+}

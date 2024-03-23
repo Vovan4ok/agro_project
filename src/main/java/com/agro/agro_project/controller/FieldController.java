@@ -113,7 +113,7 @@ public class FieldController {
         return "field_scout_reports";
     }
 
-    @GetMapping(value="fields/{field_id}/shape_land_parcels")
+    @GetMapping(value="/fields/{field_id}/shape_land_parcels")
     public String getShapes(@PathVariable Integer field_id, HttpServletRequest request) {
         Field field = fieldService.findFieldById(field_id);
         List<FieldShape> fieldShapes = fieldService.findAllFieldShapesByField(field);
@@ -122,7 +122,7 @@ public class FieldController {
         return "field_shape_land_parcels";
     }
 
-    @GetMapping(value="fields/{field_id}/notes")
+    @GetMapping(value="/fields/{field_id}/notes")
     public String getNotes(@PathVariable Integer field_id, HttpServletRequest request) {
         Field field = fieldService.findFieldById(field_id);
         List<Note> notes = noteService.getNotes(field_id, "Field");
@@ -131,7 +131,7 @@ public class FieldController {
         return "field_notes";
     }
 
-    @GetMapping(value="fields/{field_id}/alerts")
+    @GetMapping(value="/fields/{field_id}/alerts")
     public String getAlerts(@PathVariable Integer field_id, HttpServletRequest request) {
         Field field = fieldService.findFieldById(field_id);
         List<Alert> alerts = alertService.findAllByAlertableIdAndAlertableType(field_id, "Field");
@@ -140,7 +140,7 @@ public class FieldController {
         return "field_alerts";
     }
 
-    @GetMapping(value="fields/{field_id}/alerts/{alert_id}")
+    @GetMapping(value="/fields/{field_id}/alerts/{alert_id}")
     public String getAlert(@PathVariable Integer field_id, @PathVariable Integer alert_id, HttpServletRequest request) {
         Field field = fieldService.findFieldById(field_id);
         Alert alert = alertService.findById(alert_id);

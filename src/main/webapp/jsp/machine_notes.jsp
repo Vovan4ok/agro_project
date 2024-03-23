@@ -9,13 +9,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${field.name}</title>
+    <title>${machine.name}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet">
-    <link rel="stylesheet" href="../../styles/field_notes.css">
-    <script src="../../js/field_notes.js"></script>
+    <link rel="stylesheet" href="../../styles/machine_notes.css">
+    <script src="../../js/machine_notes.js"></script>
 </head>
 
 <body class="body">
@@ -112,34 +112,34 @@
 </header>
 <main class="main">
     <div class="field-name-block">
-        <h1 class="field-name">${field.name}</h1>
-        <span class="field-group">${field.fieldGroup.groupFolder.parent.name}/${field.fieldGroup.groupFolder.name}/${field.fieldGroup.name}</span>
+        <h1 class="field-name">${machine.name}</h1>
+        <span class="field-group">${machine.manufacturer} ${machine.model}</span>
     </div>
     <div class="main-content">
         <ul class="field-menu">
             <li class="field-menu-item">
-                <a href="/fields/${field.id}" class="field-menu-link" >Інформація про поле</a>
+                <a href="/machines/${machine.id}" class="field-menu-link">Інформація про машину</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/agro_operations" class="field-menu-link">Агрооперації</a>
+                <a href="/machines/${machine.id}/notes" class="field-menu-link" style="font-weight: bold;">Нотатки</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/machine_tasks" class="field-menu-link">Роботи машин</a>
+                <a href="/machines/${machine.id}/tasks" class="field-menu-link">Завдання</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/scouting_tasks" class="field-menu-link">Завдання на огляд</a>
+                <a href="/machines/${machine.id}/alerts" class="field-menu-link">Тривоги</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/scout_reports" class="field-menu-link">Звіти оглядів</a>
+                <a href="/machines/${machine.id}/maintenances" class="field-menu-link">Обслуговування</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/shape_land_parcels" class="field-menu-link">Площа поля та ділянки</a>
+                <a href="/machines/${machine.id}/downtimes" class="field-menu-link">Зупинки</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/notes" class="field-menu-link" style="font-weight: bold;">Нотатки</a>
+                <a href="/machines/${machine.id}/weighings" class="field-menu-link">Зважування</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/alerts" class="field-menu-link">Тривоги</a>
+                <a href="/machines/${machine.id}/regions" class="field-menu-link">Регіон</a>
             </li>
         </ul>
         <div class="content-info">
@@ -164,36 +164,36 @@
                         </div>
                         <div class="information-block">
                             <h3 class="info-part-header">Інформація</h3>
-                                <div class="information-block-div">
-                                    <div class="information-block-part" style="width: 80px;">
-                                        <h4 class="information-block-part-header">Заголовок</h4>
-                                        <div class="information-block-part-text">
-                                            <c:if test="${note.title == null}">
-                                                -
-                                            </c:if>
-                                            <c:if test="${note.title.contains('youtube')}">
-                                                <a href="${note.title}" class="username">Посилання</a>
-                                            </c:if>
-                                            <c:if test="${!note.title.contains('youtube')}">
-                                                ${note.title}
-                                            </c:if>
-                                        </div>
-                                    </div>
-                                    <div class="information-block-part" style="width: 170px;">
-                                        <h4 class="information-block-part-header">Опис</h4>
-                                        <div class="information-block-part-text">
-                                            <c:if test="${note.description == null}">
-                                                -
-                                            </c:if>
-                                            <c:if test="${note.description.contains('youtube')}">
-                                                <a href="${note.description}" class="username">Посилання</a>
-                                            </c:if>
-                                            <c:if test="${!note.description.contains('youtube')}">
-                                                ${note.description}
-                                            </c:if>
-                                        </div>
+                            <div class="information-block-div">
+                                <div class="information-block-part" style="width: 80px;">
+                                    <h4 class="information-block-part-header">Заголовок</h4>
+                                    <div class="information-block-part-text">
+                                        <c:if test="${note.title == null}">
+                                            -
+                                        </c:if>
+                                        <c:if test="${note.title.contains('http')}">
+                                            <a href="${note.title}" class="username">Посилання</a>
+                                        </c:if>
+                                        <c:if test="${!note.title.contains('http')}">
+                                            ${note.title}
+                                        </c:if>
                                     </div>
                                 </div>
+                                <div class="information-block-part" style="width: 170px;">
+                                    <h4 class="information-block-part-header">Опис</h4>
+                                    <div class="information-block-part-text">
+                                        <c:if test="${note.description == null}">
+                                            -
+                                        </c:if>
+                                        <c:if test="${note.description.contains('http')}">
+                                            <a href="${note.description}" class="username">Посилання</a>
+                                        </c:if>
+                                        <c:if test="${!note.description.contains('http')}">
+                                            ${note.description}
+                                        </c:if>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,27 @@
+@import url(main.css);
+@import url(fields_menu.css);
+
+.content-info{
+    width: 785px;
+}
+.status-block{
+    margin-top: 20px;
+}
+.info-part{
+    width: 25%;
+}
+.username{
+    font-weight: 300;
+    transition: font-weight 0.5s;
+}
+.username:hover{
+    font-weight: bold;
+}
+.link{
+    color: black;
+    font-weight: 300;
+    transition: font-weight 0.5s;
+}
+.link:hover{
+    font-weight: bold;
+}

@@ -1,0 +1,12 @@
+@import url(main.css);
+@import url(fields_menu.css);
+
+.content-info{
+    width: 1040px;
+}
+.duration-cell{
+    width: 25%;
+}
+.start-cell, .end-cell, .status-cell, .long-cell, .lat-cell{
+    width: 15%;
+}

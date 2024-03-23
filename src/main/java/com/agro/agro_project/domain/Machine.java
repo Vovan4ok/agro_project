@@ -9,7 +9,7 @@ import java.util.Objects;
 public class Machine {
     @Id
     @Column(name="id")
-    private Integer id;
+    private Short id;
 
     @Column(name="name", length=100)
     private String name;
@@ -126,7 +126,7 @@ public class Machine {
     @Column(name="calculate_downtimes", length=20)
     private String calculateDowntimes;
 
-    public Machine(Integer id, String name, String model, String manufacturer, Short year, String registrationNumber, String inventoryNumber, MachineGroup machineGroup, String machineType, String machine_subtype, Short avatarId, String chassisSerialNumber, String engineSerialNumber, Short enginePower, String fuelTypeString, Double fuelTankSize, Double fuelConsumptionNorm, String legalCompany, String description, Implement defaultImplement, User defaultDriver, String additional1, String additional2, String additionalInfo, String phoneNumber, Timestamp createdAt, Timestamp updatedAt, String externalId, FuelType fuelType, String refuelSource, Double engineCapacity, Double weight, Double height, Double width, Double length, Boolean unchangedDefaultImplement, Short minDowntimeInSeconds, String calculateDowntimes) {
+    public Machine(Short id, String name, String model, String manufacturer, Short year, String registrationNumber, String inventoryNumber, MachineGroup machineGroup, String machineType, String machine_subtype, Short avatarId, String chassisSerialNumber, String engineSerialNumber, Short enginePower, String fuelTypeString, Double fuelTankSize, Double fuelConsumptionNorm, String legalCompany, String description, Implement defaultImplement, User defaultDriver, String additional1, String additional2, String additionalInfo, String phoneNumber, Timestamp createdAt, Timestamp updatedAt, String externalId, FuelType fuelType, String refuelSource, Double engineCapacity, Double weight, Double height, Double width, Double length, Boolean unchangedDefaultImplement, Short minDowntimeInSeconds, String calculateDowntimes) {
         this.id = id;
         this.name = name;
         this.model = model;
@@ -170,11 +170,11 @@ public class Machine {
     public Machine() {
     }
 
-    public Integer getId() {
+    public Short getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Short id) {
         this.id = id;
     }
 

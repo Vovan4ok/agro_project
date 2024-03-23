@@ -1,0 +1,21 @@
+@import url(main.css);
+@import url(fields_menu.css);
+
+.content-info{
+    width: 800px;
+    height: fit-content;
+}
+.content-header{
+    margin: 0 auto;
+}
+.info-part{
+    width: 25%;
+}
+.username{
+    color: black;
+    font-weight: 300;
+    transition: font-weight 0.5s;
+}
+.username:hover{
+    font-weight: bold;
+}

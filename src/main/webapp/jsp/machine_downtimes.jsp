@@ -9,13 +9,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${field.name}</title>
+    <title>${machine.name}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet">
-    <link rel="stylesheet" href="../../styles/field_notes.css">
-    <script src="../../js/field_notes.js"></script>
+    <link rel="stylesheet" href="../../styles/machine_downtimes.css">
 </head>
 
 <body class="body">
@@ -112,92 +111,65 @@
 </header>
 <main class="main">
     <div class="field-name-block">
-        <h1 class="field-name">${field.name}</h1>
-        <span class="field-group">${field.fieldGroup.groupFolder.parent.name}/${field.fieldGroup.groupFolder.name}/${field.fieldGroup.name}</span>
+        <h1 class="field-name">${machine.name}</h1>
+        <span class="field-group">${machine.manufacturer} ${machine.model}</span>
     </div>
     <div class="main-content">
         <ul class="field-menu">
             <li class="field-menu-item">
-                <a href="/fields/${field.id}" class="field-menu-link" >Інформація про поле</a>
+                <a href="/machines/${machine.id}" class="field-menu-link">Інформація про машину</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/agro_operations" class="field-menu-link">Агрооперації</a>
+                <a href="/machines/${machine.id}/notes" class="field-menu-link">Нотатки</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/machine_tasks" class="field-menu-link">Роботи машин</a>
+                <a href="/machines/${machine.id}/tasks" class="field-menu-link">Завдання</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/scouting_tasks" class="field-menu-link">Завдання на огляд</a>
+                <a href="/machines/${machine.id}/alerts" class="field-menu-link">Тривоги</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/scout_reports" class="field-menu-link">Звіти оглядів</a>
+                <a href="/machines/${machine.id}/maintenances" class="field-menu-link">Обслуговування</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/shape_land_parcels" class="field-menu-link">Площа поля та ділянки</a>
+                <a href="/machines/${machine.id}/downtimes" class="field-menu-link" style="font-weight: bold;">Зупинки</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/notes" class="field-menu-link" style="font-weight: bold;">Нотатки</a>
+                <a href="/machines/${machine.id}/weighings" class="field-menu-link">Зважування</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/alerts" class="field-menu-link">Тривоги</a>
+                <a href="/machines/${machine.id}/regions" class="field-menu-link">Регіон</a>
             </li>
         </ul>
         <div class="content-info">
-            <h1 class="content-header">Нотатки</h1>
-            <input type="text" class="main-content-search" placeholder="Пошук нотаток">
-            <c:forEach var="note" items="${notes}">
-                <div class="block-info">
-                    <h2 class="block-info-header">${note.id}</h2>
-                    <div class="blocks">
-                        <div class="author-block">
-                            <h3 class="info-part-header">Автор</h3>
-                            <a href="/users/${note.user.id}" class="username">${note.user.username}</a>
-                            <p class="email">${note.user.email}</p>
-                            <p class="profession">
-                                <c:if test="${note.user.position != null}">
-                                    ${note.user.position}
-                                </c:if>
-                                <c:if test="${note.user.position == null}">
-                                    -
-                                </c:if>
-                            </p>
-                        </div>
-                        <div class="information-block">
-                            <h3 class="info-part-header">Інформація</h3>
-                                <div class="information-block-div">
-                                    <div class="information-block-part" style="width: 80px;">
-                                        <h4 class="information-block-part-header">Заголовок</h4>
-                                        <div class="information-block-part-text">
-                                            <c:if test="${note.title == null}">
-                                                -
-                                            </c:if>
-                                            <c:if test="${note.title.contains('youtube')}">
-                                                <a href="${note.title}" class="username">Посилання</a>
-                                            </c:if>
-                                            <c:if test="${!note.title.contains('youtube')}">
-                                                ${note.title}
-                                            </c:if>
-                                        </div>
-                                    </div>
-                                    <div class="information-block-part" style="width: 170px;">
-                                        <h4 class="information-block-part-header">Опис</h4>
-                                        <div class="information-block-part-text">
-                                            <c:if test="${note.description == null}">
-                                                -
-                                            </c:if>
-                                            <c:if test="${note.description.contains('youtube')}">
-                                                <a href="${note.description}" class="username">Посилання</a>
-                                            </c:if>
-                                            <c:if test="${!note.description.contains('youtube')}">
-                                                ${note.description}
-                                            </c:if>
-                                        </div>
-                                    </div>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </c:forEach>
+            <h1 class="content-header">Історія зупинок</h1>
+            <table class="main-table">
+                <tr class="table-row">
+                    <th class="table-th type-cell">Тип зупинки</th>
+                    <th class="table-th start-cell">Початок<br>зупинки</th>
+                    <th class="table-th end-cell">Кінець<br>зупинки</th>
+                    <th class="table-th status-cell">Пробіг,<br>км</th>
+                    <th class="table-th long-cell">Точка<br>довготи</th>
+                    <th class="table-th lat-cell">Точка<br>широти</th>
+                </tr>
+                <c:forEach var="downtime" items="${downtimes}">
+                    <tr class="table-row">
+                        <td class="table-td type-cell">
+                            <c:if test="${downtime.machineDowntimeType != null}">
+                                ${downtime.machineDowntimeType.machineDowntimeTypeGroup.name}/${downtime.machineDowntimeType.name}
+                            </c:if>
+                            <c:if test="${downtime.machineDowntimeType == null}">
+                                -
+                            </c:if>
+                        </td>
+                        <td class="table-td start-cell">${downtime.startTime}</td>
+                        <td class="table-td end-cell">${downtime.endTime}</td>
+                        <td class="table-td status-cell">${downtime.status}</td>
+                        <td class="table-td long-cell">${downtime.pointLon}</td>
+                        <td class="table-td lat-cell">${downtime.pointLat}</td>
+                    </tr>
+                </c:forEach>
+            </table>
         </div>
     </div>
 </main>

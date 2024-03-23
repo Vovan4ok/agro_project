@@ -11,4 +11,8 @@ import java.util.Optional;
 @Repository("machineRegionMappingItemRepository")
 public interface MachineRegionMappingItemRepository extends JpaRepository<MachineRegionMappingItem, Short> {
     List<MachineRegionMappingItem> findAllByMachine(Machine machine);
+
+    Optional<MachineRegionMappingItem> findByMachineAndNoDateEnd(Machine machine, Boolean noDateEnd);
+
+    List<MachineRegionMappingItem> findAllByNoDateEnd(Boolean noDateEnd);
 }

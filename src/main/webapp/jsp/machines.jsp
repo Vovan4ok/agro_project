@@ -5,22 +5,19 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${field.name}</title>
+    <title>Список машин</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet">
-    <link rel="stylesheet" href="../../styles/field_notes.css">
-    <script src="../../js/field_notes.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/machines.css">
+    <script src="../js/machines.js"></script>
 </head>
-
 <body class="body">
 <header class="header">
-    <img src="../../images/logo.png" alt="лого" class="header-image">
+    <img src="../images/logo.png" alt="лого" class="header-image">
     <nav class="header-menu">
         <ul class="header-menu-list">
             <li class="header-menu-list-item">
@@ -107,98 +104,40 @@
                 <option value="2024">2020</option>
             </select>
         </div>
-        <img src="../../images/user-avatar.png" alt="аватар">
+        <img src="../images/user-avatar.png" alt="аватар">
     </div>
 </header>
 <main class="main">
-    <div class="field-name-block">
-        <h1 class="field-name">${field.name}</h1>
-        <span class="field-group">${field.fieldGroup.groupFolder.parent.name}/${field.fieldGroup.groupFolder.name}/${field.fieldGroup.name}</span>
-    </div>
     <div class="main-content">
-        <ul class="field-menu">
-            <li class="field-menu-item">
-                <a href="/fields/${field.id}" class="field-menu-link" >Інформація про поле</a>
-            </li>
-            <li class="field-menu-item">
-                <a href="/fields/${field.id}/agro_operations" class="field-menu-link">Агрооперації</a>
-            </li>
-            <li class="field-menu-item">
-                <a href="/fields/${field.id}/machine_tasks" class="field-menu-link">Роботи машин</a>
-            </li>
-            <li class="field-menu-item">
-                <a href="/fields/${field.id}/scouting_tasks" class="field-menu-link">Завдання на огляд</a>
-            </li>
-            <li class="field-menu-item">
-                <a href="/fields/${field.id}/scout_reports" class="field-menu-link">Звіти оглядів</a>
-            </li>
-            <li class="field-menu-item">
-                <a href="/fields/${field.id}/shape_land_parcels" class="field-menu-link">Площа поля та ділянки</a>
-            </li>
-            <li class="field-menu-item">
-                <a href="/fields/${field.id}/notes" class="field-menu-link" style="font-weight: bold;">Нотатки</a>
-            </li>
-            <li class="field-menu-item">
-                <a href="/fields/${field.id}/alerts" class="field-menu-link">Тривоги</a>
-            </li>
-        </ul>
-        <div class="content-info">
-            <h1 class="content-header">Нотатки</h1>
-            <input type="text" class="main-content-search" placeholder="Пошук нотаток">
-            <c:forEach var="note" items="${notes}">
-                <div class="block-info">
-                    <h2 class="block-info-header">${note.id}</h2>
-                    <div class="blocks">
-                        <div class="author-block">
-                            <h3 class="info-part-header">Автор</h3>
-                            <a href="/users/${note.user.id}" class="username">${note.user.username}</a>
-                            <p class="email">${note.user.email}</p>
-                            <p class="profession">
-                                <c:if test="${note.user.position != null}">
-                                    ${note.user.position}
-                                </c:if>
-                                <c:if test="${note.user.position == null}">
-                                    -
-                                </c:if>
-                            </p>
-                        </div>
-                        <div class="information-block">
-                            <h3 class="info-part-header">Інформація</h3>
-                                <div class="information-block-div">
-                                    <div class="information-block-part" style="width: 80px;">
-                                        <h4 class="information-block-part-header">Заголовок</h4>
-                                        <div class="information-block-part-text">
-                                            <c:if test="${note.title == null}">
-                                                -
-                                            </c:if>
-                                            <c:if test="${note.title.contains('youtube')}">
-                                                <a href="${note.title}" class="username">Посилання</a>
-                                            </c:if>
-                                            <c:if test="${!note.title.contains('youtube')}">
-                                                ${note.title}
-                                            </c:if>
-                                        </div>
-                                    </div>
-                                    <div class="information-block-part" style="width: 170px;">
-                                        <h4 class="information-block-part-header">Опис</h4>
-                                        <div class="information-block-part-text">
-                                            <c:if test="${note.description == null}">
-                                                -
-                                            </c:if>
-                                            <c:if test="${note.description.contains('youtube')}">
-                                                <a href="${note.description}" class="username">Посилання</a>
-                                            </c:if>
-                                            <c:if test="${!note.description.contains('youtube')}">
-                                                ${note.description}
-                                            </c:if>
-                                        </div>
-                                    </div>
-                                </div>
-                        </div>
-                    </div>
-                </div>
+        <h1 class="main-content-header">Машини</h1>
+        <input type="text" class="main-content-search" placeholder="Пошук машин">
+        <table class="main-table">
+            <tr class="table-row">
+                <th class="table-th">Назва</th>
+                <th class="table-th">Виробник</th>
+                <th class="table-th">Модель</th>
+                <th class="table-th">Регіон</th>
+                <th class="table-th">Реєстраційний номер</th>
+            </tr>
+            <c:forEach var="mapping_item" items="${mapping_items}">
+                <tr class="table-row table-td-row">
+                    <td class="table-td">
+                        <a href="/machines/${mapping_item.machine.id}">${mapping_item.machine.name}</a>
+                    </td>
+                    <td class="table-td">${mapping_item.machine.manufacturer}</td>
+                    <td class="table-td">${mapping_item.machine.model}</td>
+                    <td class="table-td">${mapping_item.machineRegion.name}</td>
+                    <td class="table-td">
+                        <c:if test="${mapping_item.machine.registrationNumber != null}">
+                            ${mapping_item.machine.registrationNumber}
+                        </c:if>
+                        <c:if test="${mapping_item.machine.registrationNumber == null}">
+                            -
+                        </c:if>
+                    </td>
+                </tr>
             </c:forEach>
-        </div>
+        </table>
     </div>
 </main>
 <footer class="footer">
@@ -225,8 +164,7 @@
                 </div>
                 <div class="footer-about-block-info-facebook">
                     <span class="footer-text-header">Facebook:</span>
-                    <a href="http://www.facebook.com/agrocontrol.net"
-                       class="footer-text-info">http://www.facebook.com/agrocontrol.net</a>
+                    <a href="http://www.facebook.com/agrocontrol.net" class="footer-text-info">http://www.facebook.com/agrocontrol.net</a>
                 </div>
             </div>
         </div>
@@ -234,5 +172,4 @@
     <span class="rights-text">© 2024–24 AgroControl. All rights reserved.</span>
 </footer>
 </body>
-
 </html>

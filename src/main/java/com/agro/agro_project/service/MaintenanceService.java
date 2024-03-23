@@ -26,7 +26,7 @@ public class MaintenanceService {
         return maintenanceRecordRepository.findById(id).get();
     }
 
-    public List<MaintenanceRecord> findMaintenanceRecordsByMaintainableIdAndMaintainableType(int maintainableId, String maintainableType) {
+    public List<MaintenanceRecord> findMaintenanceRecordsByMaintainableIdAndMaintainableType(Integer maintainableId, String maintainableType) {
         return maintenanceRecordRepository.findAllByMaintainableIdAndMaintainableType(maintainableId, maintainableType);
     }
 

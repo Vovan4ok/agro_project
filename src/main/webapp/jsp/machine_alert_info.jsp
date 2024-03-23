@@ -5,22 +5,18 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${field.name}</title>
+    <title>${machine.name}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet">
-    <link rel="stylesheet" href="../../styles/field_notes.css">
-    <script src="../../js/field_notes.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../styles/machine_alert_info.css">
 </head>
-
 <body class="body">
 <header class="header">
-    <img src="../../images/logo.png" alt="лого" class="header-image">
+    <img src="../../../images/logo.png" alt="лого" class="header-image">
     <nav class="header-menu">
         <ul class="header-menu-list">
             <li class="header-menu-list-item">
@@ -107,97 +103,120 @@
                 <option value="2024">2020</option>
             </select>
         </div>
-        <img src="../../images/user-avatar.png" alt="аватар">
+        <img src="../../../images/user-avatar.png" alt="аватар">
     </div>
 </header>
 <main class="main">
     <div class="field-name-block">
-        <h1 class="field-name">${field.name}</h1>
-        <span class="field-group">${field.fieldGroup.groupFolder.parent.name}/${field.fieldGroup.groupFolder.name}/${field.fieldGroup.name}</span>
+        <h1 class="field-name">${machine.name}</h1>
+        <span class="field-group">${machine.manufacturer} ${machine.model}</span>
     </div>
     <div class="main-content">
         <ul class="field-menu">
             <li class="field-menu-item">
-                <a href="/fields/${field.id}" class="field-menu-link" >Інформація про поле</a>
+                <a href="/machines/${machine.id}" class="field-menu-link">Інформація про машину</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/agro_operations" class="field-menu-link">Агрооперації</a>
+                <a href="/machines/${machine.id}/notes" class="field-menu-link">Нотатки</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/machine_tasks" class="field-menu-link">Роботи машин</a>
+                <a href="/machines/${machine.id}/tasks" class="field-menu-link">Завдання</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/scouting_tasks" class="field-menu-link">Завдання на огляд</a>
+                <a href="/machines/${machine.id}/alerts" class="field-menu-link" style="font-weight: bold;">Тривоги</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/scout_reports" class="field-menu-link">Звіти оглядів</a>
+                <a href="/machines/${machine.id}/maintenances" class="field-menu-link">Обслуговування</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/shape_land_parcels" class="field-menu-link">Площа поля та ділянки</a>
+                <a href="/machines/${machine.id}/downtimes" class="field-menu-link">Зупинки</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/notes" class="field-menu-link" style="font-weight: bold;">Нотатки</a>
+                <a href="/machines/${machine.id}/weighings" class="field-menu-link">Зважування</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/alerts" class="field-menu-link">Тривоги</a>
+                <a href="/machines/${machine.id}/regions" class="field-menu-link">Регіон</a>
             </li>
         </ul>
         <div class="content-info">
-            <h1 class="content-header">Нотатки</h1>
-            <input type="text" class="main-content-search" placeholder="Пошук нотаток">
-            <c:forEach var="note" items="${notes}">
-                <div class="block-info">
-                    <h2 class="block-info-header">${note.id}</h2>
-                    <div class="blocks">
-                        <div class="author-block">
-                            <h3 class="info-part-header">Автор</h3>
-                            <a href="/users/${note.user.id}" class="username">${note.user.username}</a>
-                            <p class="email">${note.user.email}</p>
-                            <p class="profession">
-                                <c:if test="${note.user.position != null}">
-                                    ${note.user.position}
-                                </c:if>
-                                <c:if test="${note.user.position == null}">
-                                    -
-                                </c:if>
-                            </p>
-                        </div>
-                        <div class="information-block">
-                            <h3 class="info-part-header">Інформація</h3>
-                                <div class="information-block-div">
-                                    <div class="information-block-part" style="width: 80px;">
-                                        <h4 class="information-block-part-header">Заголовок</h4>
-                                        <div class="information-block-part-text">
-                                            <c:if test="${note.title == null}">
-                                                -
-                                            </c:if>
-                                            <c:if test="${note.title.contains('youtube')}">
-                                                <a href="${note.title}" class="username">Посилання</a>
-                                            </c:if>
-                                            <c:if test="${!note.title.contains('youtube')}">
-                                                ${note.title}
-                                            </c:if>
-                                        </div>
-                                    </div>
-                                    <div class="information-block-part" style="width: 170px;">
-                                        <h4 class="information-block-part-header">Опис</h4>
-                                        <div class="information-block-part-text">
-                                            <c:if test="${note.description == null}">
-                                                -
-                                            </c:if>
-                                            <c:if test="${note.description.contains('youtube')}">
-                                                <a href="${note.description}" class="username">Посилання</a>
-                                            </c:if>
-                                            <c:if test="${!note.description.contains('youtube')}">
-                                                ${note.description}
-                                            </c:if>
-                                        </div>
-                                    </div>
-                                </div>
-                        </div>
-                    </div>
+            <h2 class="content-header">Тривога ${alert.id}</h2>
+            <p class="status-block"><span style="font-weight: 500;">Статус:</span> ${alert.status}</p>
+            <div class="info-block">
+                <div class="info-part">
+                    <h3 class="info-part-header">Назва тривоги</h3>
+                    <span class="info-part-info">${alert.alertType.name}</span>
                 </div>
-            </c:forEach>
+                <div class="info-part">
+                    <h3 class="info-part-header">Тип тривоги</h3>
+                    <span class="info-part-info">
+                        <c:if test="${alert.alertType.alertType == null}">
+                            -
+                        </c:if>
+                        <c:if test="${alert.alertType.alertType != null}">
+                            ${alert.alertType.alertType}
+                        </c:if>
+                    </span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Створена</h3>
+                    <span class="info-part-info">${alert.createdAt}</span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Закрита</h3>
+                    <span class="info-part-info">
+                        <c:if test="${alert.alertClosedAt == null}">
+                            тривога відкрита
+                        </c:if>
+                        <c:if test="${alert.alertClosedAt != null}">
+                            ${alert.alertClosedAt}
+                        </c:if>
+                    </span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Початок події</h3>
+                    <span class="info-part-info">${alert.eventStartTime}</span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Кінець події</h3>
+                    <span class="info-part-info">
+                        <c:if test="${alert.eventStopTime == null}">
+                            тривога відкрита
+                        </c:if>
+                        <c:if test="${alert.eventStopTime != null}">
+                            ${alert.eventStopTime}
+                        </c:if>
+                    </span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Відповідальна особа</h3>
+                    <c:if test="${alert.responsiblePerson == null}">
+                        <span class="info-part-info">-</span>
+                    </c:if>
+                    <c:if test="${alert.responsiblePerson != null}">
+                        <a href="/users/${alert.responsiblePerson.id}" class="info-part-info username">${alert.responsiblePerson.username}</a>
+                    </c:if>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Створена</h3>
+                    <c:if test="${alert.createdByUser == null}">
+                        <span class="info-part-info">-</span>
+                    </c:if>
+                    <c:if test="${alert.createdByUser != null}">
+                        <a href="/users/${alert.createdByUser.id}" class="info-part-info username">${alert.createdByUser.username}</a>
+                    </c:if>
+                </div>
+                <div class="info-part" style="width: 100%;">
+                    <h3 class="info-part-header">Додаткова інформація</h3>
+                    <span class="info-part-info">
+                        <c:if test="${alert.description == null}">
+                            -
+                        </c:if>
+                        <c:if test="${alert.description != null}">
+                            ${alert.description}
+                        </c:if>
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
 </main>
@@ -225,8 +244,7 @@
                 </div>
                 <div class="footer-about-block-info-facebook">
                     <span class="footer-text-header">Facebook:</span>
-                    <a href="http://www.facebook.com/agrocontrol.net"
-                       class="footer-text-info">http://www.facebook.com/agrocontrol.net</a>
+                    <a href="http://www.facebook.com/agrocontrol.net" class="footer-text-info">http://www.facebook.com/agrocontrol.net</a>
                 </div>
             </div>
         </div>
@@ -234,5 +252,4 @@
     <span class="rights-text">© 2024–24 AgroControl. All rights reserved.</span>
 </footer>
 </body>
-
 </html>

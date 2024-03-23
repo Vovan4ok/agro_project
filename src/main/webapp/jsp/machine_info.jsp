@@ -8,16 +8,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${field.name}</title>
+    <title>${machine.name}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../styles/field_machine_tasks.css">
-    <script src="../../js/field_machine_tasks.js"></script>
+    <link rel="stylesheet" href="../styles/machine_info.css">
 </head>
 <body class="body">
 <header class="header">
-    <img src="../../images/logo.png" alt="лого" class="header-image">
+    <img src="../images/logo.png" alt="лого" class="header-image">
     <nav class="header-menu">
         <ul class="header-menu-list">
             <li class="header-menu-list-item">
@@ -104,75 +103,160 @@
                 <option value="2024">2020</option>
             </select>
         </div>
-        <img src="../../images/user-avatar.png" alt="аватар">
+        <img src="../images/user-avatar.png" alt="аватар">
     </div>
 </header>
 <main class="main">
     <div class="field-name-block">
-        <h1 class="field-name">${field.name}</h1>
-        <span class="field-group">${field.fieldGroup.groupFolder.parent.name}/${field.fieldGroup.groupFolder.name}/${field.fieldGroup.name}</span>
+        <h1 class="field-name">${machine.name}</h1>
+        <span class="field-group">${machine.manufacturer} ${machine.model}</span>
     </div>
     <div class="main-content">
         <ul class="field-menu">
             <li class="field-menu-item">
-                <a href="/fields/${field.id}" class="field-menu-link" >Інформація про поле</a>
+                <a href="/machines/${machine.id}" class="field-menu-link" style="font-weight: bold;">Інформація про машину</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/agro_operations" class="field-menu-link">Агрооперації</a>
+                <a href="/machines/${machine.id}/notes" class="field-menu-link">Нотатки</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/machine_tasks" class="field-menu-link" style="font-weight: bold;">Роботи машин</a>
+                <a href="/machines/${machine.id}/tasks" class="field-menu-link">Завдання</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/scouting_tasks" class="field-menu-link">Завдання на огляд</a>
+                <a href="/machines/${machine.id}/alerts" class="field-menu-link">Тривоги</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/scout_reports" class="field-menu-link">Звіти оглядів</a>
+                <a href="/machines/${machine.id}/maintenances" class="field-menu-link">Обслуговування</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/shape_land_parcels" class="field-menu-link">Площа поля та ділянки</a>
+                <a href="/machines/${machine.id}/downtimes" class="field-menu-link">Зупинки</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/notes" class="field-menu-link">Нотатки</a>
+                <a href="/machines/${machine.id}/weighings" class="field-menu-link">Зважування</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/alerts" class="field-menu-link">Тривоги</a>
+                <a href="/machines/${machine.id}/regions" class="field-menu-link">Регіон</a>
             </li>
         </ul>
         <div class="content-info">
-            <h2 class="content-header">Роботи машин</h2>
-            <input type="text" placeholder="Пошук робіт машин" class="main-content-search">
-            <table class="main-table">
-                <tr class="table-row">
-                    <th class="table-th work-type-cell">Вид робіт</th>
-                    <th class="table-th machine-cell">Машина</th>
-                    <th class="table-th implement-cell">Обладнання</th>
-                    <th class="table-th shape1-cell">Оброблена площа, га</th>
-                    <th class="table-th shape2-cell">Витрата палива, л</th>
-                </tr>
-                <c:forEach var="machine_task_dto" items="${machine_tasks_dtos}">
-                    <tr class="table-row table-td-row">
-                        <td class="table-td work-type-cell">
-                            <a href="/machines/${machine_task_dto.machineTask.machine.id}/tasks/${machine_task_dto.machineTask.id}" class="table-link">${machine_task_dto.machineTask.id} ${machine_task_dto.machineTask.workType.name}/${machine_task_dto.machineTask.workType.workTypeGroup.name}</a>
-                            <p class="date-start">${machine_task_dto.machineTask.startTime} -</p>
-                            <p class="date-end">${machine_task_dto.machineTask.endTime}</p>
-                        </td>
-                        <td class="table-td machine-cell">
-                            <a href="/machines/${machine_task_dto.machineTask.machine.id}" class="table-link">${machine_task_dto.machineTask.machine.name}</a>
-                        </td>
-                        <td class="table-td implement-cell">
-                            <c:if test="${machine_task_dto.implement != null}">
-                                <a href="/implements/${machine_task_dto.implement.id}" class="table-link">${machine_task_dto.implement.name}</a>
-                            </c:if>
-                            <c:if test="${machine_task_dto.implement == null}">
+            <h2 class="content-header">Інформація про машину</h2>
+            <div class="info-block">
+                <div class="info-part">
+                    <h3 class="info-part-header">Назва</h3>
+                    <span class="info-part-info">${machine.name}</span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Тип машини</h3>
+                    <span class="info-part-info">
+                        <c:if test="${machine.machineType.equals('agri')}">
+                            Агро
+                        </c:if>
+                        <c:if test="${machine.machineType.equals('transport')}">
+                            Транспорт
+                        </c:if>
+                    </span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Підтип машини</h3>
+                    <span class="info-part-info">
+                        <c:choose>
+                            <c:when test="${machine.machineSubtype == null}">
                                 -
-                            </c:if>
-                        </td>
-                        <td class="table-td shape1-cell">${machine_task_dto.machineTask.coveredArea}</td>
-                        <td class="table-td shape2-cell">${machine_task_dto.machineTask.fuelConsumption}</td>
-                    </tr>
-                </c:forEach>
-            </table>
+                            </c:when>
+                            <c:when test="${machine.machineSubtype == 'tractor'}">
+                                Трактор
+                            </c:when>
+                            <c:when test="${machine.machineSubtype == 'lorrie'}">
+                                Вантажівка
+                            </c:when>
+                            <c:when test="${machine.machineSubtype == 'harvester'}">
+                                Комбайн
+                            </c:when>
+                            <c:when test="${machine.machineSubtype == 'tipper'}">
+                                Самоскид
+                            </c:when>
+                            <c:when test="${machine.machineSubtype == 'truck_crane'}">
+                                Автокран
+                            </c:when>
+                            <c:when test="${machine.machineSubtype == 'car'}">
+                                Машина
+                            </c:when>
+                            <c:when test="${machine.machineSubtype == 'telehandler'}">
+                                Телескопічний навантажувач
+                            </c:when>
+                            <c:when test="${machine.machineSubtype == 'minibus'}">
+                                Мікроавтобус
+                            </c:when>
+                            <c:when test="${machine.machineSubtype == 'sprayer'}">
+                                Розпилювач
+                            </c:when>
+                            <c:when test="${machine.machineSubtype == 'fuel_bowser'}">
+                                Паливний насос
+                            </c:when>
+                        </c:choose>
+                    </span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Група машин</h3>
+                    <span class="info-part-info">${machine.machineGroup.name}</span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Виробник</h3>
+                    <span class="info-part-info">${machine.manufacturer}</span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Модель</h3>
+                    <span class="info-part-info">${machine.model}</span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Рік випуску</h3>
+                    <span class="info-part-info">
+                        <c:if test="${machine.year == null}">
+                            -
+                        </c:if>
+                        <c:if test="${machine.year != null}">
+                            ${machine.year}
+                        </c:if>
+                    </span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Тип пального</h3>
+                    <span class="info-part-info">${machine.fuelType.name}</span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Реєстраційний номер</h3>
+                    <span class="info-part-info">
+                        <c:if test="${machine.registrationNumber == null}">
+                            -
+                        </c:if>
+                        <c:if test="${machine.registrationNumber != null}">
+                            ${machine.registrationNumber}
+                        </c:if>
+                    </span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Водій за замовчуванням</h3>
+                    <span class="info-part-info">
+                        <c:if test="${machine.defaultDriver != null}">
+                            <a href="/users/${machine.defaultDriver.id}" class="username">${machine.defaultDriver.username}</a>
+                        </c:if>
+                        <c:if test="${machine.defaultDriver == null}">
+                            -
+                        </c:if>
+                    </span>
+                </div>
+                <div class="info-part">
+                    <h3 class="info-part-header">Обладнання за замовчуванням</h3>
+                    <span class="info-part-info">
+                        <c:if test="${machine.defaultImplement != null}">
+                            <a href="/implements/${machine.defaultImplement.id}" class="username">${machine.defaultImplement.name}</a>
+                        </c:if>
+                        <c:if test="${machine.defaultImplement == null}">
+                            -
+                        </c:if>
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
 </main>

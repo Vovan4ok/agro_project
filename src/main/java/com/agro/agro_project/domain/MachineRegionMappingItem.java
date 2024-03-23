@@ -89,7 +89,7 @@ public class MachineRegionMappingItem {
         this.dateEnd = dateEnd;
     }
 
-    public Boolean isNoDateEnd() {
+    public Boolean getNoDateEnd() {
         return noDateEnd;
     }
 
