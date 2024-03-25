@@ -1,7 +1,9 @@
 package com.agro.agro_project.service;
 
+import com.agro.agro_project.dao.WarehouseRelatedObjectAssignmentRepository;
 import com.agro.agro_project.dao.WarehouseRepository;
 import com.agro.agro_project.domain.Warehouse;
+import com.agro.agro_project.domain.WarehouseRelatedObjectAssignment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,8 +14,12 @@ public class WarehouseService {
     @Autowired
     WarehouseRepository warehouseRepository;
 
-    public WarehouseService(WarehouseRepository warehouseRepository) {
+    @Autowired
+    WarehouseRelatedObjectAssignmentRepository warehouseRelatedObjectAssignmentRepository;
+
+    public WarehouseService(WarehouseRepository warehouseRepository, WarehouseRelatedObjectAssignmentRepository warehouseRelatedObjectAssignmentRepository) {
         this.warehouseRepository = warehouseRepository;
+        this.warehouseRelatedObjectAssignmentRepository = warehouseRelatedObjectAssignmentRepository;
     }
 
     public Warehouse findById(Short id) {
@@ -22,5 +28,9 @@ public class WarehouseService {
 
     public List<Warehouse> findAll() {
         return warehouseRepository.findAll();
+    }
+
+    public WarehouseRelatedObjectAssignment findAssignmentByWarehouse(Warehouse warehouse) {
+        return warehouseRelatedObjectAssignmentRepository.findByWarehouse(warehouse).get();
     }
 }
