@@ -1,0 +1,30 @@
+@import url(main.css);
+@import url(fields_menu.css);
+
+.content-info{
+    width: 1040px;
+}
+.work-type-cell{
+    width: 30%;
+}
+.time-cell{
+    width: 20%;
+}
+.fuel-cell, .distance-cell{
+    width: 15%;
+}
+.machine-cell{
+    width: 20%;
+}
+.date-start, .date-end{
+    font-size: 14px;
+    color: #8E8E8E;
+}
+.table-link{
+    color: black;
+    font-weight: 300;
+    transition: font-weight 0.5s;
+}
+.table-link:hover{
+    font-weight: bold;
+}

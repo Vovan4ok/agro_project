@@ -1,0 +1,20 @@
+@import url(main.css);
+@import url(fields_menu.css);
+
+.content-info{
+    width: 1040px;
+}
+.type-cell, .description-cell{
+    width: 20%;
+}
+.status-cell, .season-cell, .distance-cell, .motohours-cell{
+    width: 15%;
+}
+.type-link{
+    color: black;
+    font-weight: 300;
+    transition: font-weight 0.5s;
+}
+.type-link:hover{
+    font-weight: bold;
+}

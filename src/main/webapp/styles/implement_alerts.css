@@ -1,0 +1,20 @@
+@import url(main.css);
+@import url(fields_menu.css);
+
+.content-info{
+    width: 1040px;
+}
+.alert-cell, .responsible-alert-cell{
+    width: 15%;
+}
+.create-alert-cell, .start-alert-cell, .description-alert-cell{
+    width: 20%;
+}
+.alert-link, .username{
+    color: black;
+    font-weight: 300;
+    transition: font-weight 0.5s;
+}
+.alert-link:hover, .username:hover{
+    font-weight: bold;
+}

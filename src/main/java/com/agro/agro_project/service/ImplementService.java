@@ -37,4 +37,12 @@ public class ImplementService {
     public List<ImplementRegionMappingItem> findAllMappingItemsByImplement(Implement implement) {
         return implementRegionMappingItemRepository.findAllByImplement(implement);
     }
+
+    public List<ImplementRegionMappingItem> findAllMappingItemsByNoDateEnd(Boolean noDateEnd) {
+        return implementRegionMappingItemRepository.findAllByNoDateEnd(noDateEnd);
+    }
+
+    public ImplementRegionMappingItem findMappingItemByImplementAndNoDateEnd(Implement implement, Boolean noDateEnd) {
+        return implementRegionMappingItemRepository.findByImplementAndNoDateEnd(implement, noDateEnd).get();
+    }
 }

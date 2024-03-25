@@ -14,5 +14,5 @@ public interface MachineTaskRepository extends JpaRepository<MachineTask, Intege
 
     List<MachineTask> findAllByMachine(Machine machine);
 
-    List<MachineTask> findAllByImplementId(short id);
+    List<MachineTask> findAllByImplementId(Short id);
 }

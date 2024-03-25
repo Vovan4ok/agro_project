@@ -89,7 +89,7 @@ public class ImplementRegionMappingItem {
         this.dateEnd = dateEnd;
     }
 
-    public Boolean isNoDateEnd() {
+    public Boolean getNoDateEnd() {
         return noDateEnd;
     }
 
