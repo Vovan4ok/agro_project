@@ -1,0 +1,53 @@
+@import url(main.css);
+
+.main-content{
+    width: 100%;
+    background-color: #F4F4F4;
+    border-radius: 10px;
+    padding: 40px;
+    margin-top: 30px;
+}
+.field-name-block{
+    width: fit-content;
+    margin: 0 auto;
+}
+.field-name{
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Roboto Condensed';
+}
+.info-block{
+    margin-top: -40px;
+}
+.info-part{
+    width: 20%;
+}
+.main-table{
+    margin-top: 0;
+}
+.field-cell, .shape1-cell, .shape2-cell, .shape3-cell{
+    width: 20%;
+}
+.start-cell, end-cell{
+    width: 10%;
+}
+.table-link{
+    color: black;
+    font-weight: 300;
+    transition: font-weight 0.5s;
+}
+.table-link:hover{
+    font-weight: bold;
+}
+.field-shape{
+    font-size: 14px;
+    color: #8E8E8E;
+}
+.small-header{
+    width: fit-content;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 20px auto;
+}

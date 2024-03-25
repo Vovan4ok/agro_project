@@ -1,0 +1,48 @@
+@import url(main.css);
+
+.main-content{
+    width: 100%;
+    min-height: calc(100vh - 80px - 165px - 100px);
+    background-color: #F4F4F4;
+    border-radius: 10px;
+    padding: 20px 30px;
+}
+.main-content-header{
+    font-size: 25px;
+    font-weight: 500;
+}
+.status-cell{
+    width: 10%;
+}
+.shape-cell{
+    width: 20%;
+}
+.season-cell{
+    width: 7%;
+    margin-left: 10px;
+}
+.planned-dates-cell{
+    width: 12%;
+}
+.start-time-cell, .end-time-cell{
+    width: 15%;
+}
+.status-info{
+    font-weight: 400;
+}
+.end-date-info{
+    color: #8E8E8E;
+    font-size: 14px;
+}
+.agri-work-plan{
+    margin-top: 2px;
+    font-size: 14px;
+}
+.table-link{
+    font-weight: 300;
+    color: black;
+    transition: font-weight 0.5s;
+}
+.table-link:hover{
+    font-weight: bold;
+}
