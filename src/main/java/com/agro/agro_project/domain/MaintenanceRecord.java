@@ -12,7 +12,7 @@ public class MaintenanceRecord {
     private Short id;
 
     @Column(name="maintainable_id")
-    private Integer maintainableId;
+    private Short maintainableId;
 
     @Column(name="maintainable_type", length=20)
     private String maintainableType;
@@ -53,7 +53,7 @@ public class MaintenanceRecord {
     @Column(name="updated_at")
     private Timestamp updatedAt;
 
-    public MaintenanceRecord(Short id, Integer maintainableId, String maintainableType, Short maintenancePlanId, String status, Short season, Integer motohours, Integer mileage, Timestamp startTime, Timestamp endTime, Timestamp plannedStartTime, Timestamp plannedEndTime, String description, Timestamp createdAt, Timestamp updatedAt) {
+    public MaintenanceRecord(Short id, Short maintainableId, String maintainableType, Short maintenancePlanId, String status, Short season, Integer motohours, Integer mileage, Timestamp startTime, Timestamp endTime, Timestamp plannedStartTime, Timestamp plannedEndTime, String description, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.maintainableId = maintainableId;
         this.maintainableType = maintainableType;
@@ -82,11 +82,11 @@ public class MaintenanceRecord {
         this.id = id;
     }
 
-    public Integer getMaintainableId() {
+    public Short getMaintainableId() {
         return maintainableId;
     }
 
-    public void setMaintainableId(Integer maintainableId) {
+    public void setMaintainableId(Short maintainableId) {
         this.maintainableId = maintainableId;
     }
 

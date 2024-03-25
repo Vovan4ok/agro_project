@@ -11,5 +11,5 @@ import java.util.Optional;
 public interface MaintenanceRecordRepository extends JpaRepository<MaintenanceRecord, Short> {
     Optional<MaintenanceRecord> findById(Short id);
 
-    List<MaintenanceRecord> findAllByMaintainableIdAndMaintainableType(Integer maintainableId, String maintainableType);
+    List<MaintenanceRecord> findAllByMaintainableIdAndMaintainableType(Short maintainableId, String maintainableType);
 }

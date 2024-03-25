@@ -103,7 +103,7 @@ public class SparePart {
         this.externalId = externalId;
     }
 
-    public Boolean isArchived() {
+    public Boolean getArchived() {
         return archived;
     }
 

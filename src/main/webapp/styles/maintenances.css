@@ -1,0 +1,24 @@
+@import url(main.css);
+
+.main-content{
+    width: 100%;
+    min-height: calc(100vh - 80px - 165px - 100px);
+    background-color: #F4F4F4;
+    border-radius: 10px;
+    padding: 20px 30px;
+}
+.main-content-header{
+    font-size: 25px;
+    font-weight: 500;
+}
+.table-link{
+    font-weight: 300;
+    color: black;
+    transition: font-weight 0.5s;
+}
+.table-link:hover{
+    font-weight: bold;
+}
+.table-th, .table-td{
+    width: 25%;
+}
