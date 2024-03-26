@@ -82,9 +82,9 @@ public class LandParcel {
     private String villageCouncil;
 
     @Column(name="x_custom_vlasnik_zemelnoyi_dilyanki")
-    private String xCustomVlasnikZemelnoyiDilyanki;
+    private String vlasnik;
 
-    public LandParcel(Integer id, String additionalInfo, String address, String areaType, Double cadastralArea, String cadastralNumber, Double cadastralPrice, Double calculatedArea, String countryCode, Timestamp createdAt, String description, String documentStatus, String externalId, FieldGroup fieldGroup, String geoJson, Boolean inArchive, String ownershipType, String permittedUse, Boolean plannedAction, String region, String registrationNumber, String subadministrativeAreaName, Timestamp updatedAt, String villageCouncil, String xCustomVlasnikZemelnoyiDilyanki) {
+    public LandParcel(Integer id, String additionalInfo, String address, String areaType, Double cadastralArea, String cadastralNumber, Double cadastralPrice, Double calculatedArea, String countryCode, Timestamp createdAt, String description, String documentStatus, String externalId, FieldGroup fieldGroup, String geoJson, Boolean inArchive, String ownershipType, String permittedUse, Boolean plannedAction, String region, String registrationNumber, String subadministrativeAreaName, Timestamp updatedAt, String villageCouncil, String vlasnik) {
         this.id = id;
         this.additionalInfo = additionalInfo;
         this.address = address;
@@ -109,7 +109,7 @@ public class LandParcel {
         this.subadministrativeAreaName = subadministrativeAreaName;
         this.updatedAt = updatedAt;
         this.villageCouncil = villageCouncil;
-        this.xCustomVlasnikZemelnoyiDilyanki = xCustomVlasnikZemelnoyiDilyanki;
+        this.vlasnik = vlasnik;
     }
 
     public LandParcel() {
@@ -307,12 +307,12 @@ public class LandParcel {
         this.villageCouncil = villageCouncil;
     }
 
-    public String getXCustomVlasnikZemelnoyiDilyanki() {
-        return xCustomVlasnikZemelnoyiDilyanki;
+    public String getVlasnik() {
+        return vlasnik;
     }
 
-    public void setXCustomVlasnikZemelnoyiDilyanki(String xCustomVlasnikZemelnoyiDilyanki) {
-        this.xCustomVlasnikZemelnoyiDilyanki = xCustomVlasnikZemelnoyiDilyanki;
+    public void setVlasnik(String vlasnik) {
+        this.vlasnik = vlasnik;
     }
 
     @Override
@@ -320,12 +320,12 @@ public class LandParcel {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         LandParcel that = (LandParcel) o;
-        return Double.compare(cadastralArea, that.cadastralArea) == 0 && Double.compare(cadastralPrice, that.cadastralPrice) == 0 && Double.compare(calculatedArea, that.calculatedArea) == 0 && inArchive == that.inArchive && plannedAction == that.plannedAction && Objects.equals(id, that.id) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(address, that.address) && Objects.equals(areaType, that.areaType) && Objects.equals(cadastralNumber, that.cadastralNumber) && Objects.equals(countryCode, that.countryCode) && Objects.equals(createdAt, that.createdAt) && Objects.equals(description, that.description) && Objects.equals(documentStatus, that.documentStatus) && Objects.equals(externalId, that.externalId) && Objects.equals(fieldGroup, that.fieldGroup) && Objects.equals(geoJson, that.geoJson) && Objects.equals(ownershipType, that.ownershipType) && Objects.equals(permittedUse, that.permittedUse) && Objects.equals(region, that.region) && Objects.equals(registrationNumber, that.registrationNumber) && Objects.equals(subadministrativeAreaName, that.subadministrativeAreaName) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(villageCouncil, that.villageCouncil) && Objects.equals(xCustomVlasnikZemelnoyiDilyanki, that.xCustomVlasnikZemelnoyiDilyanki);
+        return Double.compare(cadastralArea, that.cadastralArea) == 0 && Double.compare(cadastralPrice, that.cadastralPrice) == 0 && Double.compare(calculatedArea, that.calculatedArea) == 0 && inArchive == that.inArchive && plannedAction == that.plannedAction && Objects.equals(id, that.id) && Objects.equals(additionalInfo, that.additionalInfo) && Objects.equals(address, that.address) && Objects.equals(areaType, that.areaType) && Objects.equals(cadastralNumber, that.cadastralNumber) && Objects.equals(countryCode, that.countryCode) && Objects.equals(createdAt, that.createdAt) && Objects.equals(description, that.description) && Objects.equals(documentStatus, that.documentStatus) && Objects.equals(externalId, that.externalId) && Objects.equals(fieldGroup, that.fieldGroup) && Objects.equals(geoJson, that.geoJson) && Objects.equals(ownershipType, that.ownershipType) && Objects.equals(permittedUse, that.permittedUse) && Objects.equals(region, that.region) && Objects.equals(registrationNumber, that.registrationNumber) && Objects.equals(subadministrativeAreaName, that.subadministrativeAreaName) && Objects.equals(updatedAt, that.updatedAt) && Objects.equals(villageCouncil, that.villageCouncil) && Objects.equals(vlasnik, that.vlasnik);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, additionalInfo, address, areaType, cadastralArea, cadastralNumber, cadastralPrice, calculatedArea, countryCode, createdAt, description, documentStatus, externalId, fieldGroup, geoJson, inArchive, ownershipType, permittedUse, plannedAction, region, registrationNumber, subadministrativeAreaName, updatedAt, villageCouncil, xCustomVlasnikZemelnoyiDilyanki);
+        return Objects.hash(id, additionalInfo, address, areaType, cadastralArea, cadastralNumber, cadastralPrice, calculatedArea, countryCode, createdAt, description, documentStatus, externalId, fieldGroup, geoJson, inArchive, ownershipType, permittedUse, plannedAction, region, registrationNumber, subadministrativeAreaName, updatedAt, villageCouncil, vlasnik);
     }
 
     @Override
@@ -355,7 +355,7 @@ public class LandParcel {
                 ", subadministrativeAreaName='" + subadministrativeAreaName + '\'' +
                 ", updatedAt=" + updatedAt +
                 ", villageCouncil='" + villageCouncil + '\'' +
-                ", xCustomVlasnikZemelnoyiDilyanki='" + xCustomVlasnikZemelnoyiDilyanki + '\'' +
+                ", vlasnik='" + vlasnik + '\'' +
                 '}';
     }
 }

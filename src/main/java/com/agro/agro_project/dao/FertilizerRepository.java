@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository("fertilizerRepository")
-public interface FertilizerRepository extends JpaRepository<Fertilizer, Integer> {
-    Optional<Fertilizer> findById(Integer id);
+public interface FertilizerRepository extends JpaRepository<Fertilizer, Short> {
+    Optional<Fertilizer> findById(Short id);
 
     List<Fertilizer> findAll();
 }

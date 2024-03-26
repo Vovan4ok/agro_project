@@ -1,0 +1,20 @@
+document.addEventListener("DOMContentLoaded", function() {
+    var input = document.getElementsByClassName("main-content-search")[0];
+
+    input.addEventListener('input', function() {
+        var filter = input.value.toUpperCase();
+        var items = document.getElementsByClassName("table-td-row");
+        var fieldNames = [];
+        for(let i = 0; i < items.length; i++) {
+            fieldNames.push(items[i].getElementsByClassName("table-td")[0]);
+        }
+
+        for(let i = 0; i < fieldNames.length; i++) {
+            var title = fieldNames[i];
+            if(title) {
+                var titleValue = title.textContent;
+                items[i].style.display = titleValue.toUpperCase().indexOf(filter) > -1 ? "" : "none";
+            }
+        }
+    });
+});

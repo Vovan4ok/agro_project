@@ -16,7 +16,7 @@ public class FertilizerService {
         this.fertilizerRepository = fertilizerRepository;
     }
 
-    public Fertilizer findById(Integer id) {
+    public Fertilizer findById(Short id) {
         return fertilizerRepository.findById(id).get();
     }
 

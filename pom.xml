@@ -51,6 +51,11 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20231013</version>
+		</dependency>
 		<!--  https://mvnrepository.com/artifact/javax/javaee-web-api  -->
 		<dependency>
 			<groupId>javax</groupId>

@@ -1,0 +1,46 @@
+@import url(main.css);
+
+.main-content{
+    width: 100%;
+    background-color: #F4F4F4;
+    border-radius: 10px;
+    padding: 40px;
+    margin-top: 30px;
+}
+.field-name-block{
+    width: fit-content;
+    margin: 0 auto;
+}
+.field-name{
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Roboto Condensed';
+}
+.block-info{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.block-info-text{
+    text-align: right;
+}
+.block-info-header, .block-info-text{
+    font-size: 18px;
+    width: 40%;
+}
+.block-info-header{
+    font-weight: bold;
+}
+a.block-info-text{
+    width: fit-content;
+    font-weight: 300;
+    color: black;
+    transition: font-weight 0.5s;
+}
+a.block-info-text:hover{
+    font-weight: bold;
+}

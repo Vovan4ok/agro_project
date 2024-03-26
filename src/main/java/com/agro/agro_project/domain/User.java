@@ -178,7 +178,7 @@ public class User {
         this.yieldUnits = yieldUnits;
     }
 
-    public Boolean isTelematicsSpecialist() {
+    public Boolean getTelematicsSpecialist() {
         return telematicsSpecialist;
     }
 
@@ -202,7 +202,7 @@ public class User {
         this.status = status;
     }
 
-    public Boolean isDispatcher() {
+    public Boolean getDispatcher() {
         return dispatcher;
     }
 
@@ -210,7 +210,7 @@ public class User {
         this.dispatcher = dispatcher;
     }
 
-    public Boolean isDriver() {
+    public Boolean getDriver() {
         return driver;
     }
 
@@ -218,7 +218,7 @@ public class User {
         this.driver = driver;
     }
 
-    public Boolean isAgronomist() {
+    public Boolean getAgronomist() {
         return agronomist;
     }
 

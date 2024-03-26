@@ -10,7 +10,7 @@ import java.util.Objects;
 public class Fertilizer {
     @Id
     @Column(name="id")
-    private Integer id;
+    private Short id;
 
     @Column(name="name")
     private String name;
@@ -27,9 +27,8 @@ public class Fertilizer {
     @Column(name="units_of_measurement", length=10)
     private String unitsOfMeasurement;
 
-    @Column(name="elements")
-    @Lob
-    private JsonObject elements;
+    @Column(name="elements", columnDefinition = "jsonb")
+    private String elements;
 
     @Column(name="archived")
     private Boolean archived;
@@ -57,7 +56,7 @@ public class Fertilizer {
     @Column(name="updated_at")
     private Timestamp updatedAt;
 
-    public Fertilizer(Integer id, String name, String fertilizerType, String sourceType, String nutrientType, String unitsOfMeasurement, JsonObject elements, boolean archived, WhItem whItem, Unit whItemBaseUnit, String additionalInfo, String description, String externalId, Timestamp createdAt, Timestamp updatedAt) {
+    public Fertilizer(Short id, String name, String fertilizerType, String sourceType, String nutrientType, String unitsOfMeasurement, String elements, boolean archived, WhItem whItem, Unit whItemBaseUnit, String additionalInfo, String description, String externalId, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.name = name;
         this.fertilizerType = fertilizerType;
@@ -78,11 +77,11 @@ public class Fertilizer {
     public Fertilizer() {
     }
 
-    public Integer getId() {
+    public Short getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Short id) {
         this.id = id;
     }
 
@@ -126,11 +125,11 @@ public class Fertilizer {
         this.unitsOfMeasurement = unitsOfMeasurement;
     }
 
-    public JsonObject getElements() {
+    public String getElements() {
         return elements;
     }
 
-    public void setElements(JsonObject elements) {
+    public void setElements(String elements) {
         this.elements = elements;
     }
 
