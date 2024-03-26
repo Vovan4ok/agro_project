@@ -35,9 +35,14 @@ public class MoreController {
     @Autowired
     AdditionalObjectService additionalObjectService;
 
+    @Autowired
+    SeasonService seasonService;
+
     @GetMapping(value="/land_parcels")
     public String getLandParcels(HttpServletRequest request) {
         List<LandParcel> landParcels = landParcelService.findAll();
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("land_parcels", landParcels);
         return "land_parcels";
     }
@@ -45,6 +50,8 @@ public class MoreController {
     @GetMapping(value="/land_parcels/{land_parcel_id}")
     public String getLandParcel(@PathVariable Integer land_parcel_id, HttpServletRequest request) {
         LandParcel landParcel = landParcelService.findById(land_parcel_id);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("land_parcel", landParcel);
         return "land_parcel_info";
     }
@@ -52,6 +59,8 @@ public class MoreController {
     @GetMapping(value="/seeds")
     public String getSeeds(HttpServletRequest request) {
         List<Seed> seeds = seedService.findAll();
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("seeds", seeds);
         return "seeds";
     }
@@ -59,6 +68,8 @@ public class MoreController {
     @GetMapping(value="/seeds/{seed_id}")
     public String getSeed(@PathVariable Short seed_id, HttpServletRequest request) {
         Seed seed = seedService.findById(seed_id);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("seed", seed);
         return "seed_info";
     }
@@ -70,6 +81,8 @@ public class MoreController {
         for(Fertilizer fertilizer : fertilizers) {
             fertilizerElementsDTOS.add(new FertilizerElementsDTO(fertilizer, new JSONObject(fertilizer.getElements())));
         }
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("fertilizer_elements_dtos", fertilizerElementsDTOS);
         return "fertilizers";
     }
@@ -77,6 +90,8 @@ public class MoreController {
     @GetMapping(value="/fertilizers/{fertilizer_id}")
     public String gerFertilizer(@PathVariable Short fertilizer_id, HttpServletRequest request) {
         Fertilizer fertilizer = fertilizerService.findById(fertilizer_id);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("fertilizer", fertilizer);
         return "fertilizer_info";
     }
@@ -84,6 +99,8 @@ public class MoreController {
     @GetMapping(value="/chemicals")
     public String getChemicals(HttpServletRequest request) {
         List<Chemical> chemicals = chemicalService.findAll();
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("chemicals", chemicals);
         return "chemicals";
     }
@@ -91,6 +108,8 @@ public class MoreController {
     @GetMapping(value="/chemicals/{chemical_id}")
     public String getChemical(@PathVariable Short chemical_id, HttpServletRequest request) {
         Chemical chemical = chemicalService.findById(chemical_id);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("chemical", chemical);
         return "chemical_info";
     }
@@ -98,6 +117,8 @@ public class MoreController {
     @GetMapping(value="/additional_objects")
     public String getAdditionalObjects(HttpServletRequest request) {
         List<AdditionalObject> additionalObjects = additionalObjectService.findAll();
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("additional_objects", additionalObjects);
         return "additional_objects";
     }
@@ -105,6 +126,8 @@ public class MoreController {
     @GetMapping(value="/users/{user_id}")
     public String getUser(@PathVariable Integer user_id, HttpServletRequest request) {
         User user = userService.findById(user_id);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("user", user);
         return "user_info";
     }

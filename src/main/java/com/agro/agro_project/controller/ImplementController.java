@@ -28,9 +28,14 @@ public class ImplementController {
     @Autowired
     MaintenanceService maintenanceService;
 
+    @Autowired
+    SeasonService seasonService;
+
     @GetMapping(value="/implements")
     public String getImplements(HttpServletRequest request) {
         List<ImplementRegionMappingItem> mappingItems = implementService.findAllMappingItemsByNoDateEnd(true);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("mapping_items", mappingItems);
         return "implements";
     }
@@ -38,6 +43,8 @@ public class ImplementController {
     @GetMapping(value="/implements/{implement_id}")
     public String getImplement(@PathVariable Short implement_id, HttpServletRequest request) {
         Implement implement = implementService.findImplementById(implement_id);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("implement", implement);
         return "implement_info";
     }
@@ -46,6 +53,8 @@ public class ImplementController {
     public String getNotes(@PathVariable Short implement_id, HttpServletRequest request) {
         Implement implement = implementService.findImplementById(implement_id);
         List<Note> notes = noteService.getNotes(Integer.valueOf(implement_id), "Implement");
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("implement", implement);
         request.setAttribute("notes", notes);
         return "implement_notes";
@@ -55,6 +64,8 @@ public class ImplementController {
     public String getTasks(@PathVariable Short implement_id, HttpServletRequest request) {
         Implement implement = implementService.findImplementById(implement_id);
         List<MachineTask> machineTasks = machineTaskService.findAllMachineTasksByImplementId(implement_id);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("implement", implement);
         request.setAttribute("machine_tasks", machineTasks);
         return "implement_tasks";
@@ -64,6 +75,8 @@ public class ImplementController {
     public String getAlerts(@PathVariable Short implement_id, HttpServletRequest request) {
         Implement implement = implementService.findImplementById(implement_id);
         List<Alert> alerts = alertService.findAllByAlertableIdAndAlertableType(Integer.valueOf(implement_id), "Implement");
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("implement", implement);
         request.setAttribute("alerts", alerts);
         return "implement_alerts";
@@ -73,6 +86,8 @@ public class ImplementController {
     public String getAlert(@PathVariable Short implement_id, @PathVariable Integer alert_id, HttpServletRequest request) {
         Implement implement = implementService.findImplementById(implement_id);
         Alert alert = alertService.findById(alert_id);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("implement", implement);
         request.setAttribute("alert", alert);
         return "implement_alert_info";
@@ -82,6 +97,8 @@ public class ImplementController {
     public String getMaintenances(@PathVariable Short implement_id, HttpServletRequest request) {
         Implement implement = implementService.findImplementById(implement_id);
         List<MaintenanceRecordRow> maintenanceRecordRowList = maintenanceService.findAllMaintenanceRecordRows().stream().filter(m -> m.getMaintenanceRecord().getMaintainableId().equals(Integer.valueOf(implement_id)) && m.getMaintenanceRecord().getMaintainableType().equals("Implement")).collect(Collectors.toList());
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("implement", implement);
         request.setAttribute("maintenance_record_rows", maintenanceRecordRowList);
         return "implement_maintenances";
@@ -91,6 +108,8 @@ public class ImplementController {
     public String getMaintenance(@PathVariable Short implement_id, @PathVariable Short maintenance_id, HttpServletRequest request) {
         Implement implement = implementService.findImplementById(implement_id);
         MaintenanceRecordRow maintenanceRecordRow = maintenanceService.findMaintenanceRecordRowByMaintenanceRecord(maintenanceService.findMaintenanceRecordById(maintenance_id));
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("implement", implement);
         request.setAttribute("maintenance_record_row", maintenanceRecordRow);
         return "implement_maintenance_info";
@@ -100,6 +119,8 @@ public class ImplementController {
     public String getRegions(@PathVariable Short implement_id, HttpServletRequest request) {
         Implement implement = implementService.findImplementById(implement_id);
         List<ImplementRegionMappingItem> region_items = implementService.findAllMappingItemsByImplement(implement);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("implement", implement);
         request.setAttribute("region_items", region_items);
         return "implement_regions";

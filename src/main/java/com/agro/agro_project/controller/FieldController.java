@@ -40,8 +40,13 @@ public class FieldController {
     @Autowired
     AlertService alertService;
 
+    @Autowired
+    SeasonService seasonService;
+
     @GetMapping(value= {"/", "/fields"})
     public String fields(HttpServletRequest request) {
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("fields", fieldService.findAllFields());
         return "fields";
     }
@@ -50,6 +55,8 @@ public class FieldController {
     public String getFieldInfo(@PathVariable Integer field_id, HttpServletRequest request) {
         Field field = fieldService.findFieldById(field_id);
         FieldShape fieldShape = fieldService.findFieldShapeByFieldAndEndTime(field, null);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("field", field);
         request.setAttribute("fieldShape", fieldShape);
         return "field_info";
@@ -59,6 +66,8 @@ public class FieldController {
     public String getAgroOperations(@PathVariable Integer field_id, HttpServletRequest request) {
         Field field = fieldService.findFieldById(field_id);
         List<AgroOperation> agroOperations = agroOperationService.findAllByField(field);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("field", field);
         request.setAttribute("agro_operations", agroOperations);
         return "field_agro_operations";
@@ -69,6 +78,8 @@ public class FieldController {
         Field field = fieldService.findFieldById(field_id);
         AgroOperation agroOperation = agroOperationService.findById(agro_operation_id);
         List<MachineTask> machineTasks = machineTaskService.findAllMachineTasksByAgroOperationId(agro_operation_id);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("field", field);
         request.setAttribute("agro_operation", agroOperation);
         request.setAttribute("machine_tasks_dtos", getMachineTaskImplementDTO(machineTasks));
@@ -79,6 +90,8 @@ public class FieldController {
     public String getMachineTasks(@PathVariable Integer field_id, HttpServletRequest request) {
         Field field = fieldService.findFieldById(field_id);
         List<MachineTask> machineTasks = machineTaskService.findAllMachineTasksByFieldId(field_id);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("field", field);
         request.setAttribute("machine_tasks_dtos", getMachineTaskImplementDTO(machineTasks));
         return "field_machine_tasks";
@@ -88,6 +101,8 @@ public class FieldController {
     public String getScoutingTasks(@PathVariable Integer field_id, HttpServletRequest request) {
         Field field = fieldService.findFieldById(field_id);
         List<ScoutingTask> scoutingTasks = scoutingTaskService.findAllScoutingTasks();
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("field", field);
         request.setAttribute("scouting_tasks", scoutingTasks);
         return "field_scouting_tasks";
@@ -98,6 +113,8 @@ public class FieldController {
         Field field = fieldService.findFieldById(field_id);
         ScoutingTask scoutingTask = scoutingTaskService.findScoutingTaskById(scouting_task_id);
         List<ScoutingTaskPoint> scoutingTaskPoints = scoutingTaskService.findAllScoutingPointsByScoutingTask(scoutingTask);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("field", field);
         request.setAttribute("scouting_task", scoutingTask);
         request.setAttribute("scouting_task_points", scoutingTaskPoints);
@@ -108,6 +125,8 @@ public class FieldController {
     public String getScoutingReports(@PathVariable Integer field_id, HttpServletRequest request) {
         Field field = fieldService.findFieldById(field_id);
         List<FieldScoutReport> scoutReports = fieldService.findFieldScoutReportsByField(field);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("field", field);
         request.setAttribute("scout_reports", scoutReports);
         return "field_scout_reports";
@@ -117,6 +136,8 @@ public class FieldController {
     public String getShapes(@PathVariable Integer field_id, HttpServletRequest request) {
         Field field = fieldService.findFieldById(field_id);
         List<FieldShape> fieldShapes = fieldService.findAllFieldShapesByField(field);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("field", field);
         request.setAttribute("field_shape_dtos", getFieldShapeLandParcelsDTO(fieldShapes));
         return "field_shape_land_parcels";
@@ -126,6 +147,8 @@ public class FieldController {
     public String getNotes(@PathVariable Integer field_id, HttpServletRequest request) {
         Field field = fieldService.findFieldById(field_id);
         List<Note> notes = noteService.getNotes(field_id, "Field");
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("field", field);
         request.setAttribute("notes", notes);
         return "field_notes";
@@ -135,6 +158,8 @@ public class FieldController {
     public String getAlerts(@PathVariable Integer field_id, HttpServletRequest request) {
         Field field = fieldService.findFieldById(field_id);
         List<Alert> alerts = alertService.findAllByAlertableIdAndAlertableType(field_id, "Field");
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("field", field);
         request.setAttribute("alerts", alerts);
         return "field_alerts";
@@ -144,6 +169,8 @@ public class FieldController {
     public String getAlert(@PathVariable Integer field_id, @PathVariable Integer alert_id, HttpServletRequest request) {
         Field field = fieldService.findFieldById(field_id);
         Alert alert = alertService.findById(alert_id);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("field", field);
         request.setAttribute("alert", alert);
         return "field_alert_info";

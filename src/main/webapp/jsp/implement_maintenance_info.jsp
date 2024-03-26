@@ -99,11 +99,9 @@
         <div class="header-right-block-season">
             <label for="season-select" class="season-label">Сезон:</label>
             <select name="season-select" id="season-select">
-                <option value="2024">2024</option>
-                <option value="2024">2023</option>
-                <option value="2024">2022</option>
-                <option value="2024">2021</option>
-                <option value="2024">2020</option>
+                <c:forEach var="season" items="${seasons}">
+                    <option value="${season.year}">${season.year}</option>
+                </c:forEach>
             </select>
         </div>
         <img src="../../../images/user-avatar.png" alt="аватар">

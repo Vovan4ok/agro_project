@@ -3,9 +3,11 @@ package com.agro.agro_project.controller;
 import com.agro.agro_project.domain.Implement;
 import com.agro.agro_project.domain.Machine;
 import com.agro.agro_project.domain.MaintenanceRecordRow;
+import com.agro.agro_project.domain.Season;
 import com.agro.agro_project.service.ImplementService;
 import com.agro.agro_project.service.MachineService;
 import com.agro.agro_project.service.MaintenanceService;
+import com.agro.agro_project.service.SeasonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,9 +27,14 @@ public class MaintenanceController {
     @Autowired
     ImplementService implementService;
 
+    @Autowired
+    SeasonService seasonService;
+
     @GetMapping(value="/maintenances")
     public String getMaintenances(HttpServletRequest request) {
         List<MaintenanceRecordRow> maintenanceRecordRows = maintenanceService.findAllMaintenanceRecordRows();
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("maintenance_record_rows", maintenanceRecordRows);
         return "maintenances";
     }
@@ -42,6 +49,8 @@ public class MaintenanceController {
             Implement implement = implementService.findImplementById(maintenanceRecordRow.getMaintenanceRecord().getMaintainableId());
             request.setAttribute("machine", implement);
         }
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("maintenance_record_row", maintenanceRecordRow);
         return "maintenance_info";
     }

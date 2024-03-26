@@ -6,6 +6,7 @@ import com.agro.agro_project.domain.ScoutingTask;
 import com.agro.agro_project.service.AgriWorkPlanService;
 import com.agro.agro_project.service.AgroOperationService;
 import com.agro.agro_project.service.ScoutingTaskService;
+import com.agro.agro_project.service.SeasonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +25,9 @@ public class AgroController {
 
     @Autowired
     ScoutingTaskService scoutingTaskService;
+
+    @Autowired
+    SeasonService seasonService;
 
     @GetMapping(value="/agro_operations")
     public String getAgroOperations(HttpServletRequest request) {

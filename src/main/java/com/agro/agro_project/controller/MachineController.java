@@ -36,9 +36,14 @@ public class MachineController {
     @Autowired
     HarvestWeighingService harvestWeighingService;
 
+    @Autowired
+    SeasonService seasonService;
+
     @GetMapping(value="/machines")
     public String getMachines(HttpServletRequest request) {
         List<MachineRegionMappingItem> mappingItems = machineService.findAllMappingItems(true);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("mapping_items", mappingItems);
         return "machines";
     }
@@ -46,6 +51,8 @@ public class MachineController {
     @GetMapping(value="/machines/{machine_id}")
     public String getMachine(@PathVariable Short machine_id, HttpServletRequest request) {
         Machine machine = machineService.findMachineById(machine_id);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("machine", machine);
         return "machine_info";
     }
@@ -54,6 +61,8 @@ public class MachineController {
     public String getNotes(@PathVariable Short machine_id, HttpServletRequest request) {
         Machine machine = machineService.findMachineById(machine_id);
         List<Note> notes = noteService.getNotes(Integer.valueOf(machine_id), "Machine");
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("machine", machine);
         request.setAttribute("notes", notes);
         return "machine_notes";
@@ -63,6 +72,8 @@ public class MachineController {
     public String getMachineTasks(@PathVariable Short machine_id, HttpServletRequest request) {
         Machine machine = machineService.findMachineById(machine_id);
         List<MachineTask> machineTasks = machineTaskService.findAllMachineTasksByMachine(machine);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("machine", machine);
         request.setAttribute("machine_tasks_dtos", getMachineTaskImplementDTO(machineTasks));
         return "machine_tasks";
@@ -74,6 +85,8 @@ public class MachineController {
         MachineTask machineTask = machineTaskService.findMachineTaskById(task_id);
         Implement implement = machineTask.getImplementId() == null ? null : implementService.findImplementById(machineTask.getImplementId());
         MachineTaskImplementDTO machineTaskImplementDTO = new MachineTaskImplementDTO(machineTask, implement);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("machine", machine);
         request.setAttribute("machine_task_dto", machineTaskImplementDTO);
         return "machine_task_info";
@@ -83,6 +96,8 @@ public class MachineController {
     public String getAlerts(@PathVariable Short machine_id, HttpServletRequest request) {
         Machine machine = machineService.findMachineById(machine_id);
         List<Alert> alerts = alertService.findAllByAlertableIdAndAlertableType(Integer.valueOf(machine_id), "Machine");
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("machine", machine);
         request.setAttribute("alerts", alerts);
         return "machine_alerts";
@@ -92,6 +107,8 @@ public class MachineController {
     public String getAlert(@PathVariable Short machine_id, @PathVariable Integer alert_id, HttpServletRequest request) {
         Machine machine = machineService.findMachineById(machine_id);
         Alert alert = alertService.findById(alert_id);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("machine", machine);
         request.setAttribute("alert", alert);
         return "machine_alert_info";
@@ -101,6 +118,8 @@ public class MachineController {
     public String getMaintenances(@PathVariable Short machine_id, HttpServletRequest request) {
         Machine machine = machineService.findMachineById(machine_id);
         List<MaintenanceRecordRow> maintenanceRecordRowList = maintenanceService.findAllMaintenanceRecordRows().stream().filter(m -> m.getMaintenanceRecord().getMaintainableId().equals(machine_id) && m.getMaintenanceRecord().getMaintainableType().equals("Machine")).collect(Collectors.toList());
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("machine", machine);
         request.setAttribute("maintenance_record_rows", maintenanceRecordRowList);
         return "machine_maintenances";
@@ -110,6 +129,8 @@ public class MachineController {
     public String getMaintenance(@PathVariable Short machine_id, @PathVariable Short maintenance_id, HttpServletRequest request) {
         Machine machine = machineService.findMachineById(machine_id);
         MaintenanceRecordRow maintenanceRecordRow = maintenanceService.findMaintenanceRecordRowByMaintenanceRecord(maintenanceService.findMaintenanceRecordById(maintenance_id));
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("machine", machine);
         request.setAttribute("maintenance_record_row", maintenanceRecordRow);
         return "machine_maintenance_info";
@@ -119,6 +140,8 @@ public class MachineController {
     public String getDowntimes(@PathVariable Short machine_id, HttpServletRequest request) {
         Machine machine = machineService.findMachineById(machine_id);
         List<MachineDowntime> machineDowntimes = machineService.findAllDowntimes(machine_id);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("machine", machine);
         request.setAttribute("downtimes", machineDowntimes);
         return "machine_downtimes";
@@ -128,6 +151,8 @@ public class MachineController {
     public String getWeighings(@PathVariable Short machine_id, HttpServletRequest request) {
         Machine machine = machineService.findMachineById(machine_id);
         List<HarvestWeighing> weighings = harvestWeighingService.findAllByMachine(machine);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("machine", machine);
         request.setAttribute("weighings", weighings);
         return "machine_weighings";
@@ -137,6 +162,8 @@ public class MachineController {
     public String getWeighing(@PathVariable Short machine_id, @PathVariable Integer weighing_id, HttpServletRequest request) {
         Machine machine = machineService.findMachineById(machine_id);
         HarvestWeighing weighing = harvestWeighingService.findById(weighing_id);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("machine", machine);
         request.setAttribute("weighing", weighing);
         return "machine_weighing_info";
@@ -146,6 +173,8 @@ public class MachineController {
     public String getRegions(@PathVariable Short machine_id, HttpServletRequest request) {
         Machine machine = machineService.findMachineById(machine_id);
         List<MachineRegionMappingItem> region_items = machineService.findAllMachineRegionsByMachine(machine);
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("seasons", seasons);
         request.setAttribute("machine", machine);
         request.setAttribute("region_items", region_items);
         return "machine_regions";

@@ -33,7 +33,7 @@ public class AdditionalObject {
     @Column(name="geometry_type", length=30)
     private String geometryType;
 
-    @Column(name="ppoint_lon")
+    @Column(name="point_lon")
     private Double pointLon;
 
     @Column(name="point_lat")
