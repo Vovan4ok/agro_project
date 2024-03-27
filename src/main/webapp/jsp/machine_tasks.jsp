@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../styles/machine_tasks.css">
     <script src="../../js/machine_tasks.js"></script>
+    <script src="../../js/season_filter.js"></script>
 </head>
 <body class="body">
 <header class="header">

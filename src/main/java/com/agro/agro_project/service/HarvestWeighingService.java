@@ -24,4 +24,8 @@ public class HarvestWeighingService {
     public List<HarvestWeighing> findAllByMachine(Machine machine) {
         return harvestWeighingRepository.findAllByMachine(machine);
     }
+
+    public List<HarvestWeighing> findAllByMachineAndSeason(Machine machine, Short season) {
+        return harvestWeighingRepository.findAllByMachineAndSeason(machine, season);
+    }
 }

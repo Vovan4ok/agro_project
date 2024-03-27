@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service("maintenanceService")
 public class MaintenanceService {
@@ -32,6 +33,10 @@ public class MaintenanceService {
 
     public List<MaintenanceRecordRow> findAllMaintenanceRecordRows() {
         return maintenanceRecordRowRepository.findAll();
+    }
+
+    public List<MaintenanceRecordRow> findAllMaintenanceRecordRowsBySeason(Short season) {
+        return findAllMaintenanceRecordRows().stream().filter(m -> m.getMaintenanceRecord().getSeason().equals(season)).collect(Collectors.toList());
     }
 
     public MaintenanceRecordRow findMaintenanceRecordRowByMaintenanceRecord(MaintenanceRecord maintenanceRecord) {

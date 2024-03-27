@@ -35,6 +35,10 @@ public class ScoutingTaskService {
         return scoutingTaskRepository.findAllByField(field);
     }
 
+    public List<ScoutingTask> findAllScoutingTasksByFieldAndSeason(Field field, Short season) {
+        return scoutingTaskRepository.findAllByFieldAndSeason(field, season);
+    }
+
     public List<ScoutingTask> findAllScoutingTasksBySeason(short season) {
         return scoutingTaskRepository.findAllBySeason(season);
     }

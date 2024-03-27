@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -31,8 +32,13 @@ public class MaintenanceController {
     SeasonService seasonService;
 
     @GetMapping(value="/maintenances")
-    public String getMaintenances(HttpServletRequest request) {
-        List<MaintenanceRecordRow> maintenanceRecordRows = maintenanceService.findAllMaintenanceRecordRows();
+    public String getMaintenances(@RequestParam(required = false) Short season, HttpServletRequest request) {
+        List<MaintenanceRecordRow> maintenanceRecordRows;
+        if(season == null) {
+            maintenanceRecordRows = maintenanceService.findAllMaintenanceRecordRows();
+        } else {
+            maintenanceRecordRows = maintenanceService.findAllMaintenanceRecordRowsBySeason(season);
+        }
         List<Season> seasons = seasonService.findAll();
         request.setAttribute("seasons", seasons);
         request.setAttribute("maintenance_record_rows", maintenanceRecordRows);

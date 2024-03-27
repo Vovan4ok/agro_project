@@ -38,4 +38,8 @@ public class AgroOperationService {
     public List<AgroOperation> findAllByField(Field field) {
         return agroOperationRepository.findAllByField(field);
     }
+
+    public List<AgroOperation> findAllByFieldAndSeason(Field field, Short season) {
+        return agroOperationRepository.findAllByFieldAndSeason(field, season);
+    }
 }

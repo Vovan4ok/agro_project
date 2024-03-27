@@ -13,4 +13,6 @@ public interface HarvestWeighingRepository extends JpaRepository<HarvestWeighing
     Optional<HarvestWeighing> findById(Integer id);
 
     List<HarvestWeighing> findAllByMachine(Machine machine);
+
+    List<HarvestWeighing> findAllByMachineAndSeason(Machine machine, Short season);
 }

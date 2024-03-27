@@ -153,15 +153,15 @@
                             <c:if test="${scout_report.additionalInfo == null}">
                                 <span class="info-part-info">Інформація відсутня</span>
                             </c:if>
-                            <c:if test="${!scout_report.additionalInfo.contains('youtube')}">
+                            <c:if test="${!scout_report.additionalInfo.contains('http')}">
                                 <span class="info-part-info">${scout_report.additionalInfo}</span>
                             </c:if>
-                            <c:if test="${scout_report.additionalInfo.contains('youtube')}">
-                                <a href="${scout_report.additionalInfo}" class="videolink">Посилання на відео</a>
+                            <c:if test="${scout_report.additionalInfo.contains('http')}">
+                                <a href="${scout_report.additionalInfo}" class="videolink" style="font-size: 18px; margin-top: 10px;">Посилання на відео</a>
                             </c:if>
                         </div>
                         <div class="scout-report-block2">
-                            <h3 class="info-part-header">Додаткова інформація</h3>
+                            <h3 class="info-part-header">Автор</h3>
                             <a href="/users/${scout_report.user.id}" class="username">${scout_report.user.username}</a>
                             <p class="email">${scout_report.user.email}</p>
                             <p class="profession">
@@ -178,7 +178,7 @@
                                 <h3 class="info-part-header">Дата створення</h3>
                                 <span class="info-part-info">${scout_report.reportTime}</span>
                             </div>
-                            <div>
+                            <div style="margin-top: 20px;">
                                 <h3 class="info-part-header">Сезон</h3>
                                 <span class="info-part-info">${scout_report.season}</span>
                             </div>

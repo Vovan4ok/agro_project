@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
@@ -69,9 +70,14 @@ public class MachineController {
     }
 
     @GetMapping(value="/machines/{machine_id}/tasks")
-    public String getMachineTasks(@PathVariable Short machine_id, HttpServletRequest request) {
+    public String getMachineTasks(@RequestParam(required = false) Short season, @PathVariable Short machine_id, HttpServletRequest request) {
         Machine machine = machineService.findMachineById(machine_id);
-        List<MachineTask> machineTasks = machineTaskService.findAllMachineTasksByMachine(machine);
+        List<MachineTask> machineTasks;
+        if(season == null) {
+            machineTasks = machineTaskService.findAllMachineTasksByMachine(machine);
+        } else {
+            machineTasks = machineTaskService.findAllMachineTasksByMachineAndSeason(machine, season);
+        }
         List<Season> seasons = seasonService.findAll();
         request.setAttribute("seasons", seasons);
         request.setAttribute("machine", machine);
@@ -148,9 +154,14 @@ public class MachineController {
     }
 
     @GetMapping(value="/machines/{machine_id}/weighings")
-    public String getWeighings(@PathVariable Short machine_id, HttpServletRequest request) {
+    public String getWeighings(@RequestParam(required = false) Short season, @PathVariable Short machine_id, HttpServletRequest request) {
         Machine machine = machineService.findMachineById(machine_id);
-        List<HarvestWeighing> weighings = harvestWeighingService.findAllByMachine(machine);
+        List<HarvestWeighing> weighings;
+        if(season == null) {
+            weighings = harvestWeighingService.findAllByMachine(machine);
+        } else {
+            weighings = harvestWeighingService.findAllByMachineAndSeason(machine, season);
+        }
         List<Season> seasons = seasonService.findAll();
         request.setAttribute("seasons", seasons);
         request.setAttribute("machine", machine);

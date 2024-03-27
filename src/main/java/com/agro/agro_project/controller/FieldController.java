@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Path;
@@ -63,9 +64,14 @@ public class FieldController {
     }
 
     @GetMapping(value="/fields/{field_id}/agro_operations")
-    public String getAgroOperations(@PathVariable Integer field_id, HttpServletRequest request) {
+    public String getAgroOperations(@RequestParam(required = false) Short season, @PathVariable Integer field_id, HttpServletRequest request) {
         Field field = fieldService.findFieldById(field_id);
-        List<AgroOperation> agroOperations = agroOperationService.findAllByField(field);
+        List<AgroOperation> agroOperations;
+        if(season == null) {
+            agroOperations = agroOperationService.findAllByField(field);
+        } else {
+            agroOperations = agroOperationService.findAllByFieldAndSeason(field, season);
+        }
         List<Season> seasons = seasonService.findAll();
         request.setAttribute("seasons", seasons);
         request.setAttribute("field", field);
@@ -87,9 +93,14 @@ public class FieldController {
     }
 
     @GetMapping(value="/fields/{field_id}/machine_tasks")
-    public String getMachineTasks(@PathVariable Integer field_id, HttpServletRequest request) {
+    public String getMachineTasks(@RequestParam(required = false) Short season, @PathVariable Integer field_id, HttpServletRequest request) {
         Field field = fieldService.findFieldById(field_id);
-        List<MachineTask> machineTasks = machineTaskService.findAllMachineTasksByFieldId(field_id);
+        List<MachineTask> machineTasks;
+        if(season == null) {
+            machineTasks = machineTaskService.findAllMachineTasksByFieldId(field_id);
+        } else {
+            machineTasks = machineTaskService.findAllMachineTasksByFieldIdAndSeason(field_id, season);
+        }
         List<Season> seasons = seasonService.findAll();
         request.setAttribute("seasons", seasons);
         request.setAttribute("field", field);
@@ -98,9 +109,14 @@ public class FieldController {
     }
 
     @GetMapping(value="/fields/{field_id}/scouting_tasks")
-    public String getScoutingTasks(@PathVariable Integer field_id, HttpServletRequest request) {
+    public String getScoutingTasks(@RequestParam(required = false) Short season, @PathVariable Integer field_id, HttpServletRequest request) {
         Field field = fieldService.findFieldById(field_id);
-        List<ScoutingTask> scoutingTasks = scoutingTaskService.findAllScoutingTasks();
+        List<ScoutingTask> scoutingTasks;
+        if(season == null) {
+            scoutingTasks = scoutingTaskService.findAllScoutingTasksByField(field);
+        } else {
+            scoutingTasks = scoutingTaskService.findAllScoutingTasksByFieldAndSeason(field, season);
+        }
         List<Season> seasons = seasonService.findAll();
         request.setAttribute("seasons", seasons);
         request.setAttribute("field", field);
