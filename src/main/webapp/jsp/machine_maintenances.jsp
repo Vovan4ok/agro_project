@@ -51,6 +51,9 @@
             <li class="field-menu-item">
                 <a href="/machines/${machine.id}/regions" class="field-menu-link">Регіон</a>
             </li>
+            <li class="field-menu-item">
+                <a href="/machines/${machine.id}/photos" class="field-menu-link">Фото</a>
+            </li>
         </ul>
         <div class="content-info">
             <h1 class="content-header">Історія Обслуговування</h1>

@@ -40,6 +40,9 @@ public class MachineController {
     @Autowired
     SeasonService seasonService;
 
+    @Autowired
+    PhotoService photoService;
+
     @GetMapping(value="/machines")
     public String getMachines(HttpServletRequest request) {
         List<MachineRegionMappingItem> mappingItems = machineService.findAllMappingItems(true);
@@ -189,6 +192,17 @@ public class MachineController {
         request.setAttribute("machine", machine);
         request.setAttribute("region_items", region_items);
         return "machine_regions";
+    }
+
+    @GetMapping(value="/machines/{machine_id}/photos")
+    public String getPhotos(@PathVariable Short machine_id, HttpServletRequest request) {
+        Machine machine = machineService.findMachineById(machine_id);
+        List<Photo> photos = photoService.findAllByPhotoableIdAndPhotoableType(Integer.valueOf(machine_id), "Machine");
+        List<Season> seasons = seasonService.findAll();
+        request.setAttribute("machine", machine);
+        request.setAttribute("photos", photos);
+        request.setAttribute("seasons", seasons);
+        return "machine_photos";
     }
 
     private List<MachineTaskImplementDTO> getMachineTaskImplementDTO(List<MachineTask> machineTasks) {

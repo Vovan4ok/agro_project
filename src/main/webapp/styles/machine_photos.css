@@ -1,0 +1,26 @@
+@import url(main.css);
+@import url(fields_menu.css);
+
+.content-info{
+    width: 100%;
+}
+.photos{
+    width: 100%;
+}
+.photos-header{
+    width: fit-content;
+    font-size: 25px;
+    font-weight: 600;
+}
+.photos-block{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+.photos-block-image{
+    border-radius: 10px;
+    width: 15%;
+    height: 150px;
+    margin-top: 20px;
+    margin-right: 45px;
+}

@@ -44,6 +44,9 @@ public class FieldController {
     @Autowired
     SeasonService seasonService;
 
+    @Autowired
+    PhotoService photoService;
+
     @GetMapping(value= {"/", "/fields"})
     public String fields(HttpServletRequest request) {
         List<Season> seasons = seasonService.findAll();
@@ -146,6 +149,19 @@ public class FieldController {
         request.setAttribute("field", field);
         request.setAttribute("scout_reports", scoutReports);
         return "field_scout_reports";
+    }
+
+    @GetMapping(value="/fields/{field_id}/scout_reports/{scout_report_id}")
+    public String getScoutingReport(@PathVariable Integer field_id, @PathVariable Integer scout_report_id, HttpServletRequest request) {
+        Field field = fieldService.findFieldById(field_id);
+        FieldScoutReport scoutReport = fieldService.findFieldScoutReportById(scout_report_id);
+        List<Season> seasons = seasonService.findAll();
+        List<Photo> photos = photoService.findAllByPhotoableIdAndPhotoableType(scout_report_id, "FieldScoutReport");
+        request.setAttribute("photos", photos);
+        request.setAttribute("field", field);
+        request.setAttribute("scout_report", scoutReport);
+        request.setAttribute("seasons", seasons);
+        return "field_scout_report";
     }
 
     @GetMapping(value="/fields/{field_id}/shape_land_parcels")

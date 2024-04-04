@@ -1,0 +1,78 @@
+@import url(main.css);
+@import url(fields_menu.css);
+
+.main{
+    padding-bottom: 0;
+}
+.block-info{
+    width: 100%;
+    margin-left: 100px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.scout-report{
+    width: 100%;
+    background-color: #F4F4F4;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    padding: 20px;
+}
+.scout-report-block-info{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.block-info-text{
+    text-align: right;
+}
+.block-info-header, .block-info-text{
+    font-size: 18px;
+    width: 40%;
+}
+.block-info-header{
+    font-weight: bold;
+}
+.username, .videolink{
+    color: black;
+    font-weight: 300;
+    transition: font-weight 0.5s;
+}
+.username:hover, .videolink:hover{
+    font-weight: bold;
+}
+.username{
+    display: block;
+    margin-top: 10px;
+}
+.email{
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+.profession{
+    font-size: 18px;
+}
+.photos{
+    width: 100%;
+    margin-top: 30px;
+}
+.photos-header{
+    width: fit-content;
+    font-size: 25px;
+    font-weight: 600;
+}
+.photos-block{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+.photos-block-image{
+    border-radius: 10px;
+    width: 15%;
+    height: 150px;
+    margin-top: 20px;
+    margin-right: 49px;
+}
