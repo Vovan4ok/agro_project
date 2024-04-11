@@ -14,8 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet">
-    <link rel="stylesheet" href="../../styles/implement_maintenances.css">
-    <script src="../../js/implement_maintenances.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/implement_maintenances.css">
+    <script src="${pageContext.request.contextPath}/js/implement_maintenances.js"></script>
 </head>
 
 <body class="body">

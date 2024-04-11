@@ -12,8 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/land_parcels.css">
-    <script src="../js/land_parcels.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/land_parcels.css">
+    <script src="${pageContext.request.contextPath}/js/land_parcels.js"></script>
 </head>
 <body class="body">
 <jsp:include page="header.jsp"></jsp:include>

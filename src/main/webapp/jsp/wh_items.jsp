@@ -12,8 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/wh_items.css">
-    <script src="../js/wh_items.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/wh_items.css">
+    <script src="${pageContext.request.contextPath}/js/wh_items.js"></script>
 </head>
 <body class="body">
 <jsp:include page="header.jsp"></jsp:include>

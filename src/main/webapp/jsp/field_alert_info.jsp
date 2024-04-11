@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../../styles/field_alert_info.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/field_alert_info.css">
 </head>
 <body class="body">
 <jsp:include page="header.jsp"></jsp:include>
@@ -27,7 +27,7 @@
                 <a href="/fields/${field.id}" class="field-menu-link" >Інформація про поле</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/agro_operations" class="field-menu-link" style="font-weight: bold;">Агрооперації</a>
+                <a href="/fields/${field.id}/agro_operations" class="field-menu-link">Агрооперації</a>
             </li>
             <li class="field-menu-item">
                 <a href="/fields/${field.id}/machine_tasks" class="field-menu-link">Роботи машин</a>
@@ -45,7 +45,7 @@
                 <a href="/fields/${field.id}/notes" class="field-menu-link">Нотатки</a>
             </li>
             <li class="field-menu-item">
-                <a href="/fields/${field.id}/alerts" class="field-menu-link">Тривоги</a>
+                <a href="/fields/${field.id}/alerts" class="field-menu-link" style="font-weight: bold;">Тривоги</a>
             </li>
         </ul>
         <div class="content-info">

@@ -12,9 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/agro_operations.css">
-    <script src="../js/agro_operations.js"></script>
-    <script src="../js/season_filter.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/agro_operations.css">
+    <script src="${pageContext.request.contextPath}/js/agro_operations.js"></script>
+    <script src="${pageContext.request.contextPath}/js/season_filter.js"></script>
 </head>
 <body class="body">
 <jsp:include page="header.jsp"></jsp:include>

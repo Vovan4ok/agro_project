@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../../styles/field_agro_operation_info.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/field_agro_operation_info.css">
 </head>
 <body class="body">
 <jsp:include page="header.jsp"></jsp:include>
@@ -84,7 +84,7 @@
                         </div>
                         <div class="info-block-small-block">
                             <span class="info-block-small-block-header">Терміни</span>
-                            <span class="info-block-small-block-info">${agro_operation.plannedStartDate} - ${agro_operation.plannedEndDate}</span>
+                            <span class="info-block-small-block-info">${agro_operation.plannedStartDate} -<br>${agro_operation.plannedEndDate}</span>
                         </div>
                         <div class="info-block-small-block">
                             <span class="info-block-small-block-header">Запланована площа</span>
@@ -96,7 +96,7 @@
                         <div class="info-block-small-block">
                             <span class="info-block-small-block-header">Терміни</span>
                             <span class="info-block-small-block-info">
-                                ${agro_operation.actualStartDatetime} - ${agro_operation.completedDate}
+                                ${agro_operation.actualStartDatetime} -<br>${agro_operation.completedDate}
                             </span>
                         </div>
                         <div class="info-block-small-block">

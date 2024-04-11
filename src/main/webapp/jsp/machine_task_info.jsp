@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../../styles/machine_task_info.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/machine_task_info.css">
 </head>
 <body class="body">
 <jsp:include page="header.jsp"></jsp:include>
@@ -140,7 +140,7 @@
                         <c:if test="${machine_task_dto.implement != null}">
                             <a href="/implements/${machine_task_dto.implement.id}" class="username">${machine_task_dto.implement.name}</a>
                         </c:if>
-                        <c:if test="${machine_task_dto.implement != null}">
+                        <c:if test="${machine_task_dto.implement == null}">
                             -
                         </c:if>
                     </span>
